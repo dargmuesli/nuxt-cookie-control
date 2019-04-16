@@ -151,7 +151,12 @@ cookies: {
 }
 ```
 ### Multilanguage
-Set **locale** prop - ```<CookieControl locale="de">```
+Set **locale** prop
+```html
+<CookieControl locale="de">
+```
+**Default**: en, 
+**Currently available**: 'en', 'de', hr'
 
 If you don't like default texts you can change them in options (**nuxt.config.js**)
 ```javascript
@@ -166,9 +171,8 @@ text: {
       ...
     }
   }
-},
 
-//this will override locale text
+  //this will override locale text
   barTitle: 'Override Title'
 }
 ```
