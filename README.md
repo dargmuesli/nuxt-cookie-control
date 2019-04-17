@@ -1,6 +1,8 @@
 
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=12TegiHCNYG1NO84CmQ2CfMAzzn-5o027)
 # Nuxt Cookie Control
+Try it out here:
+[Nuxt.js Cookie Control](https://codesandbox.io/s/vn1w1py510)
 ## Usage
 | npm install nuxt-cookie-control | yarn add nuxt-cookie-control |
 |--|--|
