@@ -9,7 +9,7 @@
         </slot>
       </div>
       <div class="cookieControl__BarButtons">
-        <button @click="cookies.modal = true" v-text="cookies.text.controlCookies"/>
+        <button @click="cookies.modal = true" v-text="cookies.text.manageCookies"/>
         <button @click="setConsent" v-text="cookies.text.acceptAll"/>
       </div>
     </div>
