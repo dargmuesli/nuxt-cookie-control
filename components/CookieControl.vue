@@ -96,22 +96,28 @@ export default {
       else if(description[this.locale]) return ` - ${description[this.locale]}`;
       return '';
     },
+
+    async setTexts(isChanged){
+      let text = null;
+      try {
+        const module = await import(`../locale/${this.locale}`);
+        text = module.default;
+      } catch (e) {
+        console.error(`There are no texts for your locale: ${this.locale}`)
+      }
+      if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
+        if(this.cookies.text.locale){
+          Object.assign(text, this.cookies.text.locale[this.locale])
+          console.log(text)
+        }
+        if(!isChanged) Object.assign(text, this.cookies.text)
+      }
+      this.$set(this.$cookies, 'text', text);
+    }
   },
 
   async mounted(){
-    let text = null;
-    try {
-      const module = await import(`../locale/${this.locale}`);
-      text = module.default;
-    } catch (e) {
-      console.error(`There are no texts for your locale: ${this.locale}`)
-    }
-    if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
-      if(this.cookies.text.locale){
-        Object.assign(text, this.cookies.text.locale[this.locale])
-      }
-      Object.assign(text, this.cookies.text)
-    }
+    await this.setTexts();
     if(process.browser && this.cookies.colors){
       let key = null;
       for(key in this.cookies.colors){
@@ -119,9 +125,15 @@ export default {
       }
     }
     this.colorsSet = true;
-    this.$set(this.$cookies, 'text', text);
+  },
+
+  watch: {
+    async locale(){
+      await this.setTexts(true);
+    }
   }
 }
+
 </script>
 
 <style lang="scss">

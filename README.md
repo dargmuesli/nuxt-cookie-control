@@ -32,7 +32,7 @@ If you want to add elements to the cookie bar you can do it like this
 ```html
 <CookieControl>
   <h3>Bar title</h3>
-  <p>Bar description (it can be $cookies.text.barDescription also)</p>
+  <p>Bar description (you can use $cookies.text.barDescription)</p>
   <n-link>Go somewhere</n-link>
 </CookieControl>
 ```
@@ -42,7 +42,7 @@ If you want to add elements to the cookie bar you can do it like this
 ```html
 <CookieControl locale="de"/>
 ```
-**Default**: en, 
+**Default**: en,
 **Currently available**: 'en', 'de', hr'
 
 ## Options
@@ -155,10 +155,10 @@ Set **locale** prop
 ```html
 <CookieControl locale="de">
 ```
-**Default**: en, 
+**Default**: en,
 **Currently available**: 'en', 'de', hr'
 
-If you don't like default texts you can change them in options (**nuxt.config.js**)
+If you don't like the default texts you can change them in options (**nuxt.config.js**)
 ```javascript
 text: {
   locale: {
@@ -166,7 +166,7 @@ text: {
       barTitle:  'Cookies Different',
       barDescription:  'We use our own cookies and third-party...',
     },
-    
+
     de: {
       ...
     }
