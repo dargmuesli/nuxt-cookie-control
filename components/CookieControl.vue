@@ -1,5 +1,5 @@
 <template>
-  <section class="cookieControl">
+  <section class="cookieControl" v-if="cookies.text">
     <transition name="cookieControl__Bar">
     <div class="cookieControl__Bar" v-if="colorsSet && !cookies.consent">
       <div>
@@ -97,10 +97,10 @@ export default {
       return '';
     },
 
-    async setTexts(isChanged){
+    async setTexts(isChanged=false){
       let text = null;
       try {
-        const module = await import(`../locale/${this.locale}`);
+        const module = require(`../locale/${this.locale}`);
         text = module.default;
       } catch (e) {
         console.error(`There are no texts for your locale: ${this.locale}`)
@@ -116,7 +116,7 @@ export default {
     }
   },
 
-  async mounted(){
+  async mounted (){
     await this.setTexts();
     if(process.browser && this.cookies.colors){
       let key = null;
