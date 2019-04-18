@@ -1,6 +1,8 @@
 
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=12TegiHCNYG1NO84CmQ2CfMAzzn-5o027)
 # Nuxt Cookie Control
+Try it out here:
+[Nuxt.js Cookie Control](https://codesandbox.io/s/vn1w1py510)
 ## Usage
 | npm install nuxt-cookie-control | yarn add nuxt-cookie-control |
 |--|--|
@@ -16,23 +18,27 @@ modules: [
   }]
 ]
 
-//template
-//CookieControl component is registered globally, you don't need to register it anywhere.
-<CookieControl/>
-//or
-<CookieControl></CookieControl>
-
 //to open cookie modal anywhere:
 $cookies.modal = true
 //or
 this.$cookies.modal = true
+```
+```html
+<!--template-->
+<!--
+  CookieControl component is registered globally,
+  you don't need to register it anywhere.
+-->
+<CookieControl/>
+<!--or-->
+<CookieControl></CookieControl>
 ```
 ## Slot
 If you want to add elements to the cookie bar you can do it like this
 ```html
 <CookieControl>
   <h3>Bar title</h3>
-  <p>Bar description (it can be $cookies.text.barDescription also)</p>
+  <p>Bar description (you can use $cookies.text.barDescription)</p>
   <n-link>Go somewhere</n-link>
 </CookieControl>
 ```
@@ -42,8 +48,8 @@ If you want to add elements to the cookie bar you can do it like this
 ```html
 <CookieControl locale="de"/>
 ```
-**Default**: en, 
-**Currently available**: 'en', 'de', hr'
+**Default**: en,
+**Currently available**: 'en', 'de', 'it', 'es', 'hr'
 
 ## Options
 Options in nuxt.config.js
@@ -81,7 +87,7 @@ modules: [
       barDescription: 'We use our own cookies and third-party cookies so that we can show you this website and better understand how you use it, with a view to improving the services we offer. If you continue browsing, we consider that you have accepted the cookies.',
       acceptAll: 'Accept all',
       declineAll: 'Delete all',
-      controlCookies: 'Manage cookies',
+      manageCookies: 'Manage cookies',
       unsaved: 'You have unsaved settings',
       close: 'Close',
       save: 'Save',
@@ -155,10 +161,10 @@ Set **locale** prop
 ```html
 <CookieControl locale="de">
 ```
-**Default**: en, 
-**Currently available**: 'en', 'de', hr'
+**Default**: en,
+**Currently available**: 'en', 'de', 'it', 'es', 'hr'
 
-If you don't like default texts you can change them in options (**nuxt.config.js**)
+If you don't like the default texts you can change them in options (**nuxt.config.js**)
 ```javascript
 text: {
   locale: {
@@ -166,7 +172,7 @@ text: {
       barTitle:  'Cookies Different',
       barDescription:  'We use our own cookies and third-party...',
     },
-    
+
     de: {
       ...
     }

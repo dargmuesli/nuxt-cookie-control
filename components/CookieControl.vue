@@ -1,5 +1,5 @@
 <template>
-  <section class="cookieControl">
+  <section class="cookieControl" v-if="cookies.text">
     <transition name="cookieControl__Bar">
     <div class="cookieControl__Bar" v-if="colorsSet && !cookies.consent">
       <div>
@@ -9,7 +9,7 @@
         </slot>
       </div>
       <div class="cookieControl__BarButtons">
-        <button @click="cookies.modal = true" v-text="cookies.text.controlCookies"/>
+        <button @click="cookies.modal = true" v-text="cookies.text.manageCookies"/>
         <button @click="setConsent" v-text="cookies.text.acceptAll"/>
       </div>
     </div>
@@ -96,22 +96,28 @@ export default {
       else if(description[this.locale]) return ` - ${description[this.locale]}`;
       return '';
     },
+
+    async setTexts(isChanged=false){
+      let text = null;
+      try {
+        const module = require(`../locale/${this.locale}`);
+        text = module.default;
+      } catch (e) {
+        console.error(`There are no texts for your locale: ${this.locale}`)
+      }
+      if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
+        if(this.cookies.text.locale){
+          Object.assign(text, this.cookies.text.locale[this.locale])
+          console.log(text)
+        }
+        if(!isChanged) Object.assign(text, this.cookies.text)
+      }
+      this.$set(this.$cookies, 'text', text);
+    }
   },
 
-  async mounted(){
-    let text = null;
-    try {
-      const module = await import(`../locale/${this.locale}`);
-      text = module.default;
-    } catch (e) {
-      console.error(`There are no texts for your locale: ${this.locale}`)
-    }
-    if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
-      if(this.cookies.text.locale){
-        Object.assign(text, this.cookies.text.locale[this.locale])
-      }
-      Object.assign(text, this.cookies.text)
-    }
+  async mounted (){
+    await this.setTexts();
     if(process.browser && this.cookies.colors){
       let key = null;
       for(key in this.cookies.colors){
@@ -119,9 +125,15 @@ export default {
       }
     }
     this.colorsSet = true;
-    this.$set(this.$cookies, 'text', text);
+  },
+
+  watch: {
+    async locale(){
+      await this.setTexts(true);
+    }
   }
 }
+
 </script>
 
 <style lang="scss">
