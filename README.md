@@ -114,46 +114,42 @@ modules: [
 ...
 ...
 cookies: {
-  necessary: {
-    cookies: [
-      {
-        name:  'Default Cookies',
-        //if multilanguage
-        description: {
-          en:  'Used for cookie control.'
-        },
-        //else
-        description:  'Used for cookie control.'
-        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+  necessary: [
+    {
+      name:  'Default Cookies',
+      //if multilanguage
+      description: {
+        en:  'Used for cookie control.'
+      },
+      //else
+      description:  'Used for cookie control.',
+      cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+    }
+  ],
+  optional: [
+    {
+      name:  'Google Analitycs',
+      //if multilanguage
+      description: {
+        en:  'Google Analytics is a web analytics ...'
+      },
+      //else
+      description:  'Google Analytics is a web analytics...',
+      src:  'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
+      async:  true,
+      cookies: ['_ga', '_gat', '_gid'],
+      accepted: () =>{
+        (function(){
+          window.dataLayer = window.dataLayer || [];
+          function  gtag(){dataLayer.push(arguments);}
+          gtag('js', new  Date());
+          gtag('config', '<API-KEY>');
+        })
+      },
+      declined: () =>{
       }
-    ]
-  },
-  optional: {
-    cookies: [
-      {
-        name:  'Google Analitycs',
-        //if multilanguage
-        description: {
-          en:  'Google Analytics is a web analytics ...'
-        },
-        //else
-        description:  'Google Analytics is a web analytics...',
-        src:  'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
-        async:  true,
-        cookies: ['_ga', '_gat', '_gid'],
-        accepted: () =>{
-          (function(){
-            window.dataLayer = window.dataLayer || [];
-            function  gtag(){dataLayer.push(arguments);}
-            gtag('js', new  Date());
-            gtag('config', '<API-KEY>');
-          })
-        },
-        declined: () =>{
-        }
-      }
-    ]
-  }
+    }
+  ]
 }
 ```
 ### Multilanguage
