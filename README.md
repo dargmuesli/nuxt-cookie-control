@@ -73,11 +73,11 @@ modules: [
       modalButtonBackground:  '#000',
       barButtonHoverBackground:  '#333',
       checkboxActiveBackground:  '#000',
-      checkboxUnactiveBackground:  '#000',
+      checkboxInactiveBackground:  '#000',
       modalButtonHoverBackground:  '#333',
       checkboxDisabledBackground:  '#ddd',
       checkboxActiveCircleBackground:  '#fff',
-      checkboxUnactiveCircleBackground:  '#fff',
+      checkboxInactiveCircleBackground:  '#fff',
       checkboxDisabledCircleBackground:  '#fff',
     },
 
@@ -131,20 +131,19 @@ cookies: {
       name:  'Google Analitycs',
       //if multilanguage
       description: {
-        en:  'Google Analytics is a web analytics ...'
+        en:  'Google GTM is ...'
       },
       //else
-      description:  'Google Analytics is a web analytics...',
+      description:  'Google GTM is...',
       src:  'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
       async:  true,
       cookies: ['_ga', '_gat', '_gid'],
       accepted: () =>{
-        (function(){
-          window.dataLayer = window.dataLayer || [];
-          function  gtag(){dataLayer.push(arguments);}
-          gtag('js', new  Date());
-          gtag('config', '<API-KEY>');
-        })
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
       },
       declined: () =>{
       }

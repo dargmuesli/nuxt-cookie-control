@@ -121,7 +121,8 @@ export default {
     if(process.browser && this.cookies.colors){
       let key = null;
       for(key in this.cookies.colors){
-        document.documentElement.style.setProperty(`--cookie-control-${key}`, `${this.cookies.colors[key]}`);
+        let k = key.toLowerCase().includes('unactive') ? key.replace(/Unactive/g, 'Inactive') : key;
+        document.documentElement.style.setProperty(`--cookie-control-${k}`, `${this.cookies.colors[key]}`);
       }
     }
     this.colorsSet = true;
@@ -137,30 +138,6 @@ export default {
 </script>
 
 <style lang="scss">
-  html:root{
-    --cookie-control-barTextColor: #fff;
-    --cookie-control-modalOverlay: #000;
-    --cookie-control-barBackground: #000;
-    --cookie-control-barButtonColor: #000;
-    --cookie-control-modalTextColor: #000;
-    --cookie-control-modalBackground: #fff;
-    --cookie-control-modalOverlayOpacity: 0.8;
-    --cookie-control-modalButtonColor: #fff;
-    --cookie-control-modalUnsavedColor: #fff;
-    --cookie-control-barButtonHoverColor: #fff;
-    --cookie-control-barButtonBackground: #fff;
-    --cookie-control-modalButtonHoverColor: #fff;
-    --cookie-control-modalButtonBackground: #000;
-    --cookie-control-barButtonHoverBackground: #333;
-    --cookie-control-checkboxActiveBackground: #000;
-    --cookie-control-checkboxUnactiveBackground: #000;
-    --cookie-control-modalButtonHoverBackground: #333;
-    --cookie-control-checkboxDisabledBackground: #ddd;
-    --cookie-control-checkboxActiveCircleBackground: #fff;
-    --cookie-control-checkboxUnactiveCircleBackground: #fff;
-    --cookie-control-checkboxDisabledCircleBackground: #fff;
-  }
-
   //Transitions
   .cookieControl__Modal-enter-active, .cookieControl__Modal-leave-active {
     transition: opacity .25s;
@@ -284,6 +261,7 @@ export default {
     overflow-y: scroll;
     display: inline-block;
     vertical-align: middle;
+    color: var(--cookie-control-modalTextColor);
     background-color: var(--cookie-control-modalBackground);
     *{
       &:not(button){
@@ -352,7 +330,7 @@ export default {
       border-radius: 20px;
       backface-visibility: hidden;
       transition: background-color 200ms;
-      background-color: var(--cookie-control-checkboxUnactiveBackground);
+      background-color: var(--cookie-control-checkboxInactiveBackground);
       &:before{
         position: absolute;
         content: "";
@@ -363,7 +341,7 @@ export default {
         border-radius: 50%;
         transition: transform 200ms;
         transform: translate3d(0, -50%, 0);
-        background-color: var(--cookie-control-checkboxUnactiveCircleBackground);
+        background-color: var(--cookie-control-checkboxInactiveCircleBackground);
       }
     }
   }
