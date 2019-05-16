@@ -49,7 +49,7 @@ If you want to add elements to the cookie bar you can do it like this
 <CookieControl locale="de"/>
 ```
 **Default**: en,
-**Currently available**: 'en', 'de', 'it', 'es', 'hr'
+**Currently available**: 'en', 'de', 'it', 'es', 'fr', 'hr'
 
 ## Options
 Options in nuxt.config.js
@@ -157,7 +157,7 @@ Set **locale** prop
 <CookieControl locale="de"/>
 ```
 **Default**: en,
-**Currently available**: 'en', 'de', 'it', 'es', 'hr'
+**Currently available**: 'en', 'de', 'it', 'es', 'fr', 'hr'
 
 If you don't like the default texts you can change them in options (**nuxt.config.js**)
 ```javascript
