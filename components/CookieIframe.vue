@@ -1,6 +1,6 @@
 <template>
   <iframe v-if="loaded && iframeEnabled"/>
-  <div v-else-if="loaded" class="CookieControl__BlockedIframe">
+  <div v-else-if="loaded" class="cookieControl__BlockedIframe">
     <p>
       {{ cookies.text.blockedIframe }}
       <a href="#" @click.prevent="cookies.modal = true" v-text="cookies.text.here"/>
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss">
-.CookieControl__BlockedIframe{
+.cookieControl__BlockedIframe{
   padding: 20px;
   border: 2px solid #ddd;
   p, a{
