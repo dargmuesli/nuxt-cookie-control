@@ -8,5 +8,8 @@ export default {
   close: 'Close',
   save: 'Save',
   necessary: 'Necessary cookies',
-  optional: 'Optional cookies'
+  optional: 'Optional cookies',
+  functional: 'Functional cookies',
+  blockedIframe: 'To see this, please enable functional cookies',
+  here: 'here'
 }

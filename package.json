@@ -1,6 +1,6 @@
 {
   "name": "nuxt-cookie-control",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Nuxt Cookies Control Module",
   "license": "MIT",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
@@ -29,6 +29,7 @@
   ],
   "dependencies": {
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1"
+    "sass-loader": "^7.0.1",
+    "string-replace-loader": "^2.1.1"
   }
 }

@@ -8,5 +8,8 @@ export default {
   close: 'Zatvori',
   save: 'Spremi',
   necessary: 'Obavezni kolačići',
-  optional: 'Neobavezni kolačići'
+  optional: 'Neobavezni kolačići',
+  functional: 'Funkcionalni kolačići',
+  blockedIframe: 'Da bi vidjeli ovo, molimo Vas omogućite funkcionalne kolačiće',
+  here: 'ovdje'
 }

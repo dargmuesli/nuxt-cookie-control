@@ -49,13 +49,21 @@ If you want to add elements to the cookie bar you can do it like this
 <CookieControl locale="de"/>
 ```
 **Default**: en,
-**Currently available**: 'en', 'de', 'it', 'es', 'fr', 'hr'
+**Currently available**: 
+- en
+- de
+- it
+- es
+- fr
+- hr
 
 ## Options
 Options in nuxt.config.js
 ```javascript
 modules: [
   ['nuxt-cookie-control', {
+    //block iframes to prevent them from adding additional cookies
+    blockIframe: true,
     //default colors
     colors: {
       barTextColor:  '#fff',
@@ -93,6 +101,9 @@ modules: [
       save: 'Save',
       necessary: 'Necessary cookies',
       optional: 'Optional cookies',
+      functional: 'Functional cookies',
+      blockedIframe: 'To see this, please enable functional cookies',
+      here: 'here'
     }
   ]
 ]
@@ -157,7 +168,13 @@ Set **locale** prop
 <CookieControl locale="de"/>
 ```
 **Default**: en,
-**Currently available**: 'en', 'de', 'it', 'es', 'fr', 'hr'
+**Currently available**: 
+- en
+- de
+- it
+- es
+- fr
+- hr
 
 If you don't like the default texts you can change them in options (**nuxt.config.js**)
 ```javascript

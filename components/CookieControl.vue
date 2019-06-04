@@ -24,11 +24,11 @@
             <ul :key="type.id">
               <li v-for="cookie in cookies[type]" :key="cookie.id">
                 <div class="cookieControl__ModalInputWrapper">
-                  <input v-if="type === 'necessary'" :id="cookie.name" type="checkbox" disabled checked/>
+                  <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="cookie.name" type="checkbox" disabled checked/>
                   <input v-else :id="cookie.name" type="checkbox" :checked="cookies.enabledList.includes(cookie.name)" @input="toogleCookie(cookie.name)"/>
-                  <label :for="cookie.name" v-text="cookie.name"/>
+                  <label :for="cookie.name" v-text="getName(cookie.name)"/>
                   <span class="cookieControl__ModalCookieName">
-                    {{ cookie.name }}
+                    {{ getName(cookie.name) }}
                     <span v-if="cookie.description" v-text="getDescription(cookie.description)"/>
                   </span>
                 </div>
@@ -95,6 +95,10 @@ export default {
       if(typeof(description) === 'string') return ` - ${description}`;
       else if(description[this.locale]) return ` - ${description[this.locale]}`;
       return '';
+    },
+
+    getName(name){
+      return name === 'functional' ? this.cookies.text['functional'] : name;
     },
 
     async setTexts(isChanged=false){
