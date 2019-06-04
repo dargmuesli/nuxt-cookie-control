@@ -1,7 +1,7 @@
 <template>
   <section class="cookieControl" v-if="cookies.text">
     <transition name="cookieControl__Bar">
-    <div class="cookieControl__Bar" v-if="colorsSet && !cookies.consent">
+    <div :class="`cookieControl__Bar cookieControl__Bar--${cookies.barPosition}`" v-if="colorsSet && !cookies.consent">
       <div>
         <slot>
           <h3 v-text="cookies.text.barTitle"/>
@@ -176,16 +176,12 @@ export default {
 
   .cookieControl__Bar{
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
     padding: 20px;
     align-items: flex-end;
     justify-content: space-between;
     background-color: var(--cookie-control-barBackground);
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-
     h3, p{
       color: var(--cookie-control-barTextColor);
       max-width: 900px;
@@ -212,6 +208,55 @@ export default {
         margin-left: 10px;
       }
     }
+  }
+
+  .cookieControl__Bar--top-full,
+  .cookieControl__Bar--bottom-full{
+    left: 0;
+    right: 0;
+    padding: 20px;
+  }
+
+  .cookieControl__Bar--top-full{
+    top: 0;
+  }
+
+  .cookieControl__Bar--bottom-full{
+    bottom: 0;
+  }
+
+  .cookieControl__Bar--top-left,
+  .cookieControl__Bar--top-right,
+  .cookieControl__Bar--bottom-left,
+  .cookieControl__Bar--bottom-right{
+    flex-direction: column;
+    p{
+      max-width: 400px;
+    }
+
+    .cookieControl__BarButtons{
+      margin-top: 20px;
+    }
+  }
+
+  .cookieControl__Bar--top-left,
+  .cookieControl__Bar--top-right{
+    top: 20px;
+  }
+
+  .cookieControl__Bar--bottom-left,
+  .cookieControl__Bar--bottom-right{
+    bottom: 20px;
+  }
+
+  .cookieControl__Bar--top-left,
+  .cookieControl__Bar--bottom-left{
+    left: 20px;
+  }
+
+  .cookieControl__Bar--top-right,
+  .cookieControl__Bar--bottom-right{
+    right: 20px;
   }
 
   .cookieControl__BarButtons{

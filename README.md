@@ -64,6 +64,10 @@ modules: [
   ['nuxt-cookie-control', {
     //block iframes to prevent them from adding additional cookies
     blockIframe: true,
+    //position of cookie bar:
+    //'top-left', 'top-right', 'top-full',
+    //'bottom-left', 'bottom-right', 'bottom-full'
+    barPosition: 'bottom-right',
     //default colors
     colors: {
       barTextColor:  '#fff',
