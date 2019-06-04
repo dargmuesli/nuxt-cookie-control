@@ -48,8 +48,8 @@ If you want to add elements to the cookie bar you can do it like this
 ```html
 <CookieControl locale="de"/>
 ```
-**Default**: en,
-**Currently available**: 
+#### Default: en,
+#### Currently available: 
 - en
 - de
 - it
@@ -167,8 +167,8 @@ Set **locale** prop
 ```html
 <CookieControl locale="de"/>
 ```
-**Default**: en,
-**Currently available**: 
+#### Default: en,
+#### Currently available: 
 - en
 - de
 - it
