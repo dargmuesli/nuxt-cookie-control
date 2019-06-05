@@ -1,6 +1,6 @@
 <template>
   <section class="cookieControl" v-if="cookies.text">
-    <transition name="cookieControl__Bar">
+    <transition :name="`cookieControl__Bar--${cookies.barPosition}`">
     <div :class="`cookieControl__Bar cookieControl__Bar--${cookies.barPosition}`" v-if="colorsSet && !cookies.consent">
       <div>
         <slot>
@@ -121,7 +121,7 @@ export default {
     }
   },
 
-  async mounted (){
+  async beforeMount (){
     await this.setTexts();
     if(process.browser && this.cookies.colors){
       let key = null;
@@ -144,19 +144,46 @@ export default {
 
 <style lang="scss">
   //Transitions
-  .cookieControl__Modal-enter-active, .cookieControl__Modal-leave-active {
+  .cookieControl__Modal-enter-active,
+  .cookieControl__Modal-leave-active {
     transition: opacity .25s;
   }
 
-  .cookieControl__Modal-enter, .cookieControl__Modal-leave-to {
+  .cookieControl__Modal-enter,
+  .cookieControl__Modal-leave-to {
     opacity: 0;
   }
 
-  .cookieControl__Bar-enter-active, .cookieControl__Bar-leave-active {
+  .cookieControl__Bar--top-left-enter-active,
+  .cookieControl__Bar--top-full-enter-active,
+  .cookieControl__Bar--top-right-enter-active,
+  .cookieControl__Bar--bottom-left-enter-active,
+  .cookieControl__Bar--bottom-full-enter-active,
+  .cookieControl__Bar--bottom-right-enter-active,
+  .cookieControl__Bar--top-left-leave-active,
+  .cookieControl__Bar--top-full-leave-active,
+  .cookieControl__Bar--top-right-leave-active,
+  .cookieControl__Bar--bottom-left-leave-active,
+  .cookieControl__Bar--bottom-full-leave-active,
+  .cookieControl__Bar--bottom-right-leave-active{
     transition: transform .25s;
   }
 
-  .cookieControl__Bar-enter, .cookieControl__Bar-leave-to {
+  .cookieControl__Bar--top-left-enter,
+  .cookieControl__Bar--top-full-enter,
+  .cookieControl__Bar--top-right-enter,
+  .cookieControl__Bar--top-left-leave-to,
+  .cookieControl__Bar--top-full-leave-to,
+  .cookieControl__Bar--top-right-leave-to{
+    transform: translateY(-100%);
+  }
+
+  .cookieControl__Bar--bottom-left-enter,
+  .cookieControl__Bar--bottom-full-enter,
+  .cookieControl__Bar--bottom-right-enter,
+  .cookieControl__Bar--bottom-left-leave-to,
+  .cookieControl__Bar--bottom-right-leave-to,
+  .cookieControl__Bar--bottom-full-leave-to{
     transform: translateY(100%);
   }
 
