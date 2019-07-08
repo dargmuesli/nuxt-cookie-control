@@ -37,9 +37,16 @@ this.$cookies.modal = true
 If you want to add elements to the cookie bar you can do it like this
 ```html
 <CookieControl>
-  <h3>Bar title</h3>
-  <p>Bar description (you can use $cookies.text.barDescription)</p>
-  <n-link>Go somewhere</n-link>
+  <template v-slot:bar>
+    <h3>Bar title</h3>
+    <p>Bar description (you can use $cookies.text.barDescription)</p>
+    <n-link>Go somewhere</n-link>
+  </template>
+
+  <template v-slot:modal>
+    <h3>Modal title</h3>
+    <p>Modal description</p>
+  </template>
 </CookieControl>
 ```
 
@@ -76,7 +83,7 @@ modules: [
       barButtonColor:  '#000',
       modalTextColor:  '#000',
       modalBackground:  '#fff',
-      modalOverlayOpacity:  0.8;
+      modalOverlayOpacity:  0.8,
       modalButtonColor: '#fff',
       modalUnsavedColor:  '#fff',
       barButtonHoverColor:  '#fff',
