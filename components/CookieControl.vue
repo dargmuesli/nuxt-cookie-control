@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import cssVars from 'css-vars-ponyfill';
 export default {
   name: 'CookieControl',
   props: {
@@ -128,10 +129,12 @@ export default {
     await this.setTexts();
     if(process.browser && this.cookies.colors){
       let key = null;
+      let variables = {};
       for(key in this.cookies.colors){
         let k = key.toLowerCase().includes('unactive') ? key.replace(/Unactive/g, 'Inactive') : key;
-        document.documentElement.style.setProperty(`--cookie-control-${k}`, `${this.cookies.colors[key]}`);
+        variables[`cookie-control-${k}`] = `${this.cookies.colors[key]}`
       }
+      cssVars({variables})
     }
     this.colorsSet = true;
   },
@@ -349,7 +352,7 @@ export default {
     background-color: var(--cookie-control-modalBackground);
     *{
       &:not(button){
-        color: var(--cookie-control-modalText);
+        color: var(--cookie-control-modalTextColor);
       }
     }
 
