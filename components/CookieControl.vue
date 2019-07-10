@@ -27,7 +27,7 @@
                 <li v-for="cookie in cookies[type]" :key="cookie.id">
                   <div class="cookieControl__ModalInputWrapper">
                     <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="cookie.name" type="checkbox" disabled checked/>
-                    <input v-else :id="cookie.name" type="checkbox" :checked="cookies.enabledList.includes(cookie.name)" @input="toogleCookie(cookie.name)"/>
+                    <input v-else :id="cookie.name" type="checkbox" :checked="cookies.enabledList.includes(cookie.name) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie.name)"/>
                     <label :for="cookie.name" v-text="getName(cookie.name)"/>
                     <span class="cookieControl__ModalCookieName">
                       {{ getName(cookie.name) }}
@@ -135,6 +135,11 @@ export default {
         variables[`cookie-control-${k}`] = `${this.cookies.colors[key]}`
       }
       cssVars({variables})
+    }
+    if(this.cookies.get('cookie_control_consent').length === 0){
+      this.optionalCookies.forEach(c =>{
+        if(c.initialState === true) this.cookies.enabledList.push(c.name)
+      })
     }
     this.colorsSet = true;
   },
