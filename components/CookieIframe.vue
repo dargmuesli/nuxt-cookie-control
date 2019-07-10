@@ -1,6 +1,6 @@
 <template>
-  <iframe v-if="loaded && iframeEnabled"/>
-  <div v-else-if="loaded" class="cookieControl__BlockedIframe">
+  <iframe v-if="iframeEnabled"/>
+  <div v-else class="cookieControl__BlockedIframe">
     <p>
       {{ cookies.text.blockedIframe }}
       <a href="#" @click.prevent="cookies.modal = true" v-text="cookies.text.here"/>
@@ -23,15 +23,6 @@ export default {
     iframeEnabled(){
       return this.cookies.enabled.filter(c =>{return c.name === 'functional'}).length > 0
     }
-  },
-
-  watch: {
-    'cookies': {
-      handler(cookies){
-        this.loaded = true;
-      },
-      deep: true
-    },
   }
 }
 </script>

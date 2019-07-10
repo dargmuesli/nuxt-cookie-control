@@ -91,7 +91,6 @@ export default {
     setConsent({type, consent=true}){
       this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
       let enabledCookies = type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c =>{return c.name})];
-      if(type !== 'partial') enabledCookies.push('functional');
       this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
       if(process.browser) window.location.reload(true);
     },
