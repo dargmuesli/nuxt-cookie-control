@@ -2,8 +2,8 @@
   <iframe v-if="iframeEnabled"/>
   <div v-else class="cookieControl__BlockedIframe">
     <p>
-      {{ cookies.text.blockedIframe }}
-      <a href="#" @click.prevent="cookies.modal = true" v-text="cookies.text.here"/>
+      {{ iframeText }}
+      <a href="#" @click.prevent="cookies.modal = true" v-text="cookies.text.here" v-if="cookies && cookies.text"/>
     </p>
   </div>
 </template>
@@ -22,6 +22,10 @@ export default {
   computed: {
     iframeEnabled(){
       return this.cookies.enabled.filter(c =>{return c.name === 'functional'}).length > 0
+    },
+
+    iframeText(){
+      return this.cookies && this.cookies.text ? this.cookies.text.blockedIframe : '';
     }
   }
 }
