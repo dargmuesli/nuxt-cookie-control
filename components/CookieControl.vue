@@ -481,6 +481,23 @@ export default {
   @media screen and (max-width: 768px){
     .cookieControl__Bar{
       flex-direction: column;
+      left: 0;
+      right: 0;
+      p, h3{
+        max-width: 100%;
+      }
+    }
+
+    .cookieControl__Bar--top-full,
+    .cookieControl__Bar--top-left,
+    .cookieControl__Bar--top-right{
+      top: 0;
+    }
+
+    .cookieControl__Bar--bottom-full,
+    .cookieControl__Bar--bottom-left,
+    .cookieControl__Bar--bottom-right{
+      bottom: 0;
     }
 
     .cookieControl__ModalContent{
@@ -494,7 +511,7 @@ export default {
     }
 
     .cookieControl__BarButtons{
-      margin-top: 30px;
+      margin-top: 20px;
     }
   }
 </style>
