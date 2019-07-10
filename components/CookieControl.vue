@@ -27,7 +27,7 @@
                 <li v-for="cookie in cookies[type]" :key="cookie.id">
                   <div class="cookieControl__ModalInputWrapper">
                     <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="cookie.name" type="checkbox" disabled checked/>
-                    <input v-else :id="cookie.name" type="checkbox" :checked="cookies.enabledList.includes(cookie.name) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie.name)"/>
+                    <input v-else :id="cookie.name" type="checkbox" :checked="cookies.enabledList.includes(cookies.slugify(cookie.name)) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookies.slugify(cookie.name))"/>
                     <label :for="cookie.name" v-text="getName(cookie.name)"/>
                     <span class="cookieControl__ModalCookieName">
                       {{ getName(cookie.name) }}
@@ -90,7 +90,7 @@ export default {
 
     setConsent({type, consent=true}){
       this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
-      let enabledCookies = type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c =>{return c.name})];
+      let enabledCookies = type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c =>{return this.cookies.slugify(c.name)})];
       this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
       if(process.browser) window.location.reload(true);
     },
@@ -137,7 +137,7 @@ export default {
     }
     if(this.cookies.get('cookie_control_consent').length === 0){
       this.optionalCookies.forEach(c =>{
-        if(c.initialState === true) this.cookies.enabledList.push(c.name)
+        if(c.initialState === true) this.cookies.enabledList.push(this.cookies.slugify(c.name))
       })
     }
     this.colorsSet = true;
