@@ -2,15 +2,17 @@
   <section class="cookieControl" v-if="cookies.text">
     <transition :name="`cookieControl__Bar--${cookies.barPosition}`">
     <div :class="`cookieControl__Bar cookieControl__Bar--${cookies.barPosition}`" v-if="colorsSet && !cookies.consent">
-      <div>
-        <slot name="bar">
-          <h3 v-text="cookies.text.barTitle"/>
-          <p v-text="cookies.text.barDescription"/>
-        </slot>
-      </div>
-      <div class="cookieControl__BarButtons">
-        <button @click="cookies.modal = true" v-text="cookies.text.manageCookies"/>
-        <button @click="setConsent" v-text="cookies.text.acceptAll"/>
+      <div class="cookieControl__BarContainer">
+        <div>
+          <slot name="bar">
+            <h3 v-text="cookies.text.barTitle"/>
+            <p v-text="cookies.text.barDescription"/>
+          </slot>
+        </div>
+        <div class="cookieControl__BarButtons">
+          <button @click="cookies.modal = true" v-text="cookies.text.manageCookies"/>
+          <button @click="setConsent" v-text="cookies.text.acceptAll"/>
+        </div>
       </div>
     </div>
     </transition>
@@ -96,8 +98,8 @@ export default {
     },
 
     getDescription(description){
-      if(typeof(description) === 'string') return ` - ${description}`;
-      else if(description[this.locale]) return ` - ${description[this.locale]}`;
+      if(typeof(description) === 'string') return ` ${this.cookies.dashInDescription !== false ? '-' : ''} ${description}`;
+      else if(description[this.locale]) return ` ${this.cookies.dashInDescription !== false ? '-' : ''} ${description[this.locale]}`;
       return '';
     },
 
@@ -164,12 +166,20 @@ export default {
     opacity: 0;
   }
 
+  .cookieControl__Bar--center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cookieControl__Bar--center-enter-active,
   .cookieControl__Bar--top-left-enter-active,
   .cookieControl__Bar--top-full-enter-active,
   .cookieControl__Bar--top-right-enter-active,
   .cookieControl__Bar--bottom-left-enter-active,
   .cookieControl__Bar--bottom-full-enter-active,
   .cookieControl__Bar--bottom-right-enter-active,
+  .cookieControl__Bar--center-leave-active,
   .cookieControl__Bar--top-left-leave-active,
   .cookieControl__Bar--top-full-leave-active,
   .cookieControl__Bar--top-right-leave-active,
@@ -197,6 +207,11 @@ export default {
     transform: translateY(100%);
   }
 
+  .cookieControl__Bar--center-enter,
+  .cookieControl__Bar--center-leave-to{
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
   .cookieControl{
     position: relative;
     z-index: 100000;
@@ -213,10 +228,6 @@ export default {
 
   .cookieControl__Bar{
     position: fixed;
-    display: flex;
-    padding: 20px;
-    align-items: flex-end;
-    justify-content: space-between;
     background-color: var(--cookie-control-barBackground);
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     h3, p{
@@ -247,11 +258,17 @@ export default {
     }
   }
 
+  .cookieControl__BarContainer{
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
   .cookieControl__Bar--top-full,
   .cookieControl__Bar--bottom-full{
     left: 0;
     right: 0;
-    padding: 20px;
   }
 
   .cookieControl__Bar--top-full{
@@ -262,13 +279,17 @@ export default {
     bottom: 0;
   }
 
+  .cookieControl__Bar--center,
   .cookieControl__Bar--top-left,
   .cookieControl__Bar--top-right,
   .cookieControl__Bar--bottom-left,
   .cookieControl__Bar--bottom-right{
-    flex-direction: column;
     p{
       max-width: 400px;
+    }
+
+    .cookieControl__BarContainer{
+      flex-direction: column;
     }
 
     .cookieControl__BarButtons{
