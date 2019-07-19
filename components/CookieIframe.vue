@@ -30,13 +30,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.cookieControl__BlockedIframe{
-  padding: 20px;
-  border: 2px solid #ddd;
-  p, a{
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  }
-}
-</style>

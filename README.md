@@ -69,12 +69,22 @@ Options in nuxt.config.js
 ```javascript
 modules: [
   ['nuxt-cookie-control', {
+    //default css (true)
+    //if css is set to false, you will still be able to access
+    //your color variables (example. background-color: var(--cookie-control-barBackground))
+    css: true,
+
+    //in case you have subdomains (shop.yourdomain.com)
+    domain: 'yourdomain.com',
+
     //block iframes to prevent them from adding additional cookies
     blockIframe: true,
+
     //position of cookie bar:
     //'top-left', 'top-right', 'top-full',
     //'bottom-left', 'bottom-right', 'bottom-full'
-    barPosition: 'bottom-right',
+    barPosition: 'bottom-full',
+
     //default colors
     colors: {
       barTextColor:  '#fff',
