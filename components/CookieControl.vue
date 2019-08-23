@@ -118,7 +118,6 @@ export default {
       if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
         if(this.cookies.text.locale){
           Object.assign(text, this.cookies.text.locale[this.locale])
-          console.log(text)
         }
         if(!isChanged) Object.assign(text, this.cookies.text)
       }
