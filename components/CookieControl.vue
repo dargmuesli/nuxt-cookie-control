@@ -28,9 +28,9 @@
               <ul :key="type.id">
                 <li v-for="cookie in cookies[type]" :key="cookie.id">
                   <div class="cookieControl__ModalInputWrapper">
-                    <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="cookie.name" type="checkbox" disabled checked/>
-                    <input v-else :id="cookie.name" type="checkbox" :checked="cookies.enabledList.includes(cookies.slugify(cookie.name)) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookies.slugify(cookie.name))"/>
-                    <label :for="cookie.name" v-text="getName(cookie.name)"/>
+                    <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="getCookieFirstName(cookie.name)" type="checkbox" disabled checked/>
+                    <input v-else :id="getCookieFirstName(cookie.name)" type="checkbox" :checked="cookies.enabledList.includes(cookies.slugify(getCookieFirstName(cookie.name))) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie.name)"/>
+                    <label :for="getCookieFirstName(cookie.name)" v-text="getName(cookie.name)"/>
                     <span class="cookieControl__ModalCookieName">
                       {{ getName(cookie.name) }}
                       <span v-if="cookie.description" v-text="getDescription(cookie.description)"/>
@@ -85,14 +85,17 @@ export default {
 
   methods: {
     toogleCookie(cookie){
+      let cookieName = this.cookies.slugify(this.getCookieFirstName(cookie));
       if(this.saved) this.saved = false;
-      if(!this.cookies.enabledList.includes(cookie)) this.cookies.enabledList.push(cookie);
-      else this.cookies.enabledList.splice(this.cookies.enabledList.indexOf(cookie), 1);
+      if(!this.cookies.enabledList.includes(cookieName)) this.cookies.enabledList.push(cookieName);
+      else this.cookies.enabledList.splice(this.cookies.enabledList.indexOf(cookieName), 1);
     },
 
     setConsent({type, consent=true}){
       this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
-      let enabledCookies = type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c =>{return this.cookies.slugify(c.name)})];
+      let enabledCookies = type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c =>{
+        return this.cookies.slugify(this.getCookieFirstName(c.name))
+      })];
       this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
       if(process.browser) window.location.reload(true);
     },
@@ -104,7 +107,11 @@ export default {
     },
 
     getName(name){
-      return name === 'functional' ? this.cookies.text['functional'] : name;
+      return name === 'functional' ? this.cookies.text['functional'] : typeof(name) === 'string' ? name : name[this.locale];
+    },
+
+    getCookieFirstName(name){
+      return typeof(name) === 'string' ? name : name[Object.keys(name)[0]]
     },
 
     async setTexts(isChanged=false){
@@ -138,7 +145,9 @@ export default {
     }
     if(this.cookies.get('cookie_control_consent').length === 0){
       this.optionalCookies.forEach(c =>{
-        if(c.initialState === true) this.cookies.enabledList.push(this.cookies.slugify(c.name))
+        if(c.initialState === true) {
+          this.cookies.enabledList.push(this.cookies.slugify(this.getCookieFirstName(c.name)));
+        }
       })
     }
     this.colorsSet = true;
