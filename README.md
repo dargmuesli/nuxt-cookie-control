@@ -1,8 +1,8 @@
-
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=12TegiHCNYG1NO84CmQ2CfMAzzn-5o027)
 # Nuxt Cookie Control
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TWVDUDL8TZRN4&source=url)
 ## Usage
 | npm install nuxt-cookie-control | yarn add nuxt-cookie-control |
 |--|--|
