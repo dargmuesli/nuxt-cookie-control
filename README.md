@@ -147,6 +147,11 @@ modules: [
 cookies: {
   necessary: [
     {
+      //if multilanguage
+      name: {
+        en: 'Default Cookies'
+      }
+      //else
       name:  'Default Cookies',
       //if multilanguage
       description: {
