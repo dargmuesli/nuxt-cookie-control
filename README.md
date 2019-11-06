@@ -2,9 +2,10 @@
 # Nuxt Cookie Control
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
-## Usage
-| npm install nuxt-cookie-control | yarn add nuxt-cookie-control |
-|--|--|
+## 🚀 Usage
+```bash
+npm install nuxt-cookie-control
+```
 ```javascript
 //nuxt.config.js
 modules: [
@@ -63,7 +64,7 @@ If you want to add elements to the cookie bar you can do it like this
 - fr
 - hr
 
-## Options
+## 🔧 Options
 Options in nuxt.config.js
 ```javascript
 modules: [
