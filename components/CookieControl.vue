@@ -1,57 +1,59 @@
 <template>
-  <section class="cookieControl" v-if="cookies.text">
-    <transition :name="`cookieControl__Bar--${cookies.barPosition}`">
-    <div :class="`cookieControl__Bar cookieControl__Bar--${cookies.barPosition}`" v-if="colorsSet && !cookies.consent">
-      <div class="cookieControl__BarContainer">
-        <div>
-          <slot name="bar">
-            <h3 v-text="cookies.text.barTitle"/>
-            <p v-text="cookies.text.barDescription"/>
-          </slot>
-        </div>
-        <div class="cookieControl__BarButtons">
-          <button @click="cookies.modal = true" v-text="cookies.text.manageCookies"/>
-          <button @click="setConsent" v-text="cookies.text.acceptAll"/>
-        </div>
-      </div>
-    </div>
-    </transition>
-    <transition name="cookieControl__Modal">
-      <div class="cookieControl__Modal" v-if="cookies.modal">
-        <p v-if="!saved" class="cookieControl__ModalUnsaved" v-text="cookies.text.unsaved"/>
-        <div class="cookieControl__ModalContent">
+  <client-only>
+    <section class="cookieControl" v-if="cookies.text">
+      <transition :name="`cookieControl__Bar--${cookies.barPosition}`">
+      <div :class="`cookieControl__Bar cookieControl__Bar--${cookies.barPosition}`" v-if="colorsSet && !cookies.consent">
+        <div class="cookieControl__BarContainer">
           <div>
-            <slot name="modal"/>
-            <button @click="cookies.modal = false" class="cookieControl__ModalClose" v-text="cookies.text.close"/>
-            <template v-for="type in ['necessary', 'optional']">
-              <h3 v-text="cookies.text[type]" :key="type.id"/>
-              <ul :key="type.id">
-                <li v-for="cookie in cookies[type]" :key="cookie.id">
-                  <div class="cookieControl__ModalInputWrapper">
-                    <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="getCookieFirstName(cookie.name)" type="checkbox" disabled checked/>
-                    <input v-else :id="getCookieFirstName(cookie.name)" type="checkbox" :checked="cookies.enabledList.includes(cookies.slugify(getCookieFirstName(cookie.name))) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie.name)"/>
-                    <label :for="getCookieFirstName(cookie.name)" v-text="getName(cookie.name)"/>
-                    <span class="cookieControl__ModalCookieName">
-                      {{ getName(cookie.name) }}
-                      <span v-if="cookie.description" v-text="getDescription(cookie.description)"/>
-                    </span>
-                  </div>
-                  <ul v-if="cookie.cookies">
-                    <li v-for="item in cookie.cookies" :key="item.id" v-text="item"/>
-                  </ul>
-                </li>
-              </ul>
-            </template>
-            <div class="cookieControl__ModalButtons">
-              <button @click="setConsent({type: 'partial'})" v-text="cookies.text.save"/>
-              <button @click="setConsent" v-if="cookies.enabledList.length < optionalCookies.length" v-text="cookies.text.acceptAll"/>
-              <button @click="setConsent({consent: false})" v-if="cookies.enabledList.length >= optionalCookies.length" v-text="cookies.text.declineAll"/>
-            </div>
+            <slot name="bar">
+              <h3 v-text="cookies.text.barTitle"/>
+              <p v-text="cookies.text.barDescription"/>
+            </slot>
+          </div>
+          <div class="cookieControl__BarButtons">
+            <button @click="cookies.modal = true" v-text="cookies.text.manageCookies"/>
+            <button @click="setConsent" v-text="cookies.text.acceptAll"/>
           </div>
         </div>
       </div>
-    </transition>
-  </section>
+      </transition>
+      <transition name="cookieControl__Modal">
+        <div class="cookieControl__Modal" v-if="cookies.modal">
+          <p v-if="!saved" class="cookieControl__ModalUnsaved" v-text="cookies.text.unsaved"/>
+          <div class="cookieControl__ModalContent">
+            <div>
+              <slot name="modal"/>
+              <button @click="cookies.modal = false" class="cookieControl__ModalClose" v-text="cookies.text.close"/>
+              <template v-for="type in ['necessary', 'optional']">
+                <h3 v-text="cookies.text[type]" :key="type.id"/>
+                <ul :key="type.id">
+                  <li v-for="cookie in cookies[type]" :key="cookie.id">
+                    <div class="cookieControl__ModalInputWrapper">
+                      <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="getCookieFirstName(cookie.name)" type="checkbox" disabled checked/>
+                      <input v-else :id="getCookieFirstName(cookie.name)" type="checkbox" :checked="cookies.enabledList.includes(cookies.slugify(getCookieFirstName(cookie.name))) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie.name)"/>
+                      <label :for="getCookieFirstName(cookie.name)" v-text="getName(cookie.name)"/>
+                      <span class="cookieControl__ModalCookieName">
+                        {{ getName(cookie.name) }}
+                        <span v-if="cookie.description" v-text="getDescription(cookie.description)"/>
+                      </span>
+                    </div>
+                    <ul v-if="cookie.cookies">
+                      <li v-for="item in cookie.cookies" :key="item.id" v-text="item"/>
+                    </ul>
+                  </li>
+                </ul>
+              </template>
+              <div class="cookieControl__ModalButtons">
+                <button @click="setConsent({type: 'partial'})" v-text="cookies.text.save"/>
+                <button @click="setConsent" v-if="cookies.enabledList.length < optionalCookies.length" v-text="cookies.text.acceptAll"/>
+                <button @click="setConsent({consent: false})" v-if="cookies.enabledList.length >= optionalCookies.length" v-text="cookies.text.declineAll"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </section>
+  </client-only>
 </template>
 
 <script>
