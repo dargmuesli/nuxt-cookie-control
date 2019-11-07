@@ -4,7 +4,7 @@ Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
 ## 🚀 Usage
 ```bash
-npm install nuxt-cookie-control
+npm i nuxt-cookie-control
 ```
 ```javascript
 //nuxt.config.js
