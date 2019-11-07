@@ -1,6 +1,6 @@
 <template>
   <iframe v-if="iframeEnabled"/>
-  <div v-else class="cookieControl__BlockedIframe">
+  <div v-else :class="['cookieControl__BlockedIframe', {'cookieControl__Holder': cookies.css === true}]">
     <p>
       {{ iframeText }}
       <a href="#" @click.prevent="cookies.modal = true" v-text="cookies.text.here" v-if="cookies && cookies.text"/>
@@ -30,3 +30,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.cookieControl__BlockedIframe{
+  padding: 20px;
+  border: 2px solid #ddd;
+  p, a{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+}
+</style>

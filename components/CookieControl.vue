@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <section class="cookieControl" v-if="cookies.text">
+    <section :class="['cookieControl', {'cookieControl__Holder': cookies.css === true}]" v-if="cookies.text">
       <transition :name="`cookieControl__Bar--${cookies.barPosition}`">
       <div :class="`cookieControl__Bar cookieControl__Bar--${cookies.barPosition}`" v-if="colorsSet && !cookies.consent">
         <div class="cookieControl__BarContainer">
@@ -162,3 +162,389 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.cookieControl__Holder{
+    //Transitions
+  .cookieControl
+  .cookieControl__Modal-enter-active,
+  .cookieControl__Modal-leave-active {
+    transition: opacity .25s;
+  }
+
+  .cookieControl__Modal-enter,
+  .cookieControl__Modal-leave-to {
+    opacity: 0;
+  }
+
+  .cookieControl__Bar--center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cookieControl__Bar--center-enter-active,
+  .cookieControl__Bar--top-left-enter-active,
+  .cookieControl__Bar--top-full-enter-active,
+  .cookieControl__Bar--top-right-enter-active,
+  .cookieControl__Bar--bottom-left-enter-active,
+  .cookieControl__Bar--bottom-full-enter-active,
+  .cookieControl__Bar--bottom-right-enter-active,
+  .cookieControl__Bar--center-leave-active,
+  .cookieControl__Bar--top-left-leave-active,
+  .cookieControl__Bar--top-full-leave-active,
+  .cookieControl__Bar--top-right-leave-active,
+  .cookieControl__Bar--bottom-left-leave-active,
+  .cookieControl__Bar--bottom-full-leave-active,
+  .cookieControl__Bar--bottom-right-leave-active{
+    transition: transform .25s;
+  }
+
+  .cookieControl__Bar--top-left-enter,
+  .cookieControl__Bar--top-full-enter,
+  .cookieControl__Bar--top-right-enter,
+  .cookieControl__Bar--top-left-leave-to,
+  .cookieControl__Bar--top-full-leave-to,
+  .cookieControl__Bar--top-right-leave-to{
+    transform: translateY(-100%);
+  }
+
+  .cookieControl__Bar--bottom-left-enter,
+  .cookieControl__Bar--bottom-full-enter,
+  .cookieControl__Bar--bottom-right-enter,
+  .cookieControl__Bar--bottom-left-leave-to,
+  .cookieControl__Bar--bottom-right-leave-to,
+  .cookieControl__Bar--bottom-full-leave-to{
+    transform: translateY(100%);
+  }
+
+  .cookieControl__Bar--center-enter,
+  .cookieControl__Bar--center-leave-to{
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  .cookieControl{
+    position: relative;
+    z-index: 100000;
+    button{
+      border: 0;
+      outline: 0;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 12px 20px;
+      backface-visibility: hidden;
+      transition: background-color 200ms, color 200ms;
+    }
+  }
+
+  .cookieControl__Bar{
+    position: fixed;
+    background-color: var(--cookie-control-barBackground);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    h3, p{
+      color: var(--cookie-control-barTextColor);
+      max-width: 900px;
+    }
+
+    h3{
+      margin: 0;
+      font-size: 20px;
+    }
+
+    p{
+      font-size: 16px;
+      margin: 5px 0 0;
+    }
+
+    button{
+      color: var(--cookie-control-barButtonColor);
+      background-color: var(--cookie-control-barButtonBackground);
+      &:hover{
+        color: var(--cookie-control-barButtonHoverColor);
+        background-color: var(--cookie-control-barButtonHoverBackground)
+      }
+      & + button{
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .cookieControl__BarContainer{
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .cookieControl__Bar--top-full,
+  .cookieControl__Bar--bottom-full{
+    left: 0;
+    right: 0;
+  }
+
+  .cookieControl__Bar--top-full{
+    top: 0;
+  }
+
+  .cookieControl__Bar--bottom-full{
+    bottom: 0;
+  }
+
+  .cookieControl__Bar--center,
+  .cookieControl__Bar--top-left,
+  .cookieControl__Bar--top-right,
+  .cookieControl__Bar--bottom-left,
+  .cookieControl__Bar--bottom-right{
+    p{
+      max-width: 400px;
+    }
+
+    .cookieControl__BarContainer{
+      flex-direction: column;
+    }
+
+    .cookieControl__BarButtons{
+      margin-top: 20px;
+    }
+  }
+
+  .cookieControl__Bar--top-left,
+  .cookieControl__Bar--top-right{
+    top: 20px;
+  }
+
+  .cookieControl__Bar--bottom-left,
+  .cookieControl__Bar--bottom-right{
+    bottom: 20px;
+  }
+
+  .cookieControl__Bar--top-left,
+  .cookieControl__Bar--bottom-left{
+    left: 20px;
+  }
+
+  .cookieControl__Bar--top-right,
+  .cookieControl__Bar--bottom-right{
+    right: 20px;
+  }
+
+  .cookieControl__BarButtons{
+    display: flex;
+  }
+
+  .cookieControl__Modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    font-size: 0;
+    text-align: center;
+    &:before{
+      content: "";
+      min-height: 100vh;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &:after{
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      opacity: var(--cookie-control-modalOverlayOpacity);
+      background-color: var(--cookie-control-modalOverlay);
+    }
+
+    & > div{
+      font-size: initial;
+    }
+
+    button{
+      color: var(--cookie-control-modalButtonColor);
+      background-color: var(--cookie-control-modalButtonBackground);
+      &:hover{
+        color: var(--cookie-control-modalButtonHoverColor);
+        background-color: var(--cookie-control-modalButtonHoverBackground)
+      }
+    }
+  }
+
+  .cookieControl__ModalContent{
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    max-width: 550px;
+    max-height: 80vh;
+    text-align: left;
+    overflow-y: scroll;
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--cookie-control-modalTextColor);
+    background-color: var(--cookie-control-modalBackground);
+    *{
+      &:not(button){
+        color: var(--cookie-control-modalTextColor);
+      }
+    }
+
+    h3{
+      font-size: 24px;
+      margin: 50px 0 25px;
+      &:first-of-type{
+        margin-top: 0;
+      }
+    }
+
+    ul{
+      padding: 0;
+      font-size: 16px;
+      list-style-type: none;
+      ul{
+        padding: 5px 56px 0;
+        li{
+          & + li{
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    li{
+      align-items: center;
+      & + li{
+        margin-top: 20px;
+      }
+    }
+
+    input{
+      display: none;
+      &:checked{
+        & + label{
+          background-color: var(--cookie-control-checkboxActiveBackground);
+          &:before{
+          background-color: var(--cookie-control-checkboxActiveCircleBackground);
+            transform: translate3d(100%, -50%, 0);
+          }
+        }
+
+        &:disabled{
+          & + label{
+            background-color: var(--cookie-control-checkboxDisabledBackground);
+            &:before{
+              background-color: var(--cookie-control-checkboxDisabledCircleBackground)
+            }
+          }
+        }
+      }
+    }
+
+    label{
+      position: relative;
+      min-width: 36px;
+      min-height: 20px;
+      font-size: 0;
+      display: block;
+      margin-right: 20px;
+      border-radius: 20px;
+      backface-visibility: hidden;
+      transition: background-color 200ms;
+      background-color: var(--cookie-control-checkboxInactiveBackground);
+      &:before{
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 3px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        transition: transform 200ms;
+        transform: translate3d(0, -50%, 0);
+        background-color: var(--cookie-control-checkboxInactiveCircleBackground);
+      }
+    }
+  }
+
+  .cookieControl__ModalInputWrapper{
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .cookieControl__ModalCookieName{
+    font-weight: bold;
+    text-transform: uppercase;
+    span{
+      font-weight: normal;
+      text-transform: none;
+    }
+  }
+
+  .cookieControl__ModalClose{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+
+  .cookieControl__ModalButtons{
+    display: flex;
+    margin-top: 80px;
+    align-items: flex-start;
+    button{
+      & + button{
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .cookieControl__ModalUnsaved{
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    margin: 0;
+    color: var(--cookie-control-modalUnsavedColor);
+    font-size: 14px;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (max-width: 768px){
+    .cookieControl__Bar{
+      flex-direction: column;
+      left: 0;
+      right: 0;
+      p, h3{
+        max-width: 100%;
+      }
+    }
+
+    .cookieControl__Bar--top-full,
+    .cookieControl__Bar--top-left,
+    .cookieControl__Bar--top-right{
+      top: 0;
+    }
+
+    .cookieControl__Bar--bottom-full,
+    .cookieControl__Bar--bottom-left,
+    .cookieControl__Bar--bottom-right{
+      bottom: 0;
+    }
+
+    .cookieControl__ModalContent{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-height: 100%;
+      padding-top: 100px;
+    }
+
+    .cookieControl__BarButtons{
+      margin-top: 20px;
+    }
+  }
+}
+</style>
