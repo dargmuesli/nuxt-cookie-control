@@ -36,7 +36,7 @@
                       <input v-else :id="getCookieFirstName(cookie.name)" type="checkbox" :checked="cookies.enabledList.includes(cookies.slugify(getCookieFirstName(cookie.name))) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie.name)"/>
                       <label :for="getCookieFirstName(cookie.name)" v-text="getName(cookie.name)"/>
                       <span class="cookieControl__ModalCookieName">
-                        {{ getCookieFirstName(cookie.name) }}
+                        {{ getName(cookie.name) }}
                         <span v-if="cookie.description" v-text="getDescription(cookie.description)"/>
                       </span>
                     </div>
@@ -112,11 +112,10 @@ export default {
     },
 
     getName(name){
-      return name === 'functional' ? this.cookies.text['functional'] : typeof(name) === 'string' ? name : name[this.locale];
+      return name === 'functional' ? this.cookies.text['functional'] : typeof(name) === 'string' ? name : name[this.locale] ? name[this.locale] : name[Object.keys(name)[0]];
     },
 
     getCookieFirstName(name){
-      console.log(typeof(name) === 'string' ? name : name[Object.keys(name)[0]])
       return typeof(name) === 'string' ? name : name[Object.keys(name)[0]]
     },
 
