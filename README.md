@@ -77,6 +77,9 @@ modules: [
     //in case you have subdomains (shop.yourdomain.com)
     domain: 'yourdomain.com',
 
+    //modal opener (cookie control)
+    controlButton: true,
+
     //block iframes to prevent them from adding additional cookies
     blockIframe: true,
 
@@ -87,27 +90,31 @@ modules: [
 
     //default colors
     colors: {
-      barTextColor:  '#fff',
-      modalOverlay:  '#000',
-      barBackground:  '#000',
-      barButtonColor:  '#000',
-      modalTextColor:  '#000',
-      modalBackground:  '#fff',
-      modalOverlayOpacity:  0.8,
+      barTextColor: '#fff',
+      modalOverlay: '#000',
+      barBackground: '#000',
+      barButtonColor: '#000',
+      modalTextColor: '#000',
+      modalBackground: '#fff',
+      modalOverlayOpacity: 0.8,
       modalButtonColor: '#fff',
-      modalUnsavedColor:  '#fff',
-      barButtonHoverColor:  '#fff',
-      barButtonBackground:  '#fff',
-      modalButtonHoverColor:  '#fff',
-      modalButtonBackground:  '#000',
-      barButtonHoverBackground:  '#333',
-      checkboxActiveBackground:  '#000',
-      checkboxInactiveBackground:  '#000',
-      modalButtonHoverBackground:  '#333',
-      checkboxDisabledBackground:  '#ddd',
-      checkboxActiveCircleBackground:  '#fff',
-      checkboxInactiveCircleBackground:  '#fff',
-      checkboxDisabledCircleBackground:  '#fff',
+      modalUnsavedColor: '#fff',
+      barButtonHoverColor: '#fff',
+      barButtonBackground: '#fff',
+      modalButtonHoverColor: '#fff',
+      toggleButtonIconColor: '#000',
+      modalButtonBackground: '#000',
+      toggleButtonBackground: '#fff',
+      barButtonHoverBackground: '#333',
+      checkboxActiveBackground: '#000',
+      toggleButtonIconHoverColor: '#fff',
+      checkboxInactiveBackground: '#000',
+      modalButtonHoverBackground: '#333',
+      checkboxDisabledBackground: '#ddd',
+      toggleButtonHoverBackground: '#000',
+      checkboxActiveCircleBackground: '#fff',
+      checkboxInactiveCircleBackground: '#fff',
+      checkboxDisabledCircleBackground: '#fff',
     },
 
     //default texts

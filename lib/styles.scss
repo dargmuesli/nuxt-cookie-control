@@ -386,3 +386,41 @@
     margin-top: 20px;
   }
 }
+
+.cookieControl__ControlButton{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: 0;
+  outline: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  transition: background-color 200ms;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background: var(--cookie-control-controlButtonBackground);
+  svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    transition: color 200ms;
+    backface-visibility: hidden;
+    transform: translate(-50%, -50%);
+    color: var(--cookie-control-controlButtonIconColor);
+  }
+
+  &:hover{
+    background-color: var(--cookie-control-controlButtonHoverBackground);
+    svg{
+      color: var(--cookie-control-controlButtonIconHoverColor);
+    }
+  }
+}
