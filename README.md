@@ -83,6 +83,11 @@ modules: [
     //block iframes to prevent them from adding additional cookies
     blockIframe: true,
 
+    //or if you want to set initialState to false (default value for initialState is true)
+    blockIframe: {
+      initialState: false
+    },
+
     //position of cookie bar:
     //'top-left', 'top-right', 'top-full',
     //'bottom-left', 'bottom-right', 'bottom-full'
