@@ -194,6 +194,7 @@
 
   & > div{
     font-size: initial;
+    padding-top: 80px;
   }
 
   button{
@@ -317,8 +318,8 @@
 
 .cookieControl__ModalClose{
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 20px;
+  right: 20px;
 }
 
 .cookieControl__ModalButtons{
@@ -378,12 +379,19 @@
     left: 0;
     right: 0;
     bottom: 0;
+    max-width: none;
     max-height: 100%;
-    padding-top: 100px;
+    padding: 80px 20px 20px;
   }
 
   .cookieControl__BarButtons{
+    width: 100%;
     margin-top: 20px;
+    justify-content: flex-end;
+  }
+
+  .cookieControl__BarContainer{
+    flex-direction: column;
   }
 }
 
