@@ -125,7 +125,9 @@ export default {
         const module = require(`../locale/${this.locale}`);
         text = module.default;
       } catch (e) {
-        console.error(`There are no texts for your locale: ${this.locale}`)
+        const module = require(`../locale/en`);
+        text = module.default;
+        console.error(`There are no texts for your locale: ${this.locale}. Using English version`);
       }
       if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
         if(this.cookies.text.locale){
