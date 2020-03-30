@@ -62,6 +62,7 @@ If you want to add elements to the cookie bar you can do it like this
 - it
 - es
 - fr
+- pt
 - hr
 - no
 
@@ -213,6 +214,7 @@ Set **locale** prop
 - it
 - es
 - fr
+- pt
 - hr
 - no
 
