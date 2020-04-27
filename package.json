@@ -1,12 +1,11 @@
 {
   "name": "nuxt-cookie-control",
-  "version": "1.8.0",
+  "version": "1.8.3",
   "description": "Nuxt Cookies Control Module",
   "license": "MIT",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
   "contributors": [
-    "Davor Teskera",
-    "Mario Jankovic <hi@mariojankovic.com>"
+    "Davor Teskera"
   ],
   "keywords": [
     "nuxt cookie control",
