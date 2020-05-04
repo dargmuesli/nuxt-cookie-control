@@ -34,14 +34,14 @@
                     <div class="cookieControl__ModalInputWrapper">
                       <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="getCookieFirstName(cookie.name)" type="checkbox" disabled checked/>
                       <input v-else :id="getCookieFirstName(cookie.name)" type="checkbox" :checked="cookies.enabledList.includes(cookies.slugify(getCookieFirstName(cookie.name))) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie.name)"/>
-                      <label :for="getCookieFirstName(cookie.name)" v-text="getName(cookie.name)"/>
+                      <label :for="getCookieFirstName(cookie.name)" v-html="getName(cookie.name)"/>
                       <span class="cookieControl__ModalCookieName">
                         {{ getName(cookie.name) }}
-                        <span v-if="cookie.description" v-text="getDescription(cookie.description)"/>
+                        <span v-if="cookie.description" v-html="getDescription(cookie.description)"/>
                       </span>
                     </div>
                     <ul v-if="cookie.cookies">
-                      <li v-for="item in cookie.cookies" :key="item.id" v-text="item"/>
+                      <li v-for="item in cookie.cookies" :key="item.id" v-html="item"/>
                     </ul>
                   </li>
                 </ul>
