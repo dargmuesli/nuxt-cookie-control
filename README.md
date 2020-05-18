@@ -8,6 +8,10 @@ Try it out here:
 ```bash
 npm i nuxt-cookie-control
 ```
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![npm downloads][kofi-src]][kofi-href]
+
 ```javascript
 //nuxt.config.js
 modules: [
@@ -238,3 +242,13 @@ text: {
   barTitle: 'Override Title'
 }
 ```
+
+<!-- Badges -->
+[npm-version-src]: https://badgen.net/npm/v/nuxt-cookie-control/latest
+[npm-version-href]: https://npmjs.com/package/nuxt-cookie-control
+
+[kofi-src]: https://badgen.net/badge/icon/kofi?icon=kofi&label=support
+[kofi-href]: https://ko-fi.com/darioferderber
+
+[npm-downloads-src]: https://badgen.net/npm/dm/nuxt-cookie-control
+[npm-downloads-href]: https://npmjs.com/package/nuxt-cookie-control
