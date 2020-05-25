@@ -2,8 +2,7 @@
 # Nuxt Cookie Control
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
-### Buy me a coffee
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31MWWL)
+
 ## 🚀 Usage
 ```bash
 npm i nuxt-cookie-control
@@ -242,6 +241,10 @@ text: {
   barTitle: 'Override Title'
 }
 ```
+
+### Buy me a coffee
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31MWWL)
+
 
 <!-- Badges -->
 [npm-version-src]: https://badgen.net/npm/v/nuxt-cookie-control/latest
