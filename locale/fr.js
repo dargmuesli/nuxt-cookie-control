@@ -1,6 +1,6 @@
 export default {
   barTitle: 'Cookies',
-  barDescription: 'Nous utilisons des cookies d’origine et des cookeis tiers. Ces cookies sont destinés à vous offrir une navigation optimisée sur ce site web et de nous donner un apperçu de la manière de l’utilisation, en vue de l’amélioration des services que nous offrons. Si vous continuez de naviguer, nous considerons que vous acceptez l’usage des cookies.',
+  barDescription: 'Nous utilisons des cookies d’origine et des cookies tiers. Ces cookies sont destinés à vous offrir une navigation optimisée sur ce site web et de nous donner un aperçu de son utilisation, en vue de l’amélioration des services que nous offrons. En poursuivant votre navigation, nous considérons que vous acceptez l’usage des cookies.',
   acceptAll: 'Accepter tous',
   declineAll: 'Supprimer tous',
   manageCookies: 'Gérer les cookies',
@@ -10,6 +10,6 @@ export default {
   necessary: 'Les cookies obligatoires',
   optional: 'Les cookies optionnels',
   functional: 'Cookies fonctionnels',
-  blockedIframe: 'Pour voir cela, s’il vous plaît activer les cookies fonctionnels',
+  blockedIframe: 'Pour voir cela, veuillez activer les cookies fonctionnels',
   here: 'ici'
 }
