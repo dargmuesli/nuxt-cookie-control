@@ -70,6 +70,7 @@ If you want to add elements to the cookie bar you can do it like this
 - pt
 - hr
 - no
+- hu
 
 ## 🔧 Options
 Options in nuxt.config.js
@@ -222,6 +223,7 @@ Set **locale** prop
 - pt
 - hr
 - no
+- hu
 
 If you don't like the default texts you can change them in options (**nuxt.config.js**)
 ```javascript

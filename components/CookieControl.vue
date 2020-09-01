@@ -33,7 +33,7 @@
                   <li v-for="cookie in cookies[type]" :key="cookie.id">
                     <div class="cookieControl__ModalInputWrapper">
                       <input v-if="type === 'necessary' && cookie.name !== 'functional'" :id="getCookieFirstName(cookie.name)" type="checkbox" disabled checked/>
-                      <input v-else :id="getCookieFirstName(cookie.name)" type="checkbox" :checked="cookies.enabledList.includes(cookies.slugify(getCookieFirstName(cookie.name))) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie.name)"/>
+                      <input v-else :id="getCookieFirstName(cookie.name)" type="checkbox" :checked="cookies.enabledList.includes(cookie.identifier || cookies.slugify(getCookieFirstName(cookie.name))) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie)"/>
                       <label :for="getCookieFirstName(cookie.name)" v-html="getName(cookie.name)"/>
                       <span class="cookieControl__ModalCookieName">
                         {{ getName(cookie.name) }}
@@ -90,7 +90,7 @@ export default {
 
   methods: {
     toogleCookie(cookie){
-      let cookieName = this.cookies.slugify(this.getCookieFirstName(cookie));
+      let cookieName = cookie.identifier || this.cookies.slugify(this.getCookieFirstName(cookie.name));
       if(this.saved) this.saved = false;
       if(!this.cookies.enabledList.includes(cookieName)) this.cookies.enabledList.push(cookieName);
       else this.cookies.enabledList.splice(this.cookies.enabledList.indexOf(cookieName), 1);
@@ -99,7 +99,7 @@ export default {
     setConsent({type, consent=true}){
       this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
       let enabledCookies = type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c =>{
-        return this.cookies.slugify(this.getCookieFirstName(c.name))
+        return c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name))
       })];
       this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
       if(process.browser) window.location.reload(true);
@@ -153,7 +153,7 @@ export default {
     if(this.cookies.get('cookie_control_consent').length === 0){
       this.optionalCookies.forEach(c =>{
         if(c.initialState === true) {
-          this.cookies.enabledList.push(this.cookies.slugify(this.getCookieFirstName(c.name)));
+          this.cookies.enabledList.push(c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)));
         }
       })
     }
