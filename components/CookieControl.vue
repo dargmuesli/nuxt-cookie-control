@@ -150,7 +150,7 @@ export default {
       }
       cssVars({variables})
     }
-    if(this.cookies.get('cookie_control_consent').length === 0){
+    if(this.cookies.get('cookie_control_consent') && this.cookies.get('cookie_control_consent').length === 0){
       this.optionalCookies.forEach(c =>{
         if(c.initialState === true) {
           this.cookies.enabledList.push(c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)));

@@ -102,6 +102,7 @@ modules: [
     barPosition: 'bottom-full',
 
     //default colors
+    //if you want to disable colors set colors property to false
     colors: {
       barTextColor: '#fff',
       modalOverlay: '#000',
