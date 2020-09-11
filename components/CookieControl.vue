@@ -40,9 +40,13 @@
                         <span v-if="cookie.description" v-html="getDescription(cookie.description)"/>
                       </span>
                     </div>
-                    <ul v-if="cookie.cookies">
-                      <li v-for="item in cookie.cookies" :key="item.id" v-html="item"/>
-                    </ul>
+                    <template v-if="cookie.cookies">
+                      <slot name="cookies" v-bind="{cookies: cookie.cookies}">
+                        <ul>
+                          <li v-for="item in cookie.cookies" :key="item.id" v-html="item"/>
+                        </ul>
+                      </slot>
+                    </template>
                   </li>
                 </ul>
               </template>

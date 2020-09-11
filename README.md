@@ -39,7 +39,7 @@ this.$cookies.modal = true
 <CookieControl></CookieControl>
 ```
 ## Slot
-If you want to add elements to the cookie bar you can do it like this
+### Bar
 ```html
 <CookieControl>
   <template v-slot:bar>
@@ -47,12 +47,20 @@ If you want to add elements to the cookie bar you can do it like this
     <p>Bar description (you can use $cookies.text.barDescription)</p>
     <n-link>Go somewhere</n-link>
   </template>
-
-  <template v-slot:modal>
-    <h3>Modal title</h3>
-    <p>Modal description</p>
-  </template>
 </CookieControl>
+```
+### Modal
+```html
+<template v-slot:modal>
+  <h3>Modal title</h3>
+  <p>Modal description</p>
+</template>
+```
+### Cookies
+```html
+<template v-slot:cookies="{cookies}">
+  <span v-for="cookie in cookies" :key="cookie.id" v-text="cookie.name"/>
+</template>
 ```
 
 ## Props
@@ -71,6 +79,7 @@ If you want to add elements to the cookie bar you can do it like this
 - hr
 - no
 - hu
+- ja
 
 ## 🔧 Options
 Options in nuxt.config.js
@@ -187,6 +196,8 @@ cookies: {
   optional: [
     {
       name:  'Google Analitycs',
+      //if you don't set identifier, slugified name will be used
+      identifier: 'ga',
       //if multilanguage
       description: {
         en:  'Google GTM is ...'
@@ -225,6 +236,7 @@ Set **locale** prop
 - hr
 - no
 - hu
+- ja
 
 If you don't like the default texts you can change them in options (**nuxt.config.js**)
 ```javascript
