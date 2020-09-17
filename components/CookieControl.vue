@@ -41,7 +41,7 @@
                       </span>
                     </div>
                     <template v-if="cookie.cookies">
-                      <slot name="cookies" v-bind="{cookies: cookie.cookies}">
+                      <slot name="cookie" v-bind="{config: cookie}">
                         <ul>
                           <li v-for="item in cookie.cookies" :key="item.id" v-html="item"/>
                         </ul>

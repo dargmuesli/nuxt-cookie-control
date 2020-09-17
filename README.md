@@ -56,10 +56,10 @@ this.$cookies.modal = true
   <p>Modal description</p>
 </template>
 ```
-### Cookies
+### Cookie
 ```html
-<template v-slot:cookies="{cookies}">
-  <span v-for="cookie in cookies" :key="cookie.id" v-text="cookie.name"/>
+<template v-slot:cookie="{config}">
+  <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
 </template>
 ```
 
