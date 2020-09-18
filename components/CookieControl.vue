@@ -12,7 +12,7 @@
             </div>
             <div class="cookieControl__BarButtons">
               <button @click="cookies.modal = true" v-text="cookies.text.manageCookies"/>
-              <button @click="setConsent" v-text="cookies.text.acceptAll"/>
+              <button @click="setConsent({reload: false})" v-text="cookies.text.acceptAll"/>
             </div>
           </div>
         </div>
@@ -100,13 +100,16 @@ export default {
       else this.cookies.enabledList.splice(this.cookies.enabledList.indexOf(cookieName), 1);
     },
 
-    setConsent({type, consent=true}){
+    setConsent({type, consent=true, reload=true}){
       this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
       let enabledCookies = type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c =>{
         return c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name))
       })];
       this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
-      if(process.browser) window.location.reload(true);
+      if(!reload){
+        this.cookies.setConsent()
+        this.$cookies.modal = false;
+      } else window.location.reload(true);
     },
 
     getDescription(description){
