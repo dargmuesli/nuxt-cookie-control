@@ -1,5 +1,5 @@
-# Nuxt Cookie Control
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1on9_GahC0ExU_2sPAh_bm_YL4LvmouuD)
+# Nuxt Cookie Control
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
 
