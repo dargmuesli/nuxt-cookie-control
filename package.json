@@ -1,6 +1,6 @@
 {
   "name": "nuxt-cookie-control",
-  "version": "1.9.2",
+  "version": "1.9.5",
   "description": "Nuxt Cookies Control Module",
   "license": "MIT",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
@@ -21,6 +21,9 @@
   "eslintIgnore": [
     "*"
   ],
+  "scripts": {
+    "postinstall": "node lib/postinstall.js"
+  },
   "files": [
     "lib",
     "components",

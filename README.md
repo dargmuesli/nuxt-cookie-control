@@ -1,5 +1,6 @@
-![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=12TegiHCNYG1NO84CmQ2CfMAzzn-5o027)
 # Nuxt Cookie Control
+![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
+#### 
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
 
@@ -93,6 +94,9 @@ modules: [
 
     //in case you have subdomains (shop.yourdomain.com)
     domain: 'yourdomain.com',
+
+    //if you want to tree-shake locales set locales you want to use
+    locales: ['en', 'de'],
 
     //modal opener (cookie control)
     controlButton: true,
@@ -204,6 +208,8 @@ cookies: {
       },
       //else
       description:  'Google GTM is...',
+
+      initialState: true,
       src:  'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
       async:  true,
       cookies: ['_ga', '_gat', '_gid'],
