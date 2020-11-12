@@ -92,6 +92,9 @@ modules: [
     //your color variables (example. background-color: var(--cookie-control-barBackground))
     css: true,
 
+    //enable or disable css variables polyfill
+    cssPolyfill: true,
+
     //in case you have subdomains (shop.yourdomain.com)
     domain: 'yourdomain.com',
 

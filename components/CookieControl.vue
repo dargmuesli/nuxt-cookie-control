@@ -64,7 +64,6 @@
 </template>
 
 <script>
-import cssVars from 'css-vars-ponyfill';
 export default {
   name: 'CookieControl',
   props: {
@@ -76,7 +75,7 @@ export default {
     return{
       saved: true,
       colorsSet: false,
-      cookies: this.$cookies,
+      cookies: this.$cookies
     }
   },
 
@@ -128,14 +127,13 @@ export default {
 
     async setTexts(isChanged=false){
       let text = null;
+      let module = null;
       try {
-        const module = require(`../locale/${this.locale}`);
-        text = module.default;
+        module = require(`../locale/${this.locale}`);
       } catch (e) {
-        const module = require(`../locale/en`);
-        text = module.default;
-        console.error(`There are no texts for your locale: ${this.locale}. Using English version`);
+        module = require(`../locale/en`);
       }
+      text = module.default;
       if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
         if(this.cookies.text.locale){
           Object.assign(text, this.cookies.text.locale[this.locale])
@@ -155,9 +153,19 @@ export default {
         let k = key.toLowerCase().includes('unactive') ? key.replace(/Unactive/g, 'Inactive') : key;
         variables[`cookie-control-${k}`] = `${this.cookies.colors[key]}`
       }
-      cssVars({variables})
+
+      if(this.cookies.cssPolyfill){
+        const module = await import('css-vars-ponyfill');
+        let cssVars = module.default
+        cssVars({variables})
+      } else if(process.client){
+        for(let cssVar in variables){
+          document.documentElement.style.setProperty(`--${cssVar}`, variables[cssVar]);
+        }
+      }
     }
-    if(this.cookies.get('cookie_control_consent') && this.cookies.get('cookie_control_consent').length === 0){
+
+    if(!this.cookies.get('cookie_control_consent') || this.cookies.get('cookie_control_consent').length === 0){
       this.optionalCookies.forEach(c =>{
         if(c.initialState === true) {
           this.cookies.enabledList.push(c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)));
