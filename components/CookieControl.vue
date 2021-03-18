@@ -52,8 +52,8 @@
               </template>
               <div class="cookieControl__ModalButtons">
                 <button @click="setConsent({type: 'partial'})" v-text="cookies.text.save"/>
-                <button @click="setConsent" v-if="cookies.enabledList.length < optionalCookies.length" v-text="cookies.text.acceptAll"/>
-                <button @click="setConsent({consent: false})" v-if="cookies.enabledList.length >= optionalCookies.length" v-text="cookies.text.declineAll"/>
+                <button @click="setConsent" v-text="cookies.text.acceptAll"/>
+                <button @click="setConsent({declineAll: true})" v-text="cookies.text.declineAll"/>
               </div>
             </div>
           </div>
@@ -99,11 +99,9 @@ export default {
       else this.cookies.enabledList.splice(this.cookies.enabledList.indexOf(cookieName), 1);
     },
 
-    setConsent({type, consent=true, reload=true}){
+    setConsent({type, consent=true, reload=true, declineAll=false}){
       this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
-      let enabledCookies = type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c =>{
-        return c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name))
-      })];
+      let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
       this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
       if(!reload){
         this.cookies.setConsent()
