@@ -1,6 +1,6 @@
 # Nuxt Cookie Control
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
-#### 
+####
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
 
@@ -70,7 +70,7 @@ this.$cookies.modal = true
 <CookieControl locale="de"/>
 ```
 #### Default: en,
-#### Currently available: 
+#### Currently available:
 - en
 - de
 - it
@@ -81,6 +81,7 @@ this.$cookies.modal = true
 - no
 - hu
 - ja
+- ru
 - uk
 
 ## 🔧 Options
@@ -236,7 +237,7 @@ Set **locale** prop
 <CookieControl locale="de"/>
 ```
 #### Default: en,
-#### Currently available: 
+#### Currently available:
 - en
 - de
 - it
@@ -247,6 +248,7 @@ Set **locale** prop
 - no
 - hu
 - ja
+- ru
 - uk
 
 If you don't like the default texts you can change them in options (**nuxt.config.js**)
