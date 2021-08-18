@@ -81,6 +81,7 @@ this.$cookies.modal = true
 - no
 - hu
 - ja
+- uk
 
 ## 🔧 Options
 Options in nuxt.config.js
@@ -246,6 +247,7 @@ Set **locale** prop
 - no
 - hu
 - ja
+- uk
 
 If you don't like the default texts you can change them in options (**nuxt.config.js**)
 ```javascript
