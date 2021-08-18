@@ -1,7 +1,7 @@
 export default {
   barTitle: "Cookies",
   barDescription: "Nous utilisons des cookies d’origine et des cookies tiers. Ces cookies sont destinés à vous offrir une navigation optimisée sur ce site web et de nous donner un aperçu de son utilisation, en vue de l’amélioration des services que nous offrons. En poursuivant votre navigation, nous considérons que vous acceptez l’usage des cookies.",
-  acceptAll: "Tous accepter",
+  acceptAll: "Tout accepter",
   declineAll: "Tout refuser",
   manageCookies: "Gérer les cookies",
   unsaved: "Vous avez des paramètres non sauvegardés",
