@@ -30,9 +30,9 @@
     "locale"
   ],
   "dependencies": {
-    "css-vars-ponyfill": "^2.0.2",
-    "node-sass": "^6.0",
-    "sass-loader": "^10.0",
-    "string-replace-loader": "^2.1.1"
+    "css-vars-ponyfill": "^2.4.7",
+    "sass": "^1.43.4",
+    "sass-loader": "^10.2.0",
+    "string-replace-loader": "^2.3.0"
   }
 }
