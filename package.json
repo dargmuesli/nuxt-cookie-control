@@ -1,11 +1,12 @@
 {
-  "name": "nuxt-cookie-control",
+  "name": "@dargmuesli/nuxt-cookie-control",
   "version": "1.9.9",
   "description": "Nuxt Cookies Control Module",
   "license": "MIT",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
   "contributors": [
-    "Davor Teskera"
+    "Davor Teskera",
+    "Jonas Thelemann"
   ],
   "keywords": [
     "nuxt cookie control",
@@ -14,7 +15,7 @@
     "nuxt gdpr consent"
   ],
   "main": "lib/module.js",
-  "repository": "https://gitlab.com/broj42/nuxt-cookie-control",
+  "repository": "https://gitlab.com/dargmuesli/nuxt-cookie-control",
   "publishConfig": {
     "access": "public"
   },
