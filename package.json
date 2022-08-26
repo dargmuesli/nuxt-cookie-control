@@ -1,6 +1,6 @@
 {
   "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "1.9.9",
+  "version": "2.0.0",
   "description": "Nuxt Cookies Control Module",
   "license": "MIT",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
@@ -31,12 +31,12 @@
     "locale"
   ],
   "dependencies": {
-    "css-vars-ponyfill": "^2.4.7",
-    "sass": "^1.43.4",
-    "sass-loader": "^10.2.0",
-    "string-replace-loader": "^2.3.0"
+    "css-vars-ponyfill": "^2.4.8",
+    "sass": "^1.54.5",
+    "sass-loader": "^13.0.2",
+    "string-replace-loader": "^3.1.0"
   },
   "peerDependencies": {
-    "webpack": "^4"
+    "webpack": "^5"
   }
 }
