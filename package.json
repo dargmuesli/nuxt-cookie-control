@@ -31,10 +31,10 @@
     "locale"
   ],
   "dependencies": {
-    "css-vars-ponyfill": "^2.4.8",
-    "sass": "^1.54.5",
-    "sass-loader": "^13.0.2",
-    "string-replace-loader": "^3.1.0"
+    "css-vars-ponyfill": "2.4.8",
+    "sass": "1.54.5",
+    "sass-loader": "13.0.2",
+    "string-replace-loader": "3.1.0"
   },
   "peerDependencies": {
     "webpack": "^5"
