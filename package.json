@@ -30,7 +30,7 @@
   "dependencies": {
     "css-vars-ponyfill": "^2.4.7",
     "sass": "^1.43.4",
-    "sass-loader": "^10.2.0",
+    "sass-loader": "^13.0.0",
     "string-replace-loader": "^2.3.0"
   },
   "peerDependencies": {
