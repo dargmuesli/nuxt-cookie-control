@@ -22,9 +22,6 @@
   "eslintIgnore": [
     "*"
   ],
-  "scripts": {
-    "postinstall": "node lib/postinstall.js"
-  },
   "files": [
     "lib",
     "components",
