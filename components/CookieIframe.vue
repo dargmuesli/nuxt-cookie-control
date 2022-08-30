@@ -1,32 +1,37 @@
 <template>
   <client-only>
-    <iframe v-if="iframeEnabled"/>
+    <iframe v-if="iframeEnabled" />
     <div v-else class="cookieControl__BlockedIframe">
       <p>
         {{ iframeText }}
-        <a href="#" @click.prevent="cookies.modal = true" v-text="cookies.text.here" v-if="cookies && cookies.text"/>
+        <a v-if="cookies && cookies.text" href="#" @click.prevent="cookies.modal = true" v-text="cookies.text.here" />
       </p>
     </div>
   </client-only>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { computed, defineComponent, reactive } from 'vue'
+
+export default defineComponent({
   name: 'CookieIframe',
-  data(){
-    return{
+  setup () {
+    const data = reactive({
       cookies: this.$cookies
+    })
+    const computations = {
+      iframeEnabled: computed(() => {
+        return data.cookies.enabled.filter((c) => { return c.name === 'functional' }).length > 0
+      }),
+      iframeText: computed(() => {
+        return data.cookies && data.cookies.text ? data.cookies.text.blockedIframe : ''
+      })
     }
-  },
 
-  computed: {
-    iframeEnabled(){
-      return this.cookies.enabled.filter(c =>{return c.name === 'functional'}).length > 0
-    },
-
-    iframeText(){
-      return this.cookies && this.cookies.text ? this.cookies.text.blockedIframe : '';
+    return {
+      ...data,
+      ...computations
     }
   }
-}
+})
 </script>

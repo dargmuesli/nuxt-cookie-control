@@ -63,120 +63,125 @@
   </client-only>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'CookieControl',
   props: {
     locale: {
-      default: 'en'
+      default: 'en',
+      type: String,
     }
   },
-  data(){
-    return{
+  setup() {
+    const data = reactive({
       saved: true,
       colorsSet: false,
       cookies: this.$cookies
-    }
-  },
+    })
+    const computations = {
+      expirationDate(){
+        let date = new Date();
+        date.setFullYear(date.getFullYear()+1);
+        return date.toUTCString();
+      },
 
-  computed: {
-    expirationDate(){
-      let date = new Date();
-      date.setFullYear(date.getFullYear()+1);
-      return date.toUTCString();
-    },
-
-    optionalCookies(){
-      return this.cookies.optional;
-    }
-  },
-
-  methods: {
-    toogleCookie(cookie){
-      let cookieName = cookie.identifier || this.cookies.slugify(this.getCookieFirstName(cookie.name));
-      if(this.saved) this.saved = false;
-      if(!this.cookies.enabledList.includes(cookieName)) this.cookies.enabledList.push(cookieName);
-      else this.cookies.enabledList.splice(this.cookies.enabledList.indexOf(cookieName), 1);
-    },
-
-    setConsent({type, consent=true, reload=true, declineAll=false}){
-      this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
-      let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
-      this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
-      if(!reload){
-        this.cookies.setConsent()
-        this.$cookies.modal = false;
-      } else window.location.reload(true);
-    },
-
-    getDescription(description){
-      if(typeof(description) === 'string') return ` ${this.cookies.dashInDescription !== false ? '-' : ''} ${description}`;
-      else if(description[this.locale]) return ` ${this.cookies.dashInDescription !== false ? '-' : ''} ${description[this.locale]}`;
-      return '';
-    },
-
-    getName(name){
-      return name === 'functional' ? this.cookies.text['functional'] : typeof(name) === 'string' ? name : name[this.locale] ? name[this.locale] : name[Object.keys(name)[0]];
-    },
-
-    getCookieFirstName(name){
-      return typeof(name) === 'string' ? name : name[Object.keys(name)[0]]
-    },
-
-    async setTexts(isChanged=false){
-      let text = null;
-      let module = null;
-      try {
-        module = require(`../locale/${this.locale}`);
-      } catch (e) {
-        module = require(`../locale/en`);
+      optionalCookies(){
+        return this.cookies.optional;
       }
-      text = module.default;
-      if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
-        if(this.cookies.text.locale){
-          Object.assign(text, this.cookies.text.locale[this.locale])
+    },
+    const methods = {
+      toogleCookie(cookie){
+        let cookieName = cookie.identifier || this.cookies.slugify(this.getCookieFirstName(cookie.name));
+        if(this.saved) this.saved = false;
+        if(!this.cookies.enabledList.includes(cookieName)) this.cookies.enabledList.push(cookieName);
+        else this.cookies.enabledList.splice(this.cookies.enabledList.indexOf(cookieName), 1);
+      },
+
+      setConsent({type, consent=true, reload=true, declineAll=false}){
+        this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
+        let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
+        this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
+        if(!reload){
+          this.cookies.setConsent()
+          this.$cookies.modal = false;
+        } else window.location.reload(true);
+      },
+
+      getDescription(description){
+        if(typeof(description) === 'string') return ` ${this.cookies.dashInDescription !== false ? '-' : ''} ${description}`;
+        else if(description[this.locale]) return ` ${this.cookies.dashInDescription !== false ? '-' : ''} ${description[this.locale]}`;
+        return '';
+      },
+
+      getName(name){
+        return name === 'functional' ? this.cookies.text['functional'] : typeof(name) === 'string' ? name : name[this.locale] ? name[this.locale] : name[Object.keys(name)[0]];
+      },
+
+      getCookieFirstName(name){
+        return typeof(name) === 'string' ? name : name[Object.keys(name)[0]]
+      },
+
+      async setTexts(isChanged=false){
+        let text = null;
+        let module = null;
+        try {
+          module = require(`../locale/${this.locale}`);
+        } catch (e) {
+          module = require(`../locale/en`);
         }
-        if(!isChanged) Object.assign(text, this.cookies.text)
+        text = module.default;
+        if(this.cookies.text && Object.keys(this.cookies.text).length > 0){
+          if(this.cookies.text.locale){
+            Object.assign(text, this.cookies.text.locale[this.locale])
+          }
+          if(!isChanged) Object.assign(text, this.cookies.text)
+        }
+        this.$set(this.$cookies, 'text', text);
       }
-      this.$set(this.$cookies, 'text', text);
-    }
-  },
+    },
 
-  async beforeMount (){
-    await this.setTexts();
-    if(process.browser && this.cookies.colors){
-      let key = null;
-      let variables = {};
-      for(key in this.cookies.colors){
-        let k = key.toLowerCase().includes('unactive') ? key.replace(/Unactive/g, 'Inactive') : key;
-        variables[`cookie-control-${k}`] = `${this.cookies.colors[key]}`
-      }
+    async beforeMount (){
+      await this.setTexts();
+      if(process.browser && this.cookies.colors){
+        let key = null;
+        let variables = {};
+        for(key in this.cookies.colors){
+          let k = key.toLowerCase().includes('unactive') ? key.replace(/Unactive/g, 'Inactive') : key;
+          variables[`cookie-control-${k}`] = `${this.cookies.colors[key]}`
+        }
 
-      if(this.cookies.cssPolyfill){
-        const module = await import('css-vars-ponyfill');
-        let cssVars = module.default
-        cssVars({variables})
-      } else if(process.client){
-        for(let cssVar in variables){
-          document.documentElement.style.setProperty(`--${cssVar}`, variables[cssVar]);
+        if(this.cookies.cssPolyfill){
+          const module = await import('css-vars-ponyfill');
+          let cssVars = module.default
+          cssVars({variables})
+        } else if(process.client){
+          for(let cssVar in variables){
+            document.documentElement.style.setProperty(`--${cssVar}`, variables[cssVar]);
+          }
         }
       }
+
+      if(!this.cookies.get('cookie_control_consent') || this.cookies.get('cookie_control_consent').length === 0){
+        this.optionalCookies.forEach(c =>{
+          if(c.initialState === true) {
+            this.cookies.enabledList.push(c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)));
+          }
+        })
+      }
+      this.colorsSet = true;
     }
 
-    if(!this.cookies.get('cookie_control_consent') || this.cookies.get('cookie_control_consent').length === 0){
-      this.optionalCookies.forEach(c =>{
-        if(c.initialState === true) {
-          this.cookies.enabledList.push(c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)));
-        }
-      })
+    watch(locale, (_currentValue, _oldValue) => {
+      await this.setTexts(true)
+    })
+
+    return {
+      ...data,
+      ...computations,
+      ...methods,
     }
-    this.colorsSet = true;
   },
-
-  watch: {
-    async locale(){
-      await this.setTexts(true);
-    }
-  }
-}
+})
 </script>
