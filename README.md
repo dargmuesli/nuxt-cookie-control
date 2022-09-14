@@ -1,4 +1,7 @@
 # Nuxt Cookie Control
+
+Continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control).
+
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
 ####
 Try it out here:
@@ -6,20 +9,19 @@ Try it out here:
 
 ## 🚀 Usage
 ```bash
-npm i nuxt-cookie-control
+npm i @dargmuesli/nuxt-cookie-control
 ```
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![npm downloads][kofi-src]][kofi-href]
 
 ```javascript
 //nuxt.config.js
 modules: [
-  'nuxt-cookie-control'
+  '@dargmuesli/nuxt-cookie-control'
 ]
 //or
 modules: [
-  ['nuxt-cookie-control', {
+  ['@dargmuesli/nuxt-cookie-control', {
     //your options
   }]
 ]
@@ -71,16 +73,16 @@ this.$cookies.modal = true
 ```
 #### Default: en,
 #### Currently available:
-- en
 - de
-- it
+- en
 - es
 - fr
-- pt
 - hr
-- no
 - hu
+- it
 - ja
+- no
+- pt
 - ru
 - uk
 
@@ -170,12 +172,7 @@ modules: [
 
 //for multilanguage see - Multilanguage
 ```
-without options (Simple)
-```javascript
-modules: [
-'nuxt-cookie-control'
-]
-```
+
 ### Cookies
 ```javascript
 modules: [
@@ -232,24 +229,6 @@ cookies: {
 }
 ```
 ### Multilanguage
-Set **locale** prop
-```html
-<CookieControl locale="de"/>
-```
-#### Default: en,
-#### Currently available:
-- en
-- de
-- it
-- es
-- fr
-- pt
-- hr
-- no
-- hu
-- ja
-- ru
-- uk
 
 If you don't like the default texts you can change them in options (**nuxt.config.js**)
 ```javascript
@@ -270,16 +249,10 @@ text: {
 }
 ```
 
-### Buy me a coffee
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31MWWL)
-
 
 <!-- Badges -->
-[npm-version-src]: https://badgen.net/npm/v/nuxt-cookie-control/latest
-[npm-version-href]: https://npmjs.com/package/nuxt-cookie-control
+[npm-version-src]: https://badgen.net/npm/v/@dargmuesli/nuxt-cookie-control/latest
+[npm-version-href]: https://npmjs.com/package/@dargmuesli/nuxt-cookie-control
 
-[kofi-src]: https://badgen.net/badge/icon/kofi?icon=kofi&label=support
-[kofi-href]: https://ko-fi.com/darioferderber
-
-[npm-downloads-src]: https://badgen.net/npm/dm/nuxt-cookie-control
-[npm-downloads-href]: https://npmjs.com/package/nuxt-cookie-control
+[npm-downloads-src]: https://badgen.net/npm/dm/@dargmuesli/nuxt-cookie-control
+[npm-downloads-href]: https://npmjs.com/package/@dargmuesli/nuxt-cookie-control

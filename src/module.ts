@@ -1,72 +1,140 @@
-import { ContextReplacementPlugin } from 'webpack'
-const path = require('path')
+import { resolve } from 'path'
+import { fileURLToPath } from 'url'
 
-module.exports = function cookies (_options) {
-  const defaultOptions = {
-    ...this.options.cookies,
-    css: true,
-    cssPolyfill: true,
-    controlButton: true,
-    barPosition: 'bottom-full',
-    iframe: path.resolve(__dirname, '../components/CookieIframe.vue'),
-    component: path.resolve(__dirname, '../components/CookieControl.vue')
-  }
+import {
+  defineNuxtModule,
+  isNuxt2,
+  addPlugin,
+  extendWebpackConfig,
+  addWebpackPlugin,
+  addTemplate,
+} from '@nuxt/kit'
+import webpack from 'webpack' // eslint-disable-line import/no-named-as-default
 
-  const options = Object.assign(defaultOptions, _options)
+import { name, version } from '../package.json'
+import { DEFAULTS, ModuleOptions } from './types'
 
-  if (options.css) { this.options.css.push(path.resolve(__dirname, '../lib/styles.scss')) }
-  if (this.options.globalName) { options.globalName = this.options.globalName }
+export default defineNuxtModule<ModuleOptions>({
+  meta: {
+    name,
+    version,
+    configKey: 'cookieControl',
+  },
+  defaults: DEFAULTS,
+  hooks: {
+    'components:dirs'(dirs) {
+      dirs.push({
+        path: fileURLToPath(new URL('./runtime/components', import.meta.url)),
+        prefix: 'cookie',
+      })
+    },
+  },
+  setup(moduleOptions, nuxt) {
+    // const defaultOptions = {
+    //   ...nuxt.options.cookies,
+    //   iframe: path.resolve(__dirname, '../components/CookieIframe.vue'),
+    //   component: path.resolve(__dirname, '../components/CookieControl.vue')
+    // }
+    // const options = Object.assign(defaultOptions, _options)
 
-  if (options.blockIframe) {
-    const blockIframe = {
-      name: 'functional',
-      initialState: options.blockIframe.initialState !== undefined ? options.blockIframe.initialState : true
+    if (moduleOptions.css) {
+      nuxt.options.css.push(
+        fileURLToPath(new URL('./runtime/styles.scss', import.meta.url))
+      )
     }
 
-    if (options.optional) { options.optional.push(blockIframe) } else { options.optional = [blockIframe] }
+    if (nuxt.options.globalName) {
+      moduleOptions.globalName = nuxt.options.globalName
+    }
 
-    this.extendBuild((config) => {
-      config.module.rules.push({
-        test: /\.vue$/,
-        loader: 'string-replace-loader',
-        exclude: /node_modules/,
-        options: {
-          multiple: [
-            { search: '<iframe', replace: '<CookieIframe', flags: 'g' },
-            { search: '</iframe>', replace: '</CookieIframe>', flags: 'g' }
-          ]
-        }
-      })
-    })
-  }
+    if (moduleOptions.blockIframe) {
+      const blockIframe = {
+        name: 'functional',
+        initialState:
+          typeof moduleOptions.blockIframe !== 'boolean' &&
+          moduleOptions.blockIframe.initialState !== undefined
+            ? moduleOptions.blockIframe.initialState
+            : true,
+      }
 
-  if (options.locales) {
-    const regex = new RegExp(options.locales.join('|'))
-    this.extendBuild((config) => {
-      config.plugins.push(
-        new ContextReplacementPlugin(/nuxt-cookie-control[\/\\]locale$/, regex)
-      )
-    })
-  }
-
-  this.addPlugin({
-    src: path.resolve(__dirname, 'plugin.js'),
-    fileName: 'nuxt-cookie-control.js',
-    options
-  })
-
-  // Nuxt-purgecss fix
-  try {
-    if (require.resolve('nuxt-purgecss').length > 0) {
-      if (this.options.purgeCSS) {
-        if (this.options.purgeCSS.whitelistPatternsChildren) { this.options.purgeCSS.whitelistPatternsChildren.push(/cookieControl/) } else { this.options.purgeCSS.whitelistPatternsChildren = [/cookieControl/] }
-      } else {
-        this.options.purgeCSS = {
-          whitelistPatternsChildren: [/cookieControl/]
+      if (moduleOptions.cookies) {
+        if (moduleOptions.cookies.optional) {
+          moduleOptions.cookies.optional.push(blockIframe)
+        } else {
+          moduleOptions.cookies.optional = [blockIframe]
         }
       }
-    }
-  } catch (e) {}
-}
 
-module.exports.meta = require('../package.json')
+      extendWebpackConfig((config) => {
+        config.module?.rules?.push({
+          test: /\.vue$/,
+          loader: 'string-replace-loader',
+          exclude: /node_modules/,
+          options: {
+            multiple: [
+              { search: '<iframe', replace: '<CookieIframe', flags: 'g' },
+              { search: '</iframe>', replace: '</CookieIframe>', flags: 'g' },
+            ],
+          },
+        })
+      })
+      // extendViteConfig(callback, options?)
+    }
+
+    if (moduleOptions.locales) {
+      const regex = new RegExp(moduleOptions.locales.join('|'))
+      addWebpackPlugin(
+        new webpack.ContextReplacementPlugin(
+          /nuxt-cookie-control[/\\]dist[/\\]runtime[/\\]locale$/,
+          regex
+        )
+      )
+      // addVitePlugin(vitePlugin, options?)
+    }
+
+    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+    nuxt.options.build.transpile.push(runtimeDir)
+    addPlugin(resolve(runtimeDir, 'plugin'))
+    nuxt.options.alias['#nuxtCookieControl'] = runtimeDir
+    // nuxt.addPlugin({
+    //   src: path.resolve(__dirname, 'plugin.js'),
+    //   fileName: 'nuxt-cookie-control.js',
+    //   options
+    // })
+
+    addTemplate({
+      filename: 'nuxtCookieControl.options.mjs',
+      write: true,
+      getContents: () =>
+        `export default ${JSON.stringify(moduleOptions, null, 2)}`,
+    })
+
+    if (isNuxt2()) {
+      // Nuxt-purgecss fix
+      try {
+        if (require.resolve('nuxt-purgecss').length > 0) {
+          // @ts-ignore
+          if (nuxt.options.purgeCSS) {
+            // @ts-ignore
+            if (nuxt.options.purgeCSS.whitelistPatternsChildren) {
+              // @ts-ignore
+              nuxt.options.purgeCSS.whitelistPatternsChildren.push(
+                /cookieControl/
+              )
+            } else {
+              // @ts-ignore
+              nuxt.options.purgeCSS.whitelistPatternsChildren = [
+                /cookieControl/,
+              ]
+            }
+          } else {
+            // @ts-ignore
+            nuxt.options.purgeCSS = {
+              whitelistPatternsChildren: [/cookieControl/],
+            }
+          }
+        }
+      } catch (e) {}
+    }
+  },
+})
