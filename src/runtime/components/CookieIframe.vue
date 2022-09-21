@@ -5,10 +5,10 @@
       <p>
         {{ iframeText }}
         <a
-          v-if="cookies && cookies.text"
+          v-if="cookies && cookies.moduleOptions.text"
           href="#"
           @click.prevent="cookies.modal = true"
-          v-text="cookies.text.here"
+          v-text="cookies.moduleOptions.text.here"
         />
       </p>
     </div>
@@ -21,8 +21,10 @@ import { computed, defineComponent, reactive } from 'vue'
 export default defineComponent({
   name: 'CookieIframe',
   setup() {
+    const { $cookies } = useNuxtApp()
+
     const data = reactive({
-      cookies: this.$cookies,
+      cookies: $cookies,
     })
     const computations = {
       iframeEnabled: computed(() => {
@@ -33,8 +35,8 @@ export default defineComponent({
         )
       }),
       iframeText: computed(() => {
-        return data.cookies && data.cookies.text
-          ? data.cookies.text.blockedIframe
+        return data.cookies && data.cookies.moduleOptions.text
+          ? data.cookies.moduleOptions.text.blockedIframe
           : ''
       }),
     }

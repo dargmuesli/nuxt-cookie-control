@@ -5,7 +5,9 @@ import { State } from '../types'
 import moduleOptions from '#build/nuxtCookieControl.options.mjs'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const state: State = {}
+  const state: State = {
+    moduleOptions,
+  }
 
   const methods = {
     get: (cookie) => {

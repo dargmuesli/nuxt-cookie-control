@@ -11,14 +11,6 @@ export interface Cookie {
   declined?: () => void
 }
 
-export interface State {
-  consent?: boolean
-  enabled?: Cookie[]
-  enabledList?: string[]
-  modal?: boolean
-  optional?: Cookie[]
-}
-
 export interface I18n {
   barTitle: string
   barDescription: string
@@ -101,4 +93,22 @@ export const DEFAULTS: Required<ModuleOptions> = {
   globalName: undefined,
   locales: ['en', 'de'],
   text: en,
+}
+
+export interface State {
+  consent?: boolean
+  enabled?: Cookie[]
+  enabledList?: string[]
+  methods?: {
+    get: (cookie: string) => string
+    set: (any: any) => void
+    isEnabled: (identifier: string) => boolean
+    setBlockedIframes: (content: any) => any
+    slugify: (content: string) => string
+    remove: (name: string) => void
+    setConsent: (isInit?: boolean) => void
+  }
+  modal?: boolean
+  optional?: Cookie[]
+  moduleOptions?: ModuleOptions
 }
