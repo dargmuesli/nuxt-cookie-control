@@ -34,7 +34,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "lint": "eslint --ext .js,.ts,.vue .",
+    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck",
     "release": "yarn test && release-it"
   },
   "dependencies": {
