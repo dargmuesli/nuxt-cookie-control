@@ -35,14 +35,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn
 
-      - name: Prepare environment
-        run: yarn dev:prepare
-
       - name: Lint
-        run: yarn lint:all
-
-      - name: Test
-        run: yarn test
+        run: yarn lint
 
       - name: Coverage
         uses: codecov/codecov-action@v3

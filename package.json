@@ -30,12 +30,13 @@
     "src/locale"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build",
+    "build": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck",
-    "release": "yarn test && release-it"
+    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck --rootDir playground",
+    "prepack": "yarn build",
+    "prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "release-it"
   },
   "dependencies": {
     "@nuxt/kit": "3.0.0-rc.11",
@@ -59,6 +60,7 @@
     "typescript": "4.8.4",
     "vite": "3.1.6",
     "vue": "3.2.40",
+    "vue-tsc": "1.0.3",
     "webpack": "5.74.0"
   },
   "peerDependencies": {

@@ -160,7 +160,6 @@ const expirationDate = computed(() => {
   date.setFullYear(date.getFullYear() + 1)
   return date.toUTCString()
 })
-
 const optionalCookies = computed(() => {
   return cookies.value.optional
 })
