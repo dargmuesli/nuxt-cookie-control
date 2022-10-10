@@ -15,36 +15,23 @@
   </client-only>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, reactive } from 'vue'
+<script setup lang="ts">
+const { $cookies } = useNuxtApp()
 
-export default defineComponent({
-  name: 'CookieIframe',
-  setup() {
-    const { $cookies } = useNuxtApp()
+// data
+const cookies = ref($cookies)
 
-    const data = reactive({
-      cookies: $cookies,
-    })
-    const computations = {
-      iframeEnabled: computed(() => {
-        return (
-          data.cookies.enabled.filter((c) => {
-            return c.name === 'functional'
-          }).length > 0
-        )
-      }),
-      iframeText: computed(() => {
-        return data.cookies && data.cookies.moduleOptions.text
-          ? data.cookies.moduleOptions.text.blockedIframe
-          : ''
-      }),
-    }
-
-    return {
-      ...data,
-      ...computations,
-    }
-  },
+// computations
+const iframeEnabled = computed(() => {
+  return (
+    cookies.value.enabled.filter((c) => {
+      return c.name === 'functional'
+    }).length > 0
+  )
+})
+const iframeText = computed(() => {
+  return cookies.value && cookies.value.moduleOptions.text
+    ? cookies.value.moduleOptions.text.blockedIframe
+    : ''
 })
 </script>

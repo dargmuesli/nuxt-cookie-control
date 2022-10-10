@@ -137,208 +137,188 @@
   </client-only>
 </template>
 
-<script lang="ts">
-import { defineComponent, onBeforeMount, reactive, watch } from 'vue'
-
-import { useNuxtApp } from '#app'
-
+<script setup lang="ts">
 import { I18n } from '../../types'
 
-export default defineComponent({
-  name: 'CookieControl',
-  props: {
-    locale: {
-      default: 'en',
-      type: String,
-    },
-  },
-  setup(props) {
-    const { $cookies } = useNuxtApp()
-
-    const data = reactive({
-      saved: true,
-      colorsSet: false,
-      cookies: $cookies,
-    })
-    const computations = {
-      expirationDate() {
-        const date = new Date()
-        date.setFullYear(date.getFullYear() + 1)
-        return date.toUTCString()
-      },
-
-      optionalCookies() {
-        return data.cookies.optional
-      },
-    }
-    const methods = {
-      toogleCookie(cookie) {
-        const cookieName =
-          cookie.identifier ||
-          data.cookies.methods.slugify(methods.getCookieFirstName(cookie.name))
-        if (data.saved) data.saved = false
-        if (!data.cookies.enabledList.includes(cookieName))
-          data.cookies.enabledList.push(cookieName)
-        else
-          data.cookies.enabledList.splice(
-            data.cookies.enabledList.indexOf(cookieName),
-            1
-          )
-      },
-
-      setConsent({
-        type = undefined,
-        consent = true,
-        reload = true,
-        declineAll = false,
-      }: {
-        type?: 'partial'
-        consent?: boolean
-        reload?: boolean
-        declineAll?: boolean
-      }) {
-        data.cookies.methods.set({
-          name: 'cookie_control_consent',
-          value: consent,
-          expires: computations.expirationDate,
-        })
-        const enabledCookies = declineAll
-          ? []
-          : type === 'partial' && consent
-          ? data.cookies.enabledList
-          : [
-              ...computations
-                .optionalCookies()
-                .map(
-                  (c) =>
-                    c.identifier ||
-                    data.cookies.methods.slugify(
-                      methods.getCookieFirstName(c.name)
-                    )
-                ),
-            ]
-        data.cookies.methods.set({
-          name: 'cookie_control_enabled_cookies',
-          value: consent ? enabledCookies.join(',') : '',
-          expires: computations.expirationDate,
-        })
-        if (!reload) {
-          data.cookies.methods.setConsent()
-          this.$cookies.modal = false
-        } else window.location.reload()
-      },
-
-      getDescription(description) {
-        if (typeof description === 'string')
-          return ` ${
-            data.cookies.moduleOptions.dashInDescription !== false ? '-' : ''
-          } ${description}`
-        else if (description[props.locale])
-          return ` ${
-            data.cookies.moduleOptions.dashInDescription !== false ? '-' : ''
-          } ${description[props.locale]}`
-        return ''
-      },
-
-      getName(name) {
-        return name === 'functional'
-          ? data.cookies.moduleOptions.text.functional
-          : typeof name === 'string'
-          ? name
-          : name[props.locale]
-          ? name[props.locale]
-          : name[Object.keys(name)[0]]
-      },
-
-      getCookieFirstName(name) {
-        return typeof name === 'string' ? name : name[Object.keys(name)[0]]
-      },
-
-      setTexts: async (isChanged = false) => {
-        let text: I18n | undefined
-
-        try {
-          text = (await import(`#nuxtCookieControl/locale/${props.locale}`))
-            .default
-        } catch (e) {
-          text = (await import(`#nuxtCookieControl/locale/en`)).default
-        }
-
-        if (
-          text &&
-          data.cookies.moduleOptions.text &&
-          Object.keys(data.cookies.moduleOptions.text).length > 0
-        ) {
-          if (data.cookies.moduleOptions.text.locale) {
-            Object.assign(
-              text,
-              data.cookies.moduleOptions.text.locale[props.locale]
-            )
-          }
-          if (!isChanged) Object.assign(text, data.cookies.moduleOptions.text)
-        }
-
-        $cookies.moduleOptions.text = text
-        // this.$set($cookies, 'text', text)
-      },
-    }
-
-    onBeforeMount(async () => {
-      methods.setTexts()
-      if (data.cookies.moduleOptions.colors) {
-        const variables = {}
-        for (const key in data.cookies.moduleOptions.colors) {
-          const k = key.toLowerCase().includes('unactive')
-            ? key.replace(/Unactive/g, 'Inactive')
-            : key
-          variables[
-            `cookie-control-${k}`
-          ] = `${data.cookies.moduleOptions.colors[key]}`
-        }
-
-        if (data.cookies.moduleOptions.cssPolyfill) {
-          const module = await import('css-vars-ponyfill')
-          const cssVars = module.default
-          cssVars({ variables })
-        } else {
-          for (const cssVar in variables) {
-            document.documentElement.style.setProperty(
-              `--${cssVar}`,
-              variables[cssVar]
-            )
-          }
-        }
-      }
-
-      if (
-        !data.cookies.methods.get('cookie_control_consent') ||
-        data.cookies.methods.get('cookie_control_consent').length === 0
-      ) {
-        computations.optionalCookies().forEach((c) => {
-          if (data.cookies.moduleOptions.blockIframe.initialState === true) {
-            data.cookies.enabledList.push(
-              c.identifier ||
-                data.cookies.methods.slugify(methods.getCookieFirstName(c.name))
-            )
-          }
-        })
-      }
-
-      data.colorsSet = true
-    })
-
-    watch(
-      () => props.locale,
-      (_currentValue, _oldValue) => {
-        methods.setTexts(true)
-      }
-    )
-
-    return {
-      ...data,
-      ...computations,
-      ...methods,
-    }
-  },
+export interface Props {
+  locale?: string
+}
+const props = withDefaults(defineProps<Props>(), {
+  locale: 'en',
 })
+
+const { $cookies } = useNuxtApp()
+
+// data
+const saved = ref(true)
+const colorsSet = ref(false)
+const cookies = ref($cookies)
+
+// computations
+const expirationDate = computed(() => {
+  const date = new Date()
+  date.setFullYear(date.getFullYear() + 1)
+  return date.toUTCString()
+})
+
+const optionalCookies = computed(() => {
+  return cookies.value.optional
+})
+
+// methods
+function toogleCookie(cookie) {
+  const cookieName =
+    cookie.identifier ||
+    cookies.value.methods.slugify(getCookieFirstName(cookie.name))
+  if (saved.value) saved.value = false
+  if (!cookies.value.enabledList.includes(cookieName))
+    cookies.value.enabledList.push(cookieName)
+  else
+    cookies.value.enabledList.splice(
+      cookies.value.enabledList.indexOf(cookieName),
+      1
+    )
+}
+function setConsent({
+  type = undefined,
+  consent = true,
+  reload = true,
+  declineAll = false,
+}: {
+  type?: 'partial'
+  consent?: boolean
+  reload?: boolean
+  declineAll?: boolean
+}) {
+  cookies.value.methods.set({
+    name: 'cookie_control_consent',
+    value: consent,
+    expires: expirationDate.value,
+  })
+  const enabledCookies = declineAll
+    ? []
+    : type === 'partial' && consent
+    ? cookies.value.enabledList
+    : [
+        ...optionalCookies.value.map(
+          (c) =>
+            c.identifier ||
+            cookies.value.methods.slugify(getCookieFirstName(c.name))
+        ),
+      ]
+  cookies.value.methods.set({
+    name: 'cookie_control_enabled_cookies',
+    value: consent ? enabledCookies.join(',') : '',
+    expires: expirationDate.value,
+  })
+  if (!reload) {
+    cookies.value.methods.setConsent()
+    this.$cookies.modal = false
+  } else window.location.reload()
+}
+function getDescription(description) {
+  if (typeof description === 'string')
+    return ` ${
+      cookies.value.moduleOptions.dashInDescription !== false ? '-' : ''
+    } ${description}`
+  else if (description[props.locale])
+    return ` ${
+      cookies.value.moduleOptions.dashInDescription !== false ? '-' : ''
+    } ${description[props.locale]}`
+  return ''
+}
+function getName(name) {
+  return name === 'functional'
+    ? cookies.value.moduleOptions.text.functional
+    : typeof name === 'string'
+    ? name
+    : name[props.locale]
+    ? name[props.locale]
+    : name[Object.keys(name)[0]]
+}
+function getCookieFirstName(name) {
+  return typeof name === 'string' ? name : name[Object.keys(name)[0]]
+}
+async function setTexts(isChanged = false) {
+  let text: I18n | undefined
+
+  try {
+    text = (await import(`#nuxtCookieControl/locale/${props.locale}.ts`)) // .then(r => r.default || r))
+      .default
+  } catch (e) {
+    text = (await import(`#nuxtCookieControl/locale/en`)).default
+  }
+
+  if (
+    text &&
+    cookies.value.moduleOptions.text &&
+    Object.keys(cookies.value.moduleOptions.text).length > 0
+  ) {
+    if (
+      Object.keys(cookies.value.moduleOptions.text).includes('locale') &&
+      cookies.value.moduleOptions.text.locale
+    ) {
+      Object.assign(text, cookies.value.moduleOptions.text.locale[props.locale])
+    }
+    if (!isChanged) Object.assign(text, cookies.value.moduleOptions.text)
+  }
+
+  $cookies.moduleOptions.text = text
+  // this.$set($cookies, 'text', text)
+}
+
+// lifecycle
+onBeforeMount(async () => {
+  setTexts()
+  if (cookies.value.moduleOptions.colors) {
+    const variables = {}
+    for (const key in cookies.value.moduleOptions.colors) {
+      const k = key.toLowerCase().includes('unactive')
+        ? key.replace(/Unactive/g, 'Inactive')
+        : key
+      variables[
+        `cookie-control-${k}`
+      ] = `${cookies.value.moduleOptions.colors[key]}`
+    }
+
+    if (cookies.value.moduleOptions.cssPolyfill) {
+      const module = await import('css-vars-ponyfill')
+      const cssVars = module.default
+      cssVars({ variables })
+    } else {
+      for (const cssVar in variables) {
+        document.documentElement.style.setProperty(
+          `--${cssVar}`,
+          variables[cssVar]
+        )
+      }
+    }
+  }
+
+  if (
+    !cookies.value.methods.get('cookie_control_consent') ||
+    cookies.value.methods.get('cookie_control_consent').length === 0
+  ) {
+    optionalCookies.value.forEach((c) => {
+      if (
+        typeof cookies.value.moduleOptions.blockIframe === 'boolean'
+          ? cookies.value.moduleOptions.blockIframe === true
+          : cookies.value.moduleOptions.blockIframe.initialState === true
+      ) {
+        cookies.value.enabledList.push(
+          c.identifier ||
+            cookies.value.methods.slugify(getCookieFirstName(c.name))
+        )
+      }
+    })
+  }
+
+  colorsSet.value = true
+})
+watch(
+  () => props.locale,
+  (_currentValue, _oldValue) => {
+    setTexts(true)
+  }
+)
 </script>

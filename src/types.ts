@@ -27,6 +27,23 @@ export interface I18n {
   here: string
 }
 
+export enum Locale {
+  DE = 'de',
+  EN = 'en',
+  ES = 'es',
+  FR = 'fr',
+  HR = 'hr',
+  HU = 'hu',
+  IT = 'it',
+  JA = 'ja',
+  NO = 'no',
+  PT = 'pt',
+  RU = 'ru',
+  UK = 'uk',
+}
+
+type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
+
 export interface ModuleOptions {
   barPosition?:
     | 'top-left'
@@ -48,7 +65,7 @@ export interface ModuleOptions {
   domain?: string
   globalName?: string
   locales?: string[]
-  text?: I18n
+  text?: I18n & { locale?: PartialRecord<Locale, I18n> }
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
