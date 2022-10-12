@@ -125,7 +125,7 @@
                   v-text="cookies.moduleOptions.text.acceptAll"
                 />
                 <button
-                  @click="setConsent({ declineAll: true })"
+                  @click="setConsent({ declineAll: true, consent: false })"
                   v-text="cookies.moduleOptions.text.declineAll"
                 />
               </div>

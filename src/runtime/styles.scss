@@ -387,11 +387,26 @@
   .cookieControl__BarButtons{
     width: 100%;
     margin-top: 20px;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    button{
+      width: 100%;
+      & + button{
+        margin: 10px 0 0;
+      }
+    }
   }
 
-  .cookieControl__BarContainer{
+  .cookieControl__BarContainer,
+  .cookieControl__ModalButtons{
     flex-direction: column;
+  }
+
+  .cookieControl__ModalButtons button{
+    width: 100%;
+    & + button{
+      margin: 10px 0 0;
+    }
   }
 }
 
