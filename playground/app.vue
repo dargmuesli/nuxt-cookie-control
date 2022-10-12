@@ -1,5 +1,8 @@
 <template>
-  <CookieControl />
+  <div>
+    <CookieControl />
+    <CookieIframe />
+  </div>
 </template>
 
 <script setup></script>
