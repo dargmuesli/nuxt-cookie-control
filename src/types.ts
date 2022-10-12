@@ -7,8 +7,8 @@ export interface Cookie {
   identifier?: string
   name: string | Record<string, string>
   src?: string
-  accepted?: () => void
-  declined?: () => void
+  accepted?: Function
+  declined?: Function
 }
 
 export interface I18n {

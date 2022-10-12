@@ -199,7 +199,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     })
     if (disabled.length > 0) {
       disabled.forEach((c) => {
-        if (c.declined) c.declined()
+        if (c.declined) c.declined().call(nuxtApp)
         if (c.ids && c.ids.length > 0) {
           c.ids.forEach((i) => {
             methods.remove(i)
@@ -223,7 +223,7 @@ export default defineNuxtPlugin((nuxtApp) => {
           script.src = c.src
           head.appendChild(script)
           script.addEventListener('load', () => {
-            if (c.accepted) c.accepted()
+            if (c.accepted) c.accepted().call(nuxtApp)
           })
         }
       })
@@ -233,7 +233,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const callAcceptedFunctions = () => {
     if (state.enabled.length > 0) {
       state.enabled.forEach((c) => {
-        if (c.accepted) c.accepted()
+        if (c.accepted) c.accepted().call(nuxtApp)
       })
     }
   }
