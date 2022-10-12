@@ -1,8 +1,8 @@
 import { defineNuxtPlugin } from '#app'
 
-import { State } from '../types'
+import { State } from './types'
 
-import moduleOptions from '#build/nuxtCookieControl.options.mjs'
+import moduleOptions from '#build/nuxtCookieControl.options'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const state: State = {

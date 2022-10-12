@@ -12,7 +12,7 @@ import {
 import webpack from 'webpack' // eslint-disable-line import/no-named-as-default
 
 import { name, version } from '../package.json'
-import { DEFAULTS, ModuleOptions } from './types'
+import { DEFAULTS, ModuleOptions } from './runtime/types'
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -103,10 +103,14 @@ export default defineNuxtModule<ModuleOptions>({
     // })
 
     addTemplate({
-      filename: 'nuxtCookieControl.options.mjs',
+      filename: 'nuxtCookieControl.options.ts',
       write: true,
       getContents: () =>
-        `export default ${JSON.stringify(moduleOptions, null, 2)}`,
+        `import { ModuleOptions } from '../../src/runtime/types'\n\nexport default ${JSON.stringify(
+          moduleOptions,
+          null,
+          2
+        )} as ModuleOptions`,
     })
 
     if (isNuxt2()) {

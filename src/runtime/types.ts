@@ -1,4 +1,4 @@
-import en from './runtime/locale/en'
+import en from './locale/en'
 
 export interface Cookie {
   async?: boolean

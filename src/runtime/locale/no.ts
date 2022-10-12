@@ -1,4 +1,4 @@
-import { I18n } from '../../types'
+import { I18n } from '../types'
 
 export default {
   acceptAll: 'Godta alle',
