@@ -39,7 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     if (moduleOptions.css) {
       nuxt.options.css.push(
-        fileURLToPath(new URL('./runtime/styles.scss', import.meta.url))
+        fileURLToPath(new URL('./runtime/styles.css', import.meta.url))
       )
     }
 
