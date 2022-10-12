@@ -16,6 +16,10 @@
 </template>
 
 <script setup lang="ts">
+import { computed, ref } from 'vue'
+
+import { useNuxtApp } from '#app'
+
 const { $cookies } = useNuxtApp()
 
 // data

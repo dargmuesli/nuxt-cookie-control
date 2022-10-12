@@ -138,6 +138,10 @@
 </template>
 
 <script setup lang="ts">
+import { computed, onBeforeMount, ref, watch } from 'vue'
+
+import { useNuxtApp } from '#app'
+
 import { I18n } from '../../types'
 
 export interface Props {
