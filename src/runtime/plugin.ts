@@ -115,6 +115,34 @@ export default defineNuxtPlugin((nuxtApp) => {
       }
     },
 
+    acceptNecessary: () => {
+      const expires = new Date()
+      expires.setFullYear(expires.getFullYear() + 1)
+      const expiresUtc = expires.toUTCString()
+      const value = state.moduleOptions.cookies.necessary.map(
+        (c) => c.identifier || state.methods.slugify(methods.getName(c.name))
+      )
+      state.methods.set({
+        name: 'cookie_control_enabled_cookies',
+        value,
+        expiresUtc,
+      })
+      state.methods.set({
+        name: 'cookie_control_consent',
+        value: true,
+        expiresUtc,
+      })
+      state.consent = true
+      if (process.client) {
+        setHead()
+        callAcceptedFunctions()
+      }
+    },
+
+    getName: (name) => {
+      return typeof name === 'string' ? name : name[Object.keys(name)[0]]
+    },
+
     setConsent: (isInit = false) => {
       state.consent = methods.get('cookie_control_consent') === 'true'
       state.enabled = []

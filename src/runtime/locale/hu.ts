@@ -2,6 +2,7 @@ import { I18n } from '../../types'
 
 export default {
   acceptAll: 'Összes elfogadása',
+  acceptNecessary: 'Elfogadom a szükségeset',
   barDescription:
     'Saját, illetve harmadik féltől származó sütiket használunk annak érdekében, hogy megmutassuk ezt a weboldalt, és jobban megértsük, hogyan használja azt, azzal a céllal, hogy javítsuk az általunk kínált szolgáltatásokat. Ha folytatod a böngészést, úgy gondoljuk, hogy elfogadtad a sütiket.',
   barTitle: 'Sütik',

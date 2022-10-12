@@ -2,6 +2,7 @@ import { I18n } from '../../types'
 
 export default {
   acceptAll: 'Godta alle',
+  acceptNecessary: 'Jeg aksepterer det nødvendige',
   barDescription:
     'Vi bruker våre egne informasjonskapsler og tredjeparts informasjonskapsler, slik at vi kan vise deg dette nettstedet og bedre forstå hvordan du bruker det, med tanke på å forbedre tjenestene vi tilbyr.',
   barTitle: 'Informasjonskapsler',

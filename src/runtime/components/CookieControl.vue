@@ -17,6 +17,11 @@
             </div>
             <div class="cookieControl__BarButtons">
               <button
+                v-if="cookies.moduleOptions.acceptNecessary"
+                @click="cookies.moduleOptions.acceptNecessary"
+                v-text="cookies.moduleOptions.text.acceptNecessary"
+              />
+              <button
                 @click="cookies.modal = true"
                 v-text="cookies.moduleOptions.text.manageCookies"
               />

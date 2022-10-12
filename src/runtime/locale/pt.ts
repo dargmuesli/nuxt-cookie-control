@@ -2,6 +2,7 @@ import { I18n } from '../../types'
 
 export default {
   acceptAll: 'Aceitar todos',
+  acceptNecessary: 'Eu aceito o necessário',
   barDescription:
     'Nós utilizamos os nossos próprios cookies e de terceiros para que possamos lhe mostrar este site e compreender a forma como o utiliza, de forma a melhorarmos os serviços que oferecemos. Ao continuar a navegar no site, consideramos que aceitou a utilização de cookies.',
   barTitle: 'Cookies',

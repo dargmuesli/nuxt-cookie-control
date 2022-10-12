@@ -12,6 +12,7 @@ export interface Cookie {
 }
 
 export interface I18n {
+  acceptNecessary: string
   barTitle: string
   barDescription: string
   acceptAll: string
@@ -45,6 +46,7 @@ export enum Locale {
 type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
 
 export interface ModuleOptions {
+  acceptNecessary?: boolean
   barPosition?:
     | 'top-left'
     | 'top-right'
@@ -69,6 +71,7 @@ export interface ModuleOptions {
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
+  acceptNecessary: true,
   barPosition: 'bottom-full', //
   blockIframe: false,
   controlButton: true, //
