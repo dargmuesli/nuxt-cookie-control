@@ -160,9 +160,6 @@ const expirationDate = computed(() => {
   date.setFullYear(date.getFullYear() + 1)
   return date.toUTCString()
 })
-const optionalCookies = computed(() => {
-  return cookies.value.optional
-})
 
 // methods
 function toogleCookie(cookie) {
@@ -199,7 +196,7 @@ function setConsent({
     : type === 'partial' && consent
     ? cookies.value.enabledList
     : [
-        ...optionalCookies.value.map(
+        ...cookies.value.optional.map(
           (c) =>
             c.identifier ||
             cookies.value.methods.slugify(getCookieFirstName(c.name))
@@ -295,10 +292,11 @@ onBeforeMount(async () => {
   }
 
   if (
-    !cookies.value.methods.get('cookie_control_consent') ||
-    cookies.value.methods.get('cookie_control_consent').length === 0
+    cookies.value.optional &&
+    (!cookies.value.methods.get('cookie_control_consent') ||
+      cookies.value.methods.get('cookie_control_consent').length === 0)
   ) {
-    optionalCookies.value.forEach((c) => {
+    cookies.value.optional.forEach((c) => {
       if (
         typeof cookies.value.moduleOptions.blockIframe === 'boolean'
           ? cookies.value.moduleOptions.blockIframe === true

@@ -159,7 +159,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
   }
 
-  Object.assign(state, methods)
+  Object.assign(state, { methods })
 
   const clearCookies = () => {
     const disabled = state.optional.filter((c) => {
