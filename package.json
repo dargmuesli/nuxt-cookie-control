@@ -33,7 +33,7 @@
     "build": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck --rootDir playground",
+    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck playground",
     "prepack": "yarn build",
     "prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "release": "release-it"
