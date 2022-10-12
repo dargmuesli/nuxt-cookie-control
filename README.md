@@ -73,6 +73,7 @@ this.$cookies.modal = true
 ```
 #### Default: en,
 #### Currently available:
+- ar
 - de
 - en
 - es
@@ -81,6 +82,7 @@ this.$cookies.modal = true
 - hu
 - it
 - ja
+- nl
 - no
 - pt
 - ru

@@ -1,3 +1,4 @@
+import ar from './ar'
 import de from './de'
 import en from './en'
 import es from './es'
@@ -6,9 +7,10 @@ import hr from './hr'
 import hu from './hu'
 import it from './it'
 import ja from './ja'
+import nl from './nl'
 import no from './no'
 import pt from './pt'
 import ru from './ru'
 import uk from './uk'
 
-export const locales = [de, en, es, fr, hr, hu, it, ja, no, pt, ru, uk]
+export const locales = [ar, de, en, es, fr, hr, hu, it, ja, nl, no, pt, ru, uk]

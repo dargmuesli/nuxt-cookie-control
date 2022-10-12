@@ -29,6 +29,7 @@ export interface I18n {
 }
 
 export enum Locale {
+  AR = 'ar',
   DE = 'de',
   EN = 'en',
   ES = 'es',
@@ -37,6 +38,7 @@ export enum Locale {
   HU = 'hu',
   IT = 'it',
   JA = 'ja',
+  NL = 'nl',
   NO = 'no',
   PT = 'pt',
   RU = 'ru',
