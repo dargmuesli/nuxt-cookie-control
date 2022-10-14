@@ -1,3 +1,3 @@
 module.exports = {
-  '*.{js,ts,vue}': ['yarn lint'],
+  '*.{js,ts,vue}': ['pnpm lint'],
 }
