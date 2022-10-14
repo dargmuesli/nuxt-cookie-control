@@ -65,6 +65,14 @@
     "vite": "^3",
     "webpack": "^5"
   },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    },
+    "webpack": {
+      "optional": true
+    }
+  },
   "resolutions": {
     "@dargmuesli/nuxt-cookie-control": "link:./"
   },
