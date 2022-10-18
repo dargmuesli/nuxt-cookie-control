@@ -1,4 +1,4 @@
-import { I18n } from '../types'
+import { LocaleStrings } from '../types'
 
 export default {
   acceptAll: 'Összes elfogadása',
@@ -17,4 +17,4 @@ export default {
   optional: 'Opcionális sütik',
   save: 'Mentés',
   unsaved: 'Mentés nélküli beállítások vannak',
-} as I18n
+} as LocaleStrings

@@ -1,4 +1,4 @@
-import { I18n } from '../types'
+import { LocaleStrings } from '../types'
 
 export default {
   acceptAll: 'Accepteer alles',
@@ -17,4 +17,4 @@ export default {
   optional: 'Optionele cookies',
   save: 'Opslaan',
   unsaved: 'Er zijn niet-opgeslagen instellingen',
-} as I18n
+} as LocaleStrings

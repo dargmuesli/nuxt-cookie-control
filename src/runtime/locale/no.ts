@@ -1,4 +1,4 @@
-import { I18n } from '../types'
+import { LocaleStrings } from '../types'
 
 export default {
   acceptAll: 'Godta alle',
@@ -17,4 +17,4 @@ export default {
   optional: 'Valgfrie informasjonskapsler',
   save: 'Lagre',
   unsaved: 'Du har ulagrede innstillinger',
-} as I18n
+} as LocaleStrings

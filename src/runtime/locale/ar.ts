@@ -1,4 +1,4 @@
-import { I18n } from '../types'
+import { LocaleStrings } from '../types'
 
 export default {
   acceptAll: 'قبول الكل',
@@ -16,4 +16,4 @@ export default {
   optional: 'ملفات تعريف الارتباط الاختيارية',
   save: 'حفظ',
   unsaved: 'لديك إعدادات غير محفوظة',
-} as I18n
+} as LocaleStrings

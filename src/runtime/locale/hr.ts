@@ -1,4 +1,4 @@
-import { I18n } from '../types'
+import { LocaleStrings } from '../types'
 
 export default {
   acceptAll: 'Dozvoli sve',
@@ -17,4 +17,4 @@ export default {
   optional: 'Neobavezni kolačići',
   save: 'Spremi',
   unsaved: 'Imate nespremljenih postavki',
-} as I18n
+} as LocaleStrings

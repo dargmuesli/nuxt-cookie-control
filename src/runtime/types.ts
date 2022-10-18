@@ -1,31 +1,12 @@
 import en from './locale/en'
 
-export interface Cookie {
-  async?: boolean
-  ids?: string[]
-  description?: string | Record<string, string>
-  identifier?: string
-  name: string | Record<string, string>
-  src?: string
-  accepted?: Function
-  declined?: Function
-}
+export type Translatable = string | Record<string, string>
 
-export interface I18n {
-  acceptNecessary: string
-  barTitle: string
-  barDescription: string
-  acceptAll: string
-  declineAll: string
-  manageCookies: string
-  unsaved: string
-  close: string
-  save: string
-  necessary: string
-  optional: string
-  functional: string
-  blockedIframe: string
-  here: string
+export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
+
+export enum CookieType {
+  NECESSARY = 'necessary',
+  OPTIONAL = 'optional',
 }
 
 export enum Locale {
@@ -45,7 +26,33 @@ export enum Locale {
   UK = 'uk',
 }
 
-type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
+export interface Cookie {
+  accepted?: Function
+  async?: boolean
+  declined?: Function
+  description?: Translatable
+  id?: string
+  ids?: string[]
+  name: Translatable
+  src?: string
+}
+
+export interface LocaleStrings {
+  acceptAll: string
+  acceptNecessary: string
+  barDescription: string
+  barTitle: string
+  blockedIframe: string
+  close: string
+  declineAll: string
+  functional: string
+  here: string
+  manageCookies: string
+  necessary: string
+  optional: string
+  save: string
+  unsaved: string
+}
 
 export interface ModuleOptions {
   acceptNecessary?: boolean
@@ -69,7 +76,7 @@ export interface ModuleOptions {
   domain?: string
   globalName?: string
   locales?: string[]
-  text?: I18n & { locale?: PartialRecord<Locale, I18n> }
+  text?: LocaleStrings & { locale?: PartialRecord<Locale, LocaleStrings> }
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
@@ -122,13 +129,8 @@ export interface State {
   enabled?: Cookie[]
   enabledList?: string[]
   methods?: {
-    get: (cookie: string) => string
-    set: (any: any) => void
-    isEnabled: (identifier: string) => boolean
-    setBlockedIframes: (content: any) => any
-    slugify: (content: string) => string
-    remove: (name: string) => void
-    setConsent: (isInit?: boolean) => void
+    setBlockedIframes: (cookies: State, content: any) => any
+    setConsent: ({ isInit = false }: { isInit?: boolean }) => void
   }
   modal?: boolean
   optional?: Cookie[]

@@ -1,4 +1,4 @@
-import { I18n } from '../types'
+import { LocaleStrings } from '../types'
 
 export default {
   acceptAll: '全て同意',
@@ -16,4 +16,4 @@ export default {
   optional: '任意のcookies',
   save: '保存',
   unsaved: '保存されていない設定があります',
-} as I18n
+} as LocaleStrings
