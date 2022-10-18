@@ -8,15 +8,18 @@ specifiers:
   '@nuxt/module-builder': 0.1.7
   '@nuxtjs/eslint-config-typescript': 11.0.0
   '@release-it/conventional-changelog': 5.1.0
+  '@types/js-cookie': 3.0.2
   css-vars-ponyfill: 2.4.8
   eslint: 8.24.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier: 4.2.1
   husky: 8.0.1
+  js-cookie: 3.0.1
   lint-staged: 13.0.3
   nuxt: 3.0.0-rc.11
   prettier: 2.7.1
   release-it: 15.5.0
+  slugify: 1.6.5
   string-replace-loader: 3.1.0
   typescript: 4.8.4
   vite: 3.1.6
@@ -27,12 +30,15 @@ specifiers:
 dependencies:
   '@nuxt/kit': 3.0.0-rc.11
   css-vars-ponyfill: 2.4.8
+  js-cookie: 3.0.1
+  slugify: 1.6.5
   string-replace-loader: 3.1.0_webpack@5.74.0
 
 devDependencies:
   '@nuxt/module-builder': 0.1.7
   '@nuxtjs/eslint-config-typescript': 11.0.0_ypn2ylkkyfa5i233caldtndbqa
   '@release-it/conventional-changelog': 5.1.0_release-it@15.5.0
+  '@types/js-cookie': 3.0.2
   eslint: 8.24.0
   eslint-config-prettier: 8.5.0_eslint@8.24.0
   eslint-plugin-prettier: 4.2.1_cfn5x6ujhhgzv3423d6k7r2zzm
@@ -1021,6 +1027,10 @@ packages:
 
   /@types/http-cache-semantics/4.0.1:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
+    dev: true
+
+  /@types/js-cookie/3.0.2:
+    resolution: {integrity: sha512-6+0ekgfusHftJNYpihfkMu8BWdeHs9EOJuGcSofErjstGPfPGEu9yTu4t460lTzzAMl2cM5zngQJqPMHbbnvYA==}
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -4966,6 +4976,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /js-cookie/3.0.1:
+    resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==}
+    engines: {node: '>=12'}
+    dev: false
+
   /js-sdsl/4.1.5:
     resolution: {integrity: sha512-08bOAKweV2NUC1wqTtf3qZlnpOX/R2DU9ikpjOHs0H+ibQv3zpncVQg6um4uYtRtrwIX8M4Nh3ytK4HGlYAq7Q==}
     dev: true
@@ -7281,6 +7296,11 @@ packages:
       ansi-styles: 6.1.1
       is-fullwidth-code-point: 4.0.0
     dev: true
+
+  /slugify/1.6.5:
+    resolution: {integrity: sha512-8mo9bslnBO3tr5PEVFzMPIWwWnipGS0xVbYf65zxDqfNwmzYn1LpiKNrR6DlClusuvo+hDHd1zKpmfAe83NQSQ==}
+    engines: {node: '>=8.0.0'}
+    dev: false
 
   /smart-buffer/4.2.0:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
