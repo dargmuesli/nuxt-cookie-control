@@ -63,13 +63,13 @@
                 @click="cookies.modal = false"
                 v-text="cookies.moduleOptions.text.close"
               />
-              <div
-                v-for="cookieType in ['necessary', 'optional']"
-                :key="cookieType"
-              >
+              <div v-for="cookieType in CookieType" :key="cookieType">
                 <h3 v-text="cookies.moduleOptions.text[cookieType]" />
                 <ul>
-                  <li v-for="cookie in cookies[cookieType]" :key="cookie.id">
+                  <li
+                    v-for="cookie in cookies.moduleOptions.cookies[cookieType]"
+                    :key="cookie.id"
+                  >
                     <div class="cookieControl__ModalInputWrapper">
                       <input
                         v-if="
@@ -87,14 +87,13 @@
                         type="checkbox"
                         :checked="
                           cookies.enabledList.includes(
-                            cookie.identifier ||
-                              cookies.methods.slugify(
-                                getCookieFirstName(cookie.name)
-                              )
+                            cookie.id ||
+                              slugify(getCookieFirstName(cookie.name))
                           ) ||
-                          (cookies.methods.get('cookie_control_consent')
-                            .length === 0 &&
-                            cookie.initialState === true)
+                          (Cookies.get('cookie_control_consent').length === 0 &&
+                            typeof cookies.moduleOptions.blockIframe ===
+                              'object' &&
+                            cookies.moduleOptions.blockIframe.initialState)
                         "
                         @change="toogleCookie(cookie)"
                       />
@@ -108,10 +107,10 @@
                         </span>
                       </span>
                     </div>
-                    <template v-if="cookie.cookies">
+                    <template v-if="cookie.ids">
                       <slot name="cookie" v-bind="{ config: cookie }">
                         <ul>
-                          <li v-for="item in cookie.cookies" :key="item.id">
+                          <li v-for="item in cookie.ids" :key="item">
                             {{ item }}
                           </li>
                         </ul>
@@ -143,11 +142,13 @@
 </template>
 
 <script setup lang="ts">
+import Cookies from 'js-cookie'
+import slugify from 'slugify'
 import { computed, onBeforeMount, ref, watch } from 'vue'
 
 import { useNuxtApp } from '#app'
 
-import { I18n } from '../types'
+import { CookieType, LocaleStrings } from '../types'
 
 export interface Props {
   locale?: string
@@ -167,14 +168,13 @@ const cookies = ref($cookies)
 const expirationDate = computed(() => {
   const date = new Date()
   date.setFullYear(date.getFullYear() + 1)
-  return date.toUTCString()
+  return date
 })
 
 // methods
 function toogleCookie(cookie) {
   const cookieName =
-    cookie.identifier ||
-    cookies.value.methods.slugify(getCookieFirstName(cookie.name))
+    cookie.identifier || slugify(getCookieFirstName(cookie.name))
   if (saved.value) saved.value = false
   if (!cookies.value.enabledList.includes(cookieName))
     cookies.value.enabledList.push(cookieName)
@@ -195,27 +195,26 @@ function setConsent({
   reload?: boolean
   declineAll?: boolean
 }) {
-  cookies.value.methods.set({
-    name: 'cookie_control_consent',
-    value: consent,
+  Cookies.set('cookie_control_consent', consent.toString(), {
     expires: expirationDate.value,
   })
+
   const enabledCookies = declineAll
     ? []
     : type === 'partial' && consent
     ? cookies.value.enabledList
     : [
         ...cookies.value.optional.map(
-          (c) =>
-            c.identifier ||
-            cookies.value.methods.slugify(getCookieFirstName(c.name))
+          (c) => c.id || slugify(getCookieFirstName(c.name))
         ),
       ]
-  cookies.value.methods.set({
-    name: 'cookie_control_enabled_cookies',
-    value: consent ? enabledCookies.join(',') : '',
-    expires: expirationDate.value,
-  })
+  Cookies.set(
+    'cookie_control_enabled_cookies',
+    consent ? enabledCookies.join(',') : '',
+    {
+      expires: expirationDate.value,
+    }
+  )
   if (!reload) {
     cookies.value.methods.setConsent()
     this.$cookies.modal = false
@@ -245,7 +244,7 @@ function getCookieFirstName(name) {
   return typeof name === 'string' ? name : name[Object.keys(name)[0]]
 }
 async function setTexts(isChanged = false) {
-  let text: I18n | undefined
+  let text: LocaleStrings | undefined
 
   try {
     text = (await import(`#nuxtCookieControl/locale/${props.locale}.ts`)) // .then(r => r.default || r))
@@ -302,8 +301,8 @@ onBeforeMount(async () => {
 
   if (
     cookies.value.optional &&
-    (!cookies.value.methods.get('cookie_control_consent') ||
-      cookies.value.methods.get('cookie_control_consent').length === 0)
+    (!Cookies.get('cookie_control_consent') ||
+      Cookies.get('cookie_control_consent').length === 0)
   ) {
     cookies.value.optional.forEach((c) => {
       if (
@@ -312,8 +311,7 @@ onBeforeMount(async () => {
           : cookies.value.moduleOptions.blockIframe.initialState === true
       ) {
         cookies.value.enabledList.push(
-          c.identifier ||
-            cookies.value.methods.slugify(getCookieFirstName(c.name))
+          c.id || slugify(getCookieFirstName(c.name))
         )
       }
     })
@@ -321,6 +319,7 @@ onBeforeMount(async () => {
 
   colorsSet.value = true
 })
+
 watch(
   () => props.locale,
   (_currentValue, _oldValue) => {

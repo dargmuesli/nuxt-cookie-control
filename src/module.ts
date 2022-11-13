@@ -43,9 +43,9 @@ export default defineNuxtModule<ModuleOptions>({
       )
     }
 
-    if (nuxt.options.globalName) {
-      moduleOptions.globalName = nuxt.options.globalName
-    }
+    // if (nuxt.options.globalName) {
+    //   moduleOptions.globalName = nuxt.options.globalName
+    // }
 
     if (moduleOptions.blockIframe) {
       const blockIframe = {

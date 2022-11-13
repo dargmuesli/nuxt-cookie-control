@@ -1,3 +1,5 @@
+import { Ref } from 'vue'
+
 import en from './locale/en'
 
 export type Translatable = string | Record<string, string>
@@ -125,14 +127,14 @@ export const DEFAULTS: Required<ModuleOptions> = {
 }
 
 export interface State {
-  consent?: boolean
-  enabled?: Cookie[]
-  enabledList?: string[]
+  consent?: Ref<boolean>
+  enabled?: Ref<Cookie[]>
+  enabledList?: Ref<string[]>
   methods?: {
     setBlockedIframes: (cookies: State, content: any) => any
-    setConsent: ({ isInit = false }: { isInit?: boolean }) => void
+    setConsent: ({ isInit }?: { isInit?: boolean }) => void
   }
-  modal?: boolean
+  modal?: Ref<boolean>
   optional?: Cookie[]
   moduleOptions?: ModuleOptions
 }
