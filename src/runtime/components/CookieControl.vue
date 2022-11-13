@@ -18,7 +18,7 @@
             <div class="cookieControl__BarButtons">
               <button
                 v-if="cookies.moduleOptions.acceptNecessary"
-                @click="cookies.moduleOptions.acceptNecessary"
+                @click="acceptNecessary"
                 v-text="cookies.moduleOptions.text.acceptNecessary"
               />
               <button
@@ -156,6 +156,7 @@ import {
   LocaleStrings,
   Translatable,
 } from '../types'
+import { useAcceptNecessary, useSetConsent } from '../methods'
 
 export interface Props {
   locale?: Locale
@@ -165,6 +166,9 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { $cookies } = useNuxtApp()
+// const cookies = useNuxtCookieControl()
+const setConsentFun = useSetConsent()
+const acceptNecessary = useAcceptNecessary()
 
 // data
 const saved = ref(true)
@@ -221,10 +225,13 @@ function setConsent({
       expires: expirationDate.value,
     }
   )
-  if (!reload) {
-    cookies.value.methods.setConsent()
+
+  if (reload) {
+    window.location.reload()
+  } else {
+    setConsentFun()
     cookies.value.modal = false
-  } else window.location.reload()
+  }
 }
 function getDescription(description: Translatable) {
   if (typeof description === 'string')
@@ -274,7 +281,6 @@ async function setTexts(isChanged = false) {
   }
 
   $cookies.moduleOptions.text = text
-  // this.$set($cookies, 'text', text)
 }
 
 // lifecycle

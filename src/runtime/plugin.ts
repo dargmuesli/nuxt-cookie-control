@@ -1,14 +1,47 @@
 import { defineNuxtPlugin } from '#app'
 
-import { useNuxtCookieControl } from './composables'
+import { setConsent } from './methods'
+import { Cookie, State } from './types'
+
+import moduleOptions from '#build/nuxtCookieControl.options'
 
 export default defineNuxtPlugin((_nuxtApp) => {
-  const state = useNuxtCookieControl()
+  const nuxtApp = useNuxtApp()
+  const consent = ref<boolean>(false)
+  const enabled = ref<Cookie[]>([])
+  const enabledList = ref<string[]>([])
+  const modal = ref<boolean>()
+  const optional: Cookie[] = []
 
-  state.methods.setConsent({ isInit: true })
+  const state = {
+    consent,
+    enabled,
+    enabledList,
+    modal,
+    optional,
+    moduleOptions,
+  } as State
+
+  setConsent({
+    isInit: true,
+    nuxtApp,
+    consent,
+    moduleOptions,
+    enabled,
+    enabledList,
+    optional,
+  })
 
   if (process.client) {
-    state.methods.setConsent()
+    setConsent({
+      isInit: false,
+      nuxtApp,
+      consent,
+      moduleOptions,
+      enabled,
+      enabledList,
+      optional,
+    })
   }
 
   return {
