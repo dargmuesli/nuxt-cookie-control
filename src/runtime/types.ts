@@ -76,7 +76,6 @@ export interface ModuleOptions {
   cssPolyfill?: boolean
   dashInDescription?: boolean
   domain?: string
-  globalName?: string
   locales?: string[]
   text?: LocaleStrings & { locale?: PartialRecord<Locale, LocaleStrings> }
 }
@@ -121,7 +120,6 @@ export const DEFAULTS: Required<ModuleOptions> = {
   cssPolyfill: true, //
   dashInDescription: true,
   domain: '',
-  globalName: undefined,
   locales: ['en', 'de'],
   text: en,
 }

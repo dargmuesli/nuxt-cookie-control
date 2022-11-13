@@ -1,28 +1,15 @@
 import { defineNuxtPlugin } from '#app'
 
-import { setBlockedIframes, setConsent } from './methods'
-import { State } from './types'
-
-import moduleOptions from '#build/nuxtCookieControl.options'
+import { useNuxtCookieControl } from './composables'
 
 export default defineNuxtPlugin((_nuxtApp) => {
-  const state: State = {
-    moduleOptions,
-    methods: {
-      setBlockedIframes,
-      setConsent,
-    },
-  }
+  const state = useNuxtCookieControl()
 
   state.methods.setConsent({ isInit: true })
 
-  // TODO: globalName
-  // if (process.client) {
-  //   const globalName = capitalize(moduleOptions.globalName) || 'Nuxt'
-  //   window[`on${globalName}Ready`](() => {
-  //     methods.setConsent()
-  //   })
-  // }
+  if (process.client) {
+    state.methods.setConsent()
+  }
 
   return {
     provide: {

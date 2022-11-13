@@ -159,9 +159,7 @@ export function setBlockedIframes(cookies: State, content: any) {
         cookies.moduleOptions.text.blockedIframe !== undefined
           ? cookies.moduleOptions.text.blockedIframe
           : ''
-      } <a href='#' onclick='event.preventDefault(); $${
-        cookies.moduleOptions.globalName
-      }.$cookies.modal = true'>${
+      } <a href='#' onclick='event.preventDefault(); $Nuxt.$cookies.modal = true'>${
         cookies.moduleOptions.text.here !== undefined
           ? cookies.moduleOptions.text.here
           : ''

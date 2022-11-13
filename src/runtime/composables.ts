@@ -1,15 +1,20 @@
+import { setBlockedIframes, setConsent } from './methods'
 import { State } from './types'
 
-export function useNuxtCookieControl() {
-  const { $cookies } = useNuxtApp()
+import moduleOptions from '#build/nuxtCookieControl.options'
 
+export function useNuxtCookieControl() {
   const consent = ref()
   const enabled = ref()
 
   return {
     consent,
     enabled,
-    moduleOptions: $cookies.moduleOptions,
+    methods: {
+      setBlockedIframes,
+      setConsent,
+    },
+    moduleOptions,
   } as State
 }
 
