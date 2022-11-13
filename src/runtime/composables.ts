@@ -1,15 +1,21 @@
 import { setBlockedIframes, setConsent } from './methods'
-import { State } from './types'
+import { Cookie, State } from './types'
 
 import moduleOptions from '#build/nuxtCookieControl.options'
 
 export function useNuxtCookieControl() {
-  const consent = ref()
-  const enabled = ref()
+  const consent = ref<boolean>()
+  const enabled = ref<Cookie[]>([])
+  const enabledList = ref<string[]>([])
+  const modal = ref<boolean>()
+  const optional: Cookie[] = []
 
   return {
     consent,
     enabled,
+    enabledList,
+    modal,
+    optional,
     methods: {
       setBlockedIframes,
       setConsent,
@@ -17,14 +23,3 @@ export function useNuxtCookieControl() {
     moduleOptions,
   } as State
 }
-
-// consent?: Ref<boolean>
-// enabled?: Cookie[]
-// enabledList?: string[]
-// methods?: {
-//   setBlockedIframes: (cookies: State, content: any) => any
-//   setConsent: ({ isInit = false }?: { isInit?: boolean }) => void
-// }
-// modal?: boolean
-// optional?: Cookie[]
-// moduleOptions?: ModuleOptions

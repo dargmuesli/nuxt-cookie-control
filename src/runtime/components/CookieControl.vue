@@ -65,7 +65,7 @@
               />
               <div v-for="cookieType in CookieType" :key="cookieType">
                 <h3 v-text="cookies.moduleOptions.text[cookieType]" />
-                <ul>
+                <ul v-if="cookies.moduleOptions.cookies">
                   <li
                     v-for="cookie in cookies.moduleOptions.cookies[cookieType]"
                     :key="cookie.id"
@@ -90,7 +90,8 @@
                             cookie.id ||
                               slugify(getCookieFirstName(cookie.name))
                           ) ||
-                          (Cookies.get('cookie_control_consent').length === 0 &&
+                          (Cookies.get('cookie_control_consent')?.length ===
+                            0 &&
                             typeof cookies.moduleOptions.blockIframe ===
                               'object' &&
                             cookies.moduleOptions.blockIframe.initialState)
@@ -148,13 +149,19 @@ import { computed, onBeforeMount, ref, watch } from 'vue'
 
 import { useNuxtApp } from '#app'
 
-import { CookieType, LocaleStrings } from '../types'
+import {
+  Cookie,
+  CookieType,
+  Locale,
+  LocaleStrings,
+  Translatable,
+} from '../types'
 
 export interface Props {
-  locale?: string
+  locale?: Locale
 }
 const props = withDefaults(defineProps<Props>(), {
-  locale: 'en',
+  locale: Locale.EN,
 })
 
 const { $cookies } = useNuxtApp()
@@ -172,9 +179,8 @@ const expirationDate = computed(() => {
 })
 
 // methods
-function toogleCookie(cookie) {
-  const cookieName =
-    cookie.identifier || slugify(getCookieFirstName(cookie.name))
+function toogleCookie(cookie: Cookie) {
+  const cookieName = cookie.id || slugify(getCookieFirstName(cookie.name))
   if (saved.value) saved.value = false
   if (!cookies.value.enabledList.includes(cookieName))
     cookies.value.enabledList.push(cookieName)
@@ -217,10 +223,10 @@ function setConsent({
   )
   if (!reload) {
     cookies.value.methods.setConsent()
-    this.$cookies.modal = false
+    cookies.value.modal = false
   } else window.location.reload()
 }
-function getDescription(description) {
+function getDescription(description: Translatable) {
   if (typeof description === 'string')
     return ` ${
       cookies.value.moduleOptions.dashInDescription !== false ? '-' : ''
@@ -231,16 +237,16 @@ function getDescription(description) {
     } ${description[props.locale]}`
   return ''
 }
-function getName(name) {
+function getName(name: Translatable) {
   return name === 'functional'
-    ? cookies.value.moduleOptions.text.functional
+    ? cookies.value.moduleOptions.text?.functional
     : typeof name === 'string'
     ? name
     : name[props.locale]
     ? name[props.locale]
     : name[Object.keys(name)[0]]
 }
-function getCookieFirstName(name) {
+function getCookieFirstName(name: Translatable) {
   return typeof name === 'string' ? name : name[Object.keys(name)[0]]
 }
 async function setTexts(isChanged = false) {
@@ -275,7 +281,7 @@ async function setTexts(isChanged = false) {
 onBeforeMount(async () => {
   setTexts()
   if (cookies.value.moduleOptions.colors) {
-    const variables = {}
+    const variables: Record<string, any> = {}
     for (const key in cookies.value.moduleOptions.colors) {
       const k = key.toLowerCase().includes('unactive')
         ? key.replace(/Unactive/g, 'Inactive')
@@ -302,13 +308,13 @@ onBeforeMount(async () => {
   if (
     cookies.value.optional &&
     (!Cookies.get('cookie_control_consent') ||
-      Cookies.get('cookie_control_consent').length === 0)
+      Cookies.get('cookie_control_consent')?.length === 0)
   ) {
     cookies.value.optional.forEach((c) => {
       if (
         typeof cookies.value.moduleOptions.blockIframe === 'boolean'
           ? cookies.value.moduleOptions.blockIframe === true
-          : cookies.value.moduleOptions.blockIframe.initialState === true
+          : cookies.value.moduleOptions.blockIframe?.initialState === true
       ) {
         cookies.value.enabledList.push(
           c.id || slugify(getCookieFirstName(c.name))

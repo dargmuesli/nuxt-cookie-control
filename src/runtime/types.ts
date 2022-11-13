@@ -125,14 +125,14 @@ export const DEFAULTS: Required<ModuleOptions> = {
 }
 
 export interface State {
-  consent?: Ref<boolean>
-  enabled?: Ref<Cookie[]>
-  enabledList?: Ref<string[]>
-  methods?: {
+  consent: Ref<boolean>
+  enabled: Ref<Cookie[]>
+  enabledList: Ref<string[]>
+  methods: {
     setBlockedIframes: (cookies: State, content: any) => any
-    setConsent: ({ isInit }?: { isInit?: boolean }) => void
+    setConsent: (options?: { isInit?: boolean }) => void
   }
-  modal?: Ref<boolean>
-  optional?: Cookie[]
-  moduleOptions?: ModuleOptions
+  modal: Ref<boolean>
+  optional: Cookie[]
+  moduleOptions: ModuleOptions
 }

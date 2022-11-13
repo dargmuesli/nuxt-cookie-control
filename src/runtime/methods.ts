@@ -2,10 +2,12 @@ import Cookies from 'js-cookie'
 import slugify from 'slugify'
 
 import { useNuxtCookieControl } from './composables'
-import { State, Translatable } from './types'
+import { Translatable } from './types'
 
 export function acceptNecessary() {
   const { consent, moduleOptions } = useNuxtCookieControl()
+
+  if (!moduleOptions.cookies) return
 
   const expires = new Date()
   expires.setFullYear(expires.getFullYear() + 1)
@@ -51,7 +53,10 @@ export function setConsent({ isInit = false }: { isInit: boolean }) {
       ...optional.filter((c) => {
         const cookieName =
           typeof c.name === 'string' ? c.name : c.name[Object.keys(c.name)[0]]
-        return enabledFromCookie.includes(c.id || slugify(cookieName))
+        return (
+          enabledFromCookie &&
+          enabledFromCookie.includes(c.id || slugify(cookieName))
+        )
       })
     )
     enabledList.value =
@@ -66,7 +71,7 @@ export function setConsent({ isInit = false }: { isInit: boolean }) {
         : []
   }
 
-  if (moduleOptions.cookies.necessary)
+  if (moduleOptions.cookies?.necessary)
     enabled.value.push(
       ...moduleOptions.cookies.necessary.filter((c) => {
         return c.src || c.accepted
@@ -139,7 +144,9 @@ export function callAcceptedFunctions() {
   }
 }
 
-export function setBlockedIframes(cookies: State, content: any) {
+export function setBlockedIframes(content: any) {
+  const { enabled, moduleOptions } = useNuxtCookieControl()
+
   const contentType = typeof content
   content = contentType === 'string' ? content : JSON.stringify(content)
 
@@ -147,7 +154,8 @@ export function setBlockedIframes(cookies: State, content: any) {
   content = content.replace(/&gt;/g, '>')
 
   if (
-    cookies.enabled.value.filter((c) => c.name === 'functional').length === 0
+    moduleOptions.text &&
+    enabled.value.filter((c) => c.name === 'functional').length === 0
   ) {
     content = content.replace(
       /<iframe/g,
@@ -156,13 +164,11 @@ export function setBlockedIframes(cookies: State, content: any) {
     content = content.replace(
       /<\/iframe/g,
       `<p>${
-        cookies.moduleOptions.text.blockedIframe !== undefined
-          ? cookies.moduleOptions.text.blockedIframe
+        moduleOptions.text.blockedIframe !== undefined
+          ? moduleOptions.text.blockedIframe
           : ''
       } <a href='#' onclick='event.preventDefault(); $Nuxt.$cookies.modal = true'>${
-        cookies.moduleOptions.text.here !== undefined
-          ? cookies.moduleOptions.text.here
-          : ''
+        moduleOptions.text.here !== undefined ? moduleOptions.text.here : ''
       }</a></p></div`
     )
   }
