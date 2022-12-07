@@ -5,10 +5,10 @@
       <p>
         {{ iframeText }}
         <a
-          v-if="cookies && cookies.moduleOptions.text"
+          v-if="$cookies.moduleOptions.text"
           href="#"
-          @click.prevent="cookies.modal = true"
-          v-text="cookies.moduleOptions.text.here"
+          @click.prevent="$cookies.isModalActive.value = true"
+          v-text="$cookies.moduleOptions.text.here"
         />
       </p>
     </div>
@@ -16,26 +16,23 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
 import { useNuxtApp } from '#app'
 
 const { $cookies } = useNuxtApp()
 
-// data
-const cookies = ref($cookies)
-
 // computations
 const iframeEnabled = computed(() => {
   return (
-    cookies.value.enabled.filter((c) => {
+    $cookies.cookiesEnabled.value.filter((c) => {
       return c.name === 'functional'
     }).length > 0
   )
 })
 const iframeText = computed(() => {
-  return cookies.value && cookies.value.moduleOptions.text
-    ? cookies.value.moduleOptions.text.blockedIframe
+  return $cookies && $cookies.moduleOptions.text
+    ? $cookies.moduleOptions.text.blockedIframe
     : ''
 })
 </script>

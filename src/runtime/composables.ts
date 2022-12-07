@@ -1,4 +1,4 @@
-export function useNuxtCookieControl() {
+export function useCookieControl() {
   const { $cookies } = useNuxtApp()
 
   return $cookies

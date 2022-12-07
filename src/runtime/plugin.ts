@@ -7,40 +7,40 @@ import moduleOptions from '#build/nuxtCookieControl.options'
 
 export default defineNuxtPlugin((_nuxtApp) => {
   const nuxtApp = useNuxtApp()
-  const consent = ref<boolean>(false)
-  const enabled = ref<Cookie[]>([])
-  const enabledList = ref<string[]>([])
-  const modal = ref<boolean>()
-  const optional: Cookie[] = []
+  const isConsentGiven = ref<boolean>()
+  const cookiesEnabled = ref<Cookie[]>([])
+  const cookiesEnabledIds = ref<string[]>([])
+  const isModalActive = ref<boolean>()
+  const cookiesOptional: Cookie[] = []
 
   const state = {
-    consent,
-    enabled,
-    enabledList,
-    modal,
-    optional,
+    isConsentGiven,
+    cookiesEnabled,
+    cookiesEnabledIds,
+    isModalActive,
+    cookiesOptional,
     moduleOptions,
   } as State
 
   setConsent({
     isInit: true,
     nuxtApp,
-    consent,
+    isConsentGiven,
     moduleOptions,
-    enabled,
-    enabledList,
-    optional,
+    cookiesEnabled,
+    cookiesEnabledIds,
+    cookiesOptional,
   })
 
   if (process.client) {
     setConsent({
       isInit: false,
       nuxtApp,
-      consent,
+      isConsentGiven,
       moduleOptions,
-      enabled,
-      enabledList,
-      optional,
+      cookiesEnabled,
+      cookiesEnabledIds,
+      cookiesOptional,
     })
   }
 

@@ -1,5 +1,4 @@
 import { resolve } from 'path'
-import { fileURLToPath } from 'url'
 
 import {
   defineNuxtModule,
@@ -8,23 +7,28 @@ import {
   extendWebpackConfig,
   addWebpackPlugin,
   addTemplate,
+  addImports,
+  createResolver,
 } from '@nuxt/kit'
 import webpack from 'webpack' // eslint-disable-line import/no-named-as-default
 
 import { name, version } from '../package.json'
 import { DEFAULTS, ModuleOptions } from './runtime/types'
 
+const resolver = createResolver(import.meta.url)
+
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name,
     version,
     configKey: 'cookieControl',
+    compatibility: { nuxt: '^3.0.0' },
   },
   defaults: DEFAULTS,
   hooks: {
     'components:dirs'(dirs) {
       dirs.push({
-        path: fileURLToPath(new URL('./runtime/components', import.meta.url)),
+        path: resolver.resolve('./runtime/components'),
         prefix: 'cookie',
       })
     },
@@ -38,9 +42,7 @@ export default defineNuxtModule<ModuleOptions>({
     // const options = Object.assign(defaultOptions, _options)
 
     if (moduleOptions.css) {
-      nuxt.options.css.push(
-        fileURLToPath(new URL('./runtime/styles.css', import.meta.url))
-      )
+      nuxt.options.css.push(resolver.resolve('./runtime/styles.css'))
     }
 
     if (moduleOptions.blockIframe) {
@@ -88,15 +90,17 @@ export default defineNuxtModule<ModuleOptions>({
       // addVitePlugin(vitePlugin, options?)
     }
 
-    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+    const runtimeDir = resolver.resolve('./runtime')
+
     nuxt.options.build.transpile.push(runtimeDir)
     addPlugin(resolve(runtimeDir, 'plugin'))
     nuxt.options.alias['#nuxtCookieControl'] = runtimeDir
-    // nuxt.addPlugin({
-    //   src: path.resolve(__dirname, 'plugin.js'),
-    //   fileName: 'nuxt-cookie-control.js',
-    //   options
-    // })
+
+    addImports({
+      name: 'useCookieControl',
+      as: 'useCookieControl',
+      from: resolve(runtimeDir, 'composables'),
+    })
 
     addTemplate({
       filename: 'nuxtCookieControl.options.ts',

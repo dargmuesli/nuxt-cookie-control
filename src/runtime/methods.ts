@@ -3,11 +3,15 @@ import { NuxtApp } from 'nuxt/dist/app/nuxt'
 import slugify from 'slugify'
 import { Ref } from 'vue'
 
-import { useNuxtCookieControl } from './composables'
+import { useCookieControl } from './composables'
 import { Cookie, ModuleOptions, Translatable } from './types'
 
 export function useAcceptNecessary() {
-  const { enabled, consent, moduleOptions } = useNuxtCookieControl()
+  const {
+    cookiesEnabled: enabled,
+    isConsentGiven: consent,
+    moduleOptions,
+  } = useCookieControl()
   const nuxtApp = useNuxtApp()
 
   return () =>
@@ -52,76 +56,80 @@ export function capitalize(string: string) {
 }
 
 export function useSetConsent() {
-  const { consent, moduleOptions, enabled, enabledList, optional } =
-    useNuxtCookieControl()
+  const {
+    isConsentGiven: consent,
+    moduleOptions,
+    cookiesEnabled,
+    cookiesEnabledIds,
+    cookiesOptional,
+  } = useCookieControl()
   const nuxtApp = useNuxtApp()
   return () =>
     setConsent({
       isInit: false,
       nuxtApp,
-      consent,
+      isConsentGiven: consent,
       moduleOptions,
-      enabled,
-      enabledList,
-      optional,
+      cookiesEnabled,
+      cookiesEnabledIds,
+      cookiesOptional,
     })
 }
 
 export function setConsent({
   isInit = false,
   nuxtApp,
-  consent,
+  isConsentGiven,
   moduleOptions,
-  enabled,
-  enabledList,
-  optional,
+  cookiesEnabled,
+  cookiesEnabledIds,
+  cookiesOptional,
 }: {
   isInit: boolean
   nuxtApp: NuxtApp
-  consent: Ref<boolean>
+  isConsentGiven: Ref<boolean | undefined>
   moduleOptions: ModuleOptions
-  enabled: Ref<Cookie[]>
-  enabledList: Ref<string[]>
-  optional: Cookie[]
+  cookiesEnabled: Ref<Cookie[]>
+  cookiesEnabledIds: Ref<string[]>
+  cookiesOptional: Cookie[]
 }) {
-  consent.value = Cookies.get('cookie_control_consent') === 'true'
-  enabled.value = []
-  enabledList.value = []
-  if (consent.value === true) {
+  isConsentGiven.value = Cookies.get('cookie_control_consent') === 'true'
+  cookiesEnabled.value = []
+  cookiesEnabledIds.value = []
+
+  if (isConsentGiven.value) {
     const enabledFromCookie = Cookies.get('cookie_control_enabled_cookies')
-    enabled.value.push(
-      ...optional.filter((c) => {
-        const cookieName =
-          typeof c.name === 'string' ? c.name : c.name[Object.keys(c.name)[0]]
+
+    cookiesEnabled.value.push(
+      ...cookiesOptional.filter((c) => {
+        const cookieName = resolveTranslatable(c.name)
         return (
           enabledFromCookie &&
           enabledFromCookie.includes(c.id || slugify(cookieName))
         )
       })
     )
-    enabledList.value =
-      enabled.value.length > 0
-        ? enabled.value.map((c) => {
-            const cookieName =
-              typeof c.name === 'string'
-                ? c.name
-                : c.name[Object.keys(c.name)[0]]
+
+    cookiesEnabledIds.value =
+      cookiesEnabled.value.length > 0
+        ? cookiesEnabled.value.map((c) => {
+            const cookieName = resolveTranslatable(c.name)
             return c.id || slugify(cookieName)
           })
         : []
   }
 
   if (moduleOptions.cookies?.necessary)
-    enabled.value.push(
+    cookiesEnabled.value.push(
       ...moduleOptions.cookies.necessary.filter((c) => {
         return c.src || c.accepted
       })
     )
 
   if (process.client && !isInit) {
-    setHead(nuxtApp, enabled.value)
-    clearCookies(nuxtApp, enabledList.value, optional)
-    callAcceptedFunctions(nuxtApp, enabled.value)
+    setHead(nuxtApp, cookiesEnabled.value)
+    clearCookies(nuxtApp, cookiesEnabledIds.value, cookiesOptional)
+    callAcceptedFunctions(nuxtApp, cookiesEnabled.value)
   }
 }
 
@@ -131,10 +139,7 @@ export function clearCookies(
   optional: Cookie[]
 ) {
   const disabled = optional.filter((optionalCookie) => {
-    const cookieName =
-      typeof optionalCookie.name === 'string'
-        ? optionalCookie.name
-        : optionalCookie.name[Object.keys(optionalCookie.name)[0]]
+    const cookieName = resolveTranslatable(optionalCookie.name)
     return !enabledList.includes(optionalCookie.id || slugify(cookieName))
   })
 
@@ -180,7 +185,7 @@ export function callAcceptedFunctions(nuxtApp: NuxtApp, enabled: Cookie[]) {
 }
 
 // export function setBlockedIframes(content: any) {
-//   const { enabled, moduleOptions } = useNuxtCookieControl()
+//   const { enabled, moduleOptions } = useCookieControl()
 
 //   const contentType = typeof content
 //   content = contentType === 'string' ? content : JSON.stringify(content)

@@ -120,15 +120,15 @@ export const DEFAULTS: Required<ModuleOptions> = {
   cssPolyfill: true, //
   dashInDescription: true,
   domain: '',
-  locales: ['en', 'de'],
+  locales: ['en'],
   text: en,
 }
 
 export interface State {
-  consent: Ref<boolean>
-  enabled: Ref<Cookie[]>
-  enabledList: Ref<string[]>
-  modal: Ref<boolean>
-  optional: Cookie[]
+  cookiesEnabled: Ref<Cookie[]>
+  cookiesEnabledIds: Ref<string[]>
+  cookiesOptional: Cookie[]
+  isConsentGiven: Ref<boolean>
+  isModalActive: Ref<boolean>
   moduleOptions: ModuleOptions
 }
