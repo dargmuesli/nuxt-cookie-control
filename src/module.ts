@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 
 import {
   defineNuxtModule,
@@ -8,6 +8,7 @@ import {
   addTemplate,
   addImports,
   createResolver,
+  resolvePath,
 } from '@nuxt/kit'
 import { Nuxt } from '@nuxt/schema'
 // import webpack from 'webpack' // eslint-disable-line import/no-named-as-default
@@ -131,7 +132,9 @@ const loadLocales = async (moduleOptions: ModuleOptions) => {
   moduleOptions.locales = []
 
   for (const locale of locales) {
-    const text = await import(resolve(runtimeDir, 'locale', `${locale}.ts`)) // .then((r: any) => r.default || r)
+    const text = await import(
+      await resolvePath(resolve(runtimeDir, 'locale', locale))
+    ).then((r: any) => r.default || r)
 
     if (!text) throw new Error(`Could not import text for locale ${locale}`)
 
