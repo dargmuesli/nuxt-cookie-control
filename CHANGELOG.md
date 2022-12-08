@@ -1,3 +1,10 @@
+# [2.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.2...2.0.0-beta.3) (2022-12-08)
+
+
+### Bug Fixes
+
+* **package:** correct postinstall hook ([17038d7](https://github.com/dargmuesli/nuxt-cookie-control/commit/17038d7ce6dfff65941fe6bdbffe35317de2bc45))
+
 # [2.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.1...2.0.0-beta.2) (2022-12-08)
 
 
