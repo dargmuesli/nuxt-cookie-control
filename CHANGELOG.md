@@ -1,3 +1,12 @@
+# [2.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.3...2.0.0-beta.4) (2022-12-08)
+
+
+### Bug Fixes
+
+* **module:** resolve paths correctly ([b25832c](https://github.com/dargmuesli/nuxt-cookie-control/commit/b25832c53ead00059aedf88fa3b7c0de48f9ec73))
+* **package:** correct scripts ([43d2679](https://github.com/dargmuesli/nuxt-cookie-control/commit/43d2679fbcf128bb644684937882a1d9f1a2a215))
+* **playground:** readd lost nuxt config ([a9dddf8](https://github.com/dargmuesli/nuxt-cookie-control/commit/a9dddf8353c42914680fac2b4e61005fa4482656))
+
 # [2.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.2...2.0.0-beta.3) (2022-12-08)
 
 
