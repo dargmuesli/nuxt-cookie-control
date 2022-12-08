@@ -31,10 +31,10 @@
   "scripts": {
     "build": "nuxt-module-build",
     "dev": "nuxi dev playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "dev:build": "nuxi build playground",
     "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck playground",
-    "prepack": "npm run build",
-    "postinstall": "nuxt-module-build --stub && nuxi prepare playground"
+    "prepack": "npm run build"
   },
   "dependencies": {
     "@nuxt/kit": "3.0.0",
