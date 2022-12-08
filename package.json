@@ -34,8 +34,7 @@
     "dev:build": "nuxi build playground",
     "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck playground",
     "prepack": "npm run build",
-    "postinstall": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "release-it"
+    "postinstall": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
     "@nuxt/kit": "3.0.0",
@@ -47,7 +46,6 @@
   "devDependencies": {
     "@nuxt/module-builder": "0.2.1",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
-    "@release-it/conventional-changelog": "5.1.1",
     "@types/js-cookie": "3.0.2",
     "eslint": "8.29.0",
     "eslint-config-prettier": "8.5.0",
@@ -56,7 +54,6 @@
     "lint-staged": "13.1.0",
     "nuxt": "3.0.0",
     "prettier": "2.8.0",
-    "release-it": "15.5.1",
     "typescript": "4.9.3",
     "vite": "3.2.5",
     "vue": "3.2.45",
