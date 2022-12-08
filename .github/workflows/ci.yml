@@ -1,15 +1,13 @@
 name: ci
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
-    branches:
-      - master
+  push:
+  release:
+    types: [published]
 
 jobs:
-  ci:
+  build:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -43,3 +41,10 @@ jobs:
 
       - name: Coverage
         uses: codecov/codecov-action@v3
+  release-semantic:
+    needs: build
+    name: Release (semantic)
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.19.12
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
