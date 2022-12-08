@@ -5,7 +5,7 @@ import { Ref } from 'vue'
 
 import { useCookieControl } from './composables'
 import { LOCALE_DEFAULT } from './constants'
-import { Cookie, Locale, ModuleOptions, Translatable } from './types'
+import { Cookie, ModuleOptions, Translatable } from './types'
 
 export const useAcceptNecessary = () => {
   const { cookiesEnabled, isConsentGiven, moduleOptions } = useCookieControl()
@@ -51,7 +51,10 @@ export const useResolveTranslatable = (locale = LOCALE_DEFAULT) => {
     resolveTranslatable(translatable, locale)
 }
 
-const resolveTranslatable = (translatable: Translatable, locale?: Locale) => {
+const resolveTranslatable = (
+  translatable: Translatable,
+  locale = LOCALE_DEFAULT
+) => {
   if (typeof translatable === 'string') return translatable
 
   if (!locale)
