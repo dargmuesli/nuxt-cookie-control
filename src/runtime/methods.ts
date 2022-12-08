@@ -114,8 +114,8 @@ export const setConsent = ({
 
   if (moduleOptions.cookies?.necessary)
     cookiesEnabled.value.push(
-      ...moduleOptions.cookies.necessary.filter((c) => {
-        return c.src // || c.onAccept
+      ...moduleOptions.cookies.necessary.filter((cookieNecessary) => {
+        return cookieNecessary.src // || c.onAccept
       })
     )
 

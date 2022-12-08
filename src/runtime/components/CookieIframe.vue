@@ -6,7 +6,7 @@
         {{ localeStrings?.blockedIframe }}
         <a
           href="#"
-          @click.prevent="cookieControl.isModalActive.value = true"
+          @click.prevent="isModalActive = true"
           v-text="localeStrings?.here"
         />
       </p>
@@ -29,15 +29,14 @@ const props = withDefaults(defineProps<Props>(), {
   locale: LOCALE_DEFAULT,
 })
 
-const cookieControl = useCookieControl()
+const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()
 
 // computations
 const isCookieFunctionalEnabled = computed(
   () =>
-    cookieControl.cookiesEnabled.value.filter((c) => c.name === 'functional')
-      .length > 0
+    cookiesEnabled.value.filter(
+      (cookieEnabled) => cookieEnabled.name === 'functional'
+    ).length > 0
 )
-const localeStrings = computed(
-  () => cookieControl.moduleOptions.localeTexts[props.locale]
-)
+const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 </script>
