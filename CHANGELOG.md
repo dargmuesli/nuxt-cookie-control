@@ -1,3 +1,10 @@
+# [2.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.1...2.0.0-beta.2) (2022-12-08)
+
+
+### Bug Fixes
+
+* **package:** remove release-it ([204394f](https://github.com/dargmuesli/nuxt-cookie-control/commit/204394f92b489c6e3e30b1eef10c34da21bae787))
+
 # [2.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/1.9.9...2.0.0-beta.1) (2022-12-08)
 
 
