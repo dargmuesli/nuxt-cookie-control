@@ -141,6 +141,7 @@
 
 <script setup lang="ts">
 import Cookies from 'js-cookie'
+import { ref, computed, onBeforeMount } from 'vue'
 
 import { Cookie, CookieType, Locale, Translatable } from '../types'
 import {
@@ -149,6 +150,8 @@ import {
   useSetConsent,
   useResolveTranslatable,
 } from '../methods'
+
+import { useCookieControl } from '#imports'
 
 export interface Props {
   locale?: Locale

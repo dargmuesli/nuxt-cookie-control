@@ -1,6 +1,8 @@
+import { ref } from 'vue'
 import { setConsent } from './methods'
 import { Cookie, State } from './types'
 
+import { defineNuxtPlugin } from '#imports'
 import moduleOptions from '#build/cookie-control-options'
 
 export default defineNuxtPlugin((_nuxtApp) => {

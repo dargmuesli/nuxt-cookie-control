@@ -15,8 +15,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 import { LOCALE_DEFAULT } from '../constants'
 import { Locale } from '../types'
+
+import { useCookieControl } from '#imports'
 
 export interface Props {
   locale?: Locale
