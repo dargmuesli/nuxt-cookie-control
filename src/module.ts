@@ -5,17 +5,18 @@ import {
   isNuxt2,
   addPlugin,
   extendWebpackConfig,
-  addWebpackPlugin,
   addTemplate,
   addImports,
   createResolver,
 } from '@nuxt/kit'
-import webpack from 'webpack' // eslint-disable-line import/no-named-as-default
+import { Nuxt } from '@nuxt/schema'
+// import webpack from 'webpack' // eslint-disable-line import/no-named-as-default
 
 import { name, version } from '../package.json'
 import { DEFAULTS, ModuleOptions } from './runtime/types'
 
 const resolver = createResolver(import.meta.url)
+const runtimeDir = resolver.resolve('./runtime')
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -28,87 +29,32 @@ export default defineNuxtModule<ModuleOptions>({
   hooks: {
     'components:dirs'(dirs) {
       dirs.push({
-        path: resolver.resolve('./runtime/components'),
+        path: resolve(runtimeDir, 'components'),
         prefix: 'cookie',
       })
     },
   },
-  setup(moduleOptions, nuxt) {
-    // const defaultOptions = {
-    //   ...nuxt.options.cookies,
-    //   iframe: path.resolve(__dirname, '../components/CookieIframe.vue'),
-    //   component: path.resolve(__dirname, '../components/CookieControl.vue')
-    // }
-    // const options = Object.assign(defaultOptions, _options)
-
-    if (moduleOptions.css) {
-      nuxt.options.css.push(resolver.resolve('./runtime/styles.css'))
-    }
-
-    if (moduleOptions.blockIframe) {
-      const blockIframe = {
-        name: 'functional',
-        initialState:
-          typeof moduleOptions.blockIframe !== 'boolean' &&
-          moduleOptions.blockIframe.initialState !== undefined
-            ? moduleOptions.blockIframe.initialState
-            : true,
-      }
-
-      if (moduleOptions.cookies) {
-        if (moduleOptions.cookies.optional) {
-          moduleOptions.cookies.optional.push(blockIframe)
-        } else {
-          moduleOptions.cookies.optional = [blockIframe]
-        }
-      }
-
-      extendWebpackConfig((config) => {
-        config.module?.rules?.push({
-          test: /\.vue$/,
-          loader: 'string-replace-loader',
-          exclude: /node_modules/,
-          options: {
-            multiple: [
-              { search: '<iframe', replace: '<CookieIframe', flags: 'g' },
-              { search: '</iframe>', replace: '</CookieIframe>', flags: 'g' },
-            ],
-          },
-        })
-      })
-      // extendViteConfig(callback, options?)
-    }
-
-    if (moduleOptions.locales) {
-      const regex = new RegExp(moduleOptions.locales.join('|'))
-      addWebpackPlugin(
-        new webpack.ContextReplacementPlugin(
-          /nuxt-cookie-control[/\\]dist[/\\]runtime[/\\]locale$/,
-          regex
-        )
-      )
-      // addVitePlugin(vitePlugin, options?)
-    }
-
-    const runtimeDir = resolver.resolve('./runtime')
-
+  async setup(moduleOptions, nuxt) {
+    nuxt.options.alias['#cookie-control'] = runtimeDir
     nuxt.options.build.transpile.push(runtimeDir)
-    addPlugin(resolve(runtimeDir, 'plugin'))
-    nuxt.options.alias['#nuxtCookieControl'] = runtimeDir
 
+    pushCss(moduleOptions, nuxt)
+    blockIframes(moduleOptions)
+    await loadLocales(moduleOptions)
+
+    addPlugin(resolve(runtimeDir, 'plugin'))
     addImports({
       name: 'useCookieControl',
       as: 'useCookieControl',
       from: resolve(runtimeDir, 'composables'),
     })
-
     addTemplate({
-      filename: 'nuxtCookieControl.options.ts',
+      filename: 'cookie-control-options.ts',
       write: true,
       getContents: () =>
         `import { ModuleOptions } from '../../src/runtime/types'\n\nexport default ${JSON.stringify(
           moduleOptions,
-          null,
+          undefined,
           2
         )} as ModuleOptions`,
     })
@@ -142,3 +88,68 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
 })
+
+const blockIframes = (moduleOptions: ModuleOptions) => {
+  if (moduleOptions.isIframeBlocked) {
+    const isIframeBlocked = {
+      name: 'functional',
+      initialState:
+        typeof moduleOptions.isIframeBlocked !== 'boolean' &&
+        moduleOptions.isIframeBlocked.initialState !== undefined
+          ? moduleOptions.isIframeBlocked.initialState
+          : true,
+    }
+
+    if (moduleOptions.cookies) {
+      if (moduleOptions.cookies.optional) {
+        moduleOptions.cookies.optional.push(isIframeBlocked)
+      } else {
+        moduleOptions.cookies.optional = [isIframeBlocked]
+      }
+    }
+
+    extendWebpackConfig((config) => {
+      config.module?.rules?.push({
+        test: /\.vue$/,
+        loader: 'string-replace-loader',
+        exclude: /node_modules/,
+        options: {
+          multiple: [
+            { search: '<iframe', replace: '<CookieIframe', flags: 'g' },
+            { search: '</iframe>', replace: '</CookieIframe>', flags: 'g' },
+          ],
+        },
+      })
+    })
+    // extendViteConfig(callback, options?)
+  }
+}
+
+const loadLocales = async (moduleOptions: ModuleOptions) => {
+  const locales = moduleOptions.locales
+
+  moduleOptions.locales = []
+
+  for (const locale of locales) {
+    const text = await import(resolve(runtimeDir, 'locale', `${locale}.ts`)) // .then((r: any) => r.default || r)
+
+    if (!text) throw new Error(`Could not import text for locale ${locale}`)
+
+    moduleOptions.locales.push(locale)
+    moduleOptions.localeTexts[locale] = text
+  }
+
+  // const regex = new RegExp(moduleOptions.locales.join('|'))
+  // addWebpackPlugin(
+  //   new webpack.ContextReplacementPlugin(
+  //     /nuxt-cookie-control[/\\]dist[/\\]runtime[/\\]locale$/,
+  //     regex
+  //   )
+  // )
+  // addVitePlugin(vitePlugin, options?)
+}
+
+const pushCss = (moduleOptions: ModuleOptions, nuxt: Nuxt) => {
+  if (moduleOptions.isCssEnabled)
+    nuxt.options.css.push(resolve(runtimeDir, 'styles.css'))
+}

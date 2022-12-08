@@ -3,8 +3,7 @@
   "version": "2.0.0",
   "description": "Nuxt Cookies Control Module",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
-  "contributors": [
-    "Davor Teskera",
+  "maintainers": [
     "Jonas Thelemann"
   ],
   "keywords": [

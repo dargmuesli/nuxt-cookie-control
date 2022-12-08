@@ -1,5 +1,1 @@
-export function useCookieControl() {
-  const { $cookies } = useNuxtApp()
-
-  return $cookies
-}
+export const useCookieControl = () => useNuxtApp().$cookies

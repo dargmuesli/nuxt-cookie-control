@@ -1,14 +1,13 @@
 <template>
   <client-only>
-    <iframe v-if="iframeEnabled" />
+    <iframe v-if="isCookieFunctionalEnabled" />
     <div v-else class="cookieControl__BlockedIframe">
       <p>
-        {{ iframeText }}
+        {{ localeStrings?.blockedIframe }}
         <a
-          v-if="$cookies.moduleOptions.text"
           href="#"
-          @click.prevent="$cookies.isModalActive.value = true"
-          v-text="$cookies.moduleOptions.text.here"
+          @click.prevent="cookieControl.isModalActive.value = true"
+          v-text="localeStrings?.here"
         />
       </p>
     </div>
@@ -16,23 +15,25 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { LOCALE_DEFAULT } from '../constants'
+import { Locale } from '../types'
 
-import { useNuxtApp } from '#app'
+export interface Props {
+  locale?: Locale
+}
+const props = withDefaults(defineProps<Props>(), {
+  locale: LOCALE_DEFAULT,
+})
 
-const { $cookies } = useNuxtApp()
+const cookieControl = useCookieControl()
 
 // computations
-const iframeEnabled = computed(() => {
-  return (
-    $cookies.cookiesEnabled.value.filter((c) => {
-      return c.name === 'functional'
-    }).length > 0
-  )
-})
-const iframeText = computed(() => {
-  return $cookies && $cookies.moduleOptions.text
-    ? $cookies.moduleOptions.text.blockedIframe
-    : ''
-})
+const isCookieFunctionalEnabled = computed(
+  () =>
+    cookieControl.cookiesEnabled.value.filter((c) => c.name === 'functional')
+      .length > 0
+)
+const localeStrings = computed(
+  () => cookieControl.moduleOptions.localeTexts[props.locale]
+)
 </script>

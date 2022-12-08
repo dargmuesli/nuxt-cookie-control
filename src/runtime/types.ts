@@ -2,15 +2,6 @@ import { Ref } from 'vue'
 
 import en from './locale/en'
 
-export type Translatable = string | Record<string, string>
-
-export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
-
-export enum CookieType {
-  NECESSARY = 'necessary',
-  OPTIONAL = 'optional',
-}
-
 export enum Locale {
   AR = 'ar',
   DE = 'de',
@@ -28,15 +19,23 @@ export enum Locale {
   UK = 'uk',
 }
 
+export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
+
+export type Translatable = string | PartialRecord<Locale, string>
+
+export enum CookieType {
+  NECESSARY = 'necessary',
+  OPTIONAL = 'optional',
+}
+
 export interface Cookie {
-  accepted?: Function
-  async?: boolean
-  declined?: Function
   description?: Translatable
   id?: string
-  ids?: string[]
   name: Translatable
+  // onAccept?: Function
+  // onDecline?: Function
   src?: string
+  targetCookieIds?: string[]
 }
 
 export interface LocaleStrings {
@@ -57,7 +56,6 @@ export interface LocaleStrings {
 }
 
 export interface ModuleOptions {
-  acceptNecessary?: boolean
   barPosition?:
     | 'top-left'
     | 'top-right'
@@ -65,26 +63,24 @@ export interface ModuleOptions {
     | 'bottom-left'
     | 'bottom-right'
     | 'bottom-full'
-  blockIframe?: boolean | { initialState: boolean }
-  colors?: Record<string, any>
-  controlButton?: boolean
-  cookies?: {
+  colors?: false | Record<string, any>
+  cookies: {
     necessary: Cookie[]
     optional: Cookie[]
   }
-  css?: boolean
-  cssPolyfill?: boolean
-  dashInDescription?: boolean
+  isAcceptNecessaryButtonEnabled?: boolean
+  isControlButtonEnabled?: boolean
+  isCssEnabled?: boolean
+  isCssPolyfillEnabled?: boolean
+  isDashInDescriptionEnabled?: boolean
+  isIframeBlocked?: boolean | { initialState: boolean }
   domain?: string
-  locales?: string[]
-  text?: LocaleStrings & { locale?: PartialRecord<Locale, LocaleStrings> }
+  locales: Locale[]
+  localeTexts: PartialRecord<Locale, LocaleStrings>
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
-  acceptNecessary: true,
-  barPosition: 'bottom-full', //
-  blockIframe: false,
-  controlButton: true, //
+  barPosition: 'bottom-full',
   colors: {
     barBackground: '#000',
     barButtonBackground: '#fff',
@@ -116,18 +112,20 @@ export const DEFAULTS: Required<ModuleOptions> = {
     necessary: [],
     optional: [],
   },
-  css: true, //
-  cssPolyfill: true, //
-  dashInDescription: true,
+  isAcceptNecessaryButtonEnabled: true,
+  isControlButtonEnabled: true,
+  isCssEnabled: true,
+  isCssPolyfillEnabled: true,
+  isDashInDescriptionEnabled: true,
+  isIframeBlocked: false,
   domain: '',
-  locales: ['en'],
-  text: en,
+  locales: [Locale.EN],
+  localeTexts: { en },
 }
 
 export interface State {
   cookiesEnabled: Ref<Cookie[]>
   cookiesEnabledIds: Ref<string[]>
-  cookiesOptional: Cookie[]
   isConsentGiven: Ref<boolean>
   isModalActive: Ref<boolean>
   moduleOptions: ModuleOptions
