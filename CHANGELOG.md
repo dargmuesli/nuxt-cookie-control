@@ -1,3 +1,10 @@
+# [2.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.4...2.0.0-beta.5) (2022-12-08)
+
+
+### Bug Fixes
+
+* **runtime:** add imports ([5f5d7c8](https://github.com/dargmuesli/nuxt-cookie-control/commit/5f5d7c85d96f7e5a6175f6b07efda1df287c11c1))
+
 # [2.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.3...2.0.0-beta.4) (2022-12-08)
 
 
