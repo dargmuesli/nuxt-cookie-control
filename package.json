@@ -29,9 +29,9 @@
     "src/locale"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build",
+    "prepack": "nuxt-module-build --stub && nuxi prepare playground && nuxt-module-build",
     "dev": "nuxi dev playground",
-    "prepare": "nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "dev:build": "nuxi build playground",
     "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
   },
