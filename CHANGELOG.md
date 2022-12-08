@@ -1,3 +1,10 @@
+# [2.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.5...2.0.0-beta.6) (2022-12-08)
+
+
+### Bug Fixes
+
+* **methods:** fallback to default language ([6655207](https://github.com/dargmuesli/nuxt-cookie-control/commit/6655207afebf4e6533902795a2f19f34f0f5c1b9))
+
 # [2.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.4...2.0.0-beta.5) (2022-12-08)
 
 
