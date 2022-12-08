@@ -29,12 +29,11 @@
     "src/locale"
   ],
   "scripts": {
-    "build": "nuxt-module-build",
+    "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "prepare": "nuxi prepare playground",
     "dev:build": "nuxi build playground",
-    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck playground",
-    "prepack": "npm run build"
+    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
   },
   "dependencies": {
     "@nuxt/kit": "3.0.0",
