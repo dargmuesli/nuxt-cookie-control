@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest] # windows-latest temporarily disabled (https://github.com/nuxt/framework/issues/8461)
+        os: [ubuntu-latest] # macos-latest, windows-latest temporarily disabled (https://github.com/nuxt/framework/issues/8461)
         node: [14, 18]
 
     steps:
@@ -44,7 +44,7 @@ jobs:
   release-semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.19.12
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.20.2
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
