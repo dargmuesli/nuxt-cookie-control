@@ -1,11 +1,9 @@
 {
   "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "1.9.9",
+  "version": "2.0.0-beta.7",
   "description": "Nuxt Cookies Control Module",
-  "license": "MIT",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
-  "contributors": [
-    "Davor Teskera",
+  "maintainers": [
     "Jonas Thelemann"
   ],
   "keywords": [
@@ -14,26 +12,56 @@
     "nuxt cookie consent",
     "nuxt gdpr consent"
   ],
-  "main": "lib/module.js",
-  "repository": "https://gitlab.com/dargmuesli/nuxt-cookie-control",
+  "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/module.d.ts",
+  "files": [
+    "dist/**/*",
+    "src/components",
+    "src/locale"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build --stub && nuxi prepare playground && nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:build": "nuxi build playground",
+    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
+  },
+  "dependencies": {
+    "@nuxt/kit": "3.0.0",
+    "css-vars-ponyfill": "2.4.8",
+    "js-cookie": "3.0.1",
+    "slugify": "1.6.5",
+    "string-replace-loader": "3.1.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "0.2.1",
+    "@nuxtjs/eslint-config-typescript": "12.0.0",
+    "@types/js-cookie": "3.0.2",
+    "eslint": "8.29.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "husky": "8.0.2",
+    "lint-staged": "13.1.0",
+    "nuxt": "3.0.0",
+    "prettier": "2.8.1",
+    "typescript": "4.9.4",
+    "vue": "3.2.45",
+    "vue-tsc": "1.0.12",
+    "webpack": "5.75.0"
+  },
+  "resolutions": {
+    "@dargmuesli/nuxt-cookie-control": "link:./"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "eslintIgnore": [
-    "*"
-  ],
-  "files": [
-    "lib",
-    "components",
-    "locale"
-  ],
-  "dependencies": {
-    "css-vars-ponyfill": "^2.4.7",
-    "sass": "^1.43.4",
-    "sass-loader": "^10.2.0",
-    "string-replace-loader": "^2.3.0"
-  },
-  "peerDependencies": {
-    "webpack": "^4"
   }
 }

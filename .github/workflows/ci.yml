@@ -1,26 +1,27 @@
 name: ci
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
+  push:
+  release:
+    types: [published]
 
 jobs:
-  ci:
+  build:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        node: [14]
+        os: [ubuntu-latest] # macos-latest, windows-latest temporarily disabled (https://github.com/nuxt/framework/issues/8461)
+        node: [14, 18]
 
     steps:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+
+      - name: Setup pnpm
+        run: corepack enable
 
       - name: checkout
         uses: actions/checkout@v3
@@ -29,20 +30,23 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: yarn
-
-      - name: Prepare environment
-        run: yarn dev:prepare
+        run: |
+          pnpm install
+          pnpm dev:prepare
 
       - name: Lint
-        run: yarn lint:all
-
-      - name: Test
-        run: yarn test
+        run: pnpm lint
 
       - name: Coverage
         uses: codecov/codecov-action@v3
+  release-semantic:
+    needs: build
+    name: Release (semantic)
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.20.4
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,4 +1,7 @@
 # Nuxt Cookie Control
+
+Continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control).
+
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
 ####
 Try it out here:
@@ -6,44 +9,51 @@ Try it out here:
 
 ## 🚀 Usage
 ```bash
-npm i nuxt-cookie-control
+npm i -D @dargmuesli/nuxt-cookie-control
+yarn add -D @dargmuesli/nuxt-cookie-control
+pnpm i -D @dargmuesli/nuxt-cookie-control
 ```
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![npm downloads][kofi-src]][kofi-href]
 
 ```javascript
-//nuxt.config.js
+// nuxt.config.js
+
 modules: [
-  'nuxt-cookie-control'
+  '@dargmuesli/nuxt-cookie-control'
 ]
-//or
+// or
 modules: [
-  ['nuxt-cookie-control', {
-    //your options
+  ['@dargmuesli/nuxt-cookie-control', {
+    // module options
   }]
 ]
-
-//to open cookie modal anywhere:
-$cookies.modal = true
-//or
-this.$cookies.modal = true
 ```
+
+Components and composables are [auto-imported](https://nuxt.com/docs/guide/concepts/auto-imports)!
+
 ```html
-<!--template-->
-<!--
-  CookieControl component is registered globally,
-  you don't need to register it anywhere.
--->
-<CookieControl/>
-<!--or-->
-<CookieControl></CookieControl>
+<!-- component.vue -->
+
+<template>
+  <CookieControl locale="en" />
+</template>
+
+<script setup lang="ts">
+const {
+  cookiesEnabled,
+  cookiesEnabledIds,
+  isConsentGiven,
+  isModalActive,
+  moduleOptions
+} = useCookieControl()
+</script>
 ```
 ## Slot
 ### Bar
 ```html
 <CookieControl>
-  <template v-slot:bar>
+  <template #bar>
     <h3>Bar title</h3>
     <p>Bar description (you can use $cookies.text.barDescription)</p>
     <n-link>Go somewhere</n-link>
@@ -52,234 +62,145 @@ this.$cookies.modal = true
 ```
 ### Modal
 ```html
-<template v-slot:modal>
+<template #modal>
   <h3>Modal title</h3>
   <p>Modal description</p>
 </template>
 ```
 ### Cookie
 ```html
-<template v-slot:cookie="{config}">
+<template #cookie="{config}">
   <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
 </template>
 ```
 
 ## Props
-### Locale
+- locale: `['en']`
 ```html
 <CookieControl locale="de"/>
 ```
-#### Default: en,
-#### Currently available:
-- en
+
+Currently available:
+- ar
 - de
-- it
+- en
 - es
 - fr
-- pt
 - hr
-- no
 - hu
+- it
 - ja
+- nl
+- no
+- pt
 - ru
 - uk
 
-## 🔧 Options
-Options in nuxt.config.js
+## Module Options
+
 ```javascript
-modules: [
-  ['nuxt-cookie-control', {
-    //default css (true)
-    //if css is set to false, you will still be able to access
-    //your color variables (example. background-color: var(--cookie-control-barBackground))
-    css: true,
+// Position of cookie bar.
+// 'top-left', 'top-right', 'top-full', 'bottom-left', 'bottom-right', 'bottom-full'
+barPosition: 'bottom-full',
 
-    //enable or disable css variables polyfill
-    cssPolyfill: true,
+// Component colors.
+// If you want to disable colors set colors property to false.
+colors: {
+  barBackground: '#000',
+  barButtonBackground: '#fff',
+  barButtonColor: '#000',
+  barButtonHoverBackground: '#333',
+  barButtonHoverColor: '#fff',
+  barTextColor: '#fff',
+  checkboxActiveBackground: '#000',
+  checkboxActiveCircleBackground: '#fff',
+  checkboxDisabledBackground: '#ddd',
+  checkboxDisabledCircleBackground: '#fff',
+  checkboxInactiveBackground: '#000',
+  checkboxInactiveCircleBackground: '#fff',
+  controlButtonBackground: '#fff',
+  controlButtonHoverBackground: '#000',
+  controlButtonIconColor: '#000',
+  controlButtonIconHoverColor: '#fff',
+  modalBackground: '#fff',
+  modalButtonBackground: '#000',
+  modalButtonColor: '#fff',
+  modalButtonHoverBackground: '#333',
+  modalButtonHoverColor: '#fff',
+  modalOverlay: '#000',
+  modalOverlayOpacity: 0.8,
+  modalTextColor: '#000',
+  modalUnsavedColor: '#fff',
+},
 
-    //in case you have subdomains (shop.yourdomain.com)
-    domain: 'yourdomain.com',
-
-    //if you want to tree-shake locales set locales you want to use
-    locales: ['en', 'de'],
-
-    //modal opener (cookie control)
-    controlButton: true,
-
-    //block iframes to prevent them from adding additional cookies
-    blockIframe: true,
-
-    //or if you want to set initialState to false (default value for initialState is true)
-    blockIframe: {
-      initialState: false
-    },
-
-    //position of cookie bar:
-    //'top-left', 'top-right', 'top-full',
-    //'bottom-left', 'bottom-right', 'bottom-full'
-    barPosition: 'bottom-full',
-
-    //default colors
-    //if you want to disable colors set colors property to false
-    colors: {
-      barTextColor: '#fff',
-      modalOverlay: '#000',
-      barBackground: '#000',
-      barButtonColor: '#000',
-      modalTextColor: '#000',
-      modalBackground: '#fff',
-      modalOverlayOpacity: 0.8,
-      modalButtonColor: '#fff',
-      modalUnsavedColor: '#fff',
-      barButtonHoverColor: '#fff',
-      barButtonBackground: '#fff',
-      modalButtonHoverColor: '#fff',
-      modalButtonBackground: '#000',
-      controlButtonIconColor: '#000',
-      controlButtonBackground: '#fff',
-      barButtonHoverBackground: '#333',
-      checkboxActiveBackground: '#000',
-      checkboxInactiveBackground: '#000',
-      modalButtonHoverBackground: '#333',
-      checkboxDisabledBackground: '#ddd',
-      controlButtonIconHoverColor: '#fff',
-      controlButtonHoverBackground: '#000',
-      checkboxActiveCircleBackground: '#fff',
-      checkboxInactiveCircleBackground: '#fff',
-      checkboxDisabledCircleBackground: '#fff',
-    },
-
-    //default texts
-    text: {
-      barTitle: 'Cookies',
-      barDescription: 'We use our own cookies and third-party cookies so that we can show you this website and better understand how you use it, with a view to improving the services we offer. If you continue browsing, we consider that you have accepted the cookies.',
-      acceptAll: 'Accept all',
-      declineAll: 'Delete all',
-      manageCookies: 'Manage cookies',
-      unsaved: 'You have unsaved settings',
-      close: 'Close',
-      save: 'Save',
-      necessary: 'Necessary cookies',
-      optional: 'Optional cookies',
-      functional: 'Functional cookies',
-      blockedIframe: 'To see this, please enable functional cookies',
-      here: 'here'
-    }
-  ]
-]
-
-//for multilanguage see - Multilanguage
-```
-without options (Simple)
-```javascript
-modules: [
-'nuxt-cookie-control'
-]
-```
-### Cookies
-```javascript
-modules: [
-'nuxt-cookie-control'
-]
-...
-...
-...
+// The cookies that are to be controlled.
+// See detailed explanation further down below!
 cookies: {
-  necessary: [
-    {
-      //if multilanguage
-      name: {
-        en: 'Default Cookies'
-      },
-      //else
-      name:  'Default Cookies',
-      //if multilanguage
-      description: {
-        en:  'Used for cookie control.'
-      },
-      //else
-      description:  'Used for cookie control.',
-      cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
-    }
-  ],
-  optional: [
-    {
-      name:  'Google Analitycs',
-      //if you don't set identifier, slugified name will be used
-      identifier: 'ga',
-      //if multilanguage
-      description: {
-        en:  'Google GTM is ...'
-      },
-      //else
-      description:  'Google GTM is...',
+  necessary: [],
+  optional: [],
+}
 
-      initialState: true,
-      src:  'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
-      async:  true,
-      cookies: ['_ga', '_gat', '_gid'],
-      accepted: () =>{
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          'gtm.start': new Date().getTime(),
-          event: 'gtm.js'
-        });
-      },
-      declined: () =>{
-      }
-    }
-  ]
+// Switch to toggle the "accept necessary" button.
+isAcceptNecessaryButtonEnabled: true
+
+// Switch to toggle the button that opens the configuration modal.
+isControlButtonEnabled: true,
+
+// Switch to toggle the inclusion of this module's css.
+// If css is set to false, you will still be able to access your color variables.
+isCssEnabled: true,
+
+// Switch to toggle the css variables polyfill.
+isCssPolyfillEnabled: true,
+
+// Switch to toggle the separation of cookie name and description in the configuration modal by a dash.
+isDashInDescriptionEnabled: true,
+
+// Switch to toggle the blocking of iframes.
+// This can be used to prevent iframes from adding additional cookies.
+isIframeBlocked: false,
+// or:
+// isIframeBlocked: {
+//   initialState: false
+// },
+
+// The domain to set cookies on.
+// This is useful in case you have subdomains (shop.yourdomain.com)
+domain: 'yourdomain.com',
+
+// The locales to include.
+locales: ['en'],
+
+// Translations to override.
+localeTexts: {
+  en: {
+    save: 'Remember',
+  }
 }
 ```
-### Multilanguage
-Set **locale** prop
-```html
-<CookieControl locale="de"/>
-```
-#### Default: en,
-#### Currently available:
-- en
-- de
-- it
-- es
-- fr
-- pt
-- hr
-- no
-- hu
-- ja
-- ru
-- uk
 
-If you don't like the default texts you can change them in options (**nuxt.config.js**)
+### Cookies
+
+Every property the includes a `{ en: ... }` value is a translatable property that could instead only specify a string (`'...'`) or other locales as well (`{ de: ..., uk: ... }`).
+
 ```javascript
-text: {
-  locale: {
-    en: {
-      barTitle:  'Cookies Different',
-      barDescription:  'We use our own cookies and third-party...',
-    },
-
-    de: {
-      ...
-    }
+{
+  description: {
+    en:  'Used for cookie control.'
   },
-
-  //this will override locale text
-  barTitle: 'Override Title'
+  id: 'ga', // if unset, the slugified name will be used
+  name: {
+    en: 'Google Analytics'
+  },
+  src: 'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
+  targetCookieIds: ['cookie_control_consent', 'cookie_control_enabled_cookies']
 }
 ```
-
-### Buy me a coffee
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31MWWL)
 
 
 <!-- Badges -->
-[npm-version-src]: https://badgen.net/npm/v/nuxt-cookie-control/latest
-[npm-version-href]: https://npmjs.com/package/nuxt-cookie-control
+[npm-version-src]: https://badgen.net/npm/v/@dargmuesli/nuxt-cookie-control/latest
+[npm-version-href]: https://npmjs.com/package/@dargmuesli/nuxt-cookie-control
 
-[kofi-src]: https://badgen.net/badge/icon/kofi?icon=kofi&label=support
-[kofi-href]: https://ko-fi.com/darioferderber
-
-[npm-downloads-src]: https://badgen.net/npm/dm/nuxt-cookie-control
-[npm-downloads-href]: https://npmjs.com/package/nuxt-cookie-control
+[npm-downloads-src]: https://badgen.net/npm/dm/@dargmuesli/nuxt-cookie-control
+[npm-downloads-href]: https://npmjs.com/package/@dargmuesli/nuxt-cookie-control
