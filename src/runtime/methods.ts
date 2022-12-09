@@ -22,26 +22,27 @@ export const useAcceptNecessary = () => {
 
 export const acceptNecessary = (
   // nuxtApp: NuxtApp,
-  enabled: Ref<Cookie[]>,
-  consent: Ref<boolean>,
-  necessaryCookies: Cookie[] = []
+  cookiesEnabledRef: Ref<Cookie[]>,
+  isConsentGivenRef: Ref<boolean>,
+  cookiesNecessary: Cookie[] = []
 ) => {
   const expires = new Date()
   expires.setFullYear(expires.getFullYear() + 1)
 
-  const necessaryCookieIds = necessaryCookies.map((necessaryCookie) =>
+  const necessaryCookieIds = cookiesNecessary.map((necessaryCookie) =>
     getCookieId(necessaryCookie)
   )
 
-  Cookies.set('cookie_control_enabled_cookies', necessaryCookieIds.join(','), {
+  setCookies({
+    isConsentGiven: isConsentGivenRef.value,
+    cookieIds: necessaryCookieIds,
     expires,
   })
-  Cookies.set('cookie_control_consent', 'true', { expires })
 
-  consent.value = true
+  isConsentGivenRef.value = true
 
   if (process.client) {
-    setHead(/* nuxtApp, */ enabled.value)
+    setHead(/* nuxtApp, */ cookiesEnabledRef.value)
     // callAcceptedFunctions(nuxtApp, enabled.value)
   }
 }
@@ -134,6 +135,9 @@ export const setConsent = ({
   }
 }
 
+export const getCookieControlConsent = () =>
+  Cookies.get('cookie_control_consent')
+
 export const getCookieId = (cookie: Cookie) =>
   cookie.id || slugify(resolveTranslatable(cookie.name))
 
@@ -179,6 +183,27 @@ export const setHead = (/* nuxtApp: NuxtApp, */ enabledCookies: Cookie[]) => {
     // })
     head.appendChild(script)
   }
+}
+
+export const setCookies = ({
+  isConsentGiven,
+  cookieIds,
+  expires,
+}: {
+  isConsentGiven: boolean
+  cookieIds: string[]
+  expires: Date
+}) => {
+  Cookies.set(
+    'cookie_control_enabled_cookies',
+    isConsentGiven ? cookieIds.join(',') : '',
+    {
+      expires,
+    }
+  )
+  Cookies.set('cookie_control_consent', isConsentGiven.toString(), {
+    expires,
+  })
 }
 
 // export const callAcceptedFunctions = (

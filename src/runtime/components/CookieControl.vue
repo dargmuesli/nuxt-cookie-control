@@ -85,8 +85,7 @@
                         type="checkbox"
                         :checked="
                           cookiesEnabledIds.includes(getCookieId(cookie)) ||
-                          (Cookies.get('cookie_control_consent')?.length ===
-                            0 &&
+                          (getCookieControlConsent()?.length === 0 &&
                             typeof moduleOptions.isIframeBlocked === 'object' &&
                             moduleOptions.isIframeBlocked.initialState)
                         "
@@ -127,7 +126,9 @@
                   v-text="localeStrings?.acceptAll"
                 />
                 <button
-                  @click="setConsent({ declineAll: true, consent: false })"
+                  @click="
+                    setConsent({ declineAll: true, isConsentGiven: false })
+                  "
                   v-text="localeStrings?.declineAll"
                 />
               </div>
@@ -140,15 +141,16 @@
 </template>
 
 <script setup lang="ts">
-import Cookies from 'js-cookie'
 import { ref, computed, onBeforeMount } from 'vue'
 
 import { Cookie, CookieType, Locale, Translatable } from '../types'
 import {
+  getCookieControlConsent,
   getCookieId,
   useAcceptNecessary,
   useSetConsent,
   useResolveTranslatable,
+  setCookies,
 } from '../methods'
 
 import { useCookieControl } from '#imports'
@@ -187,18 +189,18 @@ const toogleCookie = (cookie: Cookie) => {
 }
 const setConsent = ({
   type = undefined,
-  consent = true,
+  isConsentGiven = true,
   reload = true,
   declineAll = false,
 }: {
   type?: 'partial'
-  consent?: boolean
+  isConsentGiven?: boolean
   reload?: boolean
   declineAll?: boolean
 }) => {
-  const enabledCookies = declineAll
+  const cookieIds = declineAll
     ? []
-    : type === 'partial' && consent
+    : type === 'partial' && isConsentGiven
     ? cookiesEnabledIds.value
     : moduleOptions.cookies.optional.map((cookie: Cookie) =>
         getCookieId(cookie)
@@ -207,16 +209,11 @@ const setConsent = ({
   const expirationDate = new Date()
   expirationDate.setFullYear(expirationDate.getFullYear() + 1)
 
-  Cookies.set('cookie_control_consent', consent.toString(), {
+  setCookies({
+    isConsentGiven,
+    cookieIds,
     expires: expirationDate,
   })
-  Cookies.set(
-    'cookie_control_enabled_cookies',
-    consent ? enabledCookies.join(',') : '',
-    {
-      expires: expirationDate,
-    }
-  )
 
   if (reload) {
     window.location.reload()
@@ -260,7 +257,7 @@ onBeforeMount(async () => {
     }
   }
 
-  const cookieControlConsent = Cookies.get('cookie_control_consent')
+  const cookieControlConsent = getCookieControlConsent()
 
   if (!cookieControlConsent || !cookieControlConsent.length) {
     for (const cookieOptional of moduleOptions.cookies.optional) {
