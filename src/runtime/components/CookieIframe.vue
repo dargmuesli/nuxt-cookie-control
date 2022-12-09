@@ -18,7 +18,7 @@
 import { computed } from 'vue'
 
 import { LOCALE_DEFAULT } from '../constants'
-import { Locale } from '../types'
+import { Cookie, Locale } from '../types'
 
 import { useCookieControl } from '#imports'
 
@@ -35,7 +35,7 @@ const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()
 const isCookieFunctionalEnabled = computed(
   () =>
     cookiesEnabled.value.filter(
-      (cookieEnabled) => cookieEnabled.name === 'functional'
+      (cookieEnabled: Cookie) => cookieEnabled.name === 'functional'
     ).length > 0
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])

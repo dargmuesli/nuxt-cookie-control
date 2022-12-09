@@ -200,7 +200,9 @@ const setConsent = ({
     ? []
     : type === 'partial' && consent
     ? cookiesEnabledIds.value
-    : moduleOptions.cookies.optional.map((cookie) => getCookieId(cookie))
+    : moduleOptions.cookies.optional.map((cookie: Cookie) =>
+        getCookieId(cookie)
+      )
 
   const expirationDate = new Date()
   expirationDate.setFullYear(expirationDate.getFullYear() + 1)
