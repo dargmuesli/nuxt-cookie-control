@@ -34,8 +34,6 @@ export default defineNuxtConfig({
     ],
   ],
   typescript: {
-    tsConfig: {
-      include: ['../../**/*'], // https://github.com/nuxt/framework/pull/7726
-    },
+    includeWorkspace: true,
   },
 })
