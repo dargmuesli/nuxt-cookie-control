@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0...2.0.1) (2022-12-09)
+
+
+### Bug Fixes
+
+* trigger ci ([6a577a9](https://github.com/dargmuesli/nuxt-cookie-control/commit/6a577a98d09d2591a9a3866188e45041d4717b24))
+
 # [2.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/1.9.9...2.0.0) (2022-12-09)
 
 
