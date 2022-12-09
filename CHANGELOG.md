@@ -1,3 +1,12 @@
+# [2.0.0-beta.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.6...2.0.0-beta.7) (2022-12-09)
+
+
+### Bug Fixes
+
+* **component:** extract external dependencies ([31c6945](https://github.com/dargmuesli/nuxt-cookie-control/commit/31c6945b1b53dd638d5050893aa949d08f6fddb4))
+* **components:** add specific types on stream functions ([0fccd65](https://github.com/dargmuesli/nuxt-cookie-control/commit/0fccd65814679892ed85bba86e65ede337d8f85c))
+* **package:** remove peer dependencies ([7c0efed](https://github.com/dargmuesli/nuxt-cookie-control/commit/7c0efed1e4036b83d0e8ac5aa6755e61900ecb4e))
+
 # [2.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0-beta.5...2.0.0-beta.6) (2022-12-08)
 
 
