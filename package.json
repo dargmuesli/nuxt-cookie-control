@@ -54,22 +54,9 @@
     "nuxt": "3.0.0",
     "prettier": "2.8.1",
     "typescript": "4.9.4",
-    "vite": "3.2.5",
     "vue": "3.2.45",
     "vue-tsc": "1.0.12",
     "webpack": "5.75.0"
-  },
-  "peerDependencies": {
-    "vite": "^3",
-    "webpack": "^5"
-  },
-  "peerDependenciesMeta": {
-    "vite": {
-      "optional": true
-    },
-    "webpack": {
-      "optional": true
-    }
   },
   "resolutions": {
     "@dargmuesli/nuxt-cookie-control": "link:./"
