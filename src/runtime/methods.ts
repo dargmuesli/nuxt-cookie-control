@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 // import { NuxtApp } from 'nuxt/dist/app/nuxt'
-import slugify from 'slugify'
+import slugify from '@sindresorhus/slugify'
 import { Ref } from 'vue'
 
 import { useCookieControl } from './composables'

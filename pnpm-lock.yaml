@@ -7,6 +7,7 @@ specifiers:
   '@nuxt/kit': 3.0.0
   '@nuxt/module-builder': 0.2.1
   '@nuxtjs/eslint-config-typescript': 12.0.0
+  '@sindresorhus/slugify': 2.1.1
   '@types/js-cookie': 3.0.2
   css-vars-ponyfill: 2.4.8
   eslint: 8.29.0
@@ -17,7 +18,6 @@ specifiers:
   lint-staged: 13.1.0
   nuxt: 3.0.0
   prettier: 2.8.1
-  slugify: 1.6.5
   string-replace-loader: 3.1.0
   typescript: 4.9.4
   vue: 3.2.45
@@ -26,9 +26,9 @@ specifiers:
 
 dependencies:
   '@nuxt/kit': 3.0.0
+  '@sindresorhus/slugify': 2.1.1
   css-vars-ponyfill: 2.4.8
   js-cookie: 3.0.1
-  slugify: 1.6.5
   string-replace-loader: 3.1.0_webpack@5.75.0
 
 devDependencies:
@@ -948,6 +948,21 @@ packages:
       picomatch: 2.3.1
       rollup: 3.7.0
     dev: true
+
+  /@sindresorhus/slugify/2.1.1:
+    resolution: {integrity: sha512-XokPHZ+q6FtQGEi1hnfvARVJJVPEhwHQTPHPPuNHaN6zcHjzYNynhhHMopa1wNPqLAFOwpsbintunEqWecXJMg==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@sindresorhus/transliterate': 1.6.0
+      escape-string-regexp: 5.0.0
+    dev: false
+
+  /@sindresorhus/transliterate/1.6.0:
+    resolution: {integrity: sha512-doH1gimEu3A46VX6aVxpHTeHrytJAG6HgdxntYnCFiIFHEM/ZGpG8KiZGBChchjQmG0XFIBL552kBTjVcMZXwQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      escape-string-regexp: 5.0.0
+    dev: false
 
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -5717,11 +5732,6 @@ packages:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 4.0.0
     dev: true
-
-  /slugify/1.6.5:
-    resolution: {integrity: sha512-8mo9bslnBO3tr5PEVFzMPIWwWnipGS0xVbYf65zxDqfNwmzYn1LpiKNrR6DlClusuvo+hDHd1zKpmfAe83NQSQ==}
-    engines: {node: '>=8.0.0'}
-    dev: false
 
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
