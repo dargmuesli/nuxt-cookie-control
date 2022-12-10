@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.1...2.0.2) (2022-12-10)
+
+
+### Bug Fixes
+
+* **deps:** switch to @sindresorhus/slugify ([99b7dbf](https://github.com/dargmuesli/nuxt-cookie-control/commit/99b7dbfcb47defce2d56f30b96a17f06122cef66))
+
 ## [2.0.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.0...2.0.1) (2022-12-09)
 
 
