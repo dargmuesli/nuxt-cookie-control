@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.0...2.2.1) (2022-12-14)
+
+
+### Bug Fixes
+
+* **component:** make stream function parameter of explicit type ([34e868a](https://github.com/dargmuesli/nuxt-cookie-control/commit/34e868ac9fc25bd689ded6c0292b0376552ef741))
+
 # [2.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.1.0...2.2.0) (2022-12-14)
 
 
