@@ -35,8 +35,9 @@
         v-if="
           moduleOptions.isControlButtonEnabled && colorsSet && isConsentGiven
         "
-        class="cookieControl__ControlButton"
         aria-label="Cookie control"
+        class="cookieControl__ControlButton"
+        data-testid="nuxt-cookie-control-control-button"
         @click="isModalActive = true"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -63,7 +64,7 @@
               />
               <div v-for="cookieType in CookieType" :key="cookieType">
                 <h3 v-text="localeStrings && localeStrings[cookieType]" />
-                <ul v-if="moduleOptions.cookies">
+                <ul v-if="moduleOptions.cookies[cookieType].length">
                   <li
                     v-for="cookie in moduleOptions.cookies[cookieType]"
                     :key="cookie.id"
@@ -99,22 +100,21 @@
                         <span v-if="cookie.description">
                           {{ getDescription(cookie.description) }}
                         </span>
+                        <span v-if="cookie.targetCookieIds">
+                          {{
+                            ' IDs: ' +
+                            cookie.targetCookieIds
+                              .map((id) => `"${id}"`)
+                              .join(', ')
+                          }}
+                        </span>
                       </span>
                     </div>
-                    <template v-if="cookie.targetCookieIds">
-                      <slot name="cookie" v-bind="{ config: cookie }">
-                        <ul>
-                          <li
-                            v-for="targetCookieId in cookie.targetCookieIds"
-                            :key="targetCookieId"
-                          >
-                            {{ targetCookieId }}
-                          </li>
-                        </ul>
-                      </slot>
-                    </template>
                   </li>
                 </ul>
+                <p v-else>
+                  {{ localeStrings?.none }}
+                </p>
               </div>
               <div class="cookieControl__ModalButtons">
                 <button

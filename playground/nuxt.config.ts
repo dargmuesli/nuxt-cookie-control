@@ -7,6 +7,10 @@ export default defineNuxtConfig({
         cookies: {
           necessary: [
             {
+              description: {
+                de: 'Dieser Cookie tut etwas.',
+                en: 'This cookie does something.',
+              },
               name: {
                 de: 'Notwendiger Cookie',
                 en: 'Necessary Cookie',

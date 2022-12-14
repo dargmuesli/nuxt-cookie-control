@@ -14,6 +14,7 @@ export default {
   here: 'her',
   manageCookies: 'Administrer informasjonskapsler',
   necessary: 'Nødvendige informasjonskapsler',
+  none: 'ingen',
   optional: 'Valgfrie informasjonskapsler',
   save: 'Lagre',
   unsaved: 'Du har ulagrede innstillinger',

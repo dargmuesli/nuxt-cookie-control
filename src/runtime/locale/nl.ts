@@ -14,6 +14,7 @@ export default {
   here: 'hier',
   manageCookies: 'Beheer cookies',
   necessary: 'Noodzakelijke cookies',
+  none: 'geen',
   optional: 'Optionele cookies',
   save: 'Opslaan',
   unsaved: 'Er zijn niet-opgeslagen instellingen',

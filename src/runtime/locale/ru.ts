@@ -13,6 +13,7 @@ export default {
   here: 'здесь',
   manageCookies: 'Управление файлами cookie',
   necessary: 'Необходимые файлы cookie',
+  none: 'никто',
   optional: 'Дополнительные файлы cookie',
   save: 'Сохранить',
   unsaved: 'У вас есть несохраненные настройки',

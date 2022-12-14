@@ -13,6 +13,7 @@ export default {
   here: 'ici',
   manageCookies: 'Gérer les cookies',
   necessary: 'Les cookies obligatoires',
+  none: 'rien',
   optional: 'Les cookies optionnels',
   save: 'Sauvegarder',
   unsaved: 'Vous avez des paramètres non sauvegardés',

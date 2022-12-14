@@ -14,6 +14,7 @@ export default {
   here: 'ovdje',
   manageCookies: 'Upravljaj kolačićima',
   necessary: 'Obavezni kolačići',
+  none: 'nikakav',
   optional: 'Neobavezni kolačići',
   save: 'Spremi',
   unsaved: 'Imate nespremljenih postavki',

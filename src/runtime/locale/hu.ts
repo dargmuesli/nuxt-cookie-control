@@ -14,6 +14,7 @@ export default {
   here: 'itt',
   manageCookies: 'Sütikk kezelése',
   necessary: 'Szükséges sütikk',
+  none: 'egyik sem',
   optional: 'Opcionális sütik',
   save: 'Mentés',
   unsaved: 'Mentés nélküli beállítások vannak',

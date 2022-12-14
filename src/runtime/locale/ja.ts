@@ -13,6 +13,7 @@ export default {
   here: '設定',
   manageCookies: 'Cookieを管理',
   necessary: '不可欠なCookie',
+  none: 'なし',
   optional: '任意のcookies',
   save: '保存',
   unsaved: '保存されていない設定があります',

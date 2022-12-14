@@ -50,6 +50,7 @@ export interface LocaleStrings {
   here: string
   manageCookies: string
   necessary: string
+  none: string
   optional: string
   save: string
   unsaved: string

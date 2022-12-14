@@ -14,6 +14,7 @@ export default {
   manageCookies: 'Manage cookies',
   necessary: 'Necessary cookies',
   optional: 'Optional cookies',
+  none: 'none',
   save: 'Save',
   unsaved: 'You have unsaved settings',
 } as LocaleStrings

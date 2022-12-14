@@ -13,6 +13,7 @@ export default {
   here: 'тут',
   manageCookies: 'Керувати файлами cookie',
   necessary: 'Необхідні файли cookie',
+  none: 'немає',
   optional: 'Факультативні файли cookie',
   save: 'Зберегти',
   unsaved: 'У вас є незбережені налаштування',

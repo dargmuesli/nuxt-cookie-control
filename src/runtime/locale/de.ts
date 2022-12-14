@@ -14,6 +14,7 @@ export default {
   here: 'hier',
   manageCookies: 'Cookies verwalten',
   necessary: 'Notwendige Cookies',
+  none: 'keine',
   optional: 'Optionale Cookies',
   save: 'Speichern',
   unsaved: 'Sie haben nicht gespeicherte Einstellungen',
