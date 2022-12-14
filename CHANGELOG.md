@@ -1,3 +1,15 @@
+# [2.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.1.0...2.2.0) (2022-12-14)
+
+
+### Bug Fixes
+
+* **accept-necessary:** correct setter ([f0881a7](https://github.com/dargmuesli/nuxt-cookie-control/commit/f0881a7d96ace84e37c8ef40a01366d1522581a6)), closes [#13](https://github.com/dargmuesli/nuxt-cookie-control/issues/13)
+
+
+### Features
+
+* improve modal ux ([b45b9dd](https://github.com/dargmuesli/nuxt-cookie-control/commit/b45b9dd184ec81b75b729326132b14506c1a4f51)), closes [#11](https://github.com/dargmuesli/nuxt-cookie-control/issues/11) [#12](https://github.com/dargmuesli/nuxt-cookie-control/issues/12)
+
 # [2.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.2...2.1.0) (2022-12-14)
 
 
