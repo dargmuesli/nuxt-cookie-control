@@ -8,14 +8,15 @@ import { LOCALE_DEFAULT } from './constants'
 import { Cookie, ModuleOptions, Translatable } from './types'
 
 export const useAcceptNecessary = () => {
-  const { cookiesEnabled, isConsentGiven, moduleOptions } = useCookieControl()
+  const { cookiesEnabled, /* isConsentGiven, */ moduleOptions } =
+    useCookieControl()
   // const nuxtApp = useNuxtApp()
 
   return () =>
     acceptNecessary(
       // nuxtApp,
       cookiesEnabled,
-      isConsentGiven,
+      // isConsentGiven,
       moduleOptions.cookies?.necessary
     )
 }
@@ -23,7 +24,7 @@ export const useAcceptNecessary = () => {
 export const acceptNecessary = (
   // nuxtApp: NuxtApp,
   cookiesEnabledRef: Ref<Cookie[]>,
-  isConsentGivenRef: Ref<boolean>,
+  // isConsentGivenRef: Ref<boolean>,
   cookiesNecessary: Cookie[] = []
 ) => {
   const expires = new Date()
@@ -34,17 +35,14 @@ export const acceptNecessary = (
   )
 
   setCookies({
-    isConsentGiven: isConsentGivenRef.value,
+    isConsentGiven: true,
     cookieIds: necessaryCookieIds,
     expires,
   })
 
-  isConsentGivenRef.value = true
-
-  if (process.client) {
-    setHead(/* nuxtApp, */ cookiesEnabledRef.value)
-    // callAcceptedFunctions(nuxtApp, enabled.value)
-  }
+  setHead(/* nuxtApp, */ cookiesEnabledRef.value)
+  // callAcceptedFunctions(nuxtApp, enabled.value)
+  window.location.reload()
 }
 
 export const useResolveTranslatable = (locale = LOCALE_DEFAULT) => {
