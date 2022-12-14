@@ -2,7 +2,7 @@ import { LocaleStrings } from '../types'
 
 export default {
   acceptAll: 'Alle akzeptieren',
-  acceptNecessary: 'Akzeptiere das Notwendige',
+  acceptNecessary: 'Nur notwendige akzeptieren',
   barDescription:
     'Wir verwenden unsere eigenen Cookies und Cookies von Drittanbietern, damit wir Ihnen diese Website zeigen können und verstehen wie Sie diese verwenden, um die von uns angebotenen Dienstleistungen zu verbessern. Wenn Sie weiter surfen, gehen wir davon aus, dass Sie die Cookies akzeptiert haben.',
   barTitle: 'Cookies',
