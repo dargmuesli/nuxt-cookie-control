@@ -104,7 +104,7 @@
                           {{
                             ' IDs: ' +
                             cookie.targetCookieIds
-                              .map((id) => `"${id}"`)
+                              .map((id: string) => `"${id}"`)
                               .join(', ')
                           }}
                         </span>
