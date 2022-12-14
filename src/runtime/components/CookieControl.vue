@@ -15,6 +15,10 @@
             </div>
             <div class="cookieControl__BarButtons">
               <button
+                @click="setConsent({ reload: false })"
+                v-text="localeStrings?.acceptAll"
+              />
+              <button
                 v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
                 @click="acceptNecessary"
                 v-text="localeStrings?.acceptNecessary"
@@ -22,10 +26,6 @@
               <button
                 @click="isModalActive = true"
                 v-text="localeStrings?.manageCookies"
-              />
-              <button
-                @click="setConsent({ reload: false })"
-                v-text="localeStrings?.acceptAll"
               />
             </div>
           </div>
