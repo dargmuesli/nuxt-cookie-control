@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.2...2.1.0) (2022-12-14)
+
+
+### Bug Fixes
+
+* **de:** correct necessary translation ([c6a200a](https://github.com/dargmuesli/nuxt-cookie-control/commit/c6a200a720c13247b96a9994350f556cdac0d641))
+
+
+### Features
+
+* **cookie-control:** reorder banner buttons ([130f63a](https://github.com/dargmuesli/nuxt-cookie-control/commit/130f63af7ea29c90bc0f9f817a8f05589692929c))
+
 ## [2.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.0.1...2.0.2) (2022-12-10)
 
 
