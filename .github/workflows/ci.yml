@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest] # macos-latest, windows-latest temporarily disabled (https://github.com/nuxt/framework/issues/8461)
-        node: [14, 18]
+        node: [19]
 
     steps:
       - uses: actions/setup-node@v3
