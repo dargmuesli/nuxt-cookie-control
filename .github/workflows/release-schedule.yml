@@ -1,0 +1,15 @@
+name: 'Release: Scheduled'
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday at 00:00 AM UTC on the default branch
+  workflow_dispatch:
+
+jobs:
+  release-schedule:
+    name: 'Release: Scheduled'
+    uses: dargmuesli/github-actions/.github/workflows/release-schedule.yml@0.22.1
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    with:
+      IS_DEBOUNCED: ${{ github.event_name != 'workflow_dispatch' }}
