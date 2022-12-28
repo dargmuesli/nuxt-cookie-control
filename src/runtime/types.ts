@@ -2,22 +2,21 @@ import { Ref } from 'vue'
 
 import en from './locale/en'
 
-export enum Locale {
-  AR = 'ar',
-  DE = 'de',
-  EN = 'en',
-  ES = 'es',
-  FR = 'fr',
-  HR = 'hr',
-  HU = 'hu',
-  IT = 'it',
-  JA = 'ja',
-  NL = 'nl',
-  NO = 'no',
-  PT = 'pt',
-  RU = 'ru',
-  UK = 'uk',
-}
+export type Locale =
+  | 'ar'
+  | 'de'
+  | 'en'
+  | 'es'
+  | 'fr'
+  | 'hr'
+  | 'hu'
+  | 'it'
+  | 'ja'
+  | 'nl'
+  | 'no'
+  | 'pt'
+  | 'ru'
+  | 'uk'
 
 export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
 
@@ -120,7 +119,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   isDashInDescriptionEnabled: true,
   isIframeBlocked: false,
   domain: '',
-  locales: [Locale.EN],
+  locales: ['en'],
   localeTexts: { en },
 }
 

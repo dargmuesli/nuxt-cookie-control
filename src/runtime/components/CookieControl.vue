@@ -159,7 +159,7 @@ export interface Props {
   locale?: Locale
 }
 const props = withDefaults(defineProps<Props>(), {
-  locale: Locale.EN,
+  locale: 'en',
 })
 
 const { cookiesEnabledIds, isConsentGiven, isModalActive, moduleOptions } =

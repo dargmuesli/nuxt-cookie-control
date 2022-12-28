@@ -18,5 +18,5 @@
 <script setup lang="ts">
 import { Locale } from '../src/runtime/types'
 
-const locale = ref<Locale>(Locale.EN)
+const locale = ref<Locale>('en')
 </script>
