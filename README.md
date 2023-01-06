@@ -191,7 +191,7 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
   },
   id: 'ga', // if unset, `getCookieId(cookie)` returns the cookie's slugified name instead, which e.g. is used to fill the state's `enabledCookieIds` list
   name: {
-    en: 'Google Analytics'
+    en: 'Google Analytics' // you always have to specify a cookie name (in English)
   },
   src: 'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
   targetCookieIds: ['cookie_control_consent', 'cookie_control_enabled_cookies']
