@@ -1,9 +1,11 @@
 # Nuxt Cookie Control
+[![npm version][npm-version-src]][npm-version-href] [![npm downloads][npm-downloads-src]][npm-downloads-href]
+
+![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
+
 
 Continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control).
 
-![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
-####
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
 
@@ -13,8 +15,7 @@ npm i -D @dargmuesli/nuxt-cookie-control
 yarn add -D @dargmuesli/nuxt-cookie-control
 pnpm i -D @dargmuesli/nuxt-cookie-control
 ```
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
+
 
 ```javascript
 // nuxt.config.js
@@ -49,7 +50,7 @@ const {
 } = useCookieControl()
 </script>
 ```
-## Slot
+## Component Slots
 ### Bar
 ```html
 <CookieControl>
