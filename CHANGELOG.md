@@ -1,3 +1,10 @@
+## [2.2.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.3...2.2.4) (2023-01-06)
+
+
+### Bug Fixes
+
+* **cookie-control:** make color setter toggle more precise ([0477ae8](https://github.com/dargmuesli/nuxt-cookie-control/commit/0477ae8ffbbe5f02ace6ced5e9a51b867cacdefa))
+
 ## [2.2.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.2...2.2.3) (2023-01-06)
 
 
