@@ -6,7 +6,6 @@ import { defineNuxtPlugin } from '#imports'
 import moduleOptions from '#build/cookie-control-options'
 
 export default defineNuxtPlugin((_nuxtApp) => {
-  // const nuxtApp = useNuxtApp()
   const isConsentGiven = ref<boolean>()
   const cookiesEnabled = ref<Cookie[]>([])
   const cookiesEnabledIds = ref<string[]>([])
@@ -22,7 +21,6 @@ export default defineNuxtPlugin((_nuxtApp) => {
 
   setConsent({
     isInit: !process.client,
-    // nuxtApp,
     isConsentGiven,
     moduleOptions,
     cookiesEnabled,

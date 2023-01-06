@@ -31,8 +31,6 @@ export interface Cookie {
   description?: Translatable
   id?: string
   name: Translatable
-  // onAccept?: Function
-  // onDecline?: Function
   src?: string
   targetCookieIds?: string[]
 }

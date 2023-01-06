@@ -1,5 +1,4 @@
 import Cookies from 'js-cookie'
-// import { NuxtApp } from 'nuxt/dist/app/nuxt'
 import slugify from '@sindresorhus/slugify'
 import { Ref } from 'vue'
 
@@ -8,23 +7,13 @@ import { LOCALE_DEFAULT } from './constants'
 import { Cookie, ModuleOptions, Translatable } from './types'
 
 export const useAcceptNecessary = () => {
-  const { cookiesEnabled, /* isConsentGiven, */ moduleOptions } =
-    useCookieControl()
-  // const nuxtApp = useNuxtApp()
+  const { cookiesEnabled, moduleOptions } = useCookieControl()
 
-  return () =>
-    acceptNecessary(
-      // nuxtApp,
-      cookiesEnabled,
-      // isConsentGiven,
-      moduleOptions.cookies?.necessary
-    )
+  return () => acceptNecessary(cookiesEnabled, moduleOptions.cookies?.necessary)
 }
 
 export const acceptNecessary = (
-  // nuxtApp: NuxtApp,
   cookiesEnabledRef: Ref<Cookie[]>,
-  // isConsentGivenRef: Ref<boolean>,
   cookiesNecessary: Cookie[] = []
 ) => {
   const expires = new Date()
@@ -40,8 +29,7 @@ export const acceptNecessary = (
     expires,
   })
 
-  setHead(/* nuxtApp, */ cookiesEnabledRef.value)
-  // callAcceptedFunctions(nuxtApp, enabled.value)
+  setHead(cookiesEnabledRef.value)
   window.location.reload()
 }
 
@@ -70,11 +58,10 @@ const resolveTranslatable = (
 export const useSetConsent = () => {
   const { isConsentGiven, moduleOptions, cookiesEnabled, cookiesEnabledIds } =
     useCookieControl()
-  // const nuxtApp = useNuxtApp()
+
   return () =>
     setConsent({
       isInit: false,
-      // nuxtApp,
       isConsentGiven,
       moduleOptions,
       cookiesEnabled,
@@ -84,14 +71,12 @@ export const useSetConsent = () => {
 
 export const setConsent = ({
   isInit = false,
-  // nuxtApp,
   isConsentGiven,
   moduleOptions,
   cookiesEnabled,
   cookiesEnabledIds,
 }: {
   isInit: boolean
-  // nuxtApp: NuxtApp
   isConsentGiven: Ref<boolean | undefined>
   moduleOptions: ModuleOptions
   cookiesEnabled: Ref<Cookie[]>
@@ -105,17 +90,17 @@ export const setConsent = ({
     const enabledFromCookie = Cookies.get('cookie_control_enabled_cookies')
 
     cookiesEnabled.value.push(
-      ...moduleOptions.cookies.optional.filter((cookieOptional) => {
-        return enabledFromCookie?.includes(getCookieId(cookieOptional))
-      })
+      ...moduleOptions.cookies.optional.filter((cookieOptional) =>
+        enabledFromCookie?.includes(getCookieId(cookieOptional))
+      )
     )
   }
 
   if (moduleOptions.cookies?.necessary)
     cookiesEnabled.value.push(
-      ...moduleOptions.cookies.necessary.filter((cookieNecessary) => {
-        return cookieNecessary.src // || c.onAccept
-      })
+      ...moduleOptions.cookies.necessary.filter(
+        (cookieNecessary) => cookieNecessary.src
+      )
     )
 
   cookiesEnabledIds.value = cookiesEnabled.value.map((cookieEnabled) =>
@@ -123,13 +108,8 @@ export const setConsent = ({
   )
 
   if (process.client && !isInit) {
-    setHead(/* nuxtApp, */ cookiesEnabled.value)
-    clearCookies(
-      // nuxtApp,
-      cookiesEnabledIds.value,
-      moduleOptions.cookies.optional
-    )
-    // callAcceptedFunctions(nuxtApp, cookiesEnabled.value)
+    setHead(cookiesEnabled.value)
+    clearCookies(cookiesEnabledIds.value, moduleOptions.cookies.optional)
   }
 }
 
@@ -140,7 +120,6 @@ export const getCookieId = (cookie: Cookie) =>
   cookie.id || slugify(resolveTranslatable(cookie.name))
 
 export const clearCookies = (
-  // nuxtApp: NuxtApp,
   cookiesEnabledIds: string[],
   cookiesOptional: Cookie[]
 ) => {
@@ -149,7 +128,6 @@ export const clearCookies = (
   )
 
   for (const cookieDisabled of cookiesDisabled) {
-    // if (cookieDisabled.onDecline) cookieDisabled.onDecline().call(nuxtApp)
     if (!cookieDisabled.targetCookieIds) continue
 
     for (const cookieDisabledId of cookieDisabled.targetCookieIds) {
@@ -168,7 +146,7 @@ export const clearCookies = (
   }
 }
 
-export const setHead = (/* nuxtApp: NuxtApp, */ enabledCookies: Cookie[]) => {
+export const setHead = (enabledCookies: Cookie[]) => {
   const head = document.getElementsByTagName('head')[0]
 
   for (const cookieEnabled of enabledCookies) {
@@ -176,9 +154,6 @@ export const setHead = (/* nuxtApp: NuxtApp, */ enabledCookies: Cookie[]) => {
 
     const script = document.createElement('script')
     script.src = cookieEnabled.src
-    // script.addEventListener('load', () => {
-    //   if (cookieEnabled.onAccept) cookieEnabled.onAccept().call(nuxtApp)
-    // })
     head.appendChild(script)
   }
 }
@@ -203,14 +178,3 @@ export const setCookies = ({
     expires,
   })
 }
-
-// export const callAcceptedFunctions = (
-//   nuxtApp: NuxtApp,
-//   cookiesEnabled: Cookie[]
-// ) => {
-//   for (const cookieEnabled of cookiesEnabled) {
-//     if (!cookieEnabled.onAccept) continue
-
-//     cookieEnabled.onAccept().call(nuxtApp)
-//   }
-// }

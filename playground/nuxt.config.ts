@@ -23,14 +23,6 @@ export default defineNuxtConfig({
               name: 'Optional Cookie',
               id: 'op',
               targetCookieIds: ['_o', '_p', '_t'],
-              // accepted: () => {
-              //   // const app = useNuxtApp()
-              //   alert('accepted')
-              // },
-              // declined: () => {
-              //   // const app = useNuxtApp()
-              //   alert('declined')
-              // },
             },
           ],
         },
