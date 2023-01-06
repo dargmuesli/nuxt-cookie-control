@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.2...2.2.3) (2023-01-06)
+
+
+### Bug Fixes
+
+* **composables:** set type explicitly ([adfc31e](https://github.com/dargmuesli/nuxt-cookie-control/commit/adfc31eb560e28882c0076ad7a535217660711bf))
+
 ## [2.2.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.1...2.2.2) (2022-12-28)
 
 
