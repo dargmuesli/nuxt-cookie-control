@@ -30,7 +30,6 @@ export const acceptNecessary = (
   })
 
   setHead(cookiesEnabledRef.value)
-  window.location.reload()
 }
 
 export const useResolveTranslatable = (locale = LOCALE_DEFAULT) => {

@@ -15,7 +15,7 @@
             </div>
             <div class="cookieControl__BarButtons">
               <button
-                @click="setConsent({ reload: false })"
+                @click="setConsent({})"
                 v-text="localeStrings?.acceptAll"
               />
               <button
@@ -190,12 +190,10 @@ const toogleCookie = (cookie: Cookie) => {
 const setConsent = ({
   type = undefined,
   isConsentGiven = true,
-  reload = true,
   declineAll = false,
 }: {
   type?: 'partial'
   isConsentGiven?: boolean
-  reload?: boolean
   declineAll?: boolean
 }) => {
   const cookieIds = declineAll
@@ -215,12 +213,8 @@ const setConsent = ({
     expires: expirationDate,
   })
 
-  if (reload) {
-    window.location.reload()
-  } else {
-    setConsentFun()
-    isModalActive.value = false
-  }
+  setConsentFun()
+  isModalActive.value = false
 }
 const getDescription = (description: Translatable) =>
   `${
