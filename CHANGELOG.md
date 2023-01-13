@@ -1,3 +1,13 @@
+# [3.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.4...3.0.0-beta.1) (2023-01-13)
+
+
+* feat!: remove page reload ([9b85dd9](https://github.com/dargmuesli/nuxt-cookie-control/commit/9b85dd985ef6117847e68ee109b237739682b85a))
+
+
+### BREAKING CHANGES
+
+* decide if you need a page reload on cookie configuration change yourself instead! Simply `watch` enabled cookies for changes you wish a page reload for and execute it in your client's code instead of having page reloads forced upon you.
+
 ## [2.2.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.3...2.2.4) (2023-01-06)
 
 
