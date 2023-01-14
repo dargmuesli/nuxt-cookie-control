@@ -1,3 +1,10 @@
+# [3.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.5...3.0.0-beta.6) (2023-01-14)
+
+
+### Bug Fixes
+
+* use js-cookie outside component ([9b689d9](https://github.com/dargmuesli/nuxt-cookie-control/commit/9b689d9ef7742f4ffcc4bdd334b23fa8d751ab14))
+
 # [3.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.4...3.0.0-beta.5) (2023-01-14)
 
 
