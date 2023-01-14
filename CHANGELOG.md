@@ -1,3 +1,11 @@
+# [3.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.2...3.0.0-beta.3) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cookie-control:** correct local cloned state configuration usage ([393d59f](https://github.com/dargmuesli/nuxt-cookie-control/commit/393d59f0d077ff5674738336c9046f2c59174c36))
+* **playground:** correct locale type ([189e937](https://github.com/dargmuesli/nuxt-cookie-control/commit/189e9378a60df1eebb302fe6c295028f1866b507))
+
 # [3.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.1...3.0.0-beta.2) (2023-01-14)
 
 
