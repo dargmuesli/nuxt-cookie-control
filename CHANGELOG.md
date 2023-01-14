@@ -1,3 +1,10 @@
+# [3.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.4...3.0.0-beta.5) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cookie-control:** properly save partial cookie configurations ([ebb396e](https://github.com/dargmuesli/nuxt-cookie-control/commit/ebb396ee715ea7dc942ddb001bd4bed39579c9e9))
+
 # [3.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.3...3.0.0-beta.4) (2023-01-14)
 
 
