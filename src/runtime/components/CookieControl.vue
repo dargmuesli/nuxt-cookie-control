@@ -103,7 +103,12 @@
                         <span v-if="cookie.description">
                           {{ getDescription(cookie.description) }}
                         </span>
-                        <span v-if="cookie.targetCookieIds">
+                        <span
+                          v-if="
+                            moduleOptions.isCookieIdVisible &&
+                            cookie.targetCookieIds
+                          "
+                        >
                           {{
                             ' IDs: ' +
                             cookie.targetCookieIds

@@ -71,6 +71,7 @@ export interface ModuleOptions {
   cookieNameCookiesEnabledIds: string
   isAcceptNecessaryButtonEnabled?: boolean
   isControlButtonEnabled?: boolean
+  isCookieIdVisible?: boolean
   isCssEnabled?: boolean
   isCssPolyfillEnabled?: boolean
   isDashInDescriptionEnabled?: boolean
@@ -118,6 +119,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   cookieNameCookiesEnabledIds: 'cookie_control_cookies_enabled_ids',
   isAcceptNecessaryButtonEnabled: true,
   isControlButtonEnabled: true,
+  isCookieIdVisible: false,
   isCssEnabled: true,
   isCssPolyfillEnabled: true,
   isDashInDescriptionEnabled: true,

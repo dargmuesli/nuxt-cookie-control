@@ -154,6 +154,9 @@ isAcceptNecessaryButtonEnabled: true
 // Switch to toggle the button that opens the configuration modal.
 isControlButtonEnabled: true,
 
+// Switch to toggle the concatenation of target cookie ids to the cookie description.
+isCookieIdVisible: false,
+
 // Switch to toggle the inclusion of this module's css.
 // If css is set to false, you will still be able to access your color variables.
 isCssEnabled: true,
