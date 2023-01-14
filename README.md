@@ -6,6 +6,8 @@
 
 Continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control).
 
+🚩 **Make sure to read the Migration instructions for all major version updates like [v2.0.0](https://github.com/dargmuesli/nuxt-cookie-control/releases/tag/2.0.0), [v3.0.0](https://github.com/dargmuesli/nuxt-cookie-control/releases/tag/3.0.0) and following!**
+
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
 
