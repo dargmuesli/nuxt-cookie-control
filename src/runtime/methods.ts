@@ -1,7 +1,10 @@
+import Cookies from 'js-cookie'
 import slugify from '@sindresorhus/slugify'
 
 import { LOCALE_DEFAULT } from './constants'
 import { Cookie, Translatable } from './types'
+
+export const getCookie = (name: string) => Cookies.get(name)
 
 export const getCookieId = (cookie: Cookie) =>
   cookie.id || slugify(resolveTranslatable(cookie.name))
@@ -9,12 +12,9 @@ export const getCookieId = (cookie: Cookie) =>
 export const getCookieIds = (cookies: Cookie[]) =>
   cookies.map((cookie) => getCookieId(cookie))
 
-export const useResolveTranslatable = (locale = LOCALE_DEFAULT) => {
-  return (translatable: Translatable) =>
-    resolveTranslatable(translatable, locale)
-}
+export const removeCookie = (name: string) => Cookies.remove(name)
 
-const resolveTranslatable = (
+export const resolveTranslatable = (
   translatable: Translatable,
   locale = LOCALE_DEFAULT
 ) => {
@@ -29,4 +29,15 @@ const resolveTranslatable = (
     throw new Error(`Could not get translation for locale ${locale}.`)
 
   return result
+}
+
+export const setCookie = (
+  name: string,
+  value: string,
+  options: Cookies.CookieAttributes
+) => Cookies.set(name, value, options)
+
+export const useResolveTranslatable = (locale = LOCALE_DEFAULT) => {
+  return (translatable: Translatable) =>
+    resolveTranslatable(translatable, locale)
 }

@@ -87,9 +87,8 @@
                           getCookieIds(localCookiesEnabled)?.includes(
                             getCookieId(cookie)
                           ) ||
-                          (Cookies.get(
-                            moduleOptions.cookieNameIsConsentGiven
-                          ) !== 'true' &&
+                          (getCookie(moduleOptions.cookieNameIsConsentGiven) !==
+                            'true' &&
                             typeof moduleOptions.isIframeBlocked === 'object' &&
                             moduleOptions.isIframeBlocked.initialState)
                         "
@@ -162,11 +161,17 @@
 </template>
 
 <script setup lang="ts">
-import Cookies from 'js-cookie'
 import { ref, computed, onBeforeMount, watch } from 'vue'
 
 import { Cookie, CookieType, Locale, Translatable } from '../types'
-import { getCookieId, getCookieIds, useResolveTranslatable } from '../methods'
+import {
+  getCookie,
+  getCookieId,
+  getCookieIds,
+  removeCookie,
+  setCookie,
+  useResolveTranslatable,
+} from '../methods'
 
 import { useCookieControl } from '#imports'
 
@@ -301,7 +306,7 @@ onBeforeMount(async () => {
     isColorsSet.value = true
   }
 
-  if (Cookies.get(moduleOptions.cookieNameIsConsentGiven) === 'true') {
+  if (getCookie(moduleOptions.cookieNameIsConsentGiven) === 'true') {
     for (const cookieOptional of moduleOptions.cookies.optional) {
       if (
         typeof moduleOptions.isIframeBlocked === 'boolean'
@@ -319,7 +324,7 @@ watch(
     localCookiesEnabled.value = [...(current || [])]
 
     if (isConsentGiven.value) {
-      Cookies.set(
+      setCookie(
         moduleOptions.cookieNameCookiesEnabledIds,
         getCookieIds(current || []).join(','),
         {
@@ -335,7 +340,7 @@ watch(
         document.getElementsByTagName('head')[0].appendChild(script)
       }
     } else {
-      Cookies.remove(moduleOptions.cookieNameCookiesEnabledIds)
+      removeCookie(moduleOptions.cookieNameCookiesEnabledIds)
     }
 
     // delete formerly enabled cookies that are now disabled
@@ -347,7 +352,7 @@ watch(
       if (!cookieOptionalDisabled.targetCookieIds) continue
 
       for (const cookieOptionalDisabledId of cookieOptionalDisabled.targetCookieIds) {
-        Cookies.remove(cookieOptionalDisabledId)
+        removeCookie(cookieOptionalDisabledId)
       }
 
       if (cookieOptionalDisabled.src) {
@@ -365,9 +370,9 @@ watch(
 )
 watch(isConsentGiven, (current, _previous) => {
   if (current === undefined) {
-    Cookies.remove(moduleOptions.cookieNameIsConsentGiven)
+    removeCookie(moduleOptions.cookieNameIsConsentGiven)
   } else {
-    Cookies.set(moduleOptions.cookieNameIsConsentGiven, current.toString(), {
+    setCookie(moduleOptions.cookieNameIsConsentGiven, current.toString(), {
       expires,
     })
   }
