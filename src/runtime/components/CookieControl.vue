@@ -214,9 +214,14 @@ const acceptNecessary = () => {
   })
 }
 const acceptPartial = () => {
+  const localCookiesEnabledIds = getCookieIds(localCookiesEnabled.value)
+
   setCookies({
     isConsentGiven: true,
-    cookiesOptionalEnabled: localCookiesEnabled.value,
+    cookiesOptionalEnabled: [
+      ...moduleOptions.cookies?.necessary,
+      ...moduleOptions.cookies.optional,
+    ].filter((cookie) => localCookiesEnabledIds.includes(getCookieId(cookie))),
   })
 }
 const declineAll = () => {
@@ -226,13 +231,14 @@ const declineAll = () => {
   })
 }
 const toogleCookie = (cookie: Cookie) => {
-  if (!localCookiesEnabled.value.includes(cookie)) {
+  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(
+    getCookieId(cookie)
+  )
+
+  if (cookieIndex < 0) {
     localCookiesEnabled.value.push(cookie)
   } else {
-    localCookiesEnabled.value.splice(
-      localCookiesEnabled.value.indexOf(cookie),
-      1
-    )
+    localCookiesEnabled.value.splice(cookieIndex, 1)
   }
 }
 const getDescription = (description: Translatable) =>
