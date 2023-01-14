@@ -8,7 +8,7 @@ export default {
   barTitle: 'Cookies',
   blockedIframe: 'To see this, please enable functional cookies',
   close: 'Close',
-  declineAll: 'Delete all',
+  declineAll: 'Decline all',
   functional: 'Functional cookies',
   here: 'here',
   manageCookies: 'Manage cookies',
