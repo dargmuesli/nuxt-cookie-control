@@ -34,7 +34,7 @@ const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()
 // computations
 const isCookieFunctionalEnabled = computed(
   () =>
-    cookiesEnabled.value.filter(
+    (cookiesEnabled.value || []).filter(
       (cookieEnabled: Cookie) => cookieEnabled.name === 'functional'
     ).length > 0
 )

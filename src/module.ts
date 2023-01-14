@@ -2,7 +2,6 @@ import { resolve } from 'node:path'
 
 import {
   defineNuxtModule,
-  isNuxt2,
   addPlugin,
   extendWebpackConfig,
   addTemplate,
@@ -59,34 +58,6 @@ export default defineNuxtModule<ModuleOptions>({
           2
         )} as ModuleOptions`,
     })
-
-    if (isNuxt2()) {
-      // Nuxt-purgecss fix
-      try {
-        if (require.resolve('nuxt-purgecss').length > 0) {
-          // @ts-ignore
-          if (nuxt.options.purgeCSS) {
-            // @ts-ignore
-            if (nuxt.options.purgeCSS.whitelistPatternsChildren) {
-              // @ts-ignore
-              nuxt.options.purgeCSS.whitelistPatternsChildren.push(
-                /cookieControl/
-              )
-            } else {
-              // @ts-ignore
-              nuxt.options.purgeCSS.whitelistPatternsChildren = [
-                /cookieControl/,
-              ]
-            }
-          } else {
-            // @ts-ignore
-            nuxt.options.purgeCSS = {
-              whitelistPatternsChildren: [/cookieControl/],
-            }
-          }
-        }
-      } catch (e) {}
-    }
   },
 })
 

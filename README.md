@@ -6,6 +6,8 @@
 
 Continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control).
 
+🚩 **Make sure to read the Migration instructions for all major version updates like [v2.0.0](https://github.com/dargmuesli/nuxt-cookie-control/releases/tag/2.0.0), [v3.0.0](https://github.com/dargmuesli/nuxt-cookie-control/releases/tag/3.0.0) and following!**
+
 Try it out here:
 [Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
 
@@ -141,11 +143,21 @@ cookies: {
   optional: [],
 }
 
+// The milliseconds from now until expiry of the cookies that are being set by this module.
+cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
+
+// Names for the cookies that are being set by this module.
+cookieNameIsConsentGiven: 'cookie_control_is_consent_given',
+cookieNameCookiesEnabledIds: 'cookie_control_cookies_enabled_ids',
+
 // Switch to toggle the "accept necessary" button.
 isAcceptNecessaryButtonEnabled: true
 
 // Switch to toggle the button that opens the configuration modal.
 isControlButtonEnabled: true,
+
+// Switch to toggle the concatenation of target cookie ids to the cookie description.
+isCookieIdVisible: false,
 
 // Switch to toggle the inclusion of this module's css.
 // If css is set to false, you will still be able to access your color variables.

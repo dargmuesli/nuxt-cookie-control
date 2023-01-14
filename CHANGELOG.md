@@ -1,3 +1,84 @@
+# [3.0.0-beta.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.6...3.0.0-beta.7) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cookie:** set same-site to strict ([0ab00f7](https://github.com/dargmuesli/nuxt-cookie-control/commit/0ab00f7fca5c304e9cc4d747cb0b908c74e7172d))
+
+# [3.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.5...3.0.0-beta.6) (2023-01-14)
+
+
+### Bug Fixes
+
+* use js-cookie outside component ([9b689d9](https://github.com/dargmuesli/nuxt-cookie-control/commit/9b689d9ef7742f4ffcc4bdd334b23fa8d751ab14))
+
+# [3.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.4...3.0.0-beta.5) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cookie-control:** properly save partial cookie configurations ([ebb396e](https://github.com/dargmuesli/nuxt-cookie-control/commit/ebb396ee715ea7dc942ddb001bd4bed39579c9e9))
+
+# [3.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.3...3.0.0-beta.4) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cookie-control:** update local configuration on global change ([8a253eb](https://github.com/dargmuesli/nuxt-cookie-control/commit/8a253ebc8ca9eb39e68f1b164c5d7a2edfef825b))
+
+
+### Features
+
+* add module option to switch target id visibility ([4264052](https://github.com/dargmuesli/nuxt-cookie-control/commit/42640529820b6e43a2cffcaf8880090db384d44c))
+
+# [3.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.2...3.0.0-beta.3) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cookie-control:** correct local cloned state configuration usage ([393d59f](https://github.com/dargmuesli/nuxt-cookie-control/commit/393d59f0d077ff5674738336c9046f2c59174c36))
+* **playground:** correct locale type ([189e937](https://github.com/dargmuesli/nuxt-cookie-control/commit/189e9378a60df1eebb302fe6c295028f1866b507))
+
+# [3.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.1...3.0.0-beta.2) (2023-01-14)
+
+
+### Bug Fixes
+
+* **locale:** correct decline string ([f7bce65](https://github.com/dargmuesli/nuxt-cookie-control/commit/f7bce65d90faf7df73cd332843a30dc6459131a1))
+* **module:** remove unused Nuxt 2 code ([bd7b234](https://github.com/dargmuesli/nuxt-cookie-control/commit/bd7b234e28037b5f02293074a45b6d53434f9125))
+
+
+* feat!: rework control persistence ([7631391](https://github.com/dargmuesli/nuxt-cookie-control/commit/7631391b8c06dc7bff897aa76814a02a27d5d74f))
+* feat(plugin)!: do not initialize cookies ([2d85581](https://github.com/dargmuesli/nuxt-cookie-control/commit/2d85581b3ad4b22ab52257872e046cf9d606a6ef))
+
+
+### BREAKING CHANGES
+
+* control persistence is reworked completely, see changes below
+- change own cookie names from `(cookie_control_consent, cookie_control_enabled_cookies)` to `(cookie_control_is_consent_given, cookie_control_cookies_enabled_ids)`
+- remove methods `useAcceptNecessary`, `acceptNecessary`, `useSetConsent`, `getCookieControlConsent`, `clearCookies`, `setHead`, `setConsent`, `setCookies`
+- state properties `cookiesEnabled`, `cookiesEnabledIds` and `isConsentGiven` can be undefined
+- include required cookies in enabled cookie list
+
+feat:
+- add ability to customize module's own cookie names and expiry
+- add method `getCookieIds`
+
+fix:
+- correct display of unsaved changes hint
+- properly initialize state by reading from cookies
+* no cookie is being saved until a user allows cookies to be saved. You now need to check for existence of cookie control's own cookies.
+
+# [3.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.4...3.0.0-beta.1) (2023-01-13)
+
+
+* feat!: remove page reload ([9b85dd9](https://github.com/dargmuesli/nuxt-cookie-control/commit/9b85dd985ef6117847e68ee109b237739682b85a))
+
+
+### BREAKING CHANGES
+
+* decide if you need a page reload on cookie configuration change yourself instead! Simply `watch` enabled cookies for changes you wish a page reload for and execute it in your client's code instead of having page reloads forced upon you.
+
 ## [2.2.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.3...2.2.4) (2023-01-06)
 
 
