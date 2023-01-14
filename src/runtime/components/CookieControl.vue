@@ -84,7 +84,9 @@
                         :id="resolveTranslatable(cookie.name)"
                         type="checkbox"
                         :checked="
-                          cookiesEnabled?.includes(cookie) ||
+                          getCookieIds(localCookiesEnabled)?.includes(
+                            getCookieId(cookie)
+                          ) ||
                           (Cookies.get(
                             moduleOptions.cookieNameIsConsentGiven
                           ) !== 'true' &&
@@ -159,7 +161,7 @@ import Cookies from 'js-cookie'
 import { ref, computed, onBeforeMount, watch } from 'vue'
 
 import { Cookie, CookieType, Locale, Translatable } from '../types'
-import { getCookieIds, useResolveTranslatable } from '../methods'
+import { getCookieId, getCookieIds, useResolveTranslatable } from '../methods'
 
 import { useCookieControl } from '#imports'
 
