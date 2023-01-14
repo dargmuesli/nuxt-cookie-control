@@ -1,3 +1,33 @@
+# [3.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.1...3.0.0-beta.2) (2023-01-14)
+
+
+### Bug Fixes
+
+* **locale:** correct decline string ([f7bce65](https://github.com/dargmuesli/nuxt-cookie-control/commit/f7bce65d90faf7df73cd332843a30dc6459131a1))
+* **module:** remove unused Nuxt 2 code ([bd7b234](https://github.com/dargmuesli/nuxt-cookie-control/commit/bd7b234e28037b5f02293074a45b6d53434f9125))
+
+
+* feat!: rework control persistence ([7631391](https://github.com/dargmuesli/nuxt-cookie-control/commit/7631391b8c06dc7bff897aa76814a02a27d5d74f))
+* feat(plugin)!: do not initialize cookies ([2d85581](https://github.com/dargmuesli/nuxt-cookie-control/commit/2d85581b3ad4b22ab52257872e046cf9d606a6ef))
+
+
+### BREAKING CHANGES
+
+* control persistence is reworked completely, see changes below
+- change own cookie names from `(cookie_control_consent, cookie_control_enabled_cookies)` to `(cookie_control_is_consent_given, cookie_control_cookies_enabled_ids)`
+- remove methods `useAcceptNecessary`, `acceptNecessary`, `useSetConsent`, `getCookieControlConsent`, `clearCookies`, `setHead`, `setConsent`, `setCookies`
+- state properties `cookiesEnabled`, `cookiesEnabledIds` and `isConsentGiven` can be undefined
+- include required cookies in enabled cookie list
+
+feat:
+- add ability to customize module's own cookie names and expiry
+- add method `getCookieIds`
+
+fix:
+- correct display of unsaved changes hint
+- properly initialize state by reading from cookies
+* no cookie is being saved until a user allows cookies to be saved. You now need to check for existence of cookie control's own cookies.
+
 # [3.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.4...3.0.0-beta.1) (2023-01-13)
 
 
