@@ -132,9 +132,10 @@ const loadLocales = async (moduleOptions: ModuleOptions) => {
   moduleOptions.locales = []
 
   for (const locale of locales) {
-    const text = await import(
-      await resolvePath(resolve(runtimeDir, 'locale', locale))
-    ).then((r: any) => r.default || r)
+    const rpath = await resolvePath(resolve(runtimeDir, "locale", locale))
+    console.log(rpath)
+    const path = !rpath.toLowerCase().startsWith("file://") || !rpath.toLowerCase().startsWith("/") ? `file://${rpath}` : rpath
+    const text = await import(path).then((r) => r.default || r);
 
     if (!text) throw new Error(`Could not import text for locale ${locale}`)
 
