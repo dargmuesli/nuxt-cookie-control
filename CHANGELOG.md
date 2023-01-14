@@ -1,3 +1,15 @@
+# [3.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.3...3.0.0-beta.4) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cookie-control:** update local configuration on global change ([8a253eb](https://github.com/dargmuesli/nuxt-cookie-control/commit/8a253ebc8ca9eb39e68f1b164c5d7a2edfef825b))
+
+
+### Features
+
+* add module option to switch target id visibility ([4264052](https://github.com/dargmuesli/nuxt-cookie-control/commit/42640529820b6e43a2cffcaf8880090db384d44c))
+
 # [3.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.2...3.0.0-beta.3) (2023-01-14)
 
 
