@@ -141,6 +141,13 @@ cookies: {
   optional: [],
 }
 
+// The milliseconds from now until expiry of the cookies that are being set by this module.
+cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
+
+// Names for the cookies that are being set by this module.
+cookieNameIsConsentGiven: 'cookie_control_is_consent_given',
+cookieNameCookiesEnabledIds: 'cookie_control_cookies_enabled_ids',
+
 // Switch to toggle the "accept necessary" button.
 isAcceptNecessaryButtonEnabled: true
 

@@ -66,6 +66,9 @@ export interface ModuleOptions {
     necessary: Cookie[]
     optional: Cookie[]
   }
+  cookieExpiryOffsetMs: number
+  cookieNameIsConsentGiven: string
+  cookieNameCookiesEnabledIds: string
   isAcceptNecessaryButtonEnabled?: boolean
   isControlButtonEnabled?: boolean
   isCssEnabled?: boolean
@@ -110,6 +113,9 @@ export const DEFAULTS: Required<ModuleOptions> = {
     necessary: [],
     optional: [],
   },
+  cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
+  cookieNameIsConsentGiven: 'cookie_control_is_consent_given',
+  cookieNameCookiesEnabledIds: 'cookie_control_cookies_enabled_ids',
   isAcceptNecessaryButtonEnabled: true,
   isControlButtonEnabled: true,
   isCssEnabled: true,
@@ -122,9 +128,9 @@ export const DEFAULTS: Required<ModuleOptions> = {
 }
 
 export interface State {
-  cookiesEnabled: Ref<Cookie[]>
-  cookiesEnabledIds: Ref<string[]>
-  isConsentGiven: Ref<boolean>
+  cookiesEnabled: Ref<Cookie[] | undefined>
+  cookiesEnabledIds: Ref<string[] | undefined>
+  isConsentGiven: Ref<boolean | undefined>
   isModalActive: Ref<boolean>
   moduleOptions: ModuleOptions
 }
