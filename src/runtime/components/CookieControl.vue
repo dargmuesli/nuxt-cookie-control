@@ -310,6 +310,8 @@ onBeforeMount(async () => {
 watch(
   () => cookiesEnabled.value,
   (current, _previous) => {
+    localCookiesEnabled.value = [...(current || [])]
+
     if (isConsentGiven.value) {
       Cookies.set(
         moduleOptions.cookieNameCookiesEnabledIds,
