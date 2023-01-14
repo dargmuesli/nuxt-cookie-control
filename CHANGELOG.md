@@ -1,3 +1,10 @@
+# [3.0.0-beta.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.6...3.0.0-beta.7) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cookie:** set same-site to strict ([0ab00f7](https://github.com/dargmuesli/nuxt-cookie-control/commit/0ab00f7fca5c304e9cc4d747cb0b908c74e7172d))
+
 # [3.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0-beta.5...3.0.0-beta.6) (2023-01-14)
 
 
