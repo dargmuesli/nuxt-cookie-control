@@ -35,7 +35,7 @@ export const setCookie = (
   name: string,
   value: string,
   options: Cookies.CookieAttributes
-) => Cookies.set(name, value, options)
+) => Cookies.set(name, value, { sameSite: 'Strict', ...options })
 
 export const useResolveTranslatable = (locale = LOCALE_DEFAULT) => {
   return (translatable: Translatable) =>
