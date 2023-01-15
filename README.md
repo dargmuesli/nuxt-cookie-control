@@ -8,8 +8,7 @@ Continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](htt
 
 🚩 **Make sure to read the Migration instructions for all major version updates like [v2.0.0](https://github.com/dargmuesli/nuxt-cookie-control/releases/tag/2.0.0), [v3.0.0](https://github.com/dargmuesli/nuxt-cookie-control/releases/tag/3.0.0) and following!**
 
-Try it out here:
-[Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
+[![Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/dargmuesli/nuxt-cookie-control?file=playground%2Fapp.vue)
 
 ## 🚀 Usage
 ```bash
