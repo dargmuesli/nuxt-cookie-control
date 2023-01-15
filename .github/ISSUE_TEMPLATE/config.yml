@@ -1,0 +1,10 @@
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/dargmuesli/nuxt-cookie-control/discussions
+    about: Use discussions for asking questions.
+  - name: 📚 README
+    url: https://github.com/dargmuesli/nuxt-cookie-control/blob/master/README.md
+    about: Check documentation on usage.
+  - name: 📰 CHANGELOG
+    url: https://github.com/dargmuesli/nuxt-cookie-control/blob/master/CHANGELOG.md
+    about: Information on potentially breaking changes and migration instructions.
