@@ -1,20 +1,20 @@
 import { LocaleStrings } from '../types'
 
 export default {
+  accept: 'Accept',
   acceptAll: 'Accept all',
-  acceptNecessary: 'Accept necessary',
-  barDescription:
-    'We use our own cookies and third-party cookies so that we can show you this website and better understand how you use it, with a view to improving the services we offer. If you continue browsing, we consider that you have accepted the cookies.',
-  barTitle: 'Cookies',
-  blockedIframe: 'To see this, please enable functional cookies',
+  bannerDescription:
+    'We use our own cookies and third-party cookies so that we can display this website correctly and better understand how this website is used, with a view to improving the services we offer. A decision on cookie usage permissions can be changed anytime using the cookie button that will appear after a selection has been made on this banner.',
+  bannerTitle: 'Cookies',
   close: 'Close',
-  declineAll: 'Decline all',
-  functional: 'Functional cookies',
+  cookiesFunctional: 'Functional cookies',
+  cookiesNecessary: 'Necessary cookies',
+  cookiesOptional: 'Optional cookies',
+  decline: 'Decline',
+  declineAll: 'Decline cookies',
   here: 'here',
-  manageCookies: 'Manage cookies',
-  necessary: 'Necessary cookies',
-  optional: 'Optional cookies',
-  none: 'none',
+  iframeBlocked: 'To see this, please enable functional cookies',
+  manageCookies: 'Learn more and customize',
   save: 'Save',
-  unsaved: 'You have unsaved settings',
+  settingsUnsaved: 'You have unsaved settings',
 } as LocaleStrings

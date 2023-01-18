@@ -1,20 +1,20 @@
 import { LocaleStrings } from '../types'
 
 export default {
+  accept: 'Принимать',
   acceptAll: 'Принять все',
-  acceptNecessary: 'Я принимаю необходимое',
-  barDescription:
+  bannerDescription:
     'Мы используем наши собственные файлы cookie и сторонние файлы cookie, чтобы мы могли показать вам этот веб-сайт и лучше понять, как вы его используете, с целью улучшения предлагаемых нами услуг. Если вы продолжите просмотр, мы будем считать, что вы приняли файлы cookie.',
-  barTitle: 'Файлы cookie',
-  blockedIframe: 'Чтобы это увидеть, включите функциональные файлы cookie',
+  bannerTitle: 'Файлы cookie',
   close: 'Закрыть',
+  cookiesFunctional: 'Функциональные файлы cookie',
+  cookiesNecessary: 'Необходимые файлы cookie',
+  cookiesOptional: 'Дополнительные файлы cookie',
+  decline: 'Я принимаю необходимое',
   declineAll: 'Удалить все',
-  functional: 'Функциональные файлы cookie',
   here: 'здесь',
+  iframeBlocked: 'Чтобы это увидеть, включите функциональные файлы cookie',
   manageCookies: 'Управление файлами cookie',
-  necessary: 'Необходимые файлы cookie',
-  none: 'никто',
-  optional: 'Дополнительные файлы cookie',
   save: 'Сохранить',
-  unsaved: 'У вас есть несохраненные настройки',
+  settingsUnsaved: 'У вас есть несохраненные настройки',
 } as LocaleStrings
