@@ -11,7 +11,7 @@ export default {
   cookiesNecessary: 'Necessary cookies',
   cookiesOptional: 'Optional cookies',
   decline: 'Decline',
-  declineAll: 'Decline cookies',
+  declineAll: 'Decline all',
   here: 'here',
   iframeBlocked: 'To see this, please enable functional cookies',
   manageCookies: 'Learn more and customize',

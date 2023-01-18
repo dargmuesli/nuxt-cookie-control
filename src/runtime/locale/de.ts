@@ -11,7 +11,7 @@ export default {
   cookiesNecessary: 'Notwendige Cookies',
   cookiesOptional: 'Optionale Cookies',
   decline: 'Ablehnen',
-  declineAll: 'Cookies ablehnen',
+  declineAll: 'Alle ablehnen',
   here: 'hier',
   iframeBlocked:
     'Um den Inhalt zu sehen, aktivieren Sie bitte funktionale Cookies',
