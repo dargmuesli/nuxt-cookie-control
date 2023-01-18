@@ -1,3 +1,10 @@
+# [4.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.0-beta.1...4.0.0-beta.2) (2023-01-18)
+
+
+### Bug Fixes
+
+* **locale:** revert decline all translation ([fd09a21](https://github.com/dargmuesli/nuxt-cookie-control/commit/fd09a2113298ff78f201983e0760803b028e11fe))
+
 # [4.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0...4.0.0-beta.1) (2023-01-18)
 
 
