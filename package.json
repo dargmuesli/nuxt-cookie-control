@@ -1,6 +1,6 @@
 {
   "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "3.0.0",
+  "version": "4.0.0-beta.1",
   "description": "Nuxt Cookies Control Module",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
   "maintainers": [
