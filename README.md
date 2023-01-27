@@ -84,6 +84,7 @@ const {
 
 Currently available:
 - ar
+- az
 - de
 - en
 - es
