@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.2...4.0.3) (2023-01-29)
+
+
+### Bug Fixes
+
+* **locale:** correct language switch reactivity ([5957224](https://github.com/dargmuesli/nuxt-cookie-control/commit/5957224e59311d7a18d4449ca962c2dadd9d2ff3))
+
 ## [4.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.1...4.0.2) (2023-01-29)
 
 
