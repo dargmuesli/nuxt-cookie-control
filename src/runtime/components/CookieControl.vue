@@ -80,14 +80,14 @@
                             cookieType === CookieType.NECESSARY &&
                             cookie.name !== 'functional'
                           "
-                          :id="resolveTranslatable(cookie.name)"
+                          :id="resolveTranslatable(cookie.name, props.locale)"
                           type="checkbox"
                           disabled
                           checked
                         />
                         <input
                           v-else
-                          :id="resolveTranslatable(cookie.name)"
+                          :id="resolveTranslatable(cookie.name, props.locale)"
                           type="checkbox"
                           :checked="
                             getCookieIds(localCookiesEnabled).includes(
@@ -102,7 +102,9 @@
                           "
                           @change="toogleCookie(cookie)"
                         />
-                        <label :for="resolveTranslatable(cookie.name)">
+                        <label
+                          :for="resolveTranslatable(cookie.name, props.locale)"
+                        >
                           {{ getName(cookie.name) }}
                         </label>
                         <span class="cookieControl__ModalCookieName">
@@ -176,7 +178,7 @@ import {
   getCookieIds,
   removeCookie,
   setCookie,
-  useResolveTranslatable,
+  resolveTranslatable,
 } from '../methods'
 
 import { useCookieControl } from '#imports'
@@ -195,7 +197,6 @@ const {
   isModalActive,
   moduleOptions,
 } = useCookieControl()
-const resolveTranslatable = useResolveTranslatable(props.locale)
 
 // data
 const expires = new Date()
@@ -254,13 +255,11 @@ const toogleCookie = (cookie: Cookie) => {
 const getDescription = (description: Translatable) =>
   `${
     moduleOptions.isDashInDescriptionEnabled === false ? '' : '-'
-  } ${resolveTranslatable(description)}`
+  } ${resolveTranslatable(description, props.locale)}`
 const getName = (name: Translatable) => {
   return name === 'functional'
     ? localeStrings.value?.cookiesFunctional
-    : typeof name === 'string'
-    ? name
-    : name[props.locale]
+    : resolveTranslatable(name, props.locale)
 }
 const init = () => {
   expires.setTime(expires.getTime() + moduleOptions.cookieExpiryOffsetMs)
