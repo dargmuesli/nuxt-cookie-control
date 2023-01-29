@@ -52,14 +52,14 @@
             v-text="localeStrings?.settingsUnsaved"
           />
           <div class="cookieControl__ModalContent">
-            <div>
+            <div class="cookieControl__ModalContentInner">
               <slot name="modal" />
               <button
                 class="cookieControl__ModalClose"
                 @click="isModalActive = false"
                 v-text="localeStrings?.close"
               />
-              <div v-for="cookieType in CookieType" :key="cookieType">
+              <template v-for="cookieType in CookieType" :key="cookieType">
                 <template v-if="moduleOptions.cookies[cookieType].length">
                   <h3
                     v-text="
@@ -128,7 +128,7 @@
                     </li>
                   </ul>
                 </template>
-              </div>
+              </template>
               <div class="cookieControl__ModalButtons">
                 <button
                   @click="

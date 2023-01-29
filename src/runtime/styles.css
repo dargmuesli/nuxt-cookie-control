@@ -175,7 +175,6 @@
 }
 .cookieControl__Modal > div {
   font-size: initial;
-  padding-top: 80px;
 }
 .cookieControl__Modal button {
   color: var(--cookie-control-modalButtonColor);
@@ -203,7 +202,7 @@
 }
 .cookieControl__ModalContent h3 {
   font-size: 24px;
-  margin: 50px 0 25px;
+  margin: 15px 0px;
 }
 .cookieControl__ModalContent h3:first-of-type {
   margin-top: 0;
@@ -265,6 +264,11 @@
   transform: translate3d(0, -50%, 0);
   background-color: var(--cookie-control-checkboxInactiveCircleBackground);
 }
+.cookieControl__ModalContentInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .cookieControl__ModalInputWrapper {
   display: flex;
   align-items: flex-start;
@@ -278,17 +282,15 @@
   text-transform: none;
 }
 .cookieControl__ModalClose {
-  position: absolute;
+  align-self: flex-end;
   top: 20px;
   right: 20px;
 }
 .cookieControl__ModalButtons {
   display: flex;
-  margin-top: 80px;
-  align-items: flex-start;
-}
-.cookieControl__ModalButtons button + button {
-  margin-left: 20px;
+  margin-top: 40px;
+  align-items: stretch;
+  gap: 20px;
 }
 .cookieControl__ModalUnsaved {
   position: absolute;
@@ -335,7 +337,7 @@
     bottom: 0;
     max-width: none;
     max-height: 100%;
-    padding: 80px 20px 20px;
+    padding: 20px;
   }
   .cookieControl__BarButtons {
     width: 100%;
@@ -352,12 +354,10 @@
   .cookieControl__BarContainer,
   .cookieControl__ModalButtons {
     flex-direction: column;
+    gap: 0;
   }
   .cookieControl__ModalButtons button {
     width: 100%;
-  }
-  .cookieControl__ModalButtons button + button {
-    margin: 10px 0 0;
   }
 }
 .cookieControl__ControlButton {
