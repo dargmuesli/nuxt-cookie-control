@@ -1,3 +1,14 @@
+# [5.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.2...5.0.0-beta.1) (2023-01-29)
+
+
+* feat(ponyfill)!: disable by default and rename ([4a84f81](https://github.com/dargmuesli/nuxt-cookie-control/commit/4a84f81d0ed13c9e589481415562ca3c3bbffa79))
+
+
+### BREAKING CHANGES
+
+* - rename module option `isCssPolyfillEnabled` to `isCssPonyfillEnabled`
+- set module option `isCssPonyfillEnabled` default to `false`
+
 ## [4.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.1...4.0.2) (2023-01-29)
 
 
