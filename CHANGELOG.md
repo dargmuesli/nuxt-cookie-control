@@ -1,3 +1,11 @@
+## [4.0.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.0...4.0.1) (2023-01-29)
+
+
+### Bug Fixes
+
+* **component:** remove color set check ([3d942ed](https://github.com/dargmuesli/nuxt-cookie-control/commit/3d942ed9388ceff0d6e8577173ae302cdc1dd5f5)), closes [#31](https://github.com/dargmuesli/nuxt-cookie-control/issues/31)
+* **types:** set all module options defined ([65a183e](https://github.com/dargmuesli/nuxt-cookie-control/commit/65a183edf57260fc2b3ee3730264d62137a2a33d))
+
 # [4.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0...4.0.0) (2023-01-29)
 
 
