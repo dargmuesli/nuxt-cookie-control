@@ -15,7 +15,7 @@ export default {
   here: 'hier',
   iframeBlocked:
     'Um den Inhalt zu sehen, aktivieren Sie bitte funktionale Cookies',
-  manageCookies: 'Mehr erfahren und individuell anpassen',
+  manageCookies: 'Mehr erfahren und anpassen',
   save: 'Speichern',
   settingsUnsaved: 'Es gibt nicht gespeicherte Einstellungen',
 } as LocaleStrings
