@@ -3,7 +3,7 @@
     <section class="cookieControl">
       <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
         <div
-          v-if="isColorsSet && isConsentGiven === undefined"
+          v-if="isConsentGiven === undefined"
           :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
         >
           <div class="cookieControl__BarContainer">
@@ -30,9 +30,7 @@
       </transition>
       <button
         v-if="
-          moduleOptions.isControlButtonEnabled &&
-          isColorsSet &&
-          isConsentGiven !== undefined
+          moduleOptions.isControlButtonEnabled && isConsentGiven !== undefined
         "
         aria-label="Cookie control"
         class="cookieControl__ControlButton"
@@ -201,7 +199,6 @@ const resolveTranslatable = useResolveTranslatable(props.locale)
 
 // data
 const expires = new Date()
-const isColorsSet = ref(false)
 const localCookiesEnabled = ref([...(cookiesEnabled.value || [])])
 
 // computations
@@ -310,8 +307,6 @@ onBeforeMount(async () => {
         )
       }
     }
-
-    isColorsSet.value = true
   }
 
   if (getCookie(moduleOptions.cookieNameIsConsentGiven) === 'true') {
