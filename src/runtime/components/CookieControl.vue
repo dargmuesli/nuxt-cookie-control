@@ -90,7 +90,7 @@
                           :id="resolveTranslatable(cookie.name)"
                           type="checkbox"
                           :checked="
-                            getCookieIds(localCookiesEnabled)?.includes(
+                            getCookieIds(localCookiesEnabled).includes(
                               getCookieId(cookie)
                             ) ||
                             (getCookie(
@@ -220,7 +220,7 @@ const accept = () => {
 const decline = () => {
   setCookies({
     isConsentGiven: true,
-    cookiesOptionalEnabled: moduleOptions.cookies?.necessary,
+    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
   })
 }
 const acceptPartial = () => {
@@ -229,7 +229,7 @@ const acceptPartial = () => {
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: [
-      ...moduleOptions.cookies?.necessary,
+      ...moduleOptions.cookies.necessary,
       ...moduleOptions.cookies.optional,
     ].filter((cookie) => localCookiesEnabledIds.includes(getCookieId(cookie))),
   })
@@ -277,7 +277,7 @@ const setCookies = ({
     ? [
         ...moduleOptions.cookies.necessary,
         ...moduleOptions.cookies.optional.filter((cookieOptional: Cookie) =>
-          cookiesOptionalEnabledNew?.includes(cookieOptional)
+          cookiesOptionalEnabledNew.includes(cookieOptional)
         ),
       ]
     : []
@@ -314,7 +314,7 @@ onBeforeMount(async () => {
       if (
         typeof moduleOptions.isIframeBlocked === 'boolean'
           ? moduleOptions.isIframeBlocked === true
-          : moduleOptions.isIframeBlocked?.initialState === true
+          : moduleOptions.isIframeBlocked.initialState === true
       ) {
         localCookiesEnabled.value.push(cookieOptional)
       }

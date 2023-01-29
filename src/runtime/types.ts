@@ -54,14 +54,14 @@ export interface LocaleStrings {
 }
 
 export interface ModuleOptions {
-  barPosition?:
+  barPosition:
     | 'top-left'
     | 'top-right'
     | 'top-full'
     | 'bottom-left'
     | 'bottom-right'
     | 'bottom-full'
-  colors?: false | Record<string, any>
+  colors: false | Record<string, any>
   cookieExpiryOffsetMs: number
   cookieNameCookiesEnabledIds: string
   cookieNameIsConsentGiven: string
@@ -69,14 +69,14 @@ export interface ModuleOptions {
     necessary: Cookie[]
     optional: Cookie[]
   }
-  domain?: string
-  isAcceptNecessaryButtonEnabled?: boolean
-  isControlButtonEnabled?: boolean
-  isCookieIdVisible?: boolean
-  isCssEnabled?: boolean
-  isCssPolyfillEnabled?: boolean
-  isDashInDescriptionEnabled?: boolean
-  isIframeBlocked?: boolean | { initialState: boolean }
+  domain: string
+  isAcceptNecessaryButtonEnabled: boolean
+  isControlButtonEnabled: boolean
+  isCookieIdVisible: boolean
+  isCssEnabled: boolean
+  isCssPolyfillEnabled: boolean
+  isDashInDescriptionEnabled: boolean
+  isIframeBlocked: boolean | { initialState: boolean }
   locales: Locale[]
   localeTexts: PartialRecord<Locale, LocaleStrings>
 }
