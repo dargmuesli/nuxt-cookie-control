@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.1...4.0.2) (2023-01-29)
+
+
+### Bug Fixes
+
+* **locale:** simplify german cookie manage string ([df4899d](https://github.com/dargmuesli/nuxt-cookie-control/commit/df4899d165a0aa5c57bb7a178a1460a2564e91e3))
+
 ## [4.0.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.0...4.0.1) (2023-01-29)
 
 
