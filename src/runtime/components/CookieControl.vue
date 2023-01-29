@@ -295,7 +295,7 @@ onBeforeMount(async () => {
       variables[`cookie-control-${key}`] = `${moduleOptions.colors[key]}`
     }
 
-    if (moduleOptions.isCssPolyfillEnabled) {
+    if (moduleOptions.isCssPonyfillEnabled) {
       const module = await import('css-vars-ponyfill')
       const cssVars = module.default
       cssVars({ variables })

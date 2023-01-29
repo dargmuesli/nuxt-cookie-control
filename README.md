@@ -162,8 +162,8 @@ isCookieIdVisible: false,
 // If css is set to false, you will still be able to access your color variables.
 isCssEnabled: true,
 
-// Switch to toggle the css variables polyfill.
-isCssPolyfillEnabled: true,
+// Switch to toggle the css variables ponyfill.
+isCssPonyfillEnabled: false,
 
 // Switch to toggle the separation of cookie name and description in the configuration modal by a dash.
 isDashInDescriptionEnabled: true,

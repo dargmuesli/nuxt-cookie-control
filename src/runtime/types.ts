@@ -74,7 +74,7 @@ export interface ModuleOptions {
   isControlButtonEnabled: boolean
   isCookieIdVisible: boolean
   isCssEnabled: boolean
-  isCssPolyfillEnabled: boolean
+  isCssPonyfillEnabled: boolean
   isDashInDescriptionEnabled: boolean
   isIframeBlocked: boolean | { initialState: boolean }
   locales: Locale[]
@@ -121,7 +121,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   isControlButtonEnabled: true,
   isCookieIdVisible: false,
   isCssEnabled: true,
-  isCssPolyfillEnabled: true,
+  isCssPonyfillEnabled: false,
   isDashInDescriptionEnabled: true,
   isIframeBlocked: false,
   domain: '',
