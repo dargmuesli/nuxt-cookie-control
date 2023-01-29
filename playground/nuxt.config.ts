@@ -3,7 +3,6 @@ export default defineNuxtConfig({
     [
       '@dargmuesli/nuxt-cookie-control',
       {
-        locales: ['en', 'de'],
         cookies: {
           necessary: [
             {
@@ -26,6 +25,7 @@ export default defineNuxtConfig({
             },
           ],
         },
+        locales: ['en', 'de'],
       },
     ],
   ],
