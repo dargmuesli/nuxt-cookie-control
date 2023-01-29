@@ -3,7 +3,7 @@
     <section class="cookieControl">
       <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
         <div
-          v-if="isColorsSet && isConsentGiven === undefined"
+          v-if="isConsentGiven === undefined"
           :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
         >
           <div class="cookieControl__BarContainer">
@@ -30,9 +30,7 @@
       </transition>
       <button
         v-if="
-          moduleOptions.isControlButtonEnabled &&
-          isColorsSet &&
-          isConsentGiven !== undefined
+          moduleOptions.isControlButtonEnabled && isConsentGiven !== undefined
         "
         aria-label="Cookie control"
         class="cookieControl__ControlButton"
@@ -92,7 +90,7 @@
                           :id="resolveTranslatable(cookie.name)"
                           type="checkbox"
                           :checked="
-                            getCookieIds(localCookiesEnabled)?.includes(
+                            getCookieIds(localCookiesEnabled).includes(
                               getCookieId(cookie)
                             ) ||
                             (getCookie(
@@ -201,7 +199,6 @@ const resolveTranslatable = useResolveTranslatable(props.locale)
 
 // data
 const expires = new Date()
-const isColorsSet = ref(false)
 const localCookiesEnabled = ref([...(cookiesEnabled.value || [])])
 
 // computations
@@ -223,7 +220,7 @@ const accept = () => {
 const decline = () => {
   setCookies({
     isConsentGiven: true,
-    cookiesOptionalEnabled: moduleOptions.cookies?.necessary,
+    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
   })
 }
 const acceptPartial = () => {
@@ -232,7 +229,7 @@ const acceptPartial = () => {
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: [
-      ...moduleOptions.cookies?.necessary,
+      ...moduleOptions.cookies.necessary,
       ...moduleOptions.cookies.optional,
     ].filter((cookie) => localCookiesEnabledIds.includes(getCookieId(cookie))),
   })
@@ -280,7 +277,7 @@ const setCookies = ({
     ? [
         ...moduleOptions.cookies.necessary,
         ...moduleOptions.cookies.optional.filter((cookieOptional: Cookie) =>
-          cookiesOptionalEnabledNew?.includes(cookieOptional)
+          cookiesOptionalEnabledNew.includes(cookieOptional)
         ),
       ]
     : []
@@ -310,8 +307,6 @@ onBeforeMount(async () => {
         )
       }
     }
-
-    isColorsSet.value = true
   }
 
   if (getCookie(moduleOptions.cookieNameIsConsentGiven) === 'true') {
@@ -319,7 +314,7 @@ onBeforeMount(async () => {
       if (
         typeof moduleOptions.isIframeBlocked === 'boolean'
           ? moduleOptions.isIframeBlocked === true
-          : moduleOptions.isIframeBlocked?.initialState === true
+          : moduleOptions.isIframeBlocked.initialState === true
       ) {
         localCookiesEnabled.value.push(cookieOptional)
       }
