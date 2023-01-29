@@ -1,3 +1,18 @@
+# [5.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.1...5.0.0-beta.2) (2023-01-29)
+
+
+### Bug Fixes
+
+* **locale:** correct language switch reactivity ([5957224](https://github.com/dargmuesli/nuxt-cookie-control/commit/5957224e59311d7a18d4449ca962c2dadd9d2ff3))
+
+
+* feat(styles)!: use gap ([9be04f1](https://github.com/dargmuesli/nuxt-cookie-control/commit/9be04f1ad5d11b0713066133c49a09edb3e005e4))
+
+
+### BREAKING CHANGES
+
+* - change padding, margins and gap for display flex
+
 # [5.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.2...5.0.0-beta.1) (2023-01-29)
 
 
