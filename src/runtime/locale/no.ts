@@ -1,21 +1,21 @@
 import { LocaleStrings } from '../types'
 
 export default {
+  accept: 'Aksepterer',
   acceptAll: 'Godta alle',
-  acceptNecessary: 'Jeg aksepterer det nødvendige',
-  barDescription:
+  bannerDescription:
     'Vi bruker våre egne informasjonskapsler og tredjeparts informasjonskapsler, slik at vi kan vise deg dette nettstedet og bedre forstå hvordan du bruker det, med tanke på å forbedre tjenestene vi tilbyr.',
-  barTitle: 'Informasjonskapsler',
-  blockedIframe:
-    'For å se dette, vennligst aktiver funksjonelle informasjonskapsler',
+  bannerTitle: 'Informasjonskapsler',
   close: 'Lukk',
+  cookiesFunctional: 'Funksjonelle informasjonskapsler',
+  cookiesNecessary: 'Nødvendige informasjonskapsler',
+  cookiesOptional: 'Valgfrie informasjonskapsler',
+  decline: 'Jeg aksepterer det nødvendige',
   declineAll: 'Slett alle',
-  functional: 'Funksjonelle informasjonskapsler',
   here: 'her',
+  iframeBlocked:
+    'For å se dette, vennligst aktiver funksjonelle informasjonskapsler',
   manageCookies: 'Administrer informasjonskapsler',
-  necessary: 'Nødvendige informasjonskapsler',
-  none: 'ingen',
-  optional: 'Valgfrie informasjonskapsler',
   save: 'Lagre',
-  unsaved: 'Du har ulagrede innstillinger',
+  settingsUnsaved: 'Du har ulagrede innstillinger',
 } as LocaleStrings

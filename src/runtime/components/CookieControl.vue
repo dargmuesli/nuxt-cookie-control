@@ -9,16 +9,16 @@
           <div class="cookieControl__BarContainer">
             <div>
               <slot name="bar">
-                <h3 v-text="localeStrings?.barTitle" />
-                <p v-text="localeStrings?.barDescription" />
+                <h3 v-text="localeStrings?.bannerTitle" />
+                <p v-text="localeStrings?.bannerDescription" />
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
-              <button @click="acceptAll()" v-text="localeStrings?.acceptAll" />
+              <button @click="accept()" v-text="localeStrings?.accept" />
               <button
                 v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-                @click="acceptNecessary()"
-                v-text="localeStrings?.acceptNecessary"
+                @click="decline()"
+                v-text="localeStrings?.decline"
               />
               <button
                 @click="isModalActive = true"
@@ -51,7 +51,7 @@
           <p
             v-if="isSaved"
             class="cookieControl__ModalUnsaved"
-            v-text="localeStrings?.unsaved"
+            v-text="localeStrings?.settingsUnsaved"
           />
           <div class="cookieControl__ModalContent">
             <div>
@@ -62,66 +62,74 @@
                 v-text="localeStrings?.close"
               />
               <div v-for="cookieType in CookieType" :key="cookieType">
-                <h3 v-text="localeStrings && localeStrings[cookieType]" />
-                <ul v-if="moduleOptions.cookies[cookieType].length">
-                  <li
-                    v-for="cookie in moduleOptions.cookies[cookieType]"
-                    :key="cookie.id"
-                  >
-                    <div class="cookieControl__ModalInputWrapper">
-                      <input
-                        v-if="
-                          cookieType === CookieType.NECESSARY &&
-                          cookie.name !== 'functional'
-                        "
-                        :id="resolveTranslatable(cookie.name)"
-                        type="checkbox"
-                        disabled
-                        checked
-                      />
-                      <input
-                        v-else
-                        :id="resolveTranslatable(cookie.name)"
-                        type="checkbox"
-                        :checked="
-                          getCookieIds(localCookiesEnabled)?.includes(
-                            getCookieId(cookie)
-                          ) ||
-                          (getCookie(moduleOptions.cookieNameIsConsentGiven) !==
-                            'true' &&
-                            typeof moduleOptions.isIframeBlocked === 'object' &&
-                            moduleOptions.isIframeBlocked.initialState)
-                        "
-                        @change="toogleCookie(cookie)"
-                      />
-                      <label :for="resolveTranslatable(cookie.name)">
-                        {{ getName(cookie.name) }}
-                      </label>
-                      <span class="cookieControl__ModalCookieName">
-                        {{ getName(cookie.name) }}
-                        <span v-if="cookie.description">
-                          {{ getDescription(cookie.description) }}
-                        </span>
-                        <span
+                <template v-if="moduleOptions.cookies[cookieType].length">
+                  <h3
+                    v-text="
+                      localeStrings &&
+                      (cookieType === CookieType.NECESSARY
+                        ? localeStrings.cookiesNecessary
+                        : localeStrings.cookiesOptional)
+                    "
+                  />
+                  <ul>
+                    <li
+                      v-for="cookie in moduleOptions.cookies[cookieType]"
+                      :key="cookie.id"
+                    >
+                      <div class="cookieControl__ModalInputWrapper">
+                        <input
                           v-if="
-                            moduleOptions.isCookieIdVisible &&
-                            cookie.targetCookieIds
+                            cookieType === CookieType.NECESSARY &&
+                            cookie.name !== 'functional'
                           "
-                        >
-                          {{
-                            ' IDs: ' +
-                            cookie.targetCookieIds
-                              .map((id: string) => `"${id}"`)
-                              .join(', ')
-                          }}
+                          :id="resolveTranslatable(cookie.name)"
+                          type="checkbox"
+                          disabled
+                          checked
+                        />
+                        <input
+                          v-else
+                          :id="resolveTranslatable(cookie.name)"
+                          type="checkbox"
+                          :checked="
+                            getCookieIds(localCookiesEnabled)?.includes(
+                              getCookieId(cookie)
+                            ) ||
+                            (getCookie(
+                              moduleOptions.cookieNameIsConsentGiven
+                            ) !== 'true' &&
+                              typeof moduleOptions.isIframeBlocked ===
+                                'object' &&
+                              moduleOptions.isIframeBlocked.initialState)
+                          "
+                          @change="toogleCookie(cookie)"
+                        />
+                        <label :for="resolveTranslatable(cookie.name)">
+                          {{ getName(cookie.name) }}
+                        </label>
+                        <span class="cookieControl__ModalCookieName">
+                          {{ getName(cookie.name) }}
+                          <span v-if="cookie.description">
+                            {{ getDescription(cookie.description) }}
+                          </span>
+                          <span
+                            v-if="
+                              moduleOptions.isCookieIdVisible &&
+                              cookie.targetCookieIds
+                            "
+                          >
+                            {{
+                              ' IDs: ' +
+                              cookie.targetCookieIds
+                                .map((id: string) => `"${id}"`)
+                                .join(', ')
+                            }}
+                          </span>
                         </span>
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-                <p v-else>
-                  {{ localeStrings?.none }}
-                </p>
+                      </div>
+                    </li>
+                  </ul>
+                </template>
               </div>
               <div class="cookieControl__ModalButtons">
                 <button
@@ -136,7 +144,7 @@
                 <button
                   @click="
                     () => {
-                      acceptAll()
+                      accept()
                       isModalActive = false
                     }
                   "
@@ -206,13 +214,13 @@ const isSaved = computed(
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
 // methods
-const acceptAll = () => {
+const accept = () => {
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: moduleOptions.cookies.optional,
   })
 }
-const acceptNecessary = () => {
+const decline = () => {
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: moduleOptions.cookies?.necessary,
@@ -252,7 +260,7 @@ const getDescription = (description: Translatable) =>
   } ${resolveTranslatable(description)}`
 const getName = (name: Translatable) => {
   return name === 'functional'
-    ? localeStrings.value?.functional
+    ? localeStrings.value?.cookiesFunctional
     : typeof name === 'string'
     ? name
     : name[props.locale]

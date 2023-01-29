@@ -36,21 +36,21 @@ export interface Cookie {
 }
 
 export interface LocaleStrings {
+  accept: string
   acceptAll: string
-  acceptNecessary: string
-  barDescription: string
-  barTitle: string
-  blockedIframe: string
+  bannerDescription: string
+  bannerTitle: string
   close: string
+  cookiesFunctional: string
+  cookiesNecessary: string
+  cookiesOptional: string
+  iframeBlocked: string
+  decline: string
   declineAll: string
-  functional: string
   here: string
   manageCookies: string
-  necessary: string
-  none: string
-  optional: string
   save: string
-  unsaved: string
+  settingsUnsaved: string
 }
 
 export interface ModuleOptions {
@@ -62,13 +62,14 @@ export interface ModuleOptions {
     | 'bottom-right'
     | 'bottom-full'
   colors?: false | Record<string, any>
+  cookieExpiryOffsetMs: number
+  cookieNameCookiesEnabledIds: string
+  cookieNameIsConsentGiven: string
   cookies: {
     necessary: Cookie[]
     optional: Cookie[]
   }
-  cookieExpiryOffsetMs: number
-  cookieNameIsConsentGiven: string
-  cookieNameCookiesEnabledIds: string
+  domain?: string
   isAcceptNecessaryButtonEnabled?: boolean
   isControlButtonEnabled?: boolean
   isCookieIdVisible?: boolean
@@ -76,7 +77,6 @@ export interface ModuleOptions {
   isCssPolyfillEnabled?: boolean
   isDashInDescriptionEnabled?: boolean
   isIframeBlocked?: boolean | { initialState: boolean }
-  domain?: string
   locales: Locale[]
   localeTexts: PartialRecord<Locale, LocaleStrings>
 }

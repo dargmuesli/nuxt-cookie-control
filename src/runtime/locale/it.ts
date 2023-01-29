@@ -1,20 +1,20 @@
 import { LocaleStrings } from '../types'
 
 export default {
+  accept: 'Accetta',
   acceptAll: 'Accetta tutto',
-  acceptNecessary: 'Accetto il necessario',
-  barDescription:
+  bannerDescription:
     'Utilizziamo cookie propri e di terzi per mostrarvi la pagina web e capire come la utilizzate, nonché per migliorare i servizi che offriamo. Se continuate a navigare, consideriamo che accettate il loro utilizzo.',
-  barTitle: 'Cookies',
-  blockedIframe: 'Per vedere questo, si prega di abilitare i cookie funzionali',
+  bannerTitle: 'Cookies',
   close: 'Chiudi',
+  cookiesFunctional: 'Cookie funzionali',
+  cookiesNecessary: 'Cookie necessari',
+  cookiesOptional: 'Cookie opzionali',
+  decline: 'Accetto il necessario',
   declineAll: 'Cancella tutto',
-  functional: 'Cookie funzionali',
   here: 'qui',
+  iframeBlocked: 'Per vedere questo, si prega di abilitare i cookie funzionali',
   manageCookies: 'Gestisci i cookie',
-  necessary: 'Cookie necessari',
-  none: 'nessuno',
-  optional: 'Cookie opzionali',
   save: 'Salva',
-  unsaved: 'Ci sono impostazioni non salvate',
+  settingsUnsaved: 'Ci sono impostazioni non salvate',
 } as LocaleStrings

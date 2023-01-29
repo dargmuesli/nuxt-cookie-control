@@ -1,3 +1,29 @@
+# [4.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.0-beta.1...4.0.0-beta.2) (2023-01-18)
+
+
+### Bug Fixes
+
+* **locale:** revert decline all translation ([fd09a21](https://github.com/dargmuesli/nuxt-cookie-control/commit/fd09a2113298ff78f201983e0760803b028e11fe))
+
+# [4.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/3.0.0...4.0.0-beta.1) (2023-01-18)
+
+
+* feat(locale)!: rework locale strings ([abd302b](https://github.com/dargmuesli/nuxt-cookie-control/commit/abd302b80a9b38cb5f52762f8c0494ceb457609f))
+
+
+### BREAKING CHANGES
+
+* - add `accept` locale string
+- rename `acceptNecessary` locale string to`decline`
+- rename `barDescription` locale string to `bannerDescription`
+- rename `barTitle` locale string to `bannerTitle`
+- rename `blockedIframe` locale string to `iframeBlocked`
+- rename `functional` locale string to `cookiesFunctional`
+- rename `necessary` locale string to `cookiesNecessary`
+- rename `optional` locale string to `cookiesOptional`
+- remove `none` locale string, do not show empty cookie types
+- rename `unsaved` locale string to `settingsUnsaved`
+
 # [3.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/2.2.4...3.0.0) (2023-01-14)
 
 
