@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "3.1.1",
-    "@sindresorhus/slugify": "2.1.1",
+    "@sindresorhus/slugify": "2.2.0",
     "css-vars-ponyfill": "2.4.8",
     "js-cookie": "3.0.1",
     "string-replace-loader": "3.1.0"
