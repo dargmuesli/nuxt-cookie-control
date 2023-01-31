@@ -3,22 +3,22 @@
     <section class="cookieControl">
       <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
         <div
-          v-if="isColorsSet && isConsentGiven === undefined"
+          v-if="isConsentGiven === undefined"
           :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
         >
           <div class="cookieControl__BarContainer">
             <div>
               <slot name="bar">
-                <h3 v-text="localeStrings?.barTitle" />
-                <p v-text="localeStrings?.barDescription" />
+                <h3 v-text="localeStrings?.bannerTitle" />
+                <p v-text="localeStrings?.bannerDescription" />
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
-              <button @click="acceptAll()" v-text="localeStrings?.acceptAll" />
+              <button @click="accept()" v-text="localeStrings?.accept" />
               <button
                 v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-                @click="acceptNecessary()"
-                v-text="localeStrings?.acceptNecessary"
+                @click="decline()"
+                v-text="localeStrings?.decline"
               />
               <button
                 @click="isModalActive = true"
@@ -30,9 +30,7 @@
       </transition>
       <button
         v-if="
-          moduleOptions.isControlButtonEnabled &&
-          isColorsSet &&
-          isConsentGiven !== undefined
+          moduleOptions.isControlButtonEnabled && isConsentGiven !== undefined
         "
         aria-label="Cookie control"
         class="cookieControl__ControlButton"
@@ -51,7 +49,7 @@
           <p
             v-if="isSaved"
             class="cookieControl__ModalUnsaved"
-            v-text="localeStrings?.unsaved"
+            v-text="localeStrings?.settingsUnsaved"
           />
           <div class="cookieControl__ModalContent">
             <div>
@@ -62,66 +60,76 @@
                 v-text="localeStrings?.close"
               />
               <div v-for="cookieType in CookieType" :key="cookieType">
-                <h3 v-text="localeStrings && localeStrings[cookieType]" />
-                <ul v-if="moduleOptions.cookies[cookieType].length">
-                  <li
-                    v-for="cookie in moduleOptions.cookies[cookieType]"
-                    :key="cookie.id"
-                  >
-                    <div class="cookieControl__ModalInputWrapper">
-                      <input
-                        v-if="
-                          cookieType === CookieType.NECESSARY &&
-                          cookie.name !== 'functional'
-                        "
-                        :id="resolveTranslatable(cookie.name)"
-                        type="checkbox"
-                        disabled
-                        checked
-                      />
-                      <input
-                        v-else
-                        :id="resolveTranslatable(cookie.name)"
-                        type="checkbox"
-                        :checked="
-                          getCookieIds(localCookiesEnabled)?.includes(
-                            getCookieId(cookie)
-                          ) ||
-                          (getCookie(moduleOptions.cookieNameIsConsentGiven) !==
-                            'true' &&
-                            typeof moduleOptions.isIframeBlocked === 'object' &&
-                            moduleOptions.isIframeBlocked.initialState)
-                        "
-                        @change="toogleCookie(cookie)"
-                      />
-                      <label :for="resolveTranslatable(cookie.name)">
-                        {{ getName(cookie.name) }}
-                      </label>
-                      <span class="cookieControl__ModalCookieName">
-                        {{ getName(cookie.name) }}
-                        <span v-if="cookie.description">
-                          {{ getDescription(cookie.description) }}
-                        </span>
-                        <span
+                <template v-if="moduleOptions.cookies[cookieType].length">
+                  <h3
+                    v-text="
+                      localeStrings &&
+                      (cookieType === CookieType.NECESSARY
+                        ? localeStrings.cookiesNecessary
+                        : localeStrings.cookiesOptional)
+                    "
+                  />
+                  <ul>
+                    <li
+                      v-for="cookie in moduleOptions.cookies[cookieType]"
+                      :key="cookie.id"
+                    >
+                      <div class="cookieControl__ModalInputWrapper">
+                        <input
                           v-if="
-                            moduleOptions.isCookieIdVisible &&
-                            cookie.targetCookieIds
+                            cookieType === CookieType.NECESSARY &&
+                            cookie.name !== 'functional'
                           "
+                          :id="resolveTranslatable(cookie.name, props.locale)"
+                          type="checkbox"
+                          disabled
+                          checked
+                        />
+                        <input
+                          v-else
+                          :id="resolveTranslatable(cookie.name, props.locale)"
+                          type="checkbox"
+                          :checked="
+                            getCookieIds(localCookiesEnabled).includes(
+                              getCookieId(cookie)
+                            ) ||
+                            (getCookie(
+                              moduleOptions.cookieNameIsConsentGiven
+                            ) !== 'true' &&
+                              typeof moduleOptions.isIframeBlocked ===
+                                'object' &&
+                              moduleOptions.isIframeBlocked.initialState)
+                          "
+                          @change="toogleCookie(cookie)"
+                        />
+                        <label
+                          :for="resolveTranslatable(cookie.name, props.locale)"
                         >
-                          {{
-                            ' IDs: ' +
-                            cookie.targetCookieIds
-                              .map((id: string) => `"${id}"`)
-                              .join(', ')
-                          }}
+                          {{ getName(cookie.name) }}
+                        </label>
+                        <span class="cookieControl__ModalCookieName">
+                          {{ getName(cookie.name) }}
+                          <span v-if="cookie.description">
+                            {{ getDescription(cookie.description) }}
+                          </span>
+                          <span
+                            v-if="
+                              moduleOptions.isCookieIdVisible &&
+                              cookie.targetCookieIds
+                            "
+                          >
+                            {{
+                              ' IDs: ' +
+                              cookie.targetCookieIds
+                                .map((id: string) => `"${id}"`)
+                                .join(', ')
+                            }}
+                          </span>
                         </span>
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-                <p v-else>
-                  {{ localeStrings?.none }}
-                </p>
+                      </div>
+                    </li>
+                  </ul>
+                </template>
               </div>
               <div class="cookieControl__ModalButtons">
                 <button
@@ -136,7 +144,7 @@
                 <button
                   @click="
                     () => {
-                      acceptAll()
+                      accept()
                       isModalActive = false
                     }
                   "
@@ -170,7 +178,7 @@ import {
   getCookieIds,
   removeCookie,
   setCookie,
-  useResolveTranslatable,
+  resolveTranslatable,
 } from '../methods'
 
 import { useCookieControl } from '#imports'
@@ -189,11 +197,9 @@ const {
   isModalActive,
   moduleOptions,
 } = useCookieControl()
-const resolveTranslatable = useResolveTranslatable(props.locale)
 
 // data
 const expires = new Date()
-const isColorsSet = ref(false)
 const localCookiesEnabled = ref([...(cookiesEnabled.value || [])])
 
 // computations
@@ -206,16 +212,16 @@ const isSaved = computed(
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
 // methods
-const acceptAll = () => {
+const accept = () => {
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: moduleOptions.cookies.optional,
   })
 }
-const acceptNecessary = () => {
+const decline = () => {
   setCookies({
     isConsentGiven: true,
-    cookiesOptionalEnabled: moduleOptions.cookies?.necessary,
+    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
   })
 }
 const acceptPartial = () => {
@@ -224,7 +230,7 @@ const acceptPartial = () => {
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: [
-      ...moduleOptions.cookies?.necessary,
+      ...moduleOptions.cookies.necessary,
       ...moduleOptions.cookies.optional,
     ].filter((cookie) => localCookiesEnabledIds.includes(getCookieId(cookie))),
   })
@@ -249,13 +255,11 @@ const toogleCookie = (cookie: Cookie) => {
 const getDescription = (description: Translatable) =>
   `${
     moduleOptions.isDashInDescriptionEnabled === false ? '' : '-'
-  } ${resolveTranslatable(description)}`
+  } ${resolveTranslatable(description, props.locale)}`
 const getName = (name: Translatable) => {
   return name === 'functional'
-    ? localeStrings.value?.functional
-    : typeof name === 'string'
-    ? name
-    : name[props.locale]
+    ? localeStrings.value?.cookiesFunctional
+    : resolveTranslatable(name, props.locale)
 }
 const init = () => {
   expires.setTime(expires.getTime() + moduleOptions.cookieExpiryOffsetMs)
@@ -272,7 +276,7 @@ const setCookies = ({
     ? [
         ...moduleOptions.cookies.necessary,
         ...moduleOptions.cookies.optional.filter((cookieOptional: Cookie) =>
-          cookiesOptionalEnabledNew?.includes(cookieOptional)
+          cookiesOptionalEnabledNew.includes(cookieOptional)
         ),
       ]
     : []
@@ -302,8 +306,6 @@ onBeforeMount(async () => {
         )
       }
     }
-
-    isColorsSet.value = true
   }
 
   if (getCookie(moduleOptions.cookieNameIsConsentGiven) === 'true') {
@@ -311,7 +313,7 @@ onBeforeMount(async () => {
       if (
         typeof moduleOptions.isIframeBlocked === 'boolean'
           ? moduleOptions.isIframeBlocked === true
-          : moduleOptions.isIframeBlocked?.initialState === true
+          : moduleOptions.isIframeBlocked.initialState === true
       ) {
         localCookiesEnabled.value.push(cookieOptional)
       }

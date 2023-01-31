@@ -3,7 +3,7 @@
     <iframe v-if="isCookieFunctionalEnabled" />
     <div v-else class="cookieControl__BlockedIframe">
       <p>
-        {{ localeStrings?.blockedIframe }}
+        {{ localeStrings?.iframeBlocked }}
         <a
           href="#"
           @click.prevent="isModalActive = true"

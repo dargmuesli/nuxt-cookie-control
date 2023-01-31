@@ -1,21 +1,21 @@
 import { LocaleStrings } from '../types'
 
 export default {
+  accept: 'Dozvoli',
   acceptAll: 'Dozvoli sve',
-  acceptNecessary: 'Prihvaćam obavezne',
-  barDescription:
+  bannerDescription:
     'Koristimo vlastite kolačiće i kolačiće treće strane kako bismo Vam mogli prikazati web stranicu i razumijeti kako je koristite, s pogledom na poboljšanje usluga koje nudimo. Ako nastavite s pregledavanjem, smatramo da prihvaćate upotrebu kolačića.',
-  barTitle: 'Kolačići',
-  blockedIframe:
-    'Da bi vidjeli ovo, molimo Vas omogućite funkcionalne kolačiće',
+  bannerTitle: 'Kolačići',
   close: 'Zatvori',
+  cookiesFunctional: 'Funkcionalni kolačići',
+  cookiesNecessary: 'Obavezni kolačići',
+  cookiesOptional: 'Neobavezni kolačići',
+  decline: 'Prihvaćam obavezne',
   declineAll: 'Obriši sve',
-  functional: 'Funkcionalni kolačići',
   here: 'ovdje',
+  iframeBlocked:
+    'Da bi vidjeli ovo, molimo Vas omogućite funkcionalne kolačiće',
   manageCookies: 'Upravljaj kolačićima',
-  necessary: 'Obavezni kolačići',
-  none: 'nikakav',
-  optional: 'Neobavezni kolačići',
   save: 'Spremi',
-  unsaved: 'Imate nespremljenih postavki',
+  settingsUnsaved: 'Imate nespremljenih postavki',
 } as LocaleStrings

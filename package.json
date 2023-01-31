@@ -1,6 +1,6 @@
 {
   "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "3.0.0",
+  "version": "4.0.3",
   "description": "Nuxt Cookies Control Module",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
   "maintainers": [
@@ -33,11 +33,11 @@
     "dev": "pnpm dev:prepare && nuxi dev playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "dev:build": "nuxi build playground",
-    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
+    "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
   },
   "dependencies": {
     "@nuxt/kit": "3.1.1",
-    "@sindresorhus/slugify": "2.1.1",
+    "@sindresorhus/slugify": "2.2.0",
     "css-vars-ponyfill": "2.4.8",
     "js-cookie": "3.0.1",
     "string-replace-loader": "3.1.0"
@@ -46,14 +46,14 @@
     "@nuxt/module-builder": "0.2.1",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@types/js-cookie": "3.0.2",
-    "eslint": "8.32.0",
+    "eslint": "8.33.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "nuxt": "3.1.1",
     "prettier": "2.8.3",
-    "typescript": "4.9.4",
+    "typescript": "4.9.5",
     "vue": "3.2.45",
     "vue-tsc": "1.0.24",
     "webpack": "5.75.0"

@@ -3,7 +3,9 @@ export default defineNuxtConfig({
     [
       '@dargmuesli/nuxt-cookie-control',
       {
-        locales: ['en', 'de'],
+        colors: {
+          checkboxActiveBackground: '#00A34A', // text-green-600
+        },
         cookies: {
           necessary: [
             {
@@ -26,6 +28,7 @@ export default defineNuxtConfig({
             },
           ],
         },
+        locales: ['en', 'de'],
       },
     ],
   ],

@@ -1,21 +1,21 @@
 import { LocaleStrings } from '../types'
 
 export default {
+  accept: 'Akzeptieren',
   acceptAll: 'Alle akzeptieren',
-  acceptNecessary: 'Nur notwendige akzeptieren',
-  barDescription:
-    'Wir verwenden unsere eigenen Cookies und Cookies von Drittanbietern, damit wir Ihnen diese Website zeigen können und verstehen wie Sie diese verwenden, um die von uns angebotenen Dienstleistungen zu verbessern. Wenn Sie weiter surfen, gehen wir davon aus, dass Sie die Cookies akzeptiert haben.',
-  barTitle: 'Cookies',
-  blockedIframe:
-    'Um den Inhalt zu sehen, aktivieren Sie bitte funktionale Cookies',
+  bannerDescription:
+    'Wir verwenden eigene Cookies und Cookies von Drittanbietern, damit wir diese Webseite korrekt darstellen können und besser verstehen, wie diese Webseite genutzt wird, um unser Angebot zu verbessern. Eine Entscheidung über die Erlaubnis zur Verwendung von Cookies kann jederzeit über den Cookie-Button geändert werden, der erscheint, nachdem eine Auswahl auf diesem Banner getroffen wurde.',
+  bannerTitle: 'Cookies',
   close: 'Schließen',
+  cookiesFunctional: 'Funktionale Cookies',
+  cookiesNecessary: 'Notwendige Cookies',
+  cookiesOptional: 'Optionale Cookies',
+  decline: 'Ablehnen',
   declineAll: 'Alle ablehnen',
-  functional: 'Funktionale Cookies',
   here: 'hier',
-  manageCookies: 'Cookies verwalten',
-  necessary: 'Notwendige Cookies',
-  none: 'keine',
-  optional: 'Optionale Cookies',
+  iframeBlocked:
+    'Um den Inhalt zu sehen, aktivieren Sie bitte funktionale Cookies',
+  manageCookies: 'Mehr erfahren und anpassen',
   save: 'Speichern',
-  unsaved: 'Sie haben nicht gespeicherte Einstellungen',
+  settingsUnsaved: 'Es gibt nicht gespeicherte Einstellungen',
 } as LocaleStrings
