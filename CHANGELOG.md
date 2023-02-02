@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.3...4.1.0) (2023-02-01)
+
+
+### Features
+
+* **lang:** Add Danish language ([df8143b](https://github.com/dargmuesli/nuxt-cookie-control/commit/df8143b369412f1fe597d8f932a44e7d9a586096))
+
 ## [4.0.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.2...4.0.3) (2023-01-29)
 
 
