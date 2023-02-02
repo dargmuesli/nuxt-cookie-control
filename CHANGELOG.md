@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.2.0...4.3.0) (2023-02-02)
+
+
+### Features
+
+* Updated bannerDescription translation for Azerbaijani language ([#35](https://github.com/dargmuesli/nuxt-cookie-control/issues/35)) ([b2c2977](https://github.com/dargmuesli/nuxt-cookie-control/commit/b2c297752673b678a128af0222de226e23462f4d))
+
 # [4.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.1.0...4.2.0) (2023-02-02)
 
 
