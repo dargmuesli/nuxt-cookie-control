@@ -4,7 +4,7 @@ export default {
   accept: 'Qəbul et',
   acceptAll: 'Hamısını qəbul et',
   bannerDescription:
-    'Biz öz kukilərimizdən və üçüncü tərəf kukilərindən istifadə edirik ki, sizə bu veb-saytı göstərə bilək və təklif etdiyimiz xidmətləri təkmilləşdirmək məqsədilə ondan necə istifadə etdiyinizi daha yaxşı başa düşək. Baxmağa davam etsəniz, kukiləri qəbul etdiyinizi hesab edirik.',
+    'Biz öz kukilərimizdən və üçüncü tərəf kukilərindən istifadə edirik ki, biz bu veb-saytı düzgün göstərə bilək və təklif etdiyimiz xidmətləri təkmilləşdirmək məqsədilə bu veb-saytdan necə istifadə olunduğunu daha yaxşı başa düşək. Kukidən istifadə icazələri ilə bağlı qərar bu bannerdə seçim edildikdən sonra görünəcək kuki düyməsindən istifadə etməklə istənilən vaxt dəyişdirilə bilər.',
   bannerTitle: 'Kukilər',
   close: 'Bağla',
   cookiesFunctional: 'Funksional kukilər',
