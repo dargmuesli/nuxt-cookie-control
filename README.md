@@ -93,6 +93,7 @@ Currently available:
 - hu
 - it
 - ja
+- ko
 - nl
 - no
 - pt
