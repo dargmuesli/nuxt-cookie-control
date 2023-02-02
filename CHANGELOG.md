@@ -1,3 +1,11 @@
+# [4.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.1.0...4.2.0) (2023-02-02)
+
+
+### Features
+
+* **ko:** Add Korean Cookie message ([983c3e7](https://github.com/dargmuesli/nuxt-cookie-control/commit/983c3e7c02120778151a6e4c5f0b001833b11f9e))
+* **locale:** add Azerbaijani ([1bf8609](https://github.com/dargmuesli/nuxt-cookie-control/commit/1bf860944886cb4348cac0c47bd9d7c45d0a30ab))
+
 # [4.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.3...4.1.0) (2023-02-01)
 
 
