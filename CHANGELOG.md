@@ -1,3 +1,10 @@
+# [4.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.3.0...4.4.0) (2023-02-07)
+
+
+### Features
+
+* **locale:** add Czech and Slovak locales ([5db470c](https://github.com/dargmuesli/nuxt-cookie-control/commit/5db470ca5b8c1fd131be8a52f4c218762374f72f))
+
 # [4.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.2.0...4.3.0) (2023-02-02)
 
 
