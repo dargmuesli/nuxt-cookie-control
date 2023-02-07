@@ -85,6 +85,7 @@ const {
 Currently available:
 - ar
 - az
+- cs
 - da
 - de
 - en
@@ -99,6 +100,7 @@ Currently available:
 - no
 - pt
 - ru
+- sk
 - uk
 
 ## Module Options
