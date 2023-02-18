@@ -8,7 +8,7 @@ specifiers:
   '@nuxt/module-builder': 0.2.1
   '@nuxtjs/eslint-config-typescript': 12.0.0
   '@sindresorhus/slugify': 2.2.0
-  '@types/js-cookie': 3.0.2
+  '@types/js-cookie': 3.0.3
   css-vars-ponyfill: 2.4.8
   eslint: 8.34.0
   eslint-config-prettier: 8.6.0
@@ -34,7 +34,7 @@ dependencies:
 devDependencies:
   '@nuxt/module-builder': 0.2.1
   '@nuxtjs/eslint-config-typescript': 12.0.0_7kw3g6rralp5ps6mg3uyzz6azm
-  '@types/js-cookie': 3.0.2
+  '@types/js-cookie': 3.0.3
   eslint: 8.34.0
   eslint-config-prettier: 8.6.0_eslint@8.34.0
   eslint-plugin-prettier: 4.2.1_u5wnrdwibbfomslmnramz52buy
@@ -1361,8 +1361,8 @@ packages:
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
 
-  /@types/js-cookie/3.0.2:
-    resolution: {integrity: sha512-6+0ekgfusHftJNYpihfkMu8BWdeHs9EOJuGcSofErjstGPfPGEu9yTu4t460lTzzAMl2cM5zngQJqPMHbbnvYA==}
+  /@types/js-cookie/3.0.3:
+    resolution: {integrity: sha512-Xe7IImK09HP1sv2M/aI+48a20VX+TdRJucfq4vfRVy6nWN8PYPOEnlMRSgxJAgYQIXJVL8dZ4/ilAM7dWNaOww==}
     dev: true
 
   /@types/json-schema/7.0.11:
