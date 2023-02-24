@@ -1,3 +1,17 @@
+# [5.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.4...5.0.0-beta.5) (2023-02-24)
+
+
+### Bug Fixes
+
+* **cookie-control:** correct toggle interactivity ([a43583f](https://github.com/dargmuesli/nuxt-cookie-control/commit/a43583f8f5b4b262a0bb97398580c4939d73bea2))
+
+
+### Features
+
+* **cookie:** shorten default cookie names ([7d2c856](https://github.com/dargmuesli/nuxt-cookie-control/commit/7d2c8566018a7e0e5847a8f5855c034f84f79f68))
+* **cookie:** split by `|` ([ff25117](https://github.com/dargmuesli/nuxt-cookie-control/commit/ff25117065a0623aeb18bdff1e39e81b221a89be))
+* show banner again once cookies are added or removed ([bf03cbc](https://github.com/dargmuesli/nuxt-cookie-control/commit/bf03cbca88518d351baabadfc75f478f89cea7db)), closes [#27](https://github.com/dargmuesli/nuxt-cookie-control/issues/27)
+
 # [5.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.3...5.0.0-beta.4) (2023-02-24)
 
 
