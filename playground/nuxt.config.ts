@@ -1,4 +1,9 @@
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'Playground',
+    },
+  },
   modules: ['@dargmuesli/nuxt-cookie-control'],
   typescript: {
     includeWorkspace: true,

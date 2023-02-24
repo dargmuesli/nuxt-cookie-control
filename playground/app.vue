@@ -3,6 +3,7 @@
     <CookieControl :locale="locale" />
     <CookieIframe :locale="locale" />
     <fieldset>
+      <legend>Choose a language</legend>
       <div>
         <label for="input-en">English</label>
         <input id="input-en" v-model="locale" type="radio" value="en" />
