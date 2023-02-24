@@ -96,6 +96,7 @@ Currently available:
 - it
 - ja
 - ko
+- lt
 - nl
 - no
 - pt
