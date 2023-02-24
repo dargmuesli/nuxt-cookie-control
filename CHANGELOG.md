@@ -1,3 +1,10 @@
+# [4.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.4.1...4.5.0) (2023-02-24)
+
+
+### Features
+
+* **locale:** add Lithuanian locales ([db8a85e](https://github.com/dargmuesli/nuxt-cookie-control/commit/db8a85e19b124037c3351ed4488292d424ff5882))
+
 ## [4.4.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.4.0...4.4.1) (2023-02-15)
 
 
