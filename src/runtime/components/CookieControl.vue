@@ -102,7 +102,7 @@
                           "
                           @change="toogleCookie(cookie)"
                         />
-                        <button @keydown="toggleButton($event)">
+                        <button @click="toggleButton($event)">
                           {{ getName(cookie.name) }}
                         </button>
                         <label
@@ -287,19 +287,14 @@ const setCookies = ({
     ? getCookieIds(cookiesEnabled.value)
     : []
 }
-const toggleButton = ($event: KeyboardEvent) => {
-  if ($event.key === ' ')
-    (
-      ($event.target as HTMLButtonElement | null)
-        ?.nextSibling as HTMLLabelElement | null
-    )?.click()
+const toggleButton = ($event: MouseEvent) => {
+  ;(
+    ($event.target as HTMLButtonElement | null)
+      ?.nextSibling as HTMLLabelElement | null
+  )?.click()
 }
-const toggleLabel = ($event: KeyboardEvent | MouseEvent) => {
-  if ($event instanceof KeyboardEvent) {
-    if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
-  } else {
-    ;($event.target as HTMLLabelElement | null)?.click()
-  }
+const toggleLabel = ($event: KeyboardEvent) => {
+  if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
 }
 
 // lifecycle
