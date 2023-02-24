@@ -4,38 +4,49 @@
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
 
 
-Continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control).
+✅ Translated for: ar, az, cs, da, de, en, es, fr, hr, hu, it, ja, ko, lt, nl, no, pt, ru, sk and uk
 
-🚩 **Make sure to read the Migration instructions for all major version updates like [v2.0.0](https://github.com/dargmuesli/nuxt-cookie-control/releases/tag/2.0.0), [v3.0.0](https://github.com/dargmuesli/nuxt-cookie-control/releases/tag/3.0.0) and following!**
+✅ Vue 3 support
+
+✅ Components and composables are [auto-imported](https://nuxt.com/docs/guide/concepts/auto-imports)
+
+🚩 API changes since continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control), make sure to read the README!
+
+
+## 🚀 Getting Started
 
 [![Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/dargmuesli/nuxt-cookie-control?file=playground%2Fapp.vue)
 
-## 🚀 Usage
+### Installation
 ```bash
 npm i -D @dargmuesli/nuxt-cookie-control
 yarn add -D @dargmuesli/nuxt-cookie-control
 pnpm i -D @dargmuesli/nuxt-cookie-control
 ```
 
-
+### Configuration
 ```javascript
 // nuxt.config.js
 
 modules: [
   '@dargmuesli/nuxt-cookie-control'
-]
+],
+cookieControl: {
+  // typed module options
+}
+
 // or
+
 modules: [
   ['@dargmuesli/nuxt-cookie-control', {
-    // module options
+    // untyped module options
   }]
 ]
 ```
 
-Components and composables are [auto-imported](https://nuxt.com/docs/guide/concepts/auto-imports)!
-
+### Usage
 ```html
-<!-- component.vue -->
+<!-- app.vue -->
 
 <template>
   <CookieControl locale="en" />
@@ -49,62 +60,39 @@ const {
   isModalActive,
   moduleOptions
 } = useCookieControl()
+
+// example: react to a cookie being accepted
+watch(
+  () => cookiesEnabledIds.value,
+  (current, previous) => {
+    if (
+      (!previous?.includes('google-analytics') &&
+        current?.includes('google-analytics'))
+    ) {
+      // cookie with id `google-analytics` got added
+      window.location.reload() // placeholder for your custom change handler
+    }
+  },
+  { deep: true }
+)
 </script>
 ```
-## Component Slots
-### Bar
-```html
-<CookieControl>
-  <template #bar>
-    <h3>Bar title</h3>
-    <p>Bar description (you can use $cookies.text.barDescription)</p>
-    <n-link>Go somewhere</n-link>
-  </template>
-</CookieControl>
-```
-### Modal
-```html
-<template #modal>
-  <h3>Modal title</h3>
-  <p>Modal description</p>
-</template>
-```
-### Cookie
-```html
-<template #cookie="{config}">
-  <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
-</template>
+
+```ts
+//  plugins/analytics.client.ts
+
+// example: initialization based on enabled cookies
+const cookieControl = useCookieControl()
+
+if (cookieControl.cookiesEnabledIds.value.includes('google-analytics')) {
+    initGoogleAnalytics() // placeholder for your custom initialization
+}
 ```
 
-## Props
-- locale: `['en']`
-```html
-<CookieControl locale="de"/>
-```
 
-Currently available:
-- ar
-- az
-- cs
-- da
-- de
-- en
-- es
-- fr
-- hr
-- hu
-- it
-- ja
-- ko
-- lt
-- nl
-- no
-- pt
-- ru
-- sk
-- uk
+## API
 
-## Module Options
+### Module Options
 
 ```javascript
 // Position of cookie bar.
@@ -197,7 +185,7 @@ localeTexts: {
 }
 ```
 
-### Cookies
+#### Cookies
 
 Every property the includes a `{ en: ... }` value is a translatable property that could instead only specify a string (`'...'`) or other locales as well (`{ de: ..., uk: ... }`).
 
@@ -213,6 +201,40 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
   src: 'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
   targetCookieIds: ['cookie_control_consent', 'cookie_control_enabled_cookies']
 }
+```
+
+### Component Slots
+
+#### Bar
+```html
+<CookieControl>
+  <template #bar>
+    <h3>Bar title</h3>
+    <p>Bar description (you can use $cookies.text.barDescription)</p>
+    <n-link>Go somewhere</n-link>
+  </template>
+</CookieControl>
+```
+
+#### Modal
+```html
+<template #modal>
+  <h3>Modal title</h3>
+  <p>Modal description</p>
+</template>
+```
+
+#### Cookie
+```html
+<template #cookie="{config}">
+  <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
+</template>
+```
+
+### Props
+- locale: `['en']`
+```html
+<CookieControl locale="de"/>
 ```
 
 
