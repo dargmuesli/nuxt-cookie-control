@@ -24,6 +24,64 @@
 * - rename module option `isCssPolyfillEnabled` to `isCssPonyfillEnabled`
 - set module option `isCssPonyfillEnabled` default to `false`
 
+# [4.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.5.0...4.6.0) (2023-02-24)
+
+
+### Features
+
+* **i18n:** adapt new locale format for Turkish translation ([9111d9c](https://github.com/dargmuesli/nuxt-cookie-control/commit/9111d9cc02a5db4b307b9fee57ffebadd9de2027))
+* **i18n:** add Turkish translation ([8dd647c](https://github.com/dargmuesli/nuxt-cookie-control/commit/8dd647c6030911857976def4667f7eb1631783c2))
+
+# [4.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.4.1...4.5.0) (2023-02-24)
+
+
+### Features
+
+* **locale:** add Lithuanian locales ([db8a85e](https://github.com/dargmuesli/nuxt-cookie-control/commit/db8a85e19b124037c3351ed4488292d424ff5882))
+
+## [4.4.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.4.0...4.4.1) (2023-02-15)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([40a9795](https://github.com/dargmuesli/nuxt-cookie-control/commit/40a9795c9e295ea96ed492acd85b613db077ce45))
+
+# [4.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.3.0...4.4.0) (2023-02-07)
+
+
+### Features
+
+* **locale:** add Czech and Slovak locales ([5db470c](https://github.com/dargmuesli/nuxt-cookie-control/commit/5db470ca5b8c1fd131be8a52f4c218762374f72f))
+
+# [4.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.2.0...4.3.0) (2023-02-02)
+
+
+### Features
+
+* Updated bannerDescription translation for Azerbaijani language ([#35](https://github.com/dargmuesli/nuxt-cookie-control/issues/35)) ([b2c2977](https://github.com/dargmuesli/nuxt-cookie-control/commit/b2c297752673b678a128af0222de226e23462f4d))
+
+# [4.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.1.0...4.2.0) (2023-02-02)
+
+
+### Features
+
+* **ko:** Add Korean Cookie message ([983c3e7](https://github.com/dargmuesli/nuxt-cookie-control/commit/983c3e7c02120778151a6e4c5f0b001833b11f9e))
+* **locale:** add Azerbaijani ([1bf8609](https://github.com/dargmuesli/nuxt-cookie-control/commit/1bf860944886cb4348cac0c47bd9d7c45d0a30ab))
+
+# [4.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.3...4.1.0) (2023-02-01)
+
+
+### Features
+
+* **lang:** Add Danish language ([df8143b](https://github.com/dargmuesli/nuxt-cookie-control/commit/df8143b369412f1fe597d8f932a44e7d9a586096))
+
+## [4.0.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.2...4.0.3) (2023-01-29)
+
+
+### Bug Fixes
+
+* **locale:** correct language switch reactivity ([5957224](https://github.com/dargmuesli/nuxt-cookie-control/commit/5957224e59311d7a18d4449ca962c2dadd9d2ff3))
+
 ## [4.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.1...4.0.2) (2023-01-29)
 
 
