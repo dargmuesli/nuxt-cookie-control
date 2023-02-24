@@ -210,7 +210,7 @@ const isSaved = computed(
   () =>
     getCookieIds(cookiesEnabled.value || [])
       .sort()
-      .join(',') !== getCookieIds(localCookiesEnabled.value).sort().join(',')
+      .join('|') !== getCookieIds(localCookiesEnabled.value).sort().join('|')
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
@@ -340,7 +340,7 @@ watch(
     if (isConsentGiven.value) {
       setCookie(
         moduleOptions.cookieNameCookiesEnabledIds,
-        getCookieIds(current || []).join(','),
+        getCookieIds(current || []).join('|'),
         {
           expires,
         }

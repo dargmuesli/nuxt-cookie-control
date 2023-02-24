@@ -13,7 +13,7 @@ export default defineNuxtPlugin((_nuxtApp) => {
   )
   const cookieCookiesEnabledIds = Cookies.get(
     moduleOptions.cookieNameCookiesEnabledIds
-  )?.split(',')
+  )?.split('|')
 
   const isConsentGiven = ref<boolean | undefined>(
     cookieIsConsentGiven === undefined
