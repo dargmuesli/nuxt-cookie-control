@@ -31,6 +31,7 @@ export interface Cookie {
   description?: Translatable
   id?: string
   name: Translatable
+  links?: Record<string, string | null>
   src?: string
   targetCookieIds?: string[]
 }
