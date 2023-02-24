@@ -86,6 +86,9 @@
   color: var(--cookie-control-barButtonHoverColor);
   background-color: var(--cookie-control-barButtonHoverBackground);
 }
+.cookieControl__Bar button:focus{
+  box-shadow: 0 0 0 3px var(--cookie-control-focusRingColor);
+}
 .cookieControl__Bar button + button {
   margin-left: 10px;
 }
@@ -183,6 +186,9 @@
 .cookieControl__Modal button:hover {
   color: var(--cookie-control-modalButtonHoverColor);
   background-color: var(--cookie-control-modalButtonHoverBackground);
+}
+.cookieControl__Modal button:focus {
+  box-shadow: 0 0 0 3px var(--cookie-control-focusRingColor);
 }
 .cookieControl__ModalContent {
   position: relative;
