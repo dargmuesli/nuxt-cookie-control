@@ -110,7 +110,10 @@ const loadLocales = async (moduleOptions: ModuleOptions) => {
     if (!text) throw new Error(`Could not import text for locale ${locale}`)
 
     moduleOptions.locales.push(locale)
-    moduleOptions.localeTexts[locale] = text
+    moduleOptions.localeTexts[locale] = {
+      ...text,
+      ...moduleOptions.localeTexts[locale],
+    }
   }
 
   // const regex = new RegExp(moduleOptions.locales.join('|'))
