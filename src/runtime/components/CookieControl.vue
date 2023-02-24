@@ -3,7 +3,7 @@
     <section class="cookieControl">
       <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
         <div
-          v-if="isConsentGiven === undefined"
+          v-if="!isConsentGiven"
           :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
         >
           <div class="cookieControl__BarContainer">
@@ -29,9 +29,7 @@
         </div>
       </transition>
       <button
-        v-if="
-          moduleOptions.isControlButtonEnabled && isConsentGiven !== undefined
-        "
+        v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
         aria-label="Cookie control"
         class="cookieControl__ControlButton"
         data-testid="nuxt-cookie-control-control-button"
@@ -95,14 +93,14 @@
                             ) ||
                             (getCookie(
                               moduleOptions.cookieNameIsConsentGiven
-                            ) !== 'true' &&
+                            ) !== allCookieIdsString &&
                               typeof moduleOptions.isIframeBlocked ===
                                 'object' &&
                               moduleOptions.isIframeBlocked.initialState)
                           "
                           @change="toogleCookie(cookie)"
                         />
-                        <button @keydown="toggleButton($event)">
+                        <button @click="toggleButton($event)">
                           {{ getName(cookie.name) }}
                         </button>
                         <label
@@ -176,6 +174,7 @@ import { ref, computed, onBeforeMount, watch } from 'vue'
 
 import { Cookie, CookieType, Locale, Translatable } from '../types'
 import {
+  getAllCookieIdsString,
   getCookie,
   getCookieId,
   getCookieIds,
@@ -204,13 +203,14 @@ const {
 // data
 const expires = new Date()
 const localCookiesEnabled = ref([...(cookiesEnabled.value || [])])
+const allCookieIdsString = getAllCookieIdsString(moduleOptions)
 
 // computations
 const isSaved = computed(
   () =>
     getCookieIds(cookiesEnabled.value || [])
       .sort()
-      .join(',') !== getCookieIds(localCookiesEnabled.value).sort().join(',')
+      .join('|') !== getCookieIds(localCookiesEnabled.value).sort().join('|')
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
@@ -287,19 +287,14 @@ const setCookies = ({
     ? getCookieIds(cookiesEnabled.value)
     : []
 }
-const toggleButton = ($event: KeyboardEvent) => {
-  if ($event.key === ' ')
-    (
-      ($event.target as HTMLButtonElement | null)
-        ?.nextSibling as HTMLLabelElement | null
-    )?.click()
+const toggleButton = ($event: MouseEvent) => {
+  ;(
+    ($event.target as HTMLButtonElement | null)
+      ?.nextSibling as HTMLLabelElement | null
+  )?.click()
 }
-const toggleLabel = ($event: KeyboardEvent | MouseEvent) => {
-  if ($event instanceof KeyboardEvent) {
-    if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
-  } else {
-    ;($event.target as HTMLLabelElement | null)?.click()
-  }
+const toggleLabel = ($event: KeyboardEvent) => {
+  if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
 }
 
 // lifecycle
@@ -325,7 +320,9 @@ onBeforeMount(async () => {
     }
   }
 
-  if (getCookie(moduleOptions.cookieNameIsConsentGiven) === 'true') {
+  if (
+    getCookie(moduleOptions.cookieNameIsConsentGiven) === allCookieIdsString
+  ) {
     for (const cookieOptional of moduleOptions.cookies.optional) {
       if (
         typeof moduleOptions.isIframeBlocked === 'boolean'
@@ -345,7 +342,7 @@ watch(
     if (isConsentGiven.value) {
       setCookie(
         moduleOptions.cookieNameCookiesEnabledIds,
-        getCookieIds(current || []).join(','),
+        getCookieIds(current || []).join('|'),
         {
           expires,
         }
@@ -391,9 +388,13 @@ watch(isConsentGiven, (current, _previous) => {
   if (current === undefined) {
     removeCookie(moduleOptions.cookieNameIsConsentGiven)
   } else {
-    setCookie(moduleOptions.cookieNameIsConsentGiven, current.toString(), {
-      expires,
-    })
+    setCookie(
+      moduleOptions.cookieNameIsConsentGiven,
+      current ? allCookieIdsString : '0',
+      {
+        expires,
+      }
+    )
   }
 })
 

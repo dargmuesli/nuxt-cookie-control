@@ -141,8 +141,8 @@ cookies: {
 cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
 
 // Names for the cookies that are being set by this module.
-cookieNameIsConsentGiven: 'cookie_control_is_consent_given',
-cookieNameCookiesEnabledIds: 'cookie_control_cookies_enabled_ids',
+cookieNameIsConsentGiven: 'ncc_c',
+cookieNameCookiesEnabledIds: 'ncc_e',
 
 // Switch to toggle the "accept necessary" button.
 isAcceptNecessaryButtonEnabled: true
@@ -196,6 +196,7 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
     en:  'Used for cookie control.'
   },
   id: 'ga', // if unset, `getCookieId(cookie)` returns the cookie's slugified name instead, which e.g. is used to fill the state's `enabledCookieIds` list
+  // use a short cookie id to save bandwidth!
   name: {
     en: 'Google Analytics' // you always have to specify a cookie name (in English)
   },
