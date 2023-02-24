@@ -100,6 +100,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
     controlButtonHoverBackground: '#000',
     controlButtonIconColor: '#000',
     controlButtonIconHoverColor: '#fff',
+    focusRingColor: '#808080',
     modalBackground: '#fff',
     modalButtonBackground: '#000',
     modalButtonColor: '#fff',
