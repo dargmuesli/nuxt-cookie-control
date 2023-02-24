@@ -196,6 +196,7 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
     en:  'Used for cookie control.'
   },
   id: 'ga', // if unset, `getCookieId(cookie)` returns the cookie's slugified name instead, which e.g. is used to fill the state's `enabledCookieIds` list
+  // use a short cookie id to save bandwidth!
   name: {
     en: 'Google Analytics' // you always have to specify a cookie name (in English)
   },
