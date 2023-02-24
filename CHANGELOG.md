@@ -1,3 +1,10 @@
+# [5.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.5...5.0.0-beta.6) (2023-02-24)
+
+
+### Features
+
+* **cookie:** allow to add links ([f91f889](https://github.com/dargmuesli/nuxt-cookie-control/commit/f91f88979a41b6a46bb8dde96b7aba61388a7e8c)), closes [#26](https://github.com/dargmuesli/nuxt-cookie-control/issues/26)
+
 # [5.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.4...5.0.0-beta.5) (2023-02-24)
 
 
