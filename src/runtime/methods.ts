@@ -2,7 +2,13 @@ import Cookies from 'js-cookie'
 import slugify from '@sindresorhus/slugify'
 
 import { LOCALE_DEFAULT } from './constants'
-import { Cookie, Translatable } from './types'
+import { Cookie, ModuleOptions, Translatable } from './types'
+
+export const getAllCookieIdsString = (moduleOptions: ModuleOptions) =>
+  getCookieIds([
+    ...moduleOptions.cookies.necessary,
+    ...moduleOptions.cookies.optional,
+  ]).join('')
 
 export const getCookie = (name: string) => Cookies.get(name)
 

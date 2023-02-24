@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 import { ref } from 'vue'
 
-import { getCookieId } from './methods'
+import { getAllCookieIdsString, getCookieId } from './methods'
 import { Cookie, State } from './types'
 
 import { defineNuxtPlugin } from '#imports'
@@ -18,7 +18,7 @@ export default defineNuxtPlugin((_nuxtApp) => {
   const isConsentGiven = ref<boolean | undefined>(
     cookieIsConsentGiven === undefined
       ? undefined
-      : cookieIsConsentGiven === 'true'
+      : cookieIsConsentGiven === getAllCookieIdsString(moduleOptions)
   )
   const cookiesEnabled = ref<Cookie[] | undefined>(
     cookieCookiesEnabledIds === undefined
