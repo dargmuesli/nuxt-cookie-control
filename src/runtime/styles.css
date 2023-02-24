@@ -193,7 +193,6 @@
 .cookieControl__ModalContent {
   position: relative;
   width: 100%;
-  padding: 40px;
   max-width: 550px;
   max-height: 80vh;
   text-align: left;
@@ -274,6 +273,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 40px;
 }
 .cookieControl__ModalInputWrapper {
   display: flex;
@@ -343,6 +343,8 @@
     bottom: 0;
     max-width: none;
     max-height: 100%;
+  }
+  .cookieControl__ModalContentInner {
     padding: 20px;
   }
   .cookieControl__BarButtons {
@@ -360,7 +362,7 @@
   .cookieControl__BarContainer,
   .cookieControl__ModalButtons {
     flex-direction: column;
-    gap: 0;
+    gap: 10px;
   }
   .cookieControl__ModalButtons button {
     width: 100%;
