@@ -119,13 +119,27 @@
                               cookie.targetCookieIds
                             "
                           >
+                            <br />
                             {{
-                              ' IDs: ' +
+                              'IDs: ' +
                               cookie.targetCookieIds
                                 .map((id: string) => `"${id}"`)
                                 .join(', ')
                             }}
                           </span>
+                          <template
+                            v-if="Object.entries(cookie.links || {}).length"
+                          >
+                            <span
+                              v-for="entry in Object.entries(
+                                cookie.links || {}
+                              )"
+                              :key="entry[0]"
+                            >
+                              <br />
+                              <a :href="entry[0]">{{ entry[1] || entry[0] }}</a>
+                            </span>
+                          </template>
                         </label>
                       </div>
                     </li>
