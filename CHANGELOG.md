@@ -1,3 +1,23 @@
+# [5.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.2...5.0.0-beta.3) (2023-02-24)
+
+
+### Bug Fixes
+
+* **playground:** resolve own package as development dependency ([2fbe156](https://github.com/dargmuesli/nuxt-cookie-control/commit/2fbe15656192c7fdf80a30a8209aa91580b70ec2))
+* **release:** schedule release ([40a9795](https://github.com/dargmuesli/nuxt-cookie-control/commit/40a9795c9e295ea96ed492acd85b613db077ce45))
+
+
+### Features
+
+* **i18n:** adapt new locale format for Turkish translation ([9111d9c](https://github.com/dargmuesli/nuxt-cookie-control/commit/9111d9cc02a5db4b307b9fee57ffebadd9de2027))
+* **i18n:** add Turkish translation ([8dd647c](https://github.com/dargmuesli/nuxt-cookie-control/commit/8dd647c6030911857976def4667f7eb1631783c2))
+* **ko:** Add Korean Cookie message ([983c3e7](https://github.com/dargmuesli/nuxt-cookie-control/commit/983c3e7c02120778151a6e4c5f0b001833b11f9e))
+* **lang:** Add Danish language ([df8143b](https://github.com/dargmuesli/nuxt-cookie-control/commit/df8143b369412f1fe597d8f932a44e7d9a586096))
+* **locale:** add Azerbaijani ([1bf8609](https://github.com/dargmuesli/nuxt-cookie-control/commit/1bf860944886cb4348cac0c47bd9d7c45d0a30ab))
+* **locale:** add Czech and Slovak locales ([5db470c](https://github.com/dargmuesli/nuxt-cookie-control/commit/5db470ca5b8c1fd131be8a52f4c218762374f72f))
+* **locale:** add Lithuanian locales ([db8a85e](https://github.com/dargmuesli/nuxt-cookie-control/commit/db8a85e19b124037c3351ed4488292d424ff5882))
+* Updated bannerDescription translation for Azerbaijani language ([#35](https://github.com/dargmuesli/nuxt-cookie-control/issues/35)) ([b2c2977](https://github.com/dargmuesli/nuxt-cookie-control/commit/b2c297752673b678a128af0222de226e23462f4d))
+
 # [5.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.1...5.0.0-beta.2) (2023-01-29)
 
 
