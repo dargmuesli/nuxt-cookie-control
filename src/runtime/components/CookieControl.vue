@@ -102,12 +102,15 @@
                           "
                           @change="toogleCookie(cookie)"
                         />
-                        <label
-                          :for="resolveTranslatable(cookie.name, props.locale)"
-                        >
+                        <button @keydown="toggleButton($event)">
                           {{ getName(cookie.name) }}
-                        </label>
-                        <span class="cookieControl__ModalCookieName">
+                        </button>
+                        <label
+                          class="cookieControl__ModalCookieName"
+                          :for="resolveTranslatable(cookie.name, props.locale)"
+                          tabindex="0"
+                          @keydown="toggleLabel($event)"
+                        >
                           {{ getName(cookie.name) }}
                           <span v-if="cookie.description">
                             {{ getDescription(cookie.description) }}
@@ -125,7 +128,7 @@
                                 .join(', ')
                             }}
                           </span>
-                        </span>
+                        </label>
                       </div>
                     </li>
                   </ul>
@@ -283,6 +286,20 @@ const setCookies = ({
   cookiesEnabledIds.value = isConsentGivenNew
     ? getCookieIds(cookiesEnabled.value)
     : []
+}
+const toggleButton = ($event: KeyboardEvent) => {
+  if ($event.key === ' ')
+    (
+      ($event.target as HTMLButtonElement | null)
+        ?.nextSibling as HTMLLabelElement | null
+    )?.click()
+}
+const toggleLabel = ($event: KeyboardEvent | MouseEvent) => {
+  if ($event instanceof KeyboardEvent) {
+    if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
+  } else {
+    ;($event.target as HTMLLabelElement | null)?.click()
+  }
 }
 
 // lifecycle

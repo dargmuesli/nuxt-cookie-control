@@ -233,20 +233,20 @@
 .cookieControl__ModalContent input {
   display: none;
 }
-.cookieControl__ModalContent input:checked + label {
+.cookieControl__ModalContent input:checked + button {
   background-color: var(--cookie-control-checkboxActiveBackground);
 }
-.cookieControl__ModalContent input:checked + label:before {
+.cookieControl__ModalContent input:checked + button:before {
   background-color: var(--cookie-control-checkboxActiveCircleBackground);
   transform: translate3d(100%, -50%, 0);
 }
-.cookieControl__ModalContent input:checked:disabled + label {
+.cookieControl__ModalContent input:checked:disabled + button {
   background-color: var(--cookie-control-checkboxDisabledBackground);
 }
-.cookieControl__ModalContent input:checked:disabled + label:before {
+.cookieControl__ModalContent input:checked:disabled + button:before {
   background-color: var(--cookie-control-checkboxDisabledCircleBackground);
 }
-.cookieControl__ModalContent label {
+.cookieControl__ModalContent input + button {
   position: relative;
   min-width: 36px;
   min-height: 20px;
@@ -258,7 +258,7 @@
   transition: background-color 200ms;
   background-color: var(--cookie-control-checkboxInactiveBackground);
 }
-.cookieControl__ModalContent label:before {
+.cookieControl__ModalContent input + button:before {
   position: absolute;
   content: '';
   top: 50%;
