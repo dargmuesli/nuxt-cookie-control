@@ -1,3 +1,11 @@
+# [4.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.5.0...4.6.0) (2023-02-24)
+
+
+### Features
+
+* **i18n:** adapt new locale format for Turkish translation ([9111d9c](https://github.com/dargmuesli/nuxt-cookie-control/commit/9111d9cc02a5db4b307b9fee57ffebadd9de2027))
+* **i18n:** add Turkish translation ([8dd647c](https://github.com/dargmuesli/nuxt-cookie-control/commit/8dd647c6030911857976def4667f7eb1631783c2))
+
 # [4.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.4.1...4.5.0) (2023-02-24)
 
 
