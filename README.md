@@ -141,8 +141,8 @@ cookies: {
 cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
 
 // Names for the cookies that are being set by this module.
-cookieNameIsConsentGiven: 'cookie_control_is_consent_given',
-cookieNameCookiesEnabledIds: 'cookie_control_cookies_enabled_ids',
+cookieNameIsConsentGiven: 'ncc_c',
+cookieNameCookiesEnabledIds: 'ncc_e',
 
 // Switch to toggle the "accept necessary" button.
 isAcceptNecessaryButtonEnabled: true

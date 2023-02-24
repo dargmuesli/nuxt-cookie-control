@@ -116,8 +116,8 @@ export const DEFAULTS: Required<ModuleOptions> = {
     optional: [],
   },
   cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
-  cookieNameIsConsentGiven: 'cookie_control_is_consent_given',
-  cookieNameCookiesEnabledIds: 'cookie_control_cookies_enabled_ids',
+  cookieNameIsConsentGiven: 'ncc_c',
+  cookieNameCookiesEnabledIds: 'ncc_e',
   isAcceptNecessaryButtonEnabled: true,
   isControlButtonEnabled: true,
   isCookieIdVisible: false,
