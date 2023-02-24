@@ -43,6 +43,7 @@
     "string-replace-loader": "3.1.0"
   },
   "devDependencies": {
+    "@dargmuesli/nuxt-cookie-control": "link:.",
     "@nuxt/module-builder": "0.2.1",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@types/js-cookie": "3.0.3",
@@ -57,9 +58,6 @@
     "vue": "3.2.47",
     "vue-tsc": "1.1.7",
     "webpack": "5.75.0"
-  },
-  "resolutions": {
-    "@dargmuesli/nuxt-cookie-control": "link:./"
   },
   "publishConfig": {
     "access": "public"
