@@ -1,3 +1,12 @@
+# [5.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.3...5.0.0-beta.4) (2023-02-24)
+
+
+### Features
+
+* add wcag text ([4d00f7d](https://github.com/dargmuesli/nuxt-cookie-control/commit/4d00f7d8f366b281fd8755f200e645f7a7a9bd0a))
+* **checkbox:** use button with interactive semantics ([80fcf05](https://github.com/dargmuesli/nuxt-cookie-control/commit/80fcf05b7ddbb19b7ecdb4d0ec0bd2276f402ee4)), closes [#41](https://github.com/dargmuesli/nuxt-cookie-control/issues/41)
+* **css:** add focus ring color ([d3a09b0](https://github.com/dargmuesli/nuxt-cookie-control/commit/d3a09b00facd87ef062aa863185aca4dcdb1ce0e))
+
 # [5.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.2...5.0.0-beta.3) (2023-02-24)
 
 
