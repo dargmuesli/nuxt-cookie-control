@@ -1,3 +1,10 @@
+# [5.0.0-beta.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.6...5.0.0-beta.7) (2023-02-24)
+
+
+### Bug Fixes
+
+* **styles:** correct padding and gap ([bba6c16](https://github.com/dargmuesli/nuxt-cookie-control/commit/bba6c162e42c0e515c2a6144275ac91e7c3c0ca9))
+
 # [5.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.5...5.0.0-beta.6) (2023-02-24)
 
 
