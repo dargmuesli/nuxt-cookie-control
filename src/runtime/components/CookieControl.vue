@@ -196,6 +196,7 @@ import {
   setCookie,
   resolveTranslatable,
 } from '../methods'
+import setCSSVariables from '#cookie-control/set-vars'
 
 import { useCookieControl } from '#imports'
 
@@ -312,7 +313,7 @@ const toggleLabel = ($event: KeyboardEvent) => {
 }
 
 // lifecycle
-onBeforeMount(async () => {
+onBeforeMount(() => {
   if (moduleOptions.colors) {
     const variables: Record<string, any> = {}
 
@@ -320,18 +321,7 @@ onBeforeMount(async () => {
       variables[`cookie-control-${key}`] = `${moduleOptions.colors[key]}`
     }
 
-    if (moduleOptions.isCssPonyfillEnabled) {
-      const module = await import('css-vars-ponyfill')
-      const cssVars = module.default
-      cssVars({ variables })
-    } else {
-      for (const cssVar in variables) {
-        document.documentElement.style.setProperty(
-          `--${cssVar}`,
-          variables[cssVar]
-        )
-      }
-    }
+    setCSSVariables(variables)
   }
 
   if (
