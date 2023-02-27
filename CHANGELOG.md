@@ -1,3 +1,10 @@
+# [5.0.0-beta.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.7...5.0.0-beta.8) (2023-02-27)
+
+
+### Bug Fixes
+
+* **module:** correct locale text input ([8fe4402](https://github.com/dargmuesli/nuxt-cookie-control/commit/8fe4402af567c634cb31cfffdc33af1bb4679412)), closes [#46](https://github.com/dargmuesli/nuxt-cookie-control/issues/46)
+
 # [5.0.0-beta.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.6...5.0.0-beta.7) (2023-02-24)
 
 
