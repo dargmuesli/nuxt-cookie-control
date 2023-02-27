@@ -81,6 +81,13 @@
 * - rename module option `isCssPolyfillEnabled` to `isCssPonyfillEnabled`
 - set module option `isCssPonyfillEnabled` default to `false`
 
+## [4.6.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.6.0...4.6.1) (2023-02-24)
+
+
+### Bug Fixes
+
+* **module:** correct locale text input ([8fe4402](https://github.com/dargmuesli/nuxt-cookie-control/commit/8fe4402af567c634cb31cfffdc33af1bb4679412)), closes [#46](https://github.com/dargmuesli/nuxt-cookie-control/issues/46)
+
 # [4.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.5.0...4.6.0) (2023-02-24)
 
 

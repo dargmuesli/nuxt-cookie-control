@@ -79,7 +79,7 @@ export interface ModuleOptions {
   isDashInDescriptionEnabled: boolean
   isIframeBlocked: boolean | { initialState: boolean }
   locales: Locale[]
-  localeTexts: PartialRecord<Locale, LocaleStrings>
+  localeTexts: PartialRecord<Locale, Partial<LocaleStrings>>
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {

@@ -42,5 +42,10 @@ export default defineNuxtConfig({
     },
     isCookieIdVisible: true,
     locales: ['en', 'de'],
+    localeTexts: {
+      de: {
+        iframeBlocked: 'Bitte funktionale Cookies aktivieren:',
+      },
+    },
   },
 })
