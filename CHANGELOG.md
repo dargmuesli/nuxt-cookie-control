@@ -1,3 +1,34 @@
+# [5.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.6.1...5.0.0) (2023-02-27)
+
+
+### Bug Fixes
+
+* **cookie-control:** correct toggle interactivity ([a43583f](https://github.com/dargmuesli/nuxt-cookie-control/commit/a43583f8f5b4b262a0bb97398580c4939d73bea2))
+* **playground:** resolve own package as development dependency ([2fbe156](https://github.com/dargmuesli/nuxt-cookie-control/commit/2fbe15656192c7fdf80a30a8209aa91580b70ec2))
+* **styles:** correct padding and gap ([bba6c16](https://github.com/dargmuesli/nuxt-cookie-control/commit/bba6c162e42c0e515c2a6144275ac91e7c3c0ca9))
+
+
+* feat(styles)!: use gap ([9be04f1](https://github.com/dargmuesli/nuxt-cookie-control/commit/9be04f1ad5d11b0713066133c49a09edb3e005e4))
+* feat(ponyfill)!: disable by default and rename ([4a84f81](https://github.com/dargmuesli/nuxt-cookie-control/commit/4a84f81d0ed13c9e589481415562ca3c3bbffa79))
+
+
+### Features
+
+* add wcag text ([4d00f7d](https://github.com/dargmuesli/nuxt-cookie-control/commit/4d00f7d8f366b281fd8755f200e645f7a7a9bd0a))
+* **checkbox:** use button with interactive semantics ([80fcf05](https://github.com/dargmuesli/nuxt-cookie-control/commit/80fcf05b7ddbb19b7ecdb4d0ec0bd2276f402ee4)), closes [#41](https://github.com/dargmuesli/nuxt-cookie-control/issues/41)
+* **cookie:** allow to add links ([f91f889](https://github.com/dargmuesli/nuxt-cookie-control/commit/f91f88979a41b6a46bb8dde96b7aba61388a7e8c)), closes [#26](https://github.com/dargmuesli/nuxt-cookie-control/issues/26)
+* **cookie:** shorten default cookie names ([7d2c856](https://github.com/dargmuesli/nuxt-cookie-control/commit/7d2c8566018a7e0e5847a8f5855c034f84f79f68))
+* **cookie:** split by `|` ([ff25117](https://github.com/dargmuesli/nuxt-cookie-control/commit/ff25117065a0623aeb18bdff1e39e81b221a89be))
+* **css:** add focus ring color ([d3a09b0](https://github.com/dargmuesli/nuxt-cookie-control/commit/d3a09b00facd87ef062aa863185aca4dcdb1ce0e))
+* show banner again once cookies are added or removed ([bf03cbc](https://github.com/dargmuesli/nuxt-cookie-control/commit/bf03cbca88518d351baabadfc75f478f89cea7db)), closes [#27](https://github.com/dargmuesli/nuxt-cookie-control/issues/27)
+
+
+### BREAKING CHANGES
+
+* - change padding, margins and gap for display flex
+* - rename module option `isCssPolyfillEnabled` to `isCssPonyfillEnabled`
+- set module option `isCssPonyfillEnabled` default to `false`
+
 # [5.0.0-beta.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.7...5.0.0-beta.8) (2023-02-27)
 
 
