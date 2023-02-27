@@ -3,7 +3,7 @@
     <section class="cookieControl">
       <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
         <div
-          v-if="isConsentGiven === undefined"
+          v-if="!isConsentGiven"
           :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
         >
           <div class="cookieControl__BarContainer">
@@ -29,9 +29,7 @@
         </div>
       </transition>
       <button
-        v-if="
-          moduleOptions.isControlButtonEnabled && isConsentGiven !== undefined
-        "
+        v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
         aria-label="Cookie control"
         class="cookieControl__ControlButton"
         data-testid="nuxt-cookie-control-control-button"
@@ -52,14 +50,14 @@
             v-text="localeStrings?.settingsUnsaved"
           />
           <div class="cookieControl__ModalContent">
-            <div>
+            <div class="cookieControl__ModalContentInner">
               <slot name="modal" />
               <button
                 class="cookieControl__ModalClose"
                 @click="isModalActive = false"
                 v-text="localeStrings?.close"
               />
-              <div v-for="cookieType in CookieType" :key="cookieType">
+              <template v-for="cookieType in CookieType" :key="cookieType">
                 <template v-if="moduleOptions.cookies[cookieType].length">
                   <h3
                     v-text="
@@ -95,19 +93,22 @@
                             ) ||
                             (getCookie(
                               moduleOptions.cookieNameIsConsentGiven
-                            ) !== 'true' &&
+                            ) !== allCookieIdsString &&
                               typeof moduleOptions.isIframeBlocked ===
                                 'object' &&
                               moduleOptions.isIframeBlocked.initialState)
                           "
                           @change="toogleCookie(cookie)"
                         />
-                        <label
-                          :for="resolveTranslatable(cookie.name, props.locale)"
-                        >
+                        <button @click="toggleButton($event)">
                           {{ getName(cookie.name) }}
-                        </label>
-                        <span class="cookieControl__ModalCookieName">
+                        </button>
+                        <label
+                          class="cookieControl__ModalCookieName"
+                          :for="resolveTranslatable(cookie.name, props.locale)"
+                          tabindex="0"
+                          @keydown="toggleLabel($event)"
+                        >
                           {{ getName(cookie.name) }}
                           <span v-if="cookie.description">
                             {{ getDescription(cookie.description) }}
@@ -118,19 +119,33 @@
                               cookie.targetCookieIds
                             "
                           >
+                            <br />
                             {{
-                              ' IDs: ' +
+                              'IDs: ' +
                               cookie.targetCookieIds
                                 .map((id: string) => `"${id}"`)
                                 .join(', ')
                             }}
                           </span>
-                        </span>
+                          <template
+                            v-if="Object.entries(cookie.links || {}).length"
+                          >
+                            <span
+                              v-for="entry in Object.entries(
+                                cookie.links || {}
+                              )"
+                              :key="entry[0]"
+                            >
+                              <br />
+                              <a :href="entry[0]">{{ entry[1] || entry[0] }}</a>
+                            </span>
+                          </template>
+                        </label>
                       </div>
                     </li>
                   </ul>
                 </template>
-              </div>
+              </template>
               <div class="cookieControl__ModalButtons">
                 <button
                   @click="
@@ -173,6 +188,7 @@ import { ref, computed, onBeforeMount, watch } from 'vue'
 
 import { Cookie, CookieType, Locale, Translatable } from '../types'
 import {
+  getAllCookieIdsString,
   getCookie,
   getCookieId,
   getCookieIds,
@@ -201,13 +217,14 @@ const {
 // data
 const expires = new Date()
 const localCookiesEnabled = ref([...(cookiesEnabled.value || [])])
+const allCookieIdsString = getAllCookieIdsString(moduleOptions)
 
 // computations
 const isSaved = computed(
   () =>
     getCookieIds(cookiesEnabled.value || [])
       .sort()
-      .join(',') !== getCookieIds(localCookiesEnabled.value).sort().join(',')
+      .join('|') !== getCookieIds(localCookiesEnabled.value).sort().join('|')
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
@@ -284,6 +301,15 @@ const setCookies = ({
     ? getCookieIds(cookiesEnabled.value)
     : []
 }
+const toggleButton = ($event: MouseEvent) => {
+  ;(
+    ($event.target as HTMLButtonElement | null)
+      ?.nextSibling as HTMLLabelElement | null
+  )?.click()
+}
+const toggleLabel = ($event: KeyboardEvent) => {
+  if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
+}
 
 // lifecycle
 onBeforeMount(async () => {
@@ -294,7 +320,7 @@ onBeforeMount(async () => {
       variables[`cookie-control-${key}`] = `${moduleOptions.colors[key]}`
     }
 
-    if (moduleOptions.isCssPolyfillEnabled) {
+    if (moduleOptions.isCssPonyfillEnabled) {
       const module = await import('css-vars-ponyfill')
       const cssVars = module.default
       cssVars({ variables })
@@ -308,7 +334,9 @@ onBeforeMount(async () => {
     }
   }
 
-  if (getCookie(moduleOptions.cookieNameIsConsentGiven) === 'true') {
+  if (
+    getCookie(moduleOptions.cookieNameIsConsentGiven) === allCookieIdsString
+  ) {
     for (const cookieOptional of moduleOptions.cookies.optional) {
       if (
         typeof moduleOptions.isIframeBlocked === 'boolean'
@@ -328,7 +356,7 @@ watch(
     if (isConsentGiven.value) {
       setCookie(
         moduleOptions.cookieNameCookiesEnabledIds,
-        getCookieIds(current || []).join(','),
+        getCookieIds(current || []).join('|'),
         {
           expires,
         }
@@ -374,9 +402,13 @@ watch(isConsentGiven, (current, _previous) => {
   if (current === undefined) {
     removeCookie(moduleOptions.cookieNameIsConsentGiven)
   } else {
-    setCookie(moduleOptions.cookieNameIsConsentGiven, current.toString(), {
-      expires,
-    })
+    setCookie(
+      moduleOptions.cookieNameIsConsentGiven,
+      current ? allCookieIdsString : '0',
+      {
+        expires,
+      }
+    )
   }
 })
 

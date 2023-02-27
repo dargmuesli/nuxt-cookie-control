@@ -1,3 +1,93 @@
+# [5.0.0-beta.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.7...5.0.0-beta.8) (2023-02-27)
+
+
+### Bug Fixes
+
+* **module:** correct locale text input ([8fe4402](https://github.com/dargmuesli/nuxt-cookie-control/commit/8fe4402af567c634cb31cfffdc33af1bb4679412)), closes [#46](https://github.com/dargmuesli/nuxt-cookie-control/issues/46)
+
+# [5.0.0-beta.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.6...5.0.0-beta.7) (2023-02-24)
+
+
+### Bug Fixes
+
+* **styles:** correct padding and gap ([bba6c16](https://github.com/dargmuesli/nuxt-cookie-control/commit/bba6c162e42c0e515c2a6144275ac91e7c3c0ca9))
+
+# [5.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.5...5.0.0-beta.6) (2023-02-24)
+
+
+### Features
+
+* **cookie:** allow to add links ([f91f889](https://github.com/dargmuesli/nuxt-cookie-control/commit/f91f88979a41b6a46bb8dde96b7aba61388a7e8c)), closes [#26](https://github.com/dargmuesli/nuxt-cookie-control/issues/26)
+
+# [5.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.4...5.0.0-beta.5) (2023-02-24)
+
+
+### Bug Fixes
+
+* **cookie-control:** correct toggle interactivity ([a43583f](https://github.com/dargmuesli/nuxt-cookie-control/commit/a43583f8f5b4b262a0bb97398580c4939d73bea2))
+
+
+### Features
+
+* **cookie:** shorten default cookie names ([7d2c856](https://github.com/dargmuesli/nuxt-cookie-control/commit/7d2c8566018a7e0e5847a8f5855c034f84f79f68))
+* **cookie:** split by `|` ([ff25117](https://github.com/dargmuesli/nuxt-cookie-control/commit/ff25117065a0623aeb18bdff1e39e81b221a89be))
+* show banner again once cookies are added or removed ([bf03cbc](https://github.com/dargmuesli/nuxt-cookie-control/commit/bf03cbca88518d351baabadfc75f478f89cea7db)), closes [#27](https://github.com/dargmuesli/nuxt-cookie-control/issues/27)
+
+# [5.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.3...5.0.0-beta.4) (2023-02-24)
+
+
+### Features
+
+* add wcag text ([4d00f7d](https://github.com/dargmuesli/nuxt-cookie-control/commit/4d00f7d8f366b281fd8755f200e645f7a7a9bd0a))
+* **checkbox:** use button with interactive semantics ([80fcf05](https://github.com/dargmuesli/nuxt-cookie-control/commit/80fcf05b7ddbb19b7ecdb4d0ec0bd2276f402ee4)), closes [#41](https://github.com/dargmuesli/nuxt-cookie-control/issues/41)
+* **css:** add focus ring color ([d3a09b0](https://github.com/dargmuesli/nuxt-cookie-control/commit/d3a09b00facd87ef062aa863185aca4dcdb1ce0e))
+
+# [5.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.2...5.0.0-beta.3) (2023-02-24)
+
+
+### Bug Fixes
+
+* **playground:** resolve own package as development dependency ([2fbe156](https://github.com/dargmuesli/nuxt-cookie-control/commit/2fbe15656192c7fdf80a30a8209aa91580b70ec2))
+* **release:** schedule release ([40a9795](https://github.com/dargmuesli/nuxt-cookie-control/commit/40a9795c9e295ea96ed492acd85b613db077ce45))
+
+
+### Features
+
+* **i18n:** adapt new locale format for Turkish translation ([9111d9c](https://github.com/dargmuesli/nuxt-cookie-control/commit/9111d9cc02a5db4b307b9fee57ffebadd9de2027))
+* **i18n:** add Turkish translation ([8dd647c](https://github.com/dargmuesli/nuxt-cookie-control/commit/8dd647c6030911857976def4667f7eb1631783c2))
+* **ko:** Add Korean Cookie message ([983c3e7](https://github.com/dargmuesli/nuxt-cookie-control/commit/983c3e7c02120778151a6e4c5f0b001833b11f9e))
+* **lang:** Add Danish language ([df8143b](https://github.com/dargmuesli/nuxt-cookie-control/commit/df8143b369412f1fe597d8f932a44e7d9a586096))
+* **locale:** add Azerbaijani ([1bf8609](https://github.com/dargmuesli/nuxt-cookie-control/commit/1bf860944886cb4348cac0c47bd9d7c45d0a30ab))
+* **locale:** add Czech and Slovak locales ([5db470c](https://github.com/dargmuesli/nuxt-cookie-control/commit/5db470ca5b8c1fd131be8a52f4c218762374f72f))
+* **locale:** add Lithuanian locales ([db8a85e](https://github.com/dargmuesli/nuxt-cookie-control/commit/db8a85e19b124037c3351ed4488292d424ff5882))
+* Updated bannerDescription translation for Azerbaijani language ([#35](https://github.com/dargmuesli/nuxt-cookie-control/issues/35)) ([b2c2977](https://github.com/dargmuesli/nuxt-cookie-control/commit/b2c297752673b678a128af0222de226e23462f4d))
+
+# [5.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0-beta.1...5.0.0-beta.2) (2023-01-29)
+
+
+### Bug Fixes
+
+* **locale:** correct language switch reactivity ([5957224](https://github.com/dargmuesli/nuxt-cookie-control/commit/5957224e59311d7a18d4449ca962c2dadd9d2ff3))
+
+
+* feat(styles)!: use gap ([9be04f1](https://github.com/dargmuesli/nuxt-cookie-control/commit/9be04f1ad5d11b0713066133c49a09edb3e005e4))
+
+
+### BREAKING CHANGES
+
+* - change padding, margins and gap for display flex
+
+# [5.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.0.2...5.0.0-beta.1) (2023-01-29)
+
+
+* feat(ponyfill)!: disable by default and rename ([4a84f81](https://github.com/dargmuesli/nuxt-cookie-control/commit/4a84f81d0ed13c9e589481415562ca3c3bbffa79))
+
+
+### BREAKING CHANGES
+
+* - rename module option `isCssPolyfillEnabled` to `isCssPonyfillEnabled`
+- set module option `isCssPonyfillEnabled` default to `false`
+
 ## [4.6.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.6.0...4.6.1) (2023-02-24)
 
 

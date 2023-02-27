@@ -31,6 +31,7 @@ export interface Cookie {
   description?: Translatable
   id?: string
   name: Translatable
+  links?: Record<string, string | null>
   src?: string
   targetCookieIds?: string[]
 }
@@ -74,7 +75,7 @@ export interface ModuleOptions {
   isControlButtonEnabled: boolean
   isCookieIdVisible: boolean
   isCssEnabled: boolean
-  isCssPolyfillEnabled: boolean
+  isCssPonyfillEnabled: boolean
   isDashInDescriptionEnabled: boolean
   isIframeBlocked: boolean | { initialState: boolean }
   locales: Locale[]
@@ -100,6 +101,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
     controlButtonHoverBackground: '#000',
     controlButtonIconColor: '#000',
     controlButtonIconHoverColor: '#fff',
+    focusRingColor: '#808080',
     modalBackground: '#fff',
     modalButtonBackground: '#000',
     modalButtonColor: '#fff',
@@ -115,13 +117,13 @@ export const DEFAULTS: Required<ModuleOptions> = {
     optional: [],
   },
   cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
-  cookieNameIsConsentGiven: 'cookie_control_is_consent_given',
-  cookieNameCookiesEnabledIds: 'cookie_control_cookies_enabled_ids',
+  cookieNameIsConsentGiven: 'ncc_c',
+  cookieNameCookiesEnabledIds: 'ncc_e',
   isAcceptNecessaryButtonEnabled: true,
   isControlButtonEnabled: true,
   isCookieIdVisible: false,
   isCssEnabled: true,
-  isCssPolyfillEnabled: true,
+  isCssPonyfillEnabled: false,
   isDashInDescriptionEnabled: true,
   isIframeBlocked: false,
   domain: '',
