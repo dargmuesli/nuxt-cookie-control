@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 import {
   defineNuxtModule,
@@ -109,8 +110,9 @@ const loadLocales = async (moduleOptions: ModuleOptions) => {
 
   for (const locale of locales) {
     const text = await import(
-      await resolvePath(resolve(runtimeDir, 'locale', locale))
-    ).then((r: any) => r.default || r)
+      pathToFileURL(await resolvePath(resolve(runtimeDir, 'locale', locale)))
+        .href
+    ).then((r) => r.default || r)
 
     if (!text) throw new Error(`Could not import text for locale ${locale}`)
 
