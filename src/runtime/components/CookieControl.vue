@@ -196,7 +196,7 @@ import {
   setCookie,
   resolveTranslatable,
 } from '../methods'
-import setCSSVariables from '#cookie-control/set-vars'
+import setCssVariables from '#cookie-control/set-vars'
 
 import { useCookieControl } from '#imports'
 
@@ -321,7 +321,7 @@ onBeforeMount(() => {
       variables[`cookie-control-${key}`] = `${moduleOptions.colors[key]}`
     }
 
-    setCSSVariables(variables)
+    setCssVariables(variables)
   }
 
   if (
