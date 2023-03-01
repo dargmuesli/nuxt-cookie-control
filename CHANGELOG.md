@@ -1,3 +1,10 @@
+## [5.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.1...5.0.2) (2023-03-01)
+
+
+### Bug Fixes
+
+* **module:** import with pathToFileURL ([33cc7fa](https://github.com/dargmuesli/nuxt-cookie-control/commit/33cc7fa650d2c17c72b8a0d1a16108c0c4092946))
+
 ## [5.0.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0...5.0.1) (2023-03-01)
 
 
