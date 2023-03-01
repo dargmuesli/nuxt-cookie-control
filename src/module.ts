@@ -35,9 +35,10 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   async setup(moduleOptions, nuxt) {
-    nuxt.options.alias['#cookie-control/set-vars'] = moduleOptions.isCssPonyfillEnabled
-      ? resolve(runtimeDir, 'set-vars/ponyfill')
-      : resolve(runtimeDir, 'set-vars/native')
+    nuxt.options.alias['#cookie-control/set-vars'] =
+      moduleOptions.isCssPonyfillEnabled
+        ? resolve(runtimeDir, 'set-vars/ponyfill')
+        : resolve(runtimeDir, 'set-vars/native')
 
     nuxt.options.alias['#cookie-control'] = runtimeDir
     nuxt.options.build.transpile.push(runtimeDir)
