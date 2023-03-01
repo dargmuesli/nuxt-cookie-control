@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.0...5.0.1) (2023-03-01)
+
+
+### Bug Fixes
+
+* don't include `css-vars-ponyfill` chunk if not enabled ([56e37b1](https://github.com/dargmuesli/nuxt-cookie-control/commit/56e37b13727abdb9db1203082665d21558341de6))
+
 # [5.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/4.6.1...5.0.0) (2023-02-27)
 
 
