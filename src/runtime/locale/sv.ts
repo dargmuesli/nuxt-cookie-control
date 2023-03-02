@@ -13,7 +13,8 @@ export default {
   decline: 'Avslå',
   declineAll: 'Avslå alla',
   here: 'här',
-  iframeBlocked: 'För att ta del av detta, var god godkänn funktionella cookies',
+  iframeBlocked:
+    'För att ta del av detta, var god godkänn funktionella cookies',
   manageCookies: 'Anpassa',
   save: 'Spara',
   settingsUnsaved: 'Du har inställningar som inte är sparade',
