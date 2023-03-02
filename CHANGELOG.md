@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.2...5.1.0) (2023-03-02)
+
+
+### Features
+
+* **locale:** add Swedish locale ([20a4281](https://github.com/dargmuesli/nuxt-cookie-control/commit/20a4281c58cd32934ec8fd56565eb8696ba7a341))
+
 ## [5.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.1...5.0.2) (2023-03-01)
 
 
