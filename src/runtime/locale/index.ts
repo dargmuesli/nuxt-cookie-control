@@ -21,4 +21,27 @@ import sv from './sv'
 import tr from './tr'
 import uk from './uk'
 
-export const locales = [ar, az, cs, da, de, en, es, fr, hr, hu, it, ja, ko, lt, nl, no, pt, ru, sk, sv, tr, uk]
+export const locales = [
+  ar,
+  az,
+  cs,
+  da,
+  de,
+  en,
+  es,
+  fr,
+  hr,
+  hu,
+  it,
+  ja,
+  ko,
+  lt,
+  nl,
+  no,
+  pt,
+  ru,
+  sk,
+  sv,
+  tr,
+  uk,
+]
