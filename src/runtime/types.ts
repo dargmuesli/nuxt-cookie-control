@@ -4,6 +4,9 @@ import en from './locale/en'
 
 export type Locale =
   | 'ar'
+  | 'az'
+  | 'cs'
+  | 'da'
   | 'de'
   | 'en'
   | 'es'
@@ -12,10 +15,15 @@ export type Locale =
   | 'hu'
   | 'it'
   | 'ja'
+  | 'ko'
+  | 'lt'
   | 'nl'
   | 'no'
   | 'pt'
   | 'ru'
+  | 'sk'
+  | 'sv'
+  | 'tr'
   | 'uk'
 
 export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
