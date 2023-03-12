@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.1.0...5.2.0) (2023-03-12)
+
+
+### Features
+
+* **lang:** add Finnish locale (fi) ([9d0daee](https://github.com/dargmuesli/nuxt-cookie-control/commit/9d0daee3f637984ccff0ace64cb95f96d5d0871a)), closes [#1337](https://github.com/dargmuesli/nuxt-cookie-control/issues/1337)
+
 # [5.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.0.2...5.1.0) (2023-03-02)
 
 
