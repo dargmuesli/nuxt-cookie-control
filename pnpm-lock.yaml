@@ -15,7 +15,7 @@ specifiers:
   js-cookie: 3.0.1
   lint-staged: 13.2.0
   nuxt: 3.2.3
-  prettier: 2.8.4
+  prettier: 2.8.6
   string-replace-loader: 3.1.0
   typescript: 5.0.2
   vue: 3.2.47
@@ -36,11 +36,11 @@ devDependencies:
   '@types/js-cookie': 3.0.3
   eslint: 8.36.0
   eslint-config-prettier: 8.7.0_eslint@8.36.0
-  eslint-plugin-prettier: 4.2.1_eqzx3hpkgx5nnvxls3azrcc7dm
+  eslint-plugin-prettier: 4.2.1_w3shflqoegspmha2z74hzwkfbm
   husky: 8.0.3
   lint-staged: 13.2.0
   nuxt: 3.2.3_wimzpmatuktm27l7vs7pjloin4
-  prettier: 2.8.4
+  prettier: 2.8.6
   typescript: 5.0.2
   vue: 3.2.47
   vue-tsc: 1.2.0_typescript@5.0.2
@@ -3712,7 +3712,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_eqzx3hpkgx5nnvxls3azrcc7dm:
+  /eslint-plugin-prettier/4.2.1_w3shflqoegspmha2z74hzwkfbm:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -3725,7 +3725,7 @@ packages:
     dependencies:
       eslint: 8.36.0
       eslint-config-prettier: 8.7.0_eslint@8.36.0
-      prettier: 2.8.4
+      prettier: 2.8.6
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -6305,8 +6305,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+  /prettier/2.8.6:
+    resolution: {integrity: sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
