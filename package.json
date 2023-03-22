@@ -62,5 +62,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "scheduleVersion": "4.4.1"
+  "scheduleVersion": "5.2.1"
 }
