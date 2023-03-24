@@ -1,3 +1,10 @@
+## [5.2.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.1...5.2.2) (2023-03-24)
+
+
+### Bug Fixes
+
+* **module:** use nuxt resolver rather than node:path resolve ([799eea6](https://github.com/dargmuesli/nuxt-cookie-control/commit/799eea67a3fbf88ae237858b5b5f9bb475093b88))
+
 ## [5.2.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.0...5.2.1) (2023-03-22)
 
 
