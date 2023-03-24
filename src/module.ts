@@ -30,7 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
   hooks: {
     'components:dirs'(dirs) {
       dirs.push({
-        path: resolve(runtimeDir, 'components'),
+        path: resolver.resolve(runtimeDir, 'components'),
         prefix: 'cookie',
       })
     },
@@ -38,8 +38,8 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(moduleOptions, nuxt) {
     nuxt.options.alias['#cookie-control/set-vars'] =
       moduleOptions.isCssPonyfillEnabled
-        ? resolve(runtimeDir, 'set-vars/ponyfill')
-        : resolve(runtimeDir, 'set-vars/native')
+        ? resolver.resolve(runtimeDir, 'set-vars/ponyfill')
+        : resolver.resolve(runtimeDir, 'set-vars/native')
 
     nuxt.options.alias['#cookie-control'] = runtimeDir
     nuxt.options.build.transpile.push(runtimeDir)
@@ -48,11 +48,11 @@ export default defineNuxtModule<ModuleOptions>({
     blockIframes(moduleOptions)
     await loadLocales(moduleOptions)
 
-    addPlugin(resolve(runtimeDir, 'plugin'))
+    addPlugin(resolver.resolve(runtimeDir, 'plugin'))
     addImports({
       name: 'useCookieControl',
       as: 'useCookieControl',
-      from: resolve(runtimeDir, 'composables'),
+      from: resolver.resolve(runtimeDir, 'composables'),
     })
     addTemplate({
       filename: 'cookie-control-options.ts',
@@ -135,5 +135,5 @@ const loadLocales = async (moduleOptions: ModuleOptions) => {
 
 const pushCss = (moduleOptions: ModuleOptions, nuxt: Nuxt) => {
   if (moduleOptions.isCssEnabled)
-    nuxt.options.css.push(resolve(runtimeDir, 'styles.css'))
+    nuxt.options.css.push(resolver.resolve(runtimeDir, 'styles.css'))
 }
