@@ -15,7 +15,7 @@ specifiers:
   js-cookie: 3.0.1
   lint-staged: 13.2.0
   nuxt: 3.3.1
-  prettier: 2.8.6
+  prettier: 2.8.7
   string-replace-loader: 3.1.0
   typescript: 5.0.2
   vue: 3.2.47
@@ -36,11 +36,11 @@ devDependencies:
   '@types/js-cookie': 3.0.3
   eslint: 8.36.0
   eslint-config-prettier: 8.7.0_eslint@8.36.0
-  eslint-plugin-prettier: 4.2.1_w3shflqoegspmha2z74hzwkfbm
+  eslint-plugin-prettier: 4.2.1_eoewazrt3moyisi2qkg3xtm6hi
   husky: 8.0.3
   lint-staged: 13.2.0
   nuxt: 3.3.1_wimzpmatuktm27l7vs7pjloin4
-  prettier: 2.8.6
+  prettier: 2.8.7
   typescript: 5.0.2
   vue: 3.2.47
   vue-tsc: 1.2.0_typescript@5.0.2
@@ -3211,7 +3211,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_w3shflqoegspmha2z74hzwkfbm:
+  /eslint-plugin-prettier/4.2.1_eoewazrt3moyisi2qkg3xtm6hi:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -3224,7 +3224,7 @@ packages:
     dependencies:
       eslint: 8.36.0
       eslint-config-prettier: 8.7.0_eslint@8.36.0
-      prettier: 2.8.6
+      prettier: 2.8.7
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -5725,8 +5725,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.8.6:
-    resolution: {integrity: sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==}
+  /prettier/2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
