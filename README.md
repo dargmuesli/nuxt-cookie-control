@@ -163,6 +163,9 @@ isCssPonyfillEnabled: false,
 // Switch to toggle the separation of cookie name and description in the configuration modal by a dash.
 isDashInDescriptionEnabled: true,
 
+// if this value is given true, showing Only Modal to force to select for users.
+isForcedModal: false,
+
 // Switch to toggle the blocking of iframes.
 // This can be used to prevent iframes from adding additional cookies.
 isIframeBlocked: false,
