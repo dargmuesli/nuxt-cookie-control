@@ -339,7 +339,7 @@ onBeforeMount(() => {
     }
   }
 
-  if (moduleOptions.isForcedModal) {
+  if (moduleOptions.isForcedModal && !isConsentGiven.value) {
     isModalActive.value = true;
   }
 })
