@@ -3,7 +3,7 @@
     <section class="cookieControl">
       <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
         <div
-          v-if="!isConsentGiven"
+          v-if="!isConsentGiven && !moduleOptions.isForcedModal"
           :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
         >
           <div class="cookieControl__BarContainer">
@@ -56,6 +56,7 @@
                 class="cookieControl__ModalClose"
                 @click="isModalActive = false"
                 v-text="localeStrings?.close"
+                v-if="!moduleOptions.isForcedModal"
               />
               <template v-for="cookieType in CookieType" :key="cookieType">
                 <template v-if="moduleOptions.cookies[cookieType].length">
@@ -336,6 +337,10 @@ onBeforeMount(() => {
         localCookiesEnabled.value.push(cookieOptional)
       }
     }
+  }
+
+  if (moduleOptions.isForcedModal) {
+    isModalActive.value = true;
   }
 })
 watch(
