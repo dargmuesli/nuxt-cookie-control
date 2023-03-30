@@ -36,7 +36,7 @@
     "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
   },
   "dependencies": {
-    "@nuxt/kit": "3.3.1",
+    "@nuxt/kit": "3.3.2",
     "@sindresorhus/slugify": "2.2.0",
     "css-vars-ponyfill": "2.4.8",
     "js-cookie": "3.0.1",
@@ -47,20 +47,19 @@
     "@nuxt/module-builder": "0.2.1",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@types/js-cookie": "3.0.3",
-    "eslint": "8.36.0",
+    "eslint": "8.37.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.3",
     "lint-staged": "13.2.0",
-    "nuxt": "3.3.1",
+    "nuxt": "3.3.2",
     "prettier": "2.8.7",
     "typescript": "5.0.2",
     "vue": "3.2.47",
     "vue-tsc": "1.2.0",
-    "webpack": "5.76.3"
+    "webpack": "5.77.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "scheduleVersion": "5.2.1"
+  }
 }
