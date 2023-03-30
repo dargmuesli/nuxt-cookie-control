@@ -166,10 +166,6 @@ isDashInDescriptionEnabled: true,
 // Switch to toggle the blocking of iframes.
 // This can be used to prevent iframes from adding additional cookies.
 isIframeBlocked: false,
-// or:
-// isIframeBlocked: {
-//   initialState: false
-// },
 
 // The domain to set cookies on.
 // This is useful in case you have subdomains (shop.yourdomain.com)
