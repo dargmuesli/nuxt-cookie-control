@@ -53,10 +53,10 @@
             <div class="cookieControl__ModalContentInner">
               <slot name="modal" />
               <button
+                v-if="!moduleOptions.isForcedModal"
                 class="cookieControl__ModalClose"
                 @click="isModalActive = false"
                 v-text="localeStrings?.close"
-                v-if="!moduleOptions.isForcedModal"
               />
               <template v-for="cookieType in CookieType" :key="cookieType">
                 <template v-if="moduleOptions.cookies[cookieType].length">
@@ -340,7 +340,7 @@ onBeforeMount(() => {
   }
 
   if (moduleOptions.isForcedModal && !isConsentGiven.value) {
-    isModalActive.value = true;
+    isModalActive.value = true
   }
 })
 watch(
