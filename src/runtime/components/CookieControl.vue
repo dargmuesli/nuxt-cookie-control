@@ -3,7 +3,7 @@
     <section class="cookieControl">
       <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
         <div
-          v-if="!isConsentGiven && !moduleOptions.isForcedModal"
+          v-if="!isConsentGiven && !moduleOptions.isModalForced"
           :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
         >
           <div class="cookieControl__BarContainer">
@@ -53,7 +53,7 @@
             <div class="cookieControl__ModalContentInner">
               <slot name="modal" />
               <button
-                v-if="!moduleOptions.isForcedModal"
+                v-if="!moduleOptions.isModalForced"
                 class="cookieControl__ModalClose"
                 @click="isModalActive = false"
                 v-text="localeStrings?.close"
@@ -339,7 +339,7 @@ onBeforeMount(() => {
     }
   }
 
-  if (moduleOptions.isForcedModal && !isConsentGiven.value) {
+  if (moduleOptions.isModalForced && !isConsentGiven.value) {
     isModalActive.value = true
   }
 })
