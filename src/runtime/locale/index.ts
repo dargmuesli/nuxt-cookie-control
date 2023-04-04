@@ -5,6 +5,7 @@ import da from './da'
 import de from './de'
 import en from './en'
 import es from './es'
+import fi from './fi'
 import fr from './fr'
 import hr from './hr'
 import hu from './hu'
@@ -29,6 +30,7 @@ export const locales = [
   de,
   en,
   es,
+  fi,
   fr,
   hr,
   hu,
