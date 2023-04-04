@@ -1,3 +1,10 @@
+## [5.2.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.2...5.2.3) (2023-04-04)
+
+
+### Bug Fixes
+
+* **locales:** add missing indication for `fi` ([25aa636](https://github.com/dargmuesli/nuxt-cookie-control/commit/25aa636f7724919aee6ffcbdbc5926075e66d31a))
+
 ## [5.2.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.1...5.2.2) (2023-03-24)
 
 
