@@ -167,6 +167,7 @@
                   v-text="localeStrings?.acceptAll"
                 />
                 <button
+                  v-if="!moduleOptions.isForcedModal"
                   @click="
                     () => {
                       declineAll()
