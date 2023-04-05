@@ -13,7 +13,8 @@ export default {
   decline: 'Zrezygnuj',
   declineAll: 'Zrezygnuj ze wszystkich',
   here: 'tutaj',
-  iframeBlocked: 'W celu wyświetlenia wymagane jest włączenie funkcjonalnych plików cookies',
+  iframeBlocked:
+    'W celu wyświetlenia wymagane jest włączenie funkcjonalnych plików cookies',
   manageCookies: 'Dowiedz się więcej',
   save: 'Zapisz',
   settingsUnsaved: 'Masz niezapisane ustawienia',
