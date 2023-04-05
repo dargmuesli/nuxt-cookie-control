@@ -87,7 +87,7 @@ export interface ModuleOptions {
   isCssPonyfillEnabled: boolean
   isDashInDescriptionEnabled: boolean
   isIframeBlocked: boolean | { initialState: boolean }
-  isForcedModal: boolean
+  isModalForced: boolean
   locales: Locale[]
   localeTexts: PartialRecord<Locale, Partial<LocaleStrings>>
 }
@@ -136,7 +136,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   isCssPonyfillEnabled: false,
   isDashInDescriptionEnabled: true,
   isIframeBlocked: false,
-  isForcedModal: false,
+  isModalForced: false,
   domain: '',
   locales: ['en'],
   localeTexts: { en },
