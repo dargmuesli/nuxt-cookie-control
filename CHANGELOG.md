@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.3...5.3.0) (2023-04-05)
+
+
+### Features
+
+* **locale:** add PL - Polish translation ([52b740c](https://github.com/dargmuesli/nuxt-cookie-control/commit/52b740c83a27f9bfc95b78b6b307c6bc3072f02e))
+
 ## [5.2.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.2...5.2.3) (2023-04-04)
 
 
