@@ -43,7 +43,11 @@
         </svg>
       </button>
       <transition name="cookieControl__Modal">
-        <div v-if="isModalActive" class="cookieControl__Modal">
+        <div
+          v-if="isModalActive"
+          class="cookieControl__Modal"
+          v-on="moduleOptions.closeModalOnClickOutside ? { click: () => isModalActive = false } : {}"
+        >
           <p
             v-if="isSaved"
             class="cookieControl__ModalUnsaved"

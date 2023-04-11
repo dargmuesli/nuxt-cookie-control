@@ -72,6 +72,7 @@ export interface ModuleOptions {
     | 'bottom-left'
     | 'bottom-right'
     | 'bottom-full'
+  closeModalOnClickOutside: boolean;
   colors: false | Record<string, any>
   cookieExpiryOffsetMs: number
   cookieNameCookiesEnabledIds: string
@@ -94,6 +95,7 @@ export interface ModuleOptions {
 
 export const DEFAULTS: Required<ModuleOptions> = {
   barPosition: 'bottom-full',
+  closeModalOnClickOutside: false,
   colors: {
     barBackground: '#000',
     barButtonBackground: '#fff',
