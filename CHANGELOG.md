@@ -1,3 +1,24 @@
+# [5.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.3.0...5.4.0) (2023-04-11)
+
+
+### Features
+
+* add "isModalForced" to ModuleOptions ([#78](https://github.com/dargmuesli/nuxt-cookie-control/issues/78)) ([341ac73](https://github.com/dargmuesli/nuxt-cookie-control/commit/341ac73f29eb3653704b065a882e58022d355df2))
+
+# [5.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.3...5.3.0) (2023-04-05)
+
+
+### Features
+
+* **locale:** add PL - Polish translation ([52b740c](https://github.com/dargmuesli/nuxt-cookie-control/commit/52b740c83a27f9bfc95b78b6b307c6bc3072f02e))
+
+## [5.2.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.2...5.2.3) (2023-04-04)
+
+
+### Bug Fixes
+
+* **locales:** add missing indication for `fi` ([25aa636](https://github.com/dargmuesli/nuxt-cookie-control/commit/25aa636f7724919aee6ffcbdbc5926075e66d31a))
+
 ## [5.2.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.1...5.2.2) (2023-03-24)
 
 

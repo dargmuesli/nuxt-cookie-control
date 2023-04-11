@@ -4,7 +4,7 @@
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
 
 
-✅ Translated for: ar, az, cs, da, de, en, es, fr, hr, hu, it, ja, ko, lt, nl, no, pt, ru, sk, sv, tr and uk
+✅ Translated for: ar, az, cs, da, de, en, es, fi, fr, hr, hu, it, ja, ko, lt, nl, no, pt, pl, ru, sk, sv, tr and uk
 
 ✅ Vue 3 support
 
@@ -166,6 +166,9 @@ isDashInDescriptionEnabled: true,
 // Switch to toggle the blocking of iframes.
 // This can be used to prevent iframes from adding additional cookies.
 isIframeBlocked: false,
+
+// Switch to toggle the modal being shown right away, requiring a user's decision.
+isModalForced: false,
 
 // The domain to set cookies on.
 // This is useful in case you have subdomains (shop.yourdomain.com)
