@@ -46,7 +46,10 @@
         <div
           v-if="isModalActive"
           class="cookieControl__Modal"
-          v-on="moduleOptions.closeModalOnClickOutside ? { click: () => isModalActive = false } : {}"
+          @click.self="
+            moduleOptions.closeModalOnClickOutside &&
+              (() => (isModalActive = false))()
+          "
         >
           <p
             v-if="isSaved"

@@ -72,7 +72,7 @@ export interface ModuleOptions {
     | 'bottom-left'
     | 'bottom-right'
     | 'bottom-full'
-  closeModalOnClickOutside: boolean;
+  closeModalOnClickOutside: boolean
   colors: false | Record<string, any>
   cookieExpiryOffsetMs: number
   cookieNameCookiesEnabledIds: string
