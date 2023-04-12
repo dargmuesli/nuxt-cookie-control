@@ -46,10 +46,7 @@
         <div
           v-if="isModalActive"
           class="cookieControl__Modal"
-          @click.self="
-            moduleOptions.closeModalOnClickOutside &&
-              (() => (isModalActive = false))()
-          "
+          @click.self="onModalClick"
         >
           <p
             v-if="isSaved"
@@ -288,6 +285,11 @@ const getName = (name: Translatable) => {
 }
 const init = () => {
   expires.setTime(expires.getTime() + moduleOptions.cookieExpiryOffsetMs)
+}
+const onModalClick = () => {
+  if (moduleOptions.closeModalOnClickOutside) {
+    isModalActive.value = false
+  }
 }
 const setCookies = ({
   cookiesOptionalEnabled: cookiesOptionalEnabledNew,
