@@ -240,12 +240,6 @@ const accept = () => {
     cookiesOptionalEnabled: moduleOptions.cookies.optional,
   })
 }
-const decline = () => {
-  setCookies({
-    isConsentGiven: true,
-    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
-  })
-}
 const acceptPartial = () => {
   const localCookiesEnabledIds = getCookieIds(localCookiesEnabled.value)
 
@@ -257,22 +251,17 @@ const acceptPartial = () => {
     ].filter((cookie) => localCookiesEnabledIds.includes(getCookieId(cookie))),
   })
 }
+const decline = () => {
+  setCookies({
+    isConsentGiven: true,
+    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
+  })
+}
 const declineAll = () => {
   setCookies({
     isConsentGiven: false,
     cookiesOptionalEnabled: [],
   })
-}
-const toogleCookie = (cookie: Cookie) => {
-  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(
-    getCookieId(cookie)
-  )
-
-  if (cookieIndex < 0) {
-    localCookiesEnabled.value.push(cookie)
-  } else {
-    localCookiesEnabled.value.splice(cookieIndex, 1)
-  }
 }
 const getDescription = (description: Translatable) =>
   `${
@@ -316,6 +305,17 @@ const toggleButton = ($event: MouseEvent) => {
     ($event.target as HTMLButtonElement | null)
       ?.nextSibling as HTMLLabelElement | null
   )?.click()
+}
+const toogleCookie = (cookie: Cookie) => {
+  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(
+    getCookieId(cookie)
+  )
+
+  if (cookieIndex < 0) {
+    localCookiesEnabled.value.push(cookie)
+  } else {
+    localCookiesEnabled.value.splice(cookieIndex, 1)
+  }
 }
 const toggleLabel = ($event: KeyboardEvent) => {
   if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
