@@ -1,3 +1,10 @@
+# [5.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.5.0...5.6.0) (2023-04-13)
+
+
+### Features
+
+* **i18n:** add Occitan language ([#87](https://github.com/dargmuesli/nuxt-cookie-control/issues/87)) ([e1009b7](https://github.com/dargmuesli/nuxt-cookie-control/commit/e1009b7bbadd9b5f8bb772355f7e8596c439089a))
+
 # [5.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.4.0...5.5.0) (2023-04-13)
 
 
