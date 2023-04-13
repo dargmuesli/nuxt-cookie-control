@@ -99,6 +99,9 @@ if (cookieControl.cookiesEnabledIds.value.includes('google-analytics')) {
 // 'top-left', 'top-right', 'top-full', 'bottom-left', 'bottom-right', 'bottom-full'
 barPosition: 'bottom-full',
 
+// Switch to toggle if clicking the overlay outside the configuration modal closes the modal.
+closeModalOnClickOutside: true,
+
 // Component colors.
 // If you want to disable colors set colors property to false.
 colors: {
