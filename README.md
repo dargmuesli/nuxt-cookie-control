@@ -174,6 +174,9 @@ isIframeBlocked: false,
 //   initialState: false
 // },
 
+// Switch to toggle the modal being shown right away, requiring a user's decision.
+isModalForced: false,
+
 // The domain to set cookies on.
 // This is useful in case you have subdomains (shop.yourdomain.com)
 domain: 'yourdomain.com',

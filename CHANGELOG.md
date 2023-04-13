@@ -1,3 +1,10 @@
+# [5.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.3.0...5.4.0) (2023-04-11)
+
+
+### Features
+
+* add "isModalForced" to ModuleOptions ([#78](https://github.com/dargmuesli/nuxt-cookie-control/issues/78)) ([341ac73](https://github.com/dargmuesli/nuxt-cookie-control/commit/341ac73f29eb3653704b065a882e58022d355df2))
+
 # [5.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.2.3...5.3.0) (2023-04-05)
 
 
