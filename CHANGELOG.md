@@ -1,3 +1,10 @@
+# [5.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.4.0...5.5.0) (2023-04-13)
+
+
+### Features
+
+* **modal:** close on click outside ([#86](https://github.com/dargmuesli/nuxt-cookie-control/issues/86)) ([0147e3d](https://github.com/dargmuesli/nuxt-cookie-control/commit/0147e3deb469285d04d673313c2da860fff2b1a1))
+
 # [5.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.3.0...5.4.0) (2023-04-11)
 
 
