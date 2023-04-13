@@ -10,7 +10,7 @@ export default {
   cookiesFunctional: 'Cookies foncionals',
   cookiesNecessary: 'Los cookies obligatòris',
   cookiesOptional: 'Los cookies opcionals',
-  decline: "Accèpti çò necessari",
+  decline: 'Accèpti çò necessari',
   declineAll: 'Tot refusar',
   here: 'aquí',
   iframeBlocked: 'Per veire aquò, mercés d’activar los cookies foncionals',
