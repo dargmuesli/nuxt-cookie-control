@@ -420,7 +420,7 @@ watch(isConsentGiven, (current, _previous) => {
 defineExpose({
   accept,
   acceptPartial,
-  decline
+  decline,
 })
 
 // initialization
