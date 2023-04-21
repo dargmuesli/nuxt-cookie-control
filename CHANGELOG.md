@@ -1,3 +1,10 @@
+# [5.7.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.6.0...5.7.0) (2023-04-21)
+
+
+### Features
+
+* **method:** add define Expose - make methods available to parent component ([#89](https://github.com/dargmuesli/nuxt-cookie-control/issues/89)) ([466bdd8](https://github.com/dargmuesli/nuxt-cookie-control/commit/466bdd80c8ff8d06ff7d7f7b12e2d3f329084cb1))
+
 # [5.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.5.0...5.6.0) (2023-04-13)
 
 
