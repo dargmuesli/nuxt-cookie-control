@@ -33,7 +33,8 @@
     "dev": "pnpm dev:prepare && nuxi dev playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "dev:build": "nuxi build playground",
-    "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
+    "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nuxt/kit": "3.4.2",
