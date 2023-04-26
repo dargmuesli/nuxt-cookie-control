@@ -57,7 +57,7 @@
     "prettier": "2.8.8",
     "typescript": "5.0.4",
     "vue": "3.2.47",
-    "vue-tsc": "1.4.4",
+    "vue-tsc": "1.6.0",
     "webpack": "5.80.0"
   },
   "publishConfig": {
