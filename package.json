@@ -36,7 +36,7 @@
     "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
   },
   "dependencies": {
-    "@nuxt/kit": "3.4.2",
+    "@nuxt/kit": "3.4.3",
     "@sindresorhus/slugify": "2.2.0",
     "css-vars-ponyfill": "2.4.8",
     "js-cookie": "3.0.5",
