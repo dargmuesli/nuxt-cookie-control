@@ -1,7 +1,7 @@
 # Nuxt Cookie Control
 [![npm version][npm-version-src]][npm-version-href] [![npm downloads][npm-downloads-src]][npm-downloads-href]
 
-![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
+![nuxt-cookie-control](https://drive.google.com/a/broj42.com/uc?id=19sFguJo7SKUvmH4xu9DhK9ZXzR6oWLX8)
 
 
 ✅ Translated for: ar, az, cs, da, de, en, es, fi, fr, hr, hu, it, ja, ko, lt, nl, no, oc, pt, pl, ru, sk, sv, tr and uk
@@ -15,13 +15,13 @@
 
 ## 🚀 Getting Started
 
-[![Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/dargmuesli/nuxt-cookie-control?file=playground%2Fapp.vue)
+[![Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/github-ryq8cq?file=playground/app.vue)
 
 ### Installation
 ```bash
-npm i -D @dargmuesli/nuxt-cookie-control
-yarn add -D @dargmuesli/nuxt-cookie-control
-pnpm i -D @dargmuesli/nuxt-cookie-control
+npm i -D nuxt-cookie-control
+yarn add -D nuxt-cookie-control
+pnpm i -D nuxt-cookie-control
 ```
 
 ### Configuration
@@ -29,7 +29,7 @@ pnpm i -D @dargmuesli/nuxt-cookie-control
 // nuxt.config.js
 
 modules: [
-  '@dargmuesli/nuxt-cookie-control'
+  'nuxt-cookie-control'
 ],
 cookieControl: {
   // typed module options
@@ -38,7 +38,7 @@ cookieControl: {
 // or
 
 modules: [
-  ['@dargmuesli/nuxt-cookie-control', {
+  ['nuxt-cookie-control', {
     // untyped module options
   }]
 ]
@@ -247,8 +247,8 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
 
 
 <!-- Badges -->
-[npm-version-src]: https://badgen.net/npm/v/@dargmuesli/nuxt-cookie-control/latest
-[npm-version-href]: https://npmjs.com/package/@dargmuesli/nuxt-cookie-control
+[npm-version-src]: https://badgen.net/npm/v/nuxt-cookie-control/latest
+[npm-version-href]: https://npmjs.com/package/nuxt-cookie-control
 
-[npm-downloads-src]: https://badgen.net/npm/dm/@dargmuesli/nuxt-cookie-control
-[npm-downloads-href]: https://npmjs.com/package/@dargmuesli/nuxt-cookie-control
+[npm-downloads-src]: https://badgen.net/npm/dm/nuxt-cookie-control
+[npm-downloads-href]: https://npmjs.com/package/nuxt-cookie-control
