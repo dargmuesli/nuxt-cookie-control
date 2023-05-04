@@ -4,7 +4,7 @@
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
 
 
-✅ Translated for: ar, az, cs, da, de, en, es, fi, fr, hr, hu, it, ja, ko, lt, nl, no, pt, pl, ru, sk, sv, tr and uk
+✅ Translated for: ar, az, cs, da, de, en, es, fi, fr, hr, hu, it, ja, ko, lt, nl, no, oc, pt, pl, ru, sk, sv, tr and uk
 
 ✅ Vue 3 support
 
@@ -98,6 +98,9 @@ if (cookieControl.cookiesEnabledIds.value.includes('google-analytics')) {
 // Position of cookie bar.
 // 'top-left', 'top-right', 'top-full', 'bottom-left', 'bottom-right', 'bottom-full'
 barPosition: 'bottom-full',
+
+// Switch to toggle if clicking the overlay outside the configuration modal closes the modal.
+closeModalOnClickOutside: true,
 
 // Component colors.
 // If you want to disable colors set colors property to false.

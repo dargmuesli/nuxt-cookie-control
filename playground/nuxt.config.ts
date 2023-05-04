@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     colors: {
       checkboxActiveBackground: '#00A34A', // text-green-600
     },
+    closeModalOnClickOutside: true,
     cookies: {
       necessary: [
         {

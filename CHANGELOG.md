@@ -1,3 +1,31 @@
+## [5.7.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.7.0...5.7.1) (2023-05-03)
+
+
+### Bug Fixes
+
+* schedule release ([9f64026](https://github.com/dargmuesli/nuxt-cookie-control/commit/9f64026c0e0c06c332dd6719dacd8c68f0e35795))
+
+# [5.7.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.6.0...5.7.0) (2023-04-21)
+
+
+### Features
+
+* **method:** add define Expose - make methods available to parent component ([#89](https://github.com/dargmuesli/nuxt-cookie-control/issues/89)) ([466bdd8](https://github.com/dargmuesli/nuxt-cookie-control/commit/466bdd80c8ff8d06ff7d7f7b12e2d3f329084cb1))
+
+# [5.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.5.0...5.6.0) (2023-04-13)
+
+
+### Features
+
+* **i18n:** add Occitan language ([#87](https://github.com/dargmuesli/nuxt-cookie-control/issues/87)) ([e1009b7](https://github.com/dargmuesli/nuxt-cookie-control/commit/e1009b7bbadd9b5f8bb772355f7e8596c439089a))
+
+# [5.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.4.0...5.5.0) (2023-04-13)
+
+
+### Features
+
+* **modal:** close on click outside ([#86](https://github.com/dargmuesli/nuxt-cookie-control/issues/86)) ([0147e3d](https://github.com/dargmuesli/nuxt-cookie-control/commit/0147e3deb469285d04d673313c2da860fff2b1a1))
+
 # [5.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.3.0...5.4.0) (2023-04-11)
 
 

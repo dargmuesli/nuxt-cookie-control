@@ -1,6 +1,6 @@
 {
   "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "5.4.0",
+  "version": "5.7.1",
   "description": "Nuxt Cookies Control Module",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
   "maintainers": [
@@ -15,6 +15,10 @@
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "packageManager": "pnpm@8.4.0",
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
@@ -33,7 +37,8 @@
     "dev": "pnpm dev:prepare && nuxi dev playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "dev:build": "nuxi build playground",
-    "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground"
+    "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nuxt/kit": "3.4.3",
@@ -43,6 +48,8 @@
     "string-replace-loader": "3.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.6.3",
+    "@commitlint/config-conventional": "17.6.3",
     "@dargmuesli/nuxt-cookie-control": "link:.",
     "@nuxt/module-builder": "0.3.1",
     "@nuxtjs/eslint-config-typescript": "12.0.0",

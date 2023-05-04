@@ -43,7 +43,11 @@
         </svg>
       </button>
       <transition name="cookieControl__Modal">
-        <div v-if="isModalActive" class="cookieControl__Modal">
+        <div
+          v-if="isModalActive"
+          class="cookieControl__Modal"
+          @click.self="onModalClick"
+        >
           <p
             v-if="isSaved"
             class="cookieControl__ModalUnsaved"
@@ -180,7 +184,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onBeforeMount, watch } from 'vue'
+import { ref, computed, onBeforeMount, watch, defineExpose } from 'vue'
 
 import { Cookie, CookieType, Locale, Translatable } from '../types'
 import {
@@ -232,12 +236,6 @@ const accept = () => {
     cookiesOptionalEnabled: moduleOptions.cookies.optional,
   })
 }
-const decline = () => {
-  setCookies({
-    isConsentGiven: true,
-    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
-  })
-}
 const acceptPartial = () => {
   const localCookiesEnabledIds = getCookieIds(localCookiesEnabled.value)
 
@@ -249,22 +247,17 @@ const acceptPartial = () => {
     ].filter((cookie) => localCookiesEnabledIds.includes(getCookieId(cookie))),
   })
 }
+const decline = () => {
+  setCookies({
+    isConsentGiven: true,
+    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
+  })
+}
 const declineAll = () => {
   setCookies({
     isConsentGiven: false,
     cookiesOptionalEnabled: [],
   })
-}
-const toogleCookie = (cookie: Cookie) => {
-  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(
-    getCookieId(cookie)
-  )
-
-  if (cookieIndex < 0) {
-    localCookiesEnabled.value.push(cookie)
-  } else {
-    localCookiesEnabled.value.splice(cookieIndex, 1)
-  }
 }
 const getDescription = (description: Translatable) =>
   `${
@@ -277,6 +270,11 @@ const getName = (name: Translatable) => {
 }
 const init = () => {
   expires.setTime(expires.getTime() + moduleOptions.cookieExpiryOffsetMs)
+}
+const onModalClick = () => {
+  if (moduleOptions.closeModalOnClickOutside) {
+    isModalActive.value = false
+  }
 }
 const setCookies = ({
   cookiesOptionalEnabled: cookiesOptionalEnabledNew,
@@ -303,6 +301,17 @@ const toggleButton = ($event: MouseEvent) => {
     ($event.target as HTMLButtonElement | null)
       ?.nextSibling as HTMLLabelElement | null
   )?.click()
+}
+const toogleCookie = (cookie: Cookie) => {
+  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(
+    getCookieId(cookie)
+  )
+
+  if (cookieIndex < 0) {
+    localCookiesEnabled.value.push(cookie)
+  } else {
+    localCookiesEnabled.value.splice(cookieIndex, 1)
+  }
 }
 const toggleLabel = ($event: KeyboardEvent) => {
   if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
@@ -396,6 +405,12 @@ watch(isConsentGiven, (current, _previous) => {
       }
     )
   }
+})
+
+defineExpose({
+  accept,
+  acceptPartial,
+  decline,
 })
 
 // initialization
