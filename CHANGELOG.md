@@ -1,3 +1,10 @@
+# [5.8.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.7.1...5.8.0) (2023-05-05)
+
+
+### Features
+
+* **lang:** Add Bulgarian language ([#94](https://github.com/dargmuesli/nuxt-cookie-control/issues/94)) ([8ed4f86](https://github.com/dargmuesli/nuxt-cookie-control/commit/8ed4f86f48dcb9d550807c9e600b633fb3977514))
+
 ## [5.7.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.7.0...5.7.1) (2023-05-03)
 
 
