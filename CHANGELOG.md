@@ -1,3 +1,10 @@
+## [5.8.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.3...5.8.4) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** workaround jiti bug ([2b7952b](https://github.com/dargmuesli/nuxt-cookie-control/commit/2b7952b724b13987295864a04b9b947aa98862c0))
+
 ## [5.8.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.2...5.8.3) (2023-05-05)
 
 
