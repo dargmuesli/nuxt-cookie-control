@@ -33,12 +33,9 @@
     "src/locale"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build",
-    "dev": "nuxi dev playground",
-    "dev:prepare": "nuxt-module-build --stub && cd playground && nuxi prepare",
-    "dev:build": "nuxi build playground",
-    "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground",
-    "prepare": "husky install && pnpm dev:prepare"
+    "build": "nuxt-module-build",
+    "prepack": "pnpm build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nuxt/kit": "3.4.3",
