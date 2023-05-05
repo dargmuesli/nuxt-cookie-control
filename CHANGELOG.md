@@ -1,3 +1,11 @@
+## [5.8.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.2...5.8.3) (2023-05-05)
+
+
+### Bug Fixes
+
+* **nuxt:** revert prepare playground on install ([10b04d7](https://github.com/dargmuesli/nuxt-cookie-control/commit/10b04d729e10c72269f531de9aa58a370f7c128a))
+* **package:** prepare playground on install ([6e0cebe](https://github.com/dargmuesli/nuxt-cookie-control/commit/6e0cebe98ab2c5ecced9d4888abb92bc3c0db229))
+
 ## [5.8.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.1...5.8.2) (2023-05-05)
 
 
