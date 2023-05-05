@@ -1,3 +1,10 @@
+## [5.8.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.0...5.8.1) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** allow node engine starting from v16 ([dc30a25](https://github.com/dargmuesli/nuxt-cookie-control/commit/dc30a25ccb03a99da4433a38c7a445c8ad24d020))
+
 # [5.8.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.7.1...5.8.0) (2023-05-05)
 
 
