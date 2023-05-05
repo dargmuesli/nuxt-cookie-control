@@ -1,3 +1,10 @@
+## [5.8.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.1...5.8.2) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** readd module build stubbing to prepack script ([bdb70ba](https://github.com/dargmuesli/nuxt-cookie-control/commit/bdb70ba3d7a3e9b41737ce8b3cca47ca6ec72449))
+
 ## [5.8.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.0...5.8.1) (2023-05-05)
 
 
