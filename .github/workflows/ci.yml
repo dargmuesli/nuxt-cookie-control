@@ -35,12 +35,10 @@ jobs:
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          pnpm install
-          pnpm dev:prepare
+        run: pnpm install
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm --dir playground lint
 
       - name: Coverage
         uses: codecov/codecov-action@v3
