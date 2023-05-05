@@ -16,7 +16,7 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": "20"
+    "node": ">=16"
   },
   "packageManager": "pnpm@8.4.0",
   "exports": {
