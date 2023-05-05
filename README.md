@@ -12,6 +12,7 @@
 
 🚩 API changes since continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control), make sure to read the README!
 
+⚠️ For Nuxt 2, please use nuxt-cookie-control < 3.0.0
 
 ## 🚀 Getting Started
 
