@@ -1,3 +1,10 @@
+## [5.8.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.4...5.8.5) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** move development commands to playground ([a8dd5dc](https://github.com/dargmuesli/nuxt-cookie-control/commit/a8dd5dc1da2412a4919175c4ebe1a1671905dbde))
+
 ## [5.8.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.3...5.8.4) (2023-05-05)
 
 
