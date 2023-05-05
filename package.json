@@ -33,9 +33,9 @@
     "src/locale"
   ],
   "scripts": {
-    "prepack": "pnpm dev:prepare && nuxt-module-build",
-    "dev": "pnpm dev:prepare && nuxi dev playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:prepare": "nuxt-module-build --stub && cd playground && nuxi prepare",
     "dev:build": "nuxi build playground",
     "lint": "pnpm prepack && eslint --ext .js,.ts,.vue . && nuxi typecheck playground",
     "prepare": "husky install && pnpm dev:prepare"
