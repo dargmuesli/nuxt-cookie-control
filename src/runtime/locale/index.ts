@@ -1,5 +1,6 @@
 import ar from './ar'
 import az from './az'
+import bg from './bg'
 import cs from './cs'
 import da from './da'
 import de from './de'
@@ -28,6 +29,7 @@ import uk from './uk'
 export const locales = [
   ar,
   az,
+  bg,
   cs,
   da,
   de,

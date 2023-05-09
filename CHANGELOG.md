@@ -1,3 +1,46 @@
+## [5.8.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.4...5.8.5) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** move development commands to playground ([a8dd5dc](https://github.com/dargmuesli/nuxt-cookie-control/commit/a8dd5dc1da2412a4919175c4ebe1a1671905dbde))
+
+## [5.8.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.3...5.8.4) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** workaround jiti bug ([2b7952b](https://github.com/dargmuesli/nuxt-cookie-control/commit/2b7952b724b13987295864a04b9b947aa98862c0))
+
+## [5.8.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.2...5.8.3) (2023-05-05)
+
+
+### Bug Fixes
+
+* **nuxt:** revert prepare playground on install ([10b04d7](https://github.com/dargmuesli/nuxt-cookie-control/commit/10b04d729e10c72269f531de9aa58a370f7c128a))
+* **package:** prepare playground on install ([6e0cebe](https://github.com/dargmuesli/nuxt-cookie-control/commit/6e0cebe98ab2c5ecced9d4888abb92bc3c0db229))
+
+## [5.8.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.1...5.8.2) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** readd module build stubbing to prepack script ([bdb70ba](https://github.com/dargmuesli/nuxt-cookie-control/commit/bdb70ba3d7a3e9b41737ce8b3cca47ca6ec72449))
+
+## [5.8.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.0...5.8.1) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** allow node engine starting from v16 ([dc30a25](https://github.com/dargmuesli/nuxt-cookie-control/commit/dc30a25ccb03a99da4433a38c7a445c8ad24d020))
+
+# [5.8.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.7.1...5.8.0) (2023-05-05)
+
+
+### Features
+
+* **lang:** Add Bulgarian language ([#94](https://github.com/dargmuesli/nuxt-cookie-control/issues/94)) ([8ed4f86](https://github.com/dargmuesli/nuxt-cookie-control/commit/8ed4f86f48dcb9d550807c9e600b633fb3977514))
+
 ## [5.7.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.7.0...5.7.1) (2023-05-03)
 
 
