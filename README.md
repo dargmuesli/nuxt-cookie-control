@@ -4,7 +4,7 @@
 ![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
 
 
-✅ Translated for: ar, az, cs, da, de, en, es, fi, fr, hr, hu, it, ja, ko, lt, nl, no, oc, pt, pl, ru, sk, sv, tr and uk
+✅ Translated for: ar, az, cs, da, de, en, es, fi, fr, hr, hu, it, ja, ko, lt, nl, no, oc, pt, pl, rs, ru, sk, sv, tr and uk
 
 ✅ Vue 3 support
 
