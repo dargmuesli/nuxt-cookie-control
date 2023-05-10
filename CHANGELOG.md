@@ -1,3 +1,10 @@
+# [5.9.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.5...5.9.0) (2023-05-10)
+
+
+### Features
+
+* **locale:** added Serbian locale ([#96](https://github.com/dargmuesli/nuxt-cookie-control/issues/96)) ([8269e63](https://github.com/dargmuesli/nuxt-cookie-control/commit/8269e6396c7e49b879f73333922b125e25eb1a7f))
+
 ## [5.8.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.4...5.8.5) (2023-05-05)
 
 
