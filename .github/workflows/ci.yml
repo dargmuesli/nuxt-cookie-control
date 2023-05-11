@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node: [18]
+        node: [16,20]
 
     steps:
       - uses: actions/setup-node@v3
@@ -35,12 +35,10 @@ jobs:
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          pnpm install
-          pnpm dev:prepare
+        run: pnpm install
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm --dir playground lint
 
       - name: Coverage
         uses: codecov/codecov-action@v3
