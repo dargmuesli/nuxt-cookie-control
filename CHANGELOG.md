@@ -1,3 +1,10 @@
+## [5.9.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.9.0...5.9.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* **cookie-control:** remove `defineExpose` import ([#99](https://github.com/dargmuesli/nuxt-cookie-control/issues/99)) ([1c600f5](https://github.com/dargmuesli/nuxt-cookie-control/commit/1c600f5c7de989459d87a5fdd5b8eb5f46a91f36))
+
 # [5.9.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.5...5.9.0) (2023-05-10)
 
 
