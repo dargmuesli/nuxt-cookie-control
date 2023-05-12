@@ -4,7 +4,6 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "lint": "pnpm --dir .. build && eslint --ext .js,.ts,.vue . && nuxt typecheck",
     "prepare": "cd .. && pnpm build --stub && cd playground && nuxt prepare"
   }
 }
