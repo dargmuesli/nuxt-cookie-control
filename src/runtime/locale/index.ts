@@ -19,13 +19,13 @@ import no from './no'
 import oc from './oc'
 import pt from './pt'
 import pl from './pl'
+import ro from './ro'
 import rs from './rs'
 import ru from './ru'
 import sk from './sk'
 import sv from './sv'
 import tr from './tr'
 import uk from './uk'
-import ro from './ro'
 
 export const locales = [
   ar,
@@ -49,11 +49,11 @@ export const locales = [
   oc,
   pt,
   pl,
+  ro,
   rs,
   ru,
   sk,
   sv,
   tr,
-  uk,
-  ro
+  uk
 ]
