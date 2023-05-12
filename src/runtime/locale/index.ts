@@ -25,6 +25,7 @@ import sk from './sk'
 import sv from './sv'
 import tr from './tr'
 import uk from './uk'
+import ro from './ro'
 
 export const locales = [
   ar,
@@ -54,4 +55,5 @@ export const locales = [
   sv,
   tr,
   uk,
+  ro
 ]
