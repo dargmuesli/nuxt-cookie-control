@@ -34,6 +34,7 @@
   ],
   "scripts": {
     "build": "nuxt-module-build",
+    "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
     "prepack": "pnpm build",
     "prepare": "husky install"
   },
