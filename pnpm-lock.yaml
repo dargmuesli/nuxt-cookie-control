@@ -8,8 +8,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0(rollup@3.21.7)
       '@sindresorhus/slugify':
-        specifier: 2.2.0
-        version: 2.2.0
+        specifier: 2.2.1
+        version: 2.2.1
       css-vars-ponyfill:
         specifier: 2.4.8
         version: 2.4.8
@@ -1238,8 +1238,8 @@ packages:
       picomatch: 2.3.1
       rollup: 3.21.7
 
-  /@sindresorhus/slugify@2.2.0:
-    resolution: {integrity: sha512-9Vybc/qX8Kj6pxJaapjkFbiUJPk7MAkCh/GFCxIBnnsuYCFPIXKvnLidG8xlepht3i24L5XemUmGtrJ3UWrl6w==}
+  /@sindresorhus/slugify@2.2.1:
+    resolution: {integrity: sha512-MkngSCRZ8JdSOCHRaYd+D01XhvU3Hjy6MGl06zhOk614hp9EOAp5gIkBeQg7wtmxpitU6eAL4kdiRMcJa2dlrw==}
     engines: {node: '>=12'}
     dependencies:
       '@sindresorhus/transliterate': 1.6.0
