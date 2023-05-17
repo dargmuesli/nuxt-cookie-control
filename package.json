@@ -61,7 +61,7 @@
     "typescript": "5.0.4",
     "vue": "3.3.2",
     "vue-tsc": "1.6.5",
-    "webpack": "5.82.1"
+    "webpack": "5.83.1"
   },
   "publishConfig": {
     "access": "public"
