@@ -39,7 +39,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@nuxt/kit": "3.5.1",
+    "@nuxt/kit": "3.5.2",
     "@sindresorhus/slugify": "2.2.1",
     "css-vars-ponyfill": "2.4.8",
     "js-cookie": "3.0.5",
