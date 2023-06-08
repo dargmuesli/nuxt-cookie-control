@@ -201,7 +201,7 @@ import {
 } from '../methods'
 import setCssVariables from '#cookie-control/set-vars'
 
-import { useCookieControl } from '#imports'
+import { useCookieControl, useCookie } from '#imports'
 
 export interface Props {
   locale?: Locale
