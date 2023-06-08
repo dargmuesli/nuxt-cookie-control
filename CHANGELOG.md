@@ -1,3 +1,10 @@
+# [5.10.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.9.3...5.10.0) (2023-06-08)
+
+
+### Features
+
+* **deps:** remove js-cookie ([#102](https://github.com/dargmuesli/nuxt-cookie-control/issues/102)) ([6f1371b](https://github.com/dargmuesli/nuxt-cookie-control/commit/6f1371ba719e63e482cb7e0dcceeb18bf8b5ba9e))
+
 ## [5.9.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.9.2...5.9.3) (2023-05-31)
 
 
