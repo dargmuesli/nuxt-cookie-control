@@ -1,3 +1,10 @@
+## [5.10.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.0...5.10.1) (2023-06-08)
+
+
+### Bug Fixes
+
+* correct imports ([426f23d](https://github.com/dargmuesli/nuxt-cookie-control/commit/426f23dc03e59b61ed5c086efe2f6ffb123b2488))
+
 # [5.10.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.9.3...5.10.0) (2023-06-08)
 
 
