@@ -18,7 +18,7 @@
   "engines": {
     "node": ">=16"
   },
-  "packageManager": "pnpm@8.6.1",
+  "packageManager": "pnpm@8.6.2",
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
