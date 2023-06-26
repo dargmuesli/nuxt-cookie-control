@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: 3.6.0
-        version: 3.6.0(rollup@3.25.0)
+        specifier: 3.6.1
+        version: 3.6.1(rollup@3.25.0)
       '@sindresorhus/slugify':
         specifier: 2.2.1
         version: 2.2.1
@@ -32,7 +32,7 @@ importers:
         version: 'link:'
       '@nuxt/module-builder':
         specifier: 0.4.0
-        version: 0.4.0(@nuxt/kit@3.6.0)(nuxi@3.6.1)
+        version: 0.4.0(@nuxt/kit@3.6.1)(nuxi@3.6.1)
       '@nuxtjs/eslint-config-typescript':
         specifier: 12.0.0
         version: 12.0.0(eslint@8.43.0)(typescript@5.1.3)
@@ -1092,31 +1092,6 @@ packages:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
     dev: true
 
-  /@nuxt/kit@3.6.0(rollup@3.25.0):
-    resolution: {integrity: sha512-rqQYyWlhE42oWRQNR58KU1JYhoWryN78x8eYzFTHgalfpMjtPqZv2j9K4+hFRk0XLRUKnut4tE/3+UYyZ7ybVw==}
-    engines: {node: ^14.18.0 || >=16.10.0}
-    dependencies:
-      '@nuxt/schema': 3.6.0(rollup@3.25.0)
-      c12: 1.4.2
-      consola: 3.1.0
-      defu: 6.1.2
-      globby: 13.2.0
-      hash-sum: 2.0.0
-      ignore: 5.2.4
-      jiti: 1.18.2
-      knitwork: 1.0.0
-      mlly: 1.4.0
-      pathe: 1.1.1
-      pkg-types: 1.0.3
-      scule: 1.0.0
-      semver: 7.5.3
-      unctx: 2.3.1
-      unimport: 3.0.8(rollup@3.25.0)
-      untyped: 1.3.2
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-
   /@nuxt/kit@3.6.1(rollup@3.25.0):
     resolution: {integrity: sha512-7AoiKV0zAtyT3ZvjMfGislMcB+JMbBZxYw68/oWtkEPXCfGQMYuiMI9Ue246/0JT2Yp2KZclEgrJEJ6NLkqFcw==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -1141,16 +1116,15 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
-  /@nuxt/module-builder@0.4.0(@nuxt/kit@3.6.0)(nuxi@3.6.1):
+  /@nuxt/module-builder@0.4.0(@nuxt/kit@3.6.1)(nuxi@3.6.1):
     resolution: {integrity: sha512-B+UAYgFV1Hkc2ZcD7GaiKZ3SNHhyxFlXzZoBWTc9ulE0Z/+rq6RTa9fNm13BZyGhVhDCl5FN/wF/yYa1O/D2iw==}
     hasBin: true
     peerDependencies:
       '@nuxt/kit': ^3.5.0
       nuxi: ^3.5.0
     dependencies:
-      '@nuxt/kit': 3.6.0(rollup@3.25.0)
+      '@nuxt/kit': 3.6.1(rollup@3.25.0)
       consola: 3.1.0
       mlly: 1.3.0
       mri: 1.2.0
@@ -1161,23 +1135,6 @@ packages:
       - sass
       - supports-color
     dev: true
-
-  /@nuxt/schema@3.6.0(rollup@3.25.0):
-    resolution: {integrity: sha512-6/nq+W77JODDfhMBZTi7HCD3hT5oHegsasAzUnDmvwWuY1io7BXX9x2mDhL8E3LhVzQuN5vhi3GBgwHwCfdKEA==}
-    engines: {node: ^14.18.0 || >=16.10.0}
-    dependencies:
-      defu: 6.1.2
-      hookable: 5.5.3
-      pathe: 1.1.1
-      pkg-types: 1.0.3
-      postcss-import-resolver: 2.0.0
-      std-env: 3.3.3
-      ufo: 1.1.2
-      unimport: 3.0.10(rollup@3.25.0)
-      untyped: 1.3.2
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
 
   /@nuxt/schema@3.6.1(rollup@3.25.0):
     resolution: {integrity: sha512-+4pr0lkcPP5QqprYV+/ujmBkt2JHmi/v5vaxCrMhElUFgifvJAfT89BkGFn6W7pz0b8Vd3GcByFUWI7/wX/Pcw==}
@@ -1195,13 +1152,12 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/telemetry@2.2.0(rollup@3.25.0):
     resolution: {integrity: sha512-Z2UmPkBy5WjxvHKuUcl1X6vKWnIyWSP+9UGde1F+MzzZxYgAQybFud1uL2B3KCowxZdoqT1hd2WklV7EtyCwrQ==}
     hasBin: true
     dependencies:
-      '@nuxt/kit': 3.6.0(rollup@3.25.0)
+      '@nuxt/kit': 3.6.1(rollup@3.25.0)
       chalk: 5.2.0
       ci-info: 3.8.0
       consola: 3.1.0
@@ -7443,23 +7399,6 @@ packages:
     transitivePeerDependencies:
       - rollup
     dev: true
-
-  /unimport@3.0.8(rollup@3.25.0):
-    resolution: {integrity: sha512-AOt6xj3QMwqcTZRPB+NhFkyVEjCKnpTVoPm5x6424zz2NYYtCfym2bpJofzPHIJKPNIh5ko2/t2q46ZIMgdmbw==}
-    dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.25.0)
-      escape-string-regexp: 5.0.0
-      fast-glob: 3.2.12
-      local-pkg: 0.4.3
-      magic-string: 0.30.0
-      mlly: 1.4.0
-      pathe: 1.1.1
-      pkg-types: 1.0.3
-      scule: 1.0.0
-      strip-literal: 1.0.1
-      unplugin: 1.3.1
-    transitivePeerDependencies:
-      - rollup
 
   /universalify@2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
