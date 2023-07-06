@@ -55,7 +55,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
-    "nuxt": "3.6.1",
+    "nuxt": "3.6.2",
     "prettier": "2.8.8",
     "typescript": "5.1.6",
     "vue": "3.3.4",
