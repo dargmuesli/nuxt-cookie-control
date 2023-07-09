@@ -7,9 +7,13 @@ import { defineNuxtPlugin, useCookie } from '#imports'
 import moduleOptions from '#build/cookie-control-options'
 
 export default defineNuxtPlugin((_nuxtApp) => {
-  const cookieIsConsentGiven = useCookie(moduleOptions.cookieNameIsConsentGiven)
+  const cookieIsConsentGiven = useCookie(
+    moduleOptions.cookieNameIsConsentGiven,
+    moduleOptions.cookieOptions
+  )
   const cookieCookiesEnabledIds = useCookie(
-    moduleOptions.cookieNameCookiesEnabledIds
+    moduleOptions.cookieNameCookiesEnabledIds,
+    moduleOptions.cookieOptions
   ).value?.split('|')
 
   const isConsentGiven = ref<boolean | undefined>(
