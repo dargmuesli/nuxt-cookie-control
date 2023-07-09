@@ -21,7 +21,7 @@ export const removeCookie = (name: string) =>
 
 export const resolveTranslatable = (
   translatable: Translatable,
-  locale = LOCALE_DEFAULT
+  locale = LOCALE_DEFAULT,
 ) => {
   if (typeof translatable === 'string') return translatable
 

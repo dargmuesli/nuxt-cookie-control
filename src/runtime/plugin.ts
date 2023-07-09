@@ -9,29 +9,29 @@ import moduleOptions from '#build/cookie-control-options'
 export default defineNuxtPlugin((_nuxtApp) => {
   const cookieIsConsentGiven = useCookie(
     moduleOptions.cookieNameIsConsentGiven,
-    moduleOptions.cookieOptions
+    moduleOptions.cookieOptions,
   )
   const cookieCookiesEnabledIds = useCookie(
     moduleOptions.cookieNameCookiesEnabledIds,
-    moduleOptions.cookieOptions
+    moduleOptions.cookieOptions,
   ).value?.split('|')
 
   const isConsentGiven = ref<boolean | undefined>(
     cookieIsConsentGiven === undefined
       ? undefined
-      : cookieIsConsentGiven.value === getAllCookieIdsString(moduleOptions)
+      : cookieIsConsentGiven.value === getAllCookieIdsString(moduleOptions),
   )
   const cookiesEnabled = ref<Cookie[] | undefined>(
     cookieCookiesEnabledIds === undefined
       ? undefined
       : [
           ...moduleOptions.cookies.necessary.filter((cookieNecessary) =>
-            cookieCookiesEnabledIds.includes(getCookieId(cookieNecessary))
+            cookieCookiesEnabledIds.includes(getCookieId(cookieNecessary)),
           ),
           ...moduleOptions.cookies.optional.filter((cookieOptional) =>
-            cookieCookiesEnabledIds.includes(getCookieId(cookieOptional))
+            cookieCookiesEnabledIds.includes(getCookieId(cookieOptional)),
           ),
-        ]
+        ],
   )
   const cookiesEnabledIds = ref<string[] | undefined>(cookieCookiesEnabledIds)
   const isModalActive = ref<boolean>()

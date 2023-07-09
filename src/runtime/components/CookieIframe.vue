@@ -35,8 +35,8 @@ const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()
 const isCookieFunctionalEnabled = computed(
   () =>
     (cookiesEnabled.value || []).filter(
-      (cookieEnabled: Cookie) => cookieEnabled.name === 'functional'
-    ).length > 0
+      (cookieEnabled: Cookie) => cookieEnabled.name === 'functional',
+    ).length > 0,
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 </script>

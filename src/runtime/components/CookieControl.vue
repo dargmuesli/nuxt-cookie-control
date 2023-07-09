@@ -94,7 +94,7 @@
                           type="checkbox"
                           :checked="
                             getCookieIds(localCookiesEnabled).includes(
-                              getCookieId(cookie)
+                              getCookieId(cookie),
                             ) ||
                             (cookieIsConsentGiven !== allCookieIdsString &&
                               typeof moduleOptions.isIframeBlocked ===
@@ -135,7 +135,7 @@
                           >
                             <span
                               v-for="entry in Object.entries(
-                                cookie.links || {}
+                                cookie.links || {},
                               )"
                               :key="entry[0]"
                             >
@@ -231,7 +231,7 @@ const cookieCookiesEnabledIds = useCookie(
   {
     expires,
     ...moduleOptions.cookieOptions,
-  }
+  },
 )
 
 // computations
@@ -239,7 +239,7 @@ const isSaved = computed(
   () =>
     getCookieIds(cookiesEnabled.value || [])
       .sort()
-      .join('|') !== getCookieIds(localCookiesEnabled.value).sort().join('|')
+      .join('|') !== getCookieIds(localCookiesEnabled.value).sort().join('|'),
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
@@ -299,7 +299,7 @@ const setCookies = ({
     ? [
         ...moduleOptions.cookies.necessary,
         ...moduleOptions.cookies.optional.filter((cookieOptional: Cookie) =>
-          cookiesOptionalEnabledNew.includes(cookieOptional)
+          cookiesOptionalEnabledNew.includes(cookieOptional),
         ),
       ]
     : []
@@ -315,7 +315,7 @@ const toggleButton = ($event: MouseEvent) => {
 }
 const toogleCookie = (cookie: Cookie) => {
   const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(
-    getCookieId(cookie)
+    getCookieId(cookie),
   )
 
   if (cookieIndex < 0) {
@@ -377,7 +377,7 @@ watch(
 
     // delete formerly enabled cookies that are now disabled
     const cookiesOptionalDisabled = moduleOptions.cookies.optional.filter(
-      (cookieOptional) => !(current || []).includes(cookieOptional)
+      (cookieOptional) => !(current || []).includes(cookieOptional),
     )
 
     for (const cookieOptionalDisabled of cookiesOptionalDisabled) {
@@ -390,7 +390,7 @@ watch(
       if (cookieOptionalDisabled.src) {
         for (const script of [
           ...document.head.querySelectorAll(
-            `script[src="${cookieOptionalDisabled.src}"]`
+            `script[src="${cookieOptionalDisabled.src}"]`,
           ),
         ]) {
           script.parentNode?.removeChild(script)
@@ -398,7 +398,7 @@ watch(
       }
     }
   },
-  { deep: true }
+  { deep: true },
 )
 watch(isConsentGiven, (current, _previous) => {
   if (current === undefined) {
