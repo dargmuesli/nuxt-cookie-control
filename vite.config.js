@@ -5,7 +5,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@dargmuesli/nuxt-cookie-control': fileURLToPath(
-        new URL('./src/module', import.meta.url)
+        new URL('./src/module', import.meta.url),
       ),
     },
   },

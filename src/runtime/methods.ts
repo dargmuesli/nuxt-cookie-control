@@ -21,7 +21,7 @@ export const removeCookie = (name: string) =>
 
 export const resolveTranslatable = (
   translatable: Translatable,
-  locale = LOCALE_DEFAULT
+  locale = LOCALE_DEFAULT,
 ) => {
   if (typeof translatable === 'string') return translatable
 
@@ -39,7 +39,7 @@ export const resolveTranslatable = (
 export const setCookie = (
   name: string,
   value: string,
-  options: CookieSerializeOptions
+  options: CookieSerializeOptions,
 ) =>
   (document.cookie = serialize(name, value, {
     sameSite: 'strict',
