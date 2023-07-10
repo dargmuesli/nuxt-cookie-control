@@ -38,14 +38,14 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: pnpm --dir playground lint
+        run: pnpm lint
 
       - name: Coverage
         uses: codecov/codecov-action@v3
   release-semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.40.5
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.40.12
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -61,7 +61,7 @@ export default defineNuxtModule<ModuleOptions>({
         `import { ModuleOptions } from '../../src/runtime/types'\n\nexport default ${JSON.stringify(
           moduleOptions,
           undefined,
-          2
+          2,
         )} as ModuleOptions`,
     })
   },
