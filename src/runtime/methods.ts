@@ -1,5 +1,5 @@
 import slugify from '@sindresorhus/slugify'
-import { serialize, type CookieSerializeOptions } from 'cookie-es'
+import { serialize } from 'cookie-es'
 
 import { LOCALE_DEFAULT } from './constants'
 import { Cookie, ModuleOptions, Translatable } from './types'
@@ -35,16 +35,6 @@ export const resolveTranslatable = (
 
   return result
 }
-
-export const setCookie = (
-  name: string,
-  value: string,
-  options: CookieSerializeOptions,
-) =>
-  (document.cookie = serialize(name, value, {
-    sameSite: 'strict',
-    ...options,
-  }))
 
 export const useResolveTranslatable = (locale = LOCALE_DEFAULT) => {
   return (translatable: Translatable) =>

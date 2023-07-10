@@ -147,6 +147,11 @@ cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
 cookieNameIsConsentGiven: 'ncc_c',
 cookieNameCookiesEnabledIds: 'ncc_e',
 
+// Options to pass to nuxt's useCookie
+cookieOptions: {
+  path: '/',
+}
+
 // Switch to toggle the "accept necessary" button.
 isAcceptNecessaryButtonEnabled: true
 
@@ -172,10 +177,6 @@ isIframeBlocked: false,
 
 // Switch to toggle the modal being shown right away, requiring a user's decision.
 isModalForced: false,
-
-// The domain to set cookies on.
-// This is useful in case you have subdomains (shop.yourdomain.com)
-domain: 'yourdomain.com',
 
 // The locales to include.
 locales: ['en'],

@@ -192,7 +192,6 @@ import {
   getCookieId,
   getCookieIds,
   removeCookie,
-  setCookie,
   resolveTranslatable,
 } from '../methods'
 import setCssVariables from '#cookie-control/set-vars'
@@ -215,12 +214,20 @@ const {
 } = useCookieControl()
 
 // data
-const expires = new Date()
+const expires = new Date(Date.now() + moduleOptions.cookieExpiryOffsetMs)
 const localCookiesEnabled = ref([...(cookiesEnabled.value || [])])
 const allCookieIdsString = getAllCookieIdsString(moduleOptions)
-const cookieIsConsentGiven = useCookie(moduleOptions.cookieNameIsConsentGiven)
+const cookieIsConsentGiven = useCookie(moduleOptions.cookieNameIsConsentGiven, {
+  expires,
+  ...moduleOptions.cookieOptions,
+})
+
 const cookieCookiesEnabledIds = useCookie(
   moduleOptions.cookieNameCookiesEnabledIds,
+  {
+    expires,
+    ...moduleOptions.cookieOptions,
+  },
 )
 
 // computations
@@ -270,9 +277,6 @@ const getName = (name: Translatable) => {
   return name === 'functional'
     ? localeStrings.value?.cookiesFunctional
     : resolveTranslatable(name, props.locale)
-}
-const init = () => {
-  expires.setTime(expires.getTime() + moduleOptions.cookieExpiryOffsetMs)
 }
 const onModalClick = () => {
   if (moduleOptions.closeModalOnClickOutside) {
@@ -350,13 +354,7 @@ watch(
     localCookiesEnabled.value = [...(current || [])]
 
     if (isConsentGiven.value) {
-      setCookie(
-        moduleOptions.cookieNameCookiesEnabledIds,
-        getCookieIds(current || []).join('|'),
-        {
-          expires,
-        },
-      )
+      cookieCookiesEnabledIds.value = getCookieIds(current || []).join('|')
 
       for (const cookieEnabled of current || []) {
         if (!cookieEnabled.src) continue
@@ -398,13 +396,7 @@ watch(isConsentGiven, (current, _previous) => {
   if (current === undefined) {
     cookieIsConsentGiven.value = undefined
   } else {
-    setCookie(
-      moduleOptions.cookieNameIsConsentGiven,
-      current ? allCookieIdsString : '0',
-      {
-        expires,
-      },
-    )
+    cookieIsConsentGiven.value = current ? allCookieIdsString : '0'
   }
 })
 
@@ -413,7 +405,4 @@ defineExpose({
   acceptPartial,
   decline,
 })
-
-// initialization
-init()
 </script>
