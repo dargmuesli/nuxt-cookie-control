@@ -174,10 +174,6 @@ isDashInDescriptionEnabled: true,
 // Switch to toggle the blocking of iframes.
 // This can be used to prevent iframes from adding additional cookies.
 isIframeBlocked: false,
-// or:
-// isIframeBlocked: {
-//   initialState: false
-// },
 
 // Switch to toggle the modal being shown right away, requiring a user's decision.
 isModalForced: false,

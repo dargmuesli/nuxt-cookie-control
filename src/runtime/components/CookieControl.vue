@@ -95,11 +95,7 @@
                           :checked="
                             getCookieIds(localCookiesEnabled).includes(
                               getCookieId(cookie),
-                            ) ||
-                            (cookieIsConsentGiven !== allCookieIdsString &&
-                              typeof moduleOptions.isIframeBlocked ===
-                                'object' &&
-                              moduleOptions.isIframeBlocked.initialState)
+                            )
                           "
                           @change="toogleCookie(cookie)"
                         />
@@ -342,11 +338,7 @@ onBeforeMount(() => {
 
   if (cookieIsConsentGiven.value === allCookieIdsString) {
     for (const cookieOptional of moduleOptions.cookies.optional) {
-      if (
-        typeof moduleOptions.isIframeBlocked === 'boolean'
-          ? moduleOptions.isIframeBlocked === true
-          : moduleOptions.isIframeBlocked.initialState === true
-      ) {
+      if (moduleOptions.isIframeBlocked) {
         localCookiesEnabled.value.push(cookieOptional)
       }
     }
