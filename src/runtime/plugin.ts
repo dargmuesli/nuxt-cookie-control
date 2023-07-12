@@ -1,36 +1,37 @@
-import Cookies from 'js-cookie'
 import { ref } from 'vue'
 
 import { getAllCookieIdsString, getCookieId } from './methods'
 import { Cookie, State } from './types'
 
-import { defineNuxtPlugin } from '#imports'
+import { defineNuxtPlugin, useCookie } from '#imports'
 import moduleOptions from '#build/cookie-control-options'
 
 export default defineNuxtPlugin((_nuxtApp) => {
-  const cookieIsConsentGiven = Cookies.get(
-    moduleOptions.cookieNameIsConsentGiven
+  const cookieIsConsentGiven = useCookie(
+    moduleOptions.cookieNameIsConsentGiven,
+    moduleOptions.cookieOptions,
   )
-  const cookieCookiesEnabledIds = Cookies.get(
-    moduleOptions.cookieNameCookiesEnabledIds
-  )?.split('|')
+  const cookieCookiesEnabledIds = useCookie(
+    moduleOptions.cookieNameCookiesEnabledIds,
+    moduleOptions.cookieOptions,
+  ).value?.split('|')
 
   const isConsentGiven = ref<boolean | undefined>(
     cookieIsConsentGiven === undefined
       ? undefined
-      : cookieIsConsentGiven === getAllCookieIdsString(moduleOptions)
+      : cookieIsConsentGiven.value === getAllCookieIdsString(moduleOptions),
   )
   const cookiesEnabled = ref<Cookie[] | undefined>(
     cookieCookiesEnabledIds === undefined
       ? undefined
       : [
           ...moduleOptions.cookies.necessary.filter((cookieNecessary) =>
-            cookieCookiesEnabledIds.includes(getCookieId(cookieNecessary))
+            cookieCookiesEnabledIds.includes(getCookieId(cookieNecessary)),
           ),
           ...moduleOptions.cookies.optional.filter((cookieOptional) =>
-            cookieCookiesEnabledIds.includes(getCookieId(cookieOptional))
+            cookieCookiesEnabledIds.includes(getCookieId(cookieOptional)),
           ),
-        ]
+        ],
   )
   const cookiesEnabledIds = ref<string[] | undefined>(cookieCookiesEnabledIds)
   const isModalActive = ref<boolean>()

@@ -61,7 +61,7 @@ export default defineNuxtModule<ModuleOptions>({
         `import { ModuleOptions } from '../../src/runtime/types'\n\nexport default ${JSON.stringify(
           moduleOptions,
           undefined,
-          2
+          2,
         )} as ModuleOptions`,
     })
   },
@@ -71,11 +71,6 @@ const blockIframes = (moduleOptions: ModuleOptions) => {
   if (moduleOptions.isIframeBlocked) {
     const isIframeBlocked = {
       name: 'functional',
-      initialState:
-        typeof moduleOptions.isIframeBlocked !== 'boolean' &&
-        moduleOptions.isIframeBlocked.initialState !== undefined
-          ? moduleOptions.isIframeBlocked.initialState
-          : true,
     }
 
     if (moduleOptions.cookies) {

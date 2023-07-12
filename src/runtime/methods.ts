@@ -1,5 +1,5 @@
-import Cookies from 'js-cookie'
 import slugify from '@sindresorhus/slugify'
+import { serialize } from 'cookie-es'
 
 import { LOCALE_DEFAULT } from './constants'
 import { Cookie, ModuleOptions, Translatable } from './types'
@@ -10,19 +10,18 @@ export const getAllCookieIdsString = (moduleOptions: ModuleOptions) =>
     ...moduleOptions.cookies.optional,
   ]).join('')
 
-export const getCookie = (name: string) => Cookies.get(name)
-
 export const getCookieId = (cookie: Cookie) =>
   cookie.id || slugify(resolveTranslatable(cookie.name))
 
 export const getCookieIds = (cookies: Cookie[]) =>
   cookies.map((cookie) => getCookieId(cookie))
 
-export const removeCookie = (name: string) => Cookies.remove(name)
+export const removeCookie = (name: string) =>
+  (document.cookie = serialize(name, '', { expires: new Date(0) }))
 
 export const resolveTranslatable = (
   translatable: Translatable,
-  locale = LOCALE_DEFAULT
+  locale = LOCALE_DEFAULT,
 ) => {
   if (typeof translatable === 'string') return translatable
 
@@ -36,12 +35,6 @@ export const resolveTranslatable = (
 
   return result
 }
-
-export const setCookie = (
-  name: string,
-  value: string,
-  options: Cookies.CookieAttributes
-) => Cookies.set(name, value, { sameSite: 'Strict', ...options })
 
 export const useResolveTranslatable = (locale = LOCALE_DEFAULT) => {
   return (translatable: Translatable) =>

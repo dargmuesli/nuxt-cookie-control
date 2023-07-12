@@ -1,7 +1,7 @@
 {
   "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "5.9.1",
-  "description": "Nuxt Cookies Control Module",
+  "version": "6.0.0",
+  "description": "Nuxt Cookie Control Module",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
   "maintainers": [
     "Jonas Thelemann"
@@ -18,7 +18,7 @@
   "engines": {
     "node": ">=16"
   },
-  "packageManager": "pnpm@8.5.0",
+  "packageManager": "pnpm@8.6.7",
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
@@ -35,34 +35,33 @@
   "scripts": {
     "build": "nuxt-module-build",
     "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
+    "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
     "prepack": "pnpm build",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@nuxt/kit": "3.4.3",
-    "@sindresorhus/slugify": "2.2.0",
+    "@nuxt/kit": "3.6.2",
+    "@sindresorhus/slugify": "2.2.1",
     "css-vars-ponyfill": "2.4.8",
-    "js-cookie": "3.0.5",
     "string-replace-loader": "3.1.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.6.3",
-    "@commitlint/config-conventional": "17.6.3",
+    "@commitlint/cli": "17.6.6",
+    "@commitlint/config-conventional": "17.6.6",
     "@dargmuesli/nuxt-cookie-control": "link:.",
-    "@nuxt/module-builder": "0.3.1",
+    "@nuxt/module-builder": "0.4.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
-    "@types/js-cookie": "3.0.3",
-    "eslint": "8.40.0",
+    "eslint": "8.44.0",
     "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-prettier": "5.0.0",
     "husky": "8.0.3",
-    "lint-staged": "13.2.2",
-    "nuxt": "3.4.3",
-    "prettier": "2.8.8",
-    "typescript": "5.0.4",
-    "vue": "3.3.1",
-    "vue-tsc": "1.6.4",
-    "webpack": "5.82.1"
+    "lint-staged": "13.2.3",
+    "nuxt": "3.6.2",
+    "prettier": "3.0.0",
+    "typescript": "5.1.6",
+    "vue": "3.3.4",
+    "vue-tsc": "1.8.4",
+    "webpack": "5.88.1"
   },
   "publishConfig": {
     "access": "public"
