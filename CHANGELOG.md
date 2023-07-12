@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.0.0...6.1.0) (2023-07-12)
+
+
+### Features
+
+* **i18n:** add Romanian translation ([#103](https://github.com/dargmuesli/nuxt-cookie-control/issues/103)) ([caf9fc5](https://github.com/dargmuesli/nuxt-cookie-control/commit/caf9fc5a3c0a976f044592c4f41ff37294a3b03a))
+
 # [6.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.4...6.0.0) (2023-07-12)
 
 
