@@ -276,6 +276,7 @@ const getName = (name: Translatable) => {
 }
 const init = () => {
   expires.setTime(expires.getTime() + moduleOptions.cookieExpiryOffsetMs)
+  useNuxtApp().$cookies.locale.value = props.locale
 }
 const onModalClick = () => {
   if (moduleOptions.closeModalOnClickOutside) {
@@ -403,6 +404,7 @@ watch(
   },
   { deep: true }
 )
+
 watch(isConsentGiven, (current, _previous) => {
   if (current === undefined) {
     removeCookie(moduleOptions.cookieNameIsConsentGiven)
@@ -416,6 +418,13 @@ watch(isConsentGiven, (current, _previous) => {
     )
   }
 })
+
+watch(
+  () => props.locale,
+  (locale) => {
+    useNuxtApp().$cookies.locale.value = locale
+  }
+)
 
 // initialization
 init()

@@ -152,4 +152,5 @@ export interface State {
   isConsentGiven: Ref<boolean | undefined>
   isModalActive: Ref<boolean>
   moduleOptions: ModuleOptions
+  locale: Ref<Locale>
 }
