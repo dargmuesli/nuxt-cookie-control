@@ -1,7 +1,7 @@
 {
   "name": "@dargmuesli/nuxt-cookie-control",
   "version": "5.10.4",
-  "description": "Nuxt Cookies Control Module",
+  "description": "Nuxt Cookie Control Module",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
   "maintainers": [
     "Jonas Thelemann"
