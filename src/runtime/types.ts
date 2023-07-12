@@ -25,6 +25,7 @@ export type Locale =
   | 'oc'
   | 'pt'
   | 'pl'
+  | 'ro'
   | 'rs'
   | 'ru'
   | 'sk'

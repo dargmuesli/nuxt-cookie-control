@@ -19,6 +19,7 @@ import no from './no'
 import oc from './oc'
 import pt from './pt'
 import pl from './pl'
+import ro from './ro'
 import rs from './rs'
 import ru from './ru'
 import sk from './sk'
@@ -48,6 +49,7 @@ export const locales = [
   oc,
   pt,
   pl,
+  ro,
   rs,
   ru,
   sk,
