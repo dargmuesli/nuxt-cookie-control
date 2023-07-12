@@ -55,5 +55,5 @@ export const locales = [
   sk,
   sv,
   tr,
-  uk
+  uk,
 ]
