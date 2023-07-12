@@ -1,14 +1,14 @@
 # Nuxt Cookie Control
+
 [![npm version][npm-version-src]][npm-version-href] [![npm downloads][npm-downloads-src]][npm-downloads-href]
 
-![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
-
+![nuxt-cookie-control](https://drive.google.com/a/broj42.com/uc?id=19sFguJo7SKUvmH4xu9DhK9ZXzR6oWLX8)
 
 ✅ Translated for: ar, az, bg, cs, da, de, en, es, fi, fr, hr, hu, it, ja, ko, lt, nl, no, oc, pt, pl, rs, ru, sk, sv, tr and uk
 
 ✅ Vue 3 support
 
-✅ Components and composables are [auto-imported](https://nuxt.com/docs/guide/concepts/auto-imports)
+⚠️ For Nuxt 2, please use nuxt-cookie-control < 3.0.0
 
 🚩 API changes since continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control), make sure to read the README!
 
@@ -17,14 +17,18 @@
 
 [![Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/dargmuesli/nuxt-cookie-control?file=playground%2Fapp.vue)
 
+
 ### Installation
+
 ```bash
 npm i -D @dargmuesli/nuxt-cookie-control
 yarn add -D @dargmuesli/nuxt-cookie-control
 pnpm i -D @dargmuesli/nuxt-cookie-control
 ```
 
+
 ### Configuration
+
 ```javascript
 // nuxt.config.js
 
@@ -44,7 +48,9 @@ modules: [
 ]
 ```
 
+
 ### Usage
+
 ```html
 <!-- app.vue -->
 
@@ -214,6 +220,7 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
 ### Component Slots
 
 #### Bar
+
 ```html
 <CookieControl>
   <template #bar>
@@ -225,6 +232,7 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
 ```
 
 #### Modal
+
 ```html
 <template #modal>
   <h3>Modal title</h3>
@@ -233,6 +241,7 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
 ```
 
 #### Cookie
+
 ```html
 <template #cookie="{config}">
   <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
@@ -240,6 +249,7 @@ Every property the includes a `{ en: ... }` value is a translatable property tha
 ```
 
 ### Props
+
 - locale: `['en']`
 ```html
 <CookieControl locale="de"/>
