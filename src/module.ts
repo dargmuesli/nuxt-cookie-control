@@ -71,11 +71,6 @@ const blockIframes = (moduleOptions: ModuleOptions) => {
   if (moduleOptions.isIframeBlocked) {
     const isIframeBlocked = {
       name: 'functional',
-      initialState:
-        typeof moduleOptions.isIframeBlocked !== 'boolean' &&
-        moduleOptions.isIframeBlocked.initialState !== undefined
-          ? moduleOptions.isIframeBlocked.initialState
-          : true,
     }
 
     if (moduleOptions.cookies) {
