@@ -1,3 +1,111 @@
+# [6.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.4...6.0.0) (2023-07-12)
+
+
+* feat!: release v6 (#81) ([feb598a](https://github.com/dargmuesli/nuxt-cookie-control/commit/feb598a7d88b8985fa2f4a1239f6d3f781e299ef)), closes [#81](https://github.com/dargmuesli/nuxt-cookie-control/issues/81) [#100](https://github.com/dargmuesli/nuxt-cookie-control/issues/100) [#106](https://github.com/dargmuesli/nuxt-cookie-control/issues/106)
+
+
+### BREAKING CHANGES
+
+* Setting an initial state for a cookie (i.e. enabled instead of disabled) was never properly implemented. To avoid confusion, this setting is removed. It continues to be possible to set `isIframeBlocked` true, though as of 2022-03-30 it is not yet implemented for vite (https://github.com/dargmuesli/nuxt-cookie-control/issues/79).
+
+* chore(deps): update dependency typescript to v5.0.3
+
+* chore(deps): update dependency @nuxt/kit to v3.3.3
+
+* chore(deps): update dependency nuxt to v3.3.3
+
+* chore(deps): update dargmuesli/github-actions action to v0.35.6
+
+* chore(deps): update dependency webpack to v5.78.0
+
+* chore(deps): update dependency lint-staged to v13.2.1
+
+* chore(deps): update dependency typescript to v5.0.4
+
+* chore(deps): update dependency eslint to v8.38.0
+
+* chore(deps): update dependency @nuxt/kit to v3.4.0
+
+* chore(deps): update dargmuesli/github-actions action to v0.35.7
+
+* chore(deps): update dependency @nuxt/module-builder to v0.3.0
+
+* chore(deps): update dependency webpack to v5.79.0
+
+* chore(deps): update dependency @nuxt/kit to v3.4.1
+
+* chore(deps): update dependency nuxt to v3.4.1
+
+* chore(deps): lock file maintenance
+
+* chore(deps): update dargmuesli/github-actions action to v0.35.8
+
+* chore(deps): update dependency webpack to v5.80.0
+
+* chore(deps): update dependency @nuxt/kit to v3.4.2
+
+* chore(deps): update dependency nuxt to v3.4.2
+
+* chore(deps): update dependency vue-tsc to v1.4.1
+
+* chore(deps): update dependency vue-tsc to v1.4.2
+
+* chore(deps): update dependency js-cookie to v3.0.4
+
+* chore(deps): update dependency eslint to v8.39.0
+
+* chore(deps): update dependency vue-tsc to v1.4.3
+
+* chore(deps): update dependency vue-tsc to v1.4.4
+
+* chore(deps): update dependency prettier to v2.8.8
+
+* chore(deps): update dargmuesli/github-actions action to v0.36.0
+
+* chore(deps): update dependency js-cookie to v3.0.5
+
+* chore(deps): update dargmuesli/github-actions action to v0.37.2
+
+* chore(deps): update dargmuesli/github-actions action to v0.37.3
+
+* chore(deps): update dependency lint-staged to v13.2.2
+
+* chore(deps): update dependency webpack to v5.81.0
+
+* chore(deps): update dependency vue-tsc to v1.6.0
+
+* chore(deps): update dependency vue-tsc to v1.6.1
+
+* chore(deps): update dependency @nuxt/kit to v3.4.3
+
+* chore(deps): update dependency nuxt to v3.4.3
+
+* chore(deps): lock file maintenance
+
+* chore(deps): update dependency vue-tsc to v1.6.2
+
+* chore(deps): update dependency @nuxt/module-builder to v0.3.1
+
+* chore(deps): update dependency vue-tsc to v1.6.3
+
+* chore(deps): update dargmuesli/github-actions action to v0.37.4
+
+* chore(deps): update dependency webpack to v5.82.0
+
+* chore(deps): update dependency vue-tsc to v1.6.4
+
+* chore(deps): update dependency eslint to v8.40.0
+
+* chore(deps): update pnpm to v8.5.0
+
+* chore(deps): update dargmuesli/github-actions action to v0.38.1
+
+* chore(deps): update dependency webpack to v5.82.1
+* remove stale `domain` configuration option
+feat: add `cookieOptions` configuration option
+
+Co-authored-by: Jonas Thelemann <e-mail@jonas-thelemann.de>
+
 ## [5.10.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.3...5.10.4) (2023-07-12)
 
 
