@@ -1,3 +1,10 @@
+## [6.1.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.0...6.1.1) (2023-07-12)
+
+
+### Bug Fixes
+
+* **vite:** support iframe blocking ([#88](https://github.com/dargmuesli/nuxt-cookie-control/issues/88)) ([8ab8b7a](https://github.com/dargmuesli/nuxt-cookie-control/commit/8ab8b7a2311d623c9383c7d41a194ec0184c9c03))
+
 # [6.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.0.0...6.1.0) (2023-07-12)
 
 
