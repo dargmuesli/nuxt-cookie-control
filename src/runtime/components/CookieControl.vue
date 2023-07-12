@@ -212,6 +212,7 @@ const {
   isModalActive,
   moduleOptions,
 } = useCookieControl()
+const nuxtApp = useNuxtApp()
 
 // data
 const expires = new Date(Date.now() + moduleOptions.cookieExpiryOffsetMs)
@@ -277,6 +278,9 @@ const getName = (name: Translatable) => {
   return name === 'functional'
     ? localeStrings.value?.cookiesFunctional
     : resolveTranslatable(name, props.locale)
+}
+const init = () => {
+  nuxtApp.$cookies.locale.value = props.locale
 }
 const onModalClick = () => {
   if (moduleOptions.closeModalOnClickOutside) {
@@ -392,6 +396,7 @@ watch(
   },
   { deep: true },
 )
+
 watch(isConsentGiven, (current, _previous) => {
   if (current === undefined) {
     cookieIsConsentGiven.value = undefined
@@ -399,6 +404,16 @@ watch(isConsentGiven, (current, _previous) => {
     cookieIsConsentGiven.value = current ? allCookieIdsString : '0'
   }
 })
+
+watch(
+  () => props.locale,
+  (locale) => {
+    nuxtApp.$cookies.locale.value = locale
+  },
+)
+
+// initialization
+init()
 
 defineExpose({
   accept,

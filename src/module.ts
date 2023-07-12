@@ -5,6 +5,7 @@ import {
   defineNuxtModule,
   addPlugin,
   extendWebpackConfig,
+  extendViteConfig,
   addTemplate,
   addImports,
   createResolver,
@@ -15,6 +16,7 @@ import { Nuxt } from '@nuxt/schema'
 
 import { name, version } from '../package.json'
 import { DEFAULTS, ModuleOptions } from './runtime/types'
+import { replaceCodePlugin } from './replace'
 
 const resolver = createResolver(import.meta.url)
 const runtimeDir = resolver.resolve('./runtime')
@@ -94,7 +96,24 @@ const blockIframes = (moduleOptions: ModuleOptions) => {
         },
       })
     })
-    // extendViteConfig(callback, options?)
+
+    extendViteConfig((config) => {
+      config?.plugins?.push(
+        replaceCodePlugin({
+          replacements: [
+            {
+              from: /<iframe[^>]*.*|<\/iframe>/g,
+              to: (match: string) =>
+                match.includes('cookie-enabled')
+                  ? match
+                  : match
+                      .replace(/<iframe/g, '<CookieIframe')
+                      .replace(/iframe>/g, 'CookieIframe>'),
+            },
+          ],
+        }),
+      )
+    })
   }
 }
 

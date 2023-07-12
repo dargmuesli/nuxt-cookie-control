@@ -42,6 +42,7 @@ export default defineNuxtConfig({
       ],
     },
     isCookieIdVisible: true,
+    isIframeBlocked: true,
     locales: ['en', 'de'],
     localeTexts: {
       de: {
