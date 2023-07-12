@@ -1,3 +1,5 @@
+// TODO: move to own library (https://github.com/leanupjs/vite-plugin-replace/pull/2)
+
 const execSrcReplacements = (src: any, replacements: any[]) => {
   for (const replacement of replacements) {
     if (
@@ -5,14 +7,14 @@ const execSrcReplacements = (src: any, replacements: any[]) => {
         replacement.from instanceof RegExp) === false
     ) {
       throw new TypeError(
-        "[vite-plugin-replace]: The replacement option 'from' is not of type 'string' or 'RegExp'."
+        "[vite-plugin-replace]: The replacement option 'from' is not of type 'string' or 'RegExp'.",
       )
     } else if (
       (typeof replacement.to === 'string' ||
         replacement.to instanceof Function) === false
     ) {
       throw new TypeError(
-        "[vite-plugin-replace]: The replacement option 'to' is not of type 'string' or 'Function'"
+        "[vite-plugin-replace]: The replacement option 'to' is not of type 'string' or 'Function'",
       )
     } else src = src.replace(replacement.from, replacement.to)
   }
@@ -27,11 +29,11 @@ export const replaceCodePlugin = (config: any) => {
     }
   } else if ((typeof config === 'object' || config !== null) === false) {
     throw new TypeError(
-      "[vite-plugin-replace]: The configuration is not of type 'Object'."
+      "[vite-plugin-replace]: The configuration is not of type 'Object'.",
     )
   } else if (Array.isArray(config.replacements) === false) {
     throw new TypeError(
-      "[vite-plugin-replace]: The configuration option 'replacement' is not of type 'Array'."
+      "[vite-plugin-replace]: The configuration option 'replacement' is not of type 'Array'.",
     )
   }
 

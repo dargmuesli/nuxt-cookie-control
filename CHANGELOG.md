@@ -1,3 +1,231 @@
+# [6.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.4...6.0.0) (2023-07-12)
+
+
+* feat!: release v6 (#81) ([feb598a](https://github.com/dargmuesli/nuxt-cookie-control/commit/feb598a7d88b8985fa2f4a1239f6d3f781e299ef)), closes [#81](https://github.com/dargmuesli/nuxt-cookie-control/issues/81) [#100](https://github.com/dargmuesli/nuxt-cookie-control/issues/100) [#106](https://github.com/dargmuesli/nuxt-cookie-control/issues/106)
+
+
+### BREAKING CHANGES
+
+* Setting an initial state for a cookie (i.e. enabled instead of disabled) was never properly implemented. To avoid confusion, this setting is removed. It continues to be possible to set `isIframeBlocked` true, though as of 2022-03-30 it is not yet implemented for vite (https://github.com/dargmuesli/nuxt-cookie-control/issues/79).
+
+* chore(deps): update dependency typescript to v5.0.3
+
+* chore(deps): update dependency @nuxt/kit to v3.3.3
+
+* chore(deps): update dependency nuxt to v3.3.3
+
+* chore(deps): update dargmuesli/github-actions action to v0.35.6
+
+* chore(deps): update dependency webpack to v5.78.0
+
+* chore(deps): update dependency lint-staged to v13.2.1
+
+* chore(deps): update dependency typescript to v5.0.4
+
+* chore(deps): update dependency eslint to v8.38.0
+
+* chore(deps): update dependency @nuxt/kit to v3.4.0
+
+* chore(deps): update dargmuesli/github-actions action to v0.35.7
+
+* chore(deps): update dependency @nuxt/module-builder to v0.3.0
+
+* chore(deps): update dependency webpack to v5.79.0
+
+* chore(deps): update dependency @nuxt/kit to v3.4.1
+
+* chore(deps): update dependency nuxt to v3.4.1
+
+* chore(deps): lock file maintenance
+
+* chore(deps): update dargmuesli/github-actions action to v0.35.8
+
+* chore(deps): update dependency webpack to v5.80.0
+
+* chore(deps): update dependency @nuxt/kit to v3.4.2
+
+* chore(deps): update dependency nuxt to v3.4.2
+
+* chore(deps): update dependency vue-tsc to v1.4.1
+
+* chore(deps): update dependency vue-tsc to v1.4.2
+
+* chore(deps): update dependency js-cookie to v3.0.4
+
+* chore(deps): update dependency eslint to v8.39.0
+
+* chore(deps): update dependency vue-tsc to v1.4.3
+
+* chore(deps): update dependency vue-tsc to v1.4.4
+
+* chore(deps): update dependency prettier to v2.8.8
+
+* chore(deps): update dargmuesli/github-actions action to v0.36.0
+
+* chore(deps): update dependency js-cookie to v3.0.5
+
+* chore(deps): update dargmuesli/github-actions action to v0.37.2
+
+* chore(deps): update dargmuesli/github-actions action to v0.37.3
+
+* chore(deps): update dependency lint-staged to v13.2.2
+
+* chore(deps): update dependency webpack to v5.81.0
+
+* chore(deps): update dependency vue-tsc to v1.6.0
+
+* chore(deps): update dependency vue-tsc to v1.6.1
+
+* chore(deps): update dependency @nuxt/kit to v3.4.3
+
+* chore(deps): update dependency nuxt to v3.4.3
+
+* chore(deps): lock file maintenance
+
+* chore(deps): update dependency vue-tsc to v1.6.2
+
+* chore(deps): update dependency @nuxt/module-builder to v0.3.1
+
+* chore(deps): update dependency vue-tsc to v1.6.3
+
+* chore(deps): update dargmuesli/github-actions action to v0.37.4
+
+* chore(deps): update dependency webpack to v5.82.0
+
+* chore(deps): update dependency vue-tsc to v1.6.4
+
+* chore(deps): update dependency eslint to v8.40.0
+
+* chore(deps): update pnpm to v8.5.0
+
+* chore(deps): update dargmuesli/github-actions action to v0.38.1
+
+* chore(deps): update dependency webpack to v5.82.1
+* remove stale `domain` configuration option
+feat: add `cookieOptions` configuration option
+
+Co-authored-by: Jonas Thelemann <e-mail@jonas-thelemann.de>
+
+## [5.10.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.3...5.10.4) (2023-07-12)
+
+
+### Bug Fixes
+
+* schedule release ([ed5fe4e](https://github.com/dargmuesli/nuxt-cookie-control/commit/ed5fe4e30f776d36009ff89e7777aee08f5412cf))
+
+## [5.10.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.2...5.10.3) (2023-06-28)
+
+
+### Bug Fixes
+
+* schedule release ([e5ba71f](https://github.com/dargmuesli/nuxt-cookie-control/commit/e5ba71f84c3878a71beb0bc10ff27da862d1cac1))
+
+## [5.10.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.1...5.10.2) (2023-06-21)
+
+
+### Bug Fixes
+
+* schedule release ([8603c1d](https://github.com/dargmuesli/nuxt-cookie-control/commit/8603c1d99f6fe2ffdc85b701a5e809a1add7181b))
+
+## [5.10.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.10.0...5.10.1) (2023-06-08)
+
+
+### Bug Fixes
+
+* correct imports ([426f23d](https://github.com/dargmuesli/nuxt-cookie-control/commit/426f23dc03e59b61ed5c086efe2f6ffb123b2488))
+
+# [5.10.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.9.3...5.10.0) (2023-06-08)
+
+
+### Features
+
+* **deps:** remove js-cookie ([#102](https://github.com/dargmuesli/nuxt-cookie-control/issues/102)) ([6f1371b](https://github.com/dargmuesli/nuxt-cookie-control/commit/6f1371ba719e63e482cb7e0dcceeb18bf8b5ba9e))
+
+## [5.9.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.9.2...5.9.3) (2023-05-31)
+
+
+### Bug Fixes
+
+* schedule release ([4eebf37](https://github.com/dargmuesli/nuxt-cookie-control/commit/4eebf376158f39416e5f6b4a550df0f7c79965c5))
+
+## [5.9.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.9.1...5.9.2) (2023-05-24)
+
+
+### Bug Fixes
+
+* schedule release ([a91f733](https://github.com/dargmuesli/nuxt-cookie-control/commit/a91f7334d5185317d09285f42f6da6e5caf9f049))
+
+## [5.9.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.9.0...5.9.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* **cookie-control:** remove `defineExpose` import ([#99](https://github.com/dargmuesli/nuxt-cookie-control/issues/99)) ([1c600f5](https://github.com/dargmuesli/nuxt-cookie-control/commit/1c600f5c7de989459d87a5fdd5b8eb5f46a91f36))
+
+# [5.9.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.5...5.9.0) (2023-05-10)
+
+
+### Features
+
+* **locale:** added Serbian locale ([#96](https://github.com/dargmuesli/nuxt-cookie-control/issues/96)) ([8269e63](https://github.com/dargmuesli/nuxt-cookie-control/commit/8269e6396c7e49b879f73333922b125e25eb1a7f))
+
+## [5.8.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.4...5.8.5) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** move development commands to playground ([a8dd5dc](https://github.com/dargmuesli/nuxt-cookie-control/commit/a8dd5dc1da2412a4919175c4ebe1a1671905dbde))
+
+## [5.8.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.3...5.8.4) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** workaround jiti bug ([2b7952b](https://github.com/dargmuesli/nuxt-cookie-control/commit/2b7952b724b13987295864a04b9b947aa98862c0))
+
+## [5.8.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.2...5.8.3) (2023-05-05)
+
+
+### Bug Fixes
+
+* **nuxt:** revert prepare playground on install ([10b04d7](https://github.com/dargmuesli/nuxt-cookie-control/commit/10b04d729e10c72269f531de9aa58a370f7c128a))
+* **package:** prepare playground on install ([6e0cebe](https://github.com/dargmuesli/nuxt-cookie-control/commit/6e0cebe98ab2c5ecced9d4888abb92bc3c0db229))
+
+## [5.8.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.1...5.8.2) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** readd module build stubbing to prepack script ([bdb70ba](https://github.com/dargmuesli/nuxt-cookie-control/commit/bdb70ba3d7a3e9b41737ce8b3cca47ca6ec72449))
+
+## [5.8.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.8.0...5.8.1) (2023-05-05)
+
+
+### Bug Fixes
+
+* **package:** allow node engine starting from v16 ([dc30a25](https://github.com/dargmuesli/nuxt-cookie-control/commit/dc30a25ccb03a99da4433a38c7a445c8ad24d020))
+
+# [5.8.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.7.1...5.8.0) (2023-05-05)
+
+
+### Features
+
+* **lang:** Add Bulgarian language ([#94](https://github.com/dargmuesli/nuxt-cookie-control/issues/94)) ([8ed4f86](https://github.com/dargmuesli/nuxt-cookie-control/commit/8ed4f86f48dcb9d550807c9e600b633fb3977514))
+
+## [5.7.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.7.0...5.7.1) (2023-05-03)
+
+
+### Bug Fixes
+
+* schedule release ([9f64026](https://github.com/dargmuesli/nuxt-cookie-control/commit/9f64026c0e0c06c332dd6719dacd8c68f0e35795))
+
+# [5.7.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.6.0...5.7.0) (2023-04-21)
+
+
+### Features
+
+* **method:** add define Expose - make methods available to parent component ([#89](https://github.com/dargmuesli/nuxt-cookie-control/issues/89)) ([466bdd8](https://github.com/dargmuesli/nuxt-cookie-control/commit/466bdd80c8ff8d06ff7d7f7b12e2d3f329084cb1))
+
 # [5.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/5.5.0...5.6.0) (2023-04-13)
 
 

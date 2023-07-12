@@ -1,4 +1,9 @@
 {
   "private": true,
-  "name": "cookie-control-playground"
+  "name": "cookie-control-playground",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "prepare": "cd .. && pnpm build --stub && cd playground && nuxt prepare"
+  }
 }

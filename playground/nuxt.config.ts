@@ -11,7 +11,6 @@ export default defineNuxtConfig({
 
   // module options
   cookieControl: {
-    isIframeBlocked: true,
     colors: {
       checkboxActiveBackground: '#00A34A', // text-green-600
     },
@@ -43,6 +42,7 @@ export default defineNuxtConfig({
       ],
     },
     isCookieIdVisible: true,
+    isIframeBlocked: true,
     locales: ['en', 'de'],
     localeTexts: {
       de: {
