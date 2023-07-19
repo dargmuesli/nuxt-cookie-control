@@ -1,3 +1,10 @@
+## [6.1.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.1...6.1.2) (2023-07-19)
+
+
+### Bug Fixes
+
+* **components:** add missing imports ([#110](https://github.com/dargmuesli/nuxt-cookie-control/issues/110)) ([ee25d8c](https://github.com/dargmuesli/nuxt-cookie-control/commit/ee25d8c6f69a6ae6b0e140f31c65b45556b9483a))
+
 ## [6.1.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.0...6.1.1) (2023-07-12)
 
 
