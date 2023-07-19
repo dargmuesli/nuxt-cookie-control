@@ -22,7 +22,7 @@
 import { computed } from 'vue'
 
 import { Cookie } from '../types'
-
+import { useNuxtApp } from '#app'
 import { useCookieControl } from '#imports'
 
 const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()

@@ -196,6 +196,7 @@ import {
 } from '../methods'
 import setCssVariables from '#cookie-control/set-vars'
 
+import { useNuxtApp } from '#app'
 import { useCookieControl, useCookie } from '#imports'
 
 export interface Props {
