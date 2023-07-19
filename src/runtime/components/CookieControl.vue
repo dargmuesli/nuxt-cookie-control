@@ -186,6 +186,7 @@
 <script setup lang="ts">
 import { ref, computed, onBeforeMount, watch } from 'vue'
 
+import { useNuxtApp } from '#app'
 import { Cookie, CookieType, Locale, Translatable } from '../types'
 import {
   getAllCookieIdsString,
