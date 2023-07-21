@@ -8,14 +8,14 @@ export default {
   bannerTitle: 'Sütik',
   close: 'Bezár',
   cookiesFunctional: 'Funkcionális sütik',
-  cookiesNecessary: 'Szükséges sütikk',
+  cookiesNecessary: 'Szükséges sütik',
   cookiesOptional: 'Opcionális sütik',
   decline: 'Elfogadom a szükségeset',
   declineAll: 'Összes elutasítása',
   here: 'itt',
   iframeBlocked:
     'Ennek megtekintéséhez, engedélyezd a funkcionális sütik használatát',
-  manageCookies: 'Sütikk kezelése',
+  manageCookies: 'Sütik kezelése',
   save: 'Mentés',
   settingsUnsaved: 'Mentés nélküli beállítások vannak',
 } as LocaleStrings
