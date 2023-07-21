@@ -1,3 +1,10 @@
+## [6.1.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.2...6.1.3) (2023-07-21)
+
+
+### Bug Fixes
+
+* **locale:** correct hungarian translations ([ba9ae49](https://github.com/dargmuesli/nuxt-cookie-control/commit/ba9ae499aed72e0f80737d116e63c6dfdf81e489))
+
 ## [6.1.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.1...6.1.2) (2023-07-19)
 
 
