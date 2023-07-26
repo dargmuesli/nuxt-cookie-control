@@ -1,3 +1,10 @@
+## [6.1.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.3...6.1.4) (2023-07-26)
+
+
+### Bug Fixes
+
+* export types ([#112](https://github.com/dargmuesli/nuxt-cookie-control/issues/112)) ([b526977](https://github.com/dargmuesli/nuxt-cookie-control/commit/b526977d62402baaa312411ca39397b0658487b5))
+
 ## [6.1.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.2...6.1.3) (2023-07-21)
 
 
