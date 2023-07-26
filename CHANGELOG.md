@@ -1,3 +1,10 @@
+## [6.1.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.4...6.1.5) (2023-07-26)
+
+
+### Bug Fixes
+
+* **plugin:** set type on plugin definition ([a5dd440](https://github.com/dargmuesli/nuxt-cookie-control/commit/a5dd4405cd40b66800426ae9a206ef6191758629))
+
 ## [6.1.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.3...6.1.4) (2023-07-26)
 
 
