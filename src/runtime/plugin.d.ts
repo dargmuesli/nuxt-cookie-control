@@ -1,4 +1,4 @@
-import { State } from '../src/runtime/types'
+import { State } from './types'
 
 declare module '#app' {
   interface NuxtApp {
