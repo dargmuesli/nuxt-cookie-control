@@ -6,6 +6,9 @@
   "maintainers": [
     "Jonas Thelemann"
   ],
+  "funding": {
+    "url": "https://github.com/sponsors/dargmuesli"
+  },
   "keywords": [
     "nuxt cookie control",
     "nuxt gdpr",
