@@ -1,3 +1,10 @@
+# [6.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.6...6.2.0) (2023-08-09)
+
+
+### Features
+
+* **package:** add funding link ([27635f5](https://github.com/dargmuesli/nuxt-cookie-control/commit/27635f5420da3cfd3f7017473df2cebeffd4bf6f))
+
 ## [6.1.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.5...6.1.6) (2023-08-09)
 
 
