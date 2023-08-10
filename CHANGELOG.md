@@ -1,3 +1,10 @@
+# [6.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.2.0...6.3.0) (2023-08-10)
+
+
+### Features
+
+* **package:** add types export ([420fe0b](https://github.com/dargmuesli/nuxt-cookie-control/commit/420fe0b823007fc180465c126da66098de37da57))
+
 # [6.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.1.6...6.2.0) (2023-08-09)
 
 
