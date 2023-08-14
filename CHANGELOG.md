@@ -1,3 +1,10 @@
+## [6.3.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.3.0...6.3.1) (2023-08-14)
+
+
+### Bug Fixes
+
+* **components:** do not add show all optional cookies as enabled when `isIframeBlocked` is enabled ([#117](https://github.com/dargmuesli/nuxt-cookie-control/issues/117)) ([6af3a1c](https://github.com/dargmuesli/nuxt-cookie-control/commit/6af3a1c25de12cb2f106cd3e894e7a24b10d4c23))
+
 # [6.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.2.0...6.3.0) (2023-08-10)
 
 
