@@ -341,14 +341,6 @@ onBeforeMount(() => {
     setCssVariables(variables)
   }
 
-  if (cookieIsConsentGiven.value === allCookieIdsString) {
-    for (const cookieOptional of moduleOptions.cookies.optional) {
-      if (moduleOptions.isIframeBlocked) {
-        localCookiesEnabled.value.push(cookieOptional)
-      }
-    }
-  }
-
   if (moduleOptions.isModalForced && !isConsentGiven.value) {
     isModalActive.value = true
   }
