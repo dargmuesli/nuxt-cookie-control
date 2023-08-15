@@ -1,3 +1,10 @@
+# [6.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.3.1...6.4.0) (2023-08-15)
+
+
+### Features
+
+* **locale:** add CA - Catalan translation ([#118](https://github.com/dargmuesli/nuxt-cookie-control/issues/118)) ([ed08caf](https://github.com/dargmuesli/nuxt-cookie-control/commit/ed08cafa14c7bf6b7719b8cd229750c3ae31c7e9))
+
 ## [6.3.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.3.0...6.3.1) (2023-08-14)
 
 
