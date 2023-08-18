@@ -64,7 +64,7 @@ const {
   cookiesEnabledIds,
   isConsentGiven,
   isModalActive,
-  moduleOptions
+  moduleOptions,
 } = useCookieControl()
 
 // example: react to a cookie being accepted
@@ -72,14 +72,14 @@ watch(
   () => cookiesEnabledIds.value,
   (current, previous) => {
     if (
-      (!previous?.includes('google-analytics') &&
-        current?.includes('google-analytics'))
+      !previous?.includes('google-analytics') &&
+      current?.includes('google-analytics')
     ) {
       // cookie with id `google-analytics` got added
       window.location.reload() // placeholder for your custom change handler
     }
   },
-  { deep: true }
+  { deep: true },
 )
 </script>
 ```
@@ -91,7 +91,7 @@ watch(
 const cookieControl = useCookieControl()
 
 if (cookieControl.cookiesEnabledIds.value.includes('google-analytics')) {
-    initGoogleAnalytics() // placeholder for your custom initialization
+  initGoogleAnalytics() // placeholder for your custom initialization
 }
 ```
 
@@ -245,7 +245,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 
 ```html
 <template #cookie="{config}">
-  <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
+  <span v-for="c in config" :key="c.id" v-text="c.cookies" />
 </template>
 ```
 
@@ -253,7 +253,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 
 - locale: `['en']`
 ```html
-<CookieControl locale="de"/>
+<CookieControl locale="de" />
 ```
 
 
