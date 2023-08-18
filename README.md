@@ -197,20 +197,24 @@ localeTexts: {
 
 #### Cookies
 
-Every property the includes a `{ en: ... }` value is a translatable property that could instead only specify a string (`'...'`) or other locales as well (`{ de: ..., uk: ... }`).
+Every property that includes a `{ en: ... }` value is a translatable property that could instead only specify a string (`'...'`) or other locales as well (`{ de: ..., uk: ... }`).
 
 ```javascript
 {
   description: {
-    en:  'Used for cookie control.'
+    en: 'This cookie stores preferences.'
   },
-  id: 'ga', // if unset, `getCookieId(cookie)` returns the cookie's slugified name instead, which e.g. is used to fill the state's `enabledCookieIds` list
+  id: 'p', // if unset, `getCookieId(cookie)` returns the cookie's slugified name instead, which e.g. is used to fill the state's `enabledCookieIds` list
   // use a short cookie id to save bandwidth!
   name: {
-    en: 'Google Analytics' // you always have to specify a cookie name (in English)
+    en: 'Preferences' // you always have to specify a cookie name (in English)
   },
-  src: 'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
-  targetCookieIds: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+  links: {
+    'https://example.com/privacy': 'Privacy Policy',
+    'https://example.com/terms': 'Terms of Service',
+  },
+  src: 'https://example.com/analytics/js?id=<API-KEY>',
+  targetCookieIds: ['xmpl_a', 'xmpl_b']
 }
 ```
 
