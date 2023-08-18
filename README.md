@@ -213,7 +213,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
     'https://example.com/privacy': 'Privacy Policy',
     'https://example.com/terms': 'Terms of Service',
   },
-  src: 'https://example.com/analytics/js?id=<API-KEY>',
+  src: 'https://example.com/preferences/js?id=<API-KEY>',
   targetCookieIds: ['xmpl_a', 'xmpl_b']
 }
 ```
