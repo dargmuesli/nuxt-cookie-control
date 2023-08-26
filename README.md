@@ -1,6 +1,8 @@
 # Nuxt Cookie Control
 
-[![npm version][npm-version-src]][npm-version-href] [![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![ci status][ci-image]][ci-url]
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
 
 ![nuxt-cookie-control](https://drive.google.com/a/broj42.com/uc?id=19sFguJo7SKUvmH4xu9DhK9ZXzR6oWLX8)
 
@@ -258,6 +260,9 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 
 
 <!-- Badges -->
+[ci-image]: https://img.shields.io/github/actions/workflow/status/dargmuesli/nuxt-cookie-control/ci.yml
+[ci-url]: https://github.com/dargmuesli/nuxt-cookie-control/actions/workflows/ci.yml
+
 [npm-version-src]: https://badgen.net/npm/v/@dargmuesli/nuxt-cookie-control/latest
 [npm-version-href]: https://npmjs.com/package/@dargmuesli/nuxt-cookie-control
 
