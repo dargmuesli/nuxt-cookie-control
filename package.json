@@ -44,7 +44,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@nuxt/kit": "3.7.0",
+    "@nuxt/kit": "3.7.1",
     "@sindresorhus/slugify": "2.2.1",
     "css-vars-ponyfill": "2.4.8",
     "string-replace-loader": "3.1.0"
@@ -60,7 +60,7 @@
     "eslint-plugin-prettier": "5.0.0",
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
-    "nuxt": "3.7.0",
+    "nuxt": "3.7.1",
     "prettier": "3.0.3",
     "typescript": "5.2.2",
     "vue": "3.3.4",
