@@ -29,7 +29,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node: [16,20]
+        node: ['16','20.5.1']
     steps:
       - uses: actions/setup-node@v3
         with:
@@ -59,7 +59,7 @@ jobs:
   release-semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.42.4
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.42.5
     permissions:
       contents: write
     secrets:
