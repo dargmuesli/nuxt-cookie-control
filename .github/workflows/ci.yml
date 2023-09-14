@@ -56,6 +56,8 @@ jobs:
 
       - name: Coverage
         uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
   release-semantic:
     needs: build
     name: Release (semantic)
