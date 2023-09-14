@@ -29,7 +29,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node: ['16','20']
+        node: ['18','20']
     steps:
       - uses: actions/setup-node@v3
         with:
@@ -53,9 +53,6 @@ jobs:
 
       - name: Lint
         run: pnpm lint
-
-      - name: Coverage
-        uses: codecov/codecov-action@v3
   release-semantic:
     needs: build
     name: Release (semantic)
