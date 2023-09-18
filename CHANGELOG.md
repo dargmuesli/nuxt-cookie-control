@@ -1,3 +1,10 @@
+## [6.4.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.2...6.4.3) (2023-09-18)
+
+
+### Bug Fixes
+
+* **deps:** extend dependency range ([531f3e6](https://github.com/dargmuesli/nuxt-cookie-control/commit/531f3e6f2c547b6bb0fcd1cc3555010e18fb41ea))
+
 ## [6.4.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.1...6.4.2) (2023-09-06)
 
 
