@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <section class="cookieControl">
+    <aside class="cookieControl">
       <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
         <div
           v-if="!isConsentGiven && !moduleOptions.isModalForced"
@@ -179,7 +179,7 @@
           </div>
         </div>
       </transition>
-    </section>
+    </aside>
   </client-only>
 </template>
 
