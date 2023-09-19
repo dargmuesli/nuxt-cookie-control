@@ -1,3 +1,14 @@
+## [7.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.4-beta.1...7.0.0-beta.1) (2023-09-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* **components:** correct heading order
+
+### Bug Fixes
+
+* **components:** correct heading order ([eb31470](https://github.com/dargmuesli/nuxt-cookie-control/commit/eb314707876ac29e4aab09318f5ad847936dff06))
+
 ## [6.4.4-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.3...6.4.4-beta.1) (2023-09-19)
 
 
