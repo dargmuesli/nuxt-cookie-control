@@ -1,3 +1,10 @@
+## [6.4.4-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.3...6.4.4-beta.1) (2023-09-19)
+
+
+### Bug Fixes
+
+* **components:** correct landmark ([447550c](https://github.com/dargmuesli/nuxt-cookie-control/commit/447550c714a18ae7993f2723a5ed0f440a1d469a))
+
 ## [6.4.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.2...6.4.3) (2023-09-18)
 
 
