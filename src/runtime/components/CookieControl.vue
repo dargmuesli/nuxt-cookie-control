@@ -9,7 +9,7 @@
           <div class="cookieControl__BarContainer">
             <div>
               <slot name="bar">
-                <h3 v-text="localeStrings?.bannerTitle" />
+                <h2 v-text="localeStrings?.bannerTitle" />
                 <p v-text="localeStrings?.bannerDescription" />
               </slot>
             </div>
@@ -64,7 +64,7 @@
               />
               <template v-for="cookieType in CookieType" :key="cookieType">
                 <template v-if="moduleOptions.cookies[cookieType].length">
-                  <h3
+                  <h2
                     v-text="
                       localeStrings &&
                       (cookieType === CookieType.NECESSARY
