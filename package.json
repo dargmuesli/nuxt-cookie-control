@@ -55,7 +55,7 @@
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/module-builder": "0.5.1",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
-    "eslint": "8.49.0",
+    "eslint": "8.50.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-prettier": "5.0.0",
     "husky": "8.0.3",
