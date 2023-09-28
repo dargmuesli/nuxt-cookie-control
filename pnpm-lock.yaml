@@ -31,8 +31,8 @@ importers:
         specifier: 'link:'
         version: 'link:'
       '@nuxt/module-builder':
-        specifier: 0.5.1
-        version: 0.5.1(@nuxt/kit@3.7.3)(nuxi@3.9.0)(typescript@5.2.2)
+        specifier: 0.5.2
+        version: 0.5.2(@nuxt/kit@3.7.3)(nuxi@3.9.0)(typescript@5.2.2)
       '@nuxtjs/eslint-config-typescript':
         specifier: 12.1.0
         version: 12.1.0(eslint@8.50.0)(typescript@5.2.2)
@@ -1150,17 +1150,17 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/module-builder@0.5.1(@nuxt/kit@3.7.3)(nuxi@3.9.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-O39UrOFbNgL27urwDqeMgXeYiNIUvp73nsmtt7jm9JDcMVIWykuUzyBPYtHif7gq5ElzIjjmDw9zdRGgyMzo+w==}
+  /@nuxt/module-builder@0.5.2(@nuxt/kit@3.7.3)(nuxi@3.9.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-MsnPTsa94VNrzV76RKCDS0C96uaKw9s3EbTtabI/BkAXOD4Ud1w6m0O20XUdI9tmRtE8Kbgyr4XUhD/YB3eeAw==}
     hasBin: true
     peerDependencies:
-      '@nuxt/kit': ^3.7.0
-      nuxi: ^3.7.3
+      '@nuxt/kit': ^3.7.4
+      nuxi: ^3.9.0
     dependencies:
       '@nuxt/kit': 3.7.3(rollup@3.29.3)
+      citty: 0.1.4
       consola: 3.2.3
       mlly: 1.4.2
-      mri: 1.2.0
       nuxi: 3.9.0
       pathe: 1.1.1
       unbuild: 2.0.0(typescript@5.2.2)
