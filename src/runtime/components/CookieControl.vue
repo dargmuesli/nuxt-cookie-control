@@ -200,7 +200,7 @@ import {
 import setCssVariables from '#cookie-control/set-vars'
 import { useCookieControl, useCookie } from '#imports'
 
-export interface Props {
+interface Props {
   locale?: Locale
 }
 const props = withDefaults(defineProps<Props>(), {
