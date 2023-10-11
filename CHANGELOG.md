@@ -1,3 +1,10 @@
+## [6.4.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.4...6.4.5) (2023-10-11)
+
+
+### Bug Fixes
+
+* schedule release ([10ba69c](https://github.com/dargmuesli/nuxt-cookie-control/commit/10ba69c77fc9e50c1205615689734f3527da6390))
+
 ## [6.4.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.3...6.4.4) (2023-09-27)
 
 
