@@ -105,7 +105,9 @@
                           </button>
                           <label
                             class="cookieControl__ModalCookieName"
-                            :for="resolveTranslatable(cookie.name, props.locale)"
+                            :for="
+                              resolveTranslatable(cookie.name, props.locale)
+                            "
                             tabindex="0"
                             @keydown="toggleLabel($event)"
                           >
@@ -137,7 +139,9 @@
                                 :key="entry[0]"
                               >
                                 <br />
-                                <a :href="entry[0]">{{ entry[1] || entry[0] }}</a>
+                                <a :href="entry[0]">{{
+                                  entry[1] || entry[0]
+                                }}</a>
                               </span>
                             </template>
                           </label>
