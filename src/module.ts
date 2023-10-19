@@ -60,7 +60,7 @@ export default defineNuxtModule<ModuleOptions>({
       filename: 'cookie-control-options.ts',
       write: true,
       getContents: () =>
-        `import { ModuleOptions } from '#cookie-control/types'\n\nexport default ${JSON.stringify(
+        `import type { ModuleOptions } from '#cookie-control/types'\n\nexport default ${JSON.stringify(
           moduleOptions,
           undefined,
           2,
