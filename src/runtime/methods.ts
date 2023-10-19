@@ -2,7 +2,7 @@ import slugify from '@sindresorhus/slugify'
 import { serialize } from 'cookie-es'
 
 import { LOCALE_DEFAULT } from './constants'
-import { Cookie, ModuleOptions, Translatable } from './types'
+import type { Cookie, ModuleOptions, Translatable } from './types'
 
 export const getAllCookieIdsString = (moduleOptions: ModuleOptions) =>
   getCookieIds([

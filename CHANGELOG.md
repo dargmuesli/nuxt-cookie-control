@@ -16,6 +16,27 @@
 
 * **components:** correct landmark ([447550c](https://github.com/dargmuesli/nuxt-cookie-control/commit/447550c714a18ae7993f2723a5ed0f440a1d469a))
 
+## [6.4.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.5...6.4.6) (2023-10-19)
+
+
+### Bug Fixes
+
+* **deps:** update ([#153](https://github.com/dargmuesli/nuxt-cookie-control/issues/153)) ([962aaab](https://github.com/dargmuesli/nuxt-cookie-control/commit/962aaab8690e80137c89088695c7b3238af4dbe9))
+
+## [6.4.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.4...6.4.5) (2023-10-11)
+
+
+### Bug Fixes
+
+* schedule release ([10ba69c](https://github.com/dargmuesli/nuxt-cookie-control/commit/10ba69c77fc9e50c1205615689734f3527da6390))
+
+## [6.4.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.3...6.4.4) (2023-09-27)
+
+
+### Bug Fixes
+
+* schedule release ([823266e](https://github.com/dargmuesli/nuxt-cookie-control/commit/823266e987d22eb2cd31aa125f8136f53044c465))
+
 ## [6.4.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.2...6.4.3) (2023-09-18)
 
 

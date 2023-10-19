@@ -186,7 +186,14 @@
 <script setup lang="ts">
 import { ref, computed, onBeforeMount, watch } from 'vue'
 
-import { Cookie, CookieType, Locale, Translatable } from '../types'
+import { useNuxtApp } from '#app'
+
+import {
+  type Cookie,
+  CookieType,
+  type Locale,
+  type Translatable,
+} from '../types'
 import {
   getAllCookieIdsString,
   getCookieId,
@@ -195,7 +202,6 @@ import {
   resolveTranslatable,
 } from '../methods'
 
-import { useNuxtApp } from '#app'
 import setCssVariables from '#cookie-control/set-vars'
 import { useCookieControl, useCookie } from '#imports'
 

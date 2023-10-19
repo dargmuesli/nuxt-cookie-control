@@ -1,5 +1,5 @@
-import { Ref } from 'vue'
-import { CookieOptions } from 'nuxt/app'
+import type { Ref } from 'vue'
+import type { CookieOptions } from 'nuxt/app'
 
 import en from './locale/en'
 

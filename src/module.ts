@@ -11,11 +11,11 @@ import {
   createResolver,
   resolvePath,
 } from '@nuxt/kit'
-import { Nuxt } from '@nuxt/schema'
+import type { Nuxt } from '@nuxt/schema'
 // import webpack from 'webpack' // eslint-disable-line import/no-named-as-default
 
 import { name, version } from '../package.json'
-import { DEFAULTS, ModuleOptions } from './runtime/types'
+import { DEFAULTS, type ModuleOptions } from './runtime/types'
 import { replaceCodePlugin } from './replace'
 
 const resolver = createResolver(import.meta.url)
@@ -60,7 +60,7 @@ export default defineNuxtModule<ModuleOptions>({
       filename: 'cookie-control-options.ts',
       write: true,
       getContents: () =>
-        `import { ModuleOptions } from '#cookie-control/types'\n\nexport default ${JSON.stringify(
+        `import type { ModuleOptions } from '#cookie-control/types'\n\nexport default ${JSON.stringify(
           moduleOptions,
           undefined,
           2,
