@@ -77,7 +77,7 @@
                       v-for="cookie in moduleOptions.cookies[cookieType]"
                       :key="cookie.id"
                     >
-                      <slot name="cookie" v-bind="{ config: cookie }">
+                      <slot name="cookie" v-bind="{ cookie }">
                         <div class="cookieControl__ModalInputWrapper">
                           <input
                             v-if="

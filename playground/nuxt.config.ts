@@ -23,8 +23,8 @@ export default defineNuxtConfig({
             en: 'This cookie does something very very very very very very very long.',
           },
           name: {
-            de: 'Notwendiger Cookie',
-            en: 'Necessary Cookie',
+            de: 'Haben müssen',
+            en: 'Must have',
           },
           targetCookieIds: ['NEC'],
         },
@@ -32,7 +32,9 @@ export default defineNuxtConfig({
       optional: [
         {
           id: 'op',
-          name: 'Optional Cookie',
+          description:
+            'Please visit <a href="#link" target="_blank">this link</a>',
+          name: 'Marketing',
           links: {
             'https://example.com': 'Privacy Policy',
             'https://example.cop': null,

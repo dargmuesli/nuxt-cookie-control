@@ -246,8 +246,14 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 #### Cookie
 
 ```html
-<template #cookie="{config}">
-  <span v-for="c in config" :key="c.id" v-text="c.cookies" />
+<template #cookie="{ cookie }">
+  <h3 v-text="cookie.name" />
+  <span v-html="cookie.description" />
+
+  <div v-if="cookie.targetCookieIds">
+    <b>Cookie ids: </b>
+    <span v-text="cookie?.targetCookieIds?.join(', ')" />
+  </div>
 </template>
 ```
 
