@@ -1,3 +1,10 @@
+## [6.5.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.5.1...6.5.2) (2023-10-21)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/github-actions action to v1.1.6 ([397dbb9](https://github.com/dargmuesli/nuxt-cookie-control/commit/397dbb92ebb6e55348c8245c8d0e273ba7577e65))
+
 ## [6.5.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.5.0...6.5.1) (2023-10-21)
 
 
