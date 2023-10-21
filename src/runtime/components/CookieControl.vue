@@ -194,7 +194,12 @@ import { ref, computed, onBeforeMount, watch } from 'vue'
 
 import { useNuxtApp } from '#app'
 
-import { Cookie, CookieType, Locale, Translatable } from '../types'
+import {
+  type Cookie,
+  CookieType,
+  type Locale,
+  type Translatable,
+} from '../types'
 import {
   getAllCookieIdsString,
   getCookieId,

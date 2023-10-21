@@ -237,24 +237,28 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 #### Modal
 
 ```html
-<template #modal>
-  <h3>Modal title</h3>
-  <p>Modal description</p>
-</template>
+<CookieControl>
+  <template #modal>
+    <h3>Modal title</h3>
+    <p>Modal description</p>
+  </template>
+</CookieControl>
 ```
 
 #### Cookie
 
 ```html
-<template #cookie="{ cookie }">
-  <h3 v-text="cookie.name" />
-  <span v-html="cookie.description" />
+<CookieControl>
+  <template #cookie="{ cookie }">
+    <h3 v-text="cookie.name" />
+    <span v-html="cookie.description" />
 
-  <div v-if="cookie.targetCookieIds">
-    <b>Cookie ids: </b>
-    <span v-text="cookie?.targetCookieIds?.join(', ')" />
-  </div>
-</template>
+    <div v-if="cookie.targetCookieIds">
+      <b>Cookie ids: </b>
+      <span v-text="cookie?.targetCookieIds?.join(', ')" />
+    </div>
+  </template>
+</CookieControl>
 ```
 
 ### Props

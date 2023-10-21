@@ -1,4 +1,4 @@
-import { LocaleStrings } from '../types'
+import type { LocaleStrings } from '../types'
 
 export default {
   accept: 'Dozvoli',
