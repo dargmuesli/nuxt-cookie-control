@@ -77,70 +77,76 @@
                       v-for="cookie in moduleOptions.cookies[cookieType]"
                       :key="cookie.id"
                     >
-                      <div class="cookieControl__ModalInputWrapper">
-                        <input
-                          v-if="
-                            cookieType === CookieType.NECESSARY &&
-                            cookie.name !== 'functional'
-                          "
-                          :id="resolveTranslatable(cookie.name, props.locale)"
-                          type="checkbox"
-                          disabled
-                          checked
-                        />
-                        <input
-                          v-else
-                          :id="resolveTranslatable(cookie.name, props.locale)"
-                          type="checkbox"
-                          :checked="
-                            getCookieIds(localCookiesEnabled).includes(
-                              getCookieId(cookie),
-                            )
-                          "
-                          @change="toogleCookie(cookie)"
-                        />
-                        <button @click="toggleButton($event)">
-                          {{ getName(cookie.name) }}
-                        </button>
-                        <label
-                          class="cookieControl__ModalCookieName"
-                          :for="resolveTranslatable(cookie.name, props.locale)"
-                          tabindex="0"
-                          @keydown="toggleLabel($event)"
-                        >
-                          {{ getName(cookie.name) }}
-                          <span v-if="cookie.description">
-                            {{ getDescription(cookie.description) }}
-                          </span>
-                          <span
+                      <slot name="cookie" v-bind="{ cookie }">
+                        <div class="cookieControl__ModalInputWrapper">
+                          <input
                             v-if="
-                              moduleOptions.isCookieIdVisible &&
-                              cookie.targetCookieIds
+                              cookieType === CookieType.NECESSARY &&
+                              cookie.name !== 'functional'
                             "
+                            :id="resolveTranslatable(cookie.name, props.locale)"
+                            type="checkbox"
+                            disabled
+                            checked
+                          />
+                          <input
+                            v-else
+                            :id="resolveTranslatable(cookie.name, props.locale)"
+                            type="checkbox"
+                            :checked="
+                              getCookieIds(localCookiesEnabled).includes(
+                                getCookieId(cookie),
+                              )
+                            "
+                            @change="toogleCookie(cookie)"
+                          />
+                          <button @click="toggleButton($event)">
+                            {{ getName(cookie.name) }}
+                          </button>
+                          <label
+                            class="cookieControl__ModalCookieName"
+                            :for="
+                              resolveTranslatable(cookie.name, props.locale)
+                            "
+                            tabindex="0"
+                            @keydown="toggleLabel($event)"
                           >
-                            <br />
-                            {{
-                              'IDs: ' +
-                              cookie.targetCookieIds
-                                .map((id: string) => `"${id}"`)
-                                .join(', ')
-                            }}
-                          </span>
-                          <template
-                            v-if="Object.entries(cookie.links || {}).length"
-                          >
+                            {{ getName(cookie.name) }}
+                            <span v-if="cookie.description">
+                              {{ getDescription(cookie.description) }}
+                            </span>
                             <span
-                              v-for="entry in Object.entries(
-                                cookie.links || {},
-                              )"
-                              :key="entry[0]"
+                              v-if="
+                                moduleOptions.isCookieIdVisible &&
+                                cookie.targetCookieIds
+                              "
                             >
                               <br />
-                              <a :href="entry[0]">{{ entry[1] || entry[0] }}</a>
+                              {{
+                                'IDs: ' +
+                                cookie.targetCookieIds
+                                  .map((id: string) => `"${id}"`)
+                                  .join(', ')
+                              }}
                             </span>
-                          </template>
-                        </label>
-                      </div>
+                            <template
+                              v-if="Object.entries(cookie.links || {}).length"
+                            >
+                              <span
+                                v-for="entry in Object.entries(
+                                  cookie.links || {},
+                                )"
+                                :key="entry[0]"
+                              >
+                                <br />
+                                <a :href="entry[0]">{{
+                                  entry[1] || entry[0]
+                                }}</a>
+                              </span>
+                            </template>
+                          </label>
+                        </div>
+                      </slot>
                     </li>
                   </ul>
                 </template>
