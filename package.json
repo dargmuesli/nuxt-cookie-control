@@ -37,7 +37,7 @@
     "src/locale"
   ],
   "scripts": {
-    "build": "nuxt-module-build",
+    "build": "nuxt-module-build build",
     "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
     "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
     "prepack": "pnpm build",
