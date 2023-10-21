@@ -1,6 +1,6 @@
 {
   "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "6.5.3",
+  "version": "7.0.0-beta.2",
   "description": "Nuxt Cookie Control Module",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
   "maintainers": [
@@ -56,7 +56,6 @@
     "@nuxt/module-builder": "0.5.2",
     "@nuxt/schema": "3.8.0",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
-    "conventional-changelog-conventionalcommits": "7.0.2",
     "eslint": "8.52.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-prettier": "5.0.1",

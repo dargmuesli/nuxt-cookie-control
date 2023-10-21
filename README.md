@@ -227,7 +227,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 ```html
 <CookieControl>
   <template #bar>
-    <h3>Bar title</h3>
+    <h2>Bar title</h2>
     <p>Bar description (you can use $cookies.text.barDescription)</p>
     <n-link>Go somewhere</n-link>
   </template>
@@ -239,7 +239,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 ```html
 <CookieControl>
   <template #modal>
-    <h3>Modal title</h3>
+    <h2>Modal title</h2>
     <p>Modal description</p>
   </template>
 </CookieControl>
