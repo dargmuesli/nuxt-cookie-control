@@ -37,7 +37,7 @@
     "src/locale"
   ],
   "scripts": {
-    "build": "nuxt-module-build",
+    "build": "nuxt-module-build build",
     "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
     "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
     "prepack": "pnpm build",
@@ -54,6 +54,7 @@
     "@commitlint/config-conventional": "18.0.0",
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/module-builder": "0.5.2",
+    "@nuxt/schema": "3.8.0",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "eslint": "8.52.0",
