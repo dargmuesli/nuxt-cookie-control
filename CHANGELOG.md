@@ -1,3 +1,10 @@
+## [6.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.6...6.5.0) (2023-10-21)
+
+
+### Features
+
+* implement cookie slot ([#151](https://github.com/dargmuesli/nuxt-cookie-control/issues/151)) ([782c1b9](https://github.com/dargmuesli/nuxt-cookie-control/commit/782c1b9f4125494ce962033ac9ed2f38cd1ee491))
+
 ## [6.4.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/6.4.5...6.4.6) (2023-10-19)
 
 
