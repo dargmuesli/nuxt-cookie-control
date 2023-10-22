@@ -3,11 +3,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-* beta (#156)
-
-### Features
-
-* beta ([#156](https://github.com/dargmuesli/nuxt-cookie-control/issues/156)) ([6288aaf](https://github.com/dargmuesli/nuxt-cookie-control/commit/6288aaf47f2a5e585cf23cb455c27fb724be35ce))
+* `h2` replaces `h3` in `CookieControl.vue`
 
 ## [7.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.0.0-beta.1...7.0.0-beta.2) (2023-10-19)
 
