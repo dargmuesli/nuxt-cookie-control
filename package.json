@@ -30,6 +30,7 @@
     },
     "./runtime/*": {
       "import": "./dist/runtime/*.mjs",
+      "require": "./dist/runtime/*.mjs",
       "types": "./dist/runtime/*.d.ts"
     }
   },
