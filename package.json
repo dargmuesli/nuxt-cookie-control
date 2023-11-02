@@ -36,9 +36,7 @@
   "main": "./dist/module.cjs",
   "types": "./dist/module.d.ts",
   "files": [
-    "dist/**/*",
-    "src/components",
-    "src/locale"
+    "dist/**/*"
   ],
   "scripts": {
     "build": "nuxt-module-build build",
