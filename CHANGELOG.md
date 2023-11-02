@@ -1,3 +1,10 @@
+## [7.1.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.1.0...7.1.1) (2023-11-02)
+
+
+### Bug Fixes
+
+* **package:** export runtime for `require` ([a0811b3](https://github.com/dargmuesli/nuxt-cookie-control/commit/a0811b31f618aa83d7279890c9e9ee7624ad1164))
+
 ## [7.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.0.2...7.1.0) (2023-11-02)
 
 
