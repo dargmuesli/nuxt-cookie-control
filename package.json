@@ -27,6 +27,10 @@
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs",
       "types": "./dist/types.d.ts"
+    },
+    "./runtime/*": {
+      "import": "./dist/runtime/*.mjs",
+      "types": "./dist/runtime/*.d.ts"
     }
   },
   "main": "./dist/module.cjs",
