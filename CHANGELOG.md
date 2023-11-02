@@ -1,3 +1,10 @@
+## [7.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.0.2...7.1.0) (2023-11-02)
+
+
+### Features
+
+* **package:** export runtime ([dc73816](https://github.com/dargmuesli/nuxt-cookie-control/commit/dc738163512355e230ebaf13f6f97b391ca0e096))
+
 ## [7.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.0.1...7.0.2) (2023-11-01)
 
 
