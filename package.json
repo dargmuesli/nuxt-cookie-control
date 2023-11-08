@@ -63,6 +63,11 @@
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
   "packageManager": "pnpm@8.10.2",
+  "pnpm": {
+    "overrides": {
+      "@nuxt/kit": "3.8.0"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
