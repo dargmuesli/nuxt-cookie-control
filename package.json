@@ -15,14 +15,14 @@
     "@commitlint/config-conventional": "18.1.0",
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/module-builder": "0.5.3",
-    "@nuxt/schema": "3.8.0",
+    "@nuxt/schema": "3.8.1",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "eslint": "8.53.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-prettier": "5.0.1",
     "husky": "8.0.3",
     "lint-staged": "15.0.2",
-    "nuxt": "3.8.0",
+    "nuxt": "3.8.1",
     "prettier": "3.0.3",
     "typescript": "5.2.2",
     "vue": "3.3.8",
@@ -68,7 +68,7 @@
   },
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
   "resolutions": {
-    "@nuxt/kit": "3.8.0"
+    "@nuxt/kit": "3.8.1"
   },
   "scripts": {
     "build": "nuxt-module-build build",
