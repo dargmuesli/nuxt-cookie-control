@@ -63,15 +63,13 @@
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
   "packageManager": "pnpm@8.10.2",
-  "pnpm": {
-    "overrides": {
-      "@nuxt/kit": "3.8.0"
-    }
-  },
   "publishConfig": {
     "access": "public"
   },
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
+  "resolutions": {
+    "@nuxt/kit": "3.8.0"
+  },
   "scripts": {
     "build": "nuxt-module-build build",
     "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
