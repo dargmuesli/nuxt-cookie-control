@@ -1,3 +1,10 @@
+## [7.1.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.1.1...7.1.2) (2023-11-08)
+
+
+### Bug Fixes
+
+* import nuxt composables from [#imports](https://github.com/dargmuesli/nuxt-cookie-control/issues/imports) ([4765869](https://github.com/dargmuesli/nuxt-cookie-control/commit/476586957654aac464600d87ba538c0f0d585e5e))
+
 ## [7.1.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.1.0...7.1.1) (2023-11-02)
 
 
