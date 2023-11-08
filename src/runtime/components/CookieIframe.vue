@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { useNuxtApp } from '#app'
+import { useNuxtApp } from '#imports'
 
 import type { Cookie } from '../types'
 

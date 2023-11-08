@@ -192,7 +192,7 @@
 <script setup lang="ts">
 import { ref, computed, onBeforeMount, watch } from 'vue'
 
-import { useNuxtApp } from '#app'
+import { useNuxtApp } from '#imports'
 
 import {
   type Cookie,
