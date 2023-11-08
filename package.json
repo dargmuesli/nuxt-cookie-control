@@ -1,57 +1,15 @@
 {
-  "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "7.1.1",
-  "description": "Nuxt Cookie Control Module",
-  "author": "Dario Ferderber <dario.ferderber@broj42.com>",
-  "maintainers": [
-    "Jonas Thelemann"
+  "author": "Jonas Thelemann",
+  "contributors": [
+    "Dario Ferderber <dario.ferderber@broj42.com>"
   ],
-  "funding": {
-    "url": "https://github.com/sponsors/dargmuesli"
-  },
-  "keywords": [
-    "nuxt cookie control",
-    "nuxt gdpr",
-    "nuxt cookie consent",
-    "nuxt gdpr consent"
-  ],
-  "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
-  "license": "MIT",
-  "type": "module",
-  "engines": {
-    "node": ">=16"
-  },
-  "packageManager": "pnpm@8.10.2",
-  "exports": {
-    ".": {
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs",
-      "types": "./dist/types.d.ts"
-    },
-    "./runtime/*": {
-      "import": "./dist/runtime/*.mjs",
-      "require": "./dist/runtime/*.mjs",
-      "types": "./dist/runtime/*.d.ts"
-    }
-  },
-  "main": "./dist/module.cjs",
-  "types": "./dist/module.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
-  "scripts": {
-    "build": "nuxt-module-build build",
-    "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
-    "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
-    "prepack": "pnpm build",
-    "prepare": "husky install"
-  },
   "dependencies": {
     "@nuxt/kit": "^3.8.0",
     "@sindresorhus/slugify": "^2.2.1",
     "css-vars-ponyfill": "^2.4.8",
     "string-replace-loader": "^3.1.0"
   },
+  "description": "Nuxt Cookie Control Module",
   "devDependencies": {
     "@commitlint/cli": "18.2.0",
     "@commitlint/config-conventional": "18.1.0",
@@ -71,7 +29,52 @@
     "vue-tsc": "1.8.22",
     "webpack": "5.89.0"
   },
+  "engines": {
+    "node": ">=16"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs",
+      "types": "./dist/types.d.ts"
+    },
+    "./runtime/*": {
+      "import": "./dist/runtime/*.mjs",
+      "require": "./dist/runtime/*.mjs",
+      "types": "./dist/runtime/*.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "funding": {
+    "url": "https://github.com/sponsors/dargmuesli"
+  },
+  "keywords": [
+    "nuxt cookie control",
+    "nuxt gdpr",
+    "nuxt cookie consent",
+    "nuxt gdpr consent"
+  ],
+  "license": "MIT",
+  "main": "./dist/module.cjs",
+  "maintainers": [
+    "Jonas Thelemann"
+  ],
+  "name": "@dargmuesli/nuxt-cookie-control",
+  "packageManager": "pnpm@8.10.2",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
+  "scripts": {
+    "build": "nuxt-module-build build",
+    "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
+    "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
+    "prepack": "pnpm build",
+    "prepare": "husky install"
+  },
+  "type": "module",
+  "types": "./dist/module.d.ts",
+  "version": "7.1.1"
 }
