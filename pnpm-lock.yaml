@@ -4,12 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@nuxt/kit': 3.8.0
+
 importers:
 
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: ^3.8.0
+        specifier: 3.8.0
         version: 3.8.0(rollup@3.29.4)
       '@sindresorhus/slugify':
         specifier: ^2.2.1
@@ -1355,7 +1358,7 @@ packages:
     resolution: {integrity: sha512-iKQHuZb8/IXzTW2CqrIlsmzBuSaM9vISTGM0+KxbBPSG5JCy5MtWbmxPIw1jgac1g/B2ZkBhOCXOxGTecCHTRQ==}
     hasBin: true
     peerDependencies:
-      '@nuxt/kit': ^3.8.0
+      '@nuxt/kit': 3.8.0
       nuxi: ^3.9.1
     dependencies:
       '@nuxt/kit': 3.8.0(rollup@3.29.4)
