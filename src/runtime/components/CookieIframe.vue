@@ -21,11 +21,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { useNuxtApp } from '#app'
-
 import type { Cookie } from '../types'
 
-import { useCookieControl } from '#imports'
+import { useNuxtApp, useCookieControl } from '#imports'
 
 const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()
 const nuxtApp = useNuxtApp()
