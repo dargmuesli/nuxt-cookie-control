@@ -1,3 +1,10 @@
+## [7.1.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.1.3...7.1.4) (2023-11-25)
+
+
+### Bug Fixes
+
+* change accept in ru locale ([339ce59](https://github.com/dargmuesli/nuxt-cookie-control/commit/339ce5977c469d9e2849ac984a663016a6b27f25))
+
 ## [7.1.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.1.2...7.1.3) (2023-11-22)
 
 
