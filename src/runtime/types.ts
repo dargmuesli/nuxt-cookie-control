@@ -17,6 +17,7 @@ export type Locale =
   | 'fr'
   | 'hr'
   | 'hu'
+  | 'id'
   | 'it'
   | 'ja'
   | 'ko'
