@@ -1,3 +1,16 @@
+## [7.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.1.5...7.2.0) (2023-12-08)
+
+
+### Features
+
+* **locale:** add ID - Bahasa(Indonesian) translation ([a4ab550](https://github.com/dargmuesli/nuxt-cookie-control/commit/a4ab550028a07bef6471ea7cbdb58db85ff91e1a))
+
+
+### Bug Fixes
+
+* **locale:** forgot type on LocaleStrings ([0d42235](https://github.com/dargmuesli/nuxt-cookie-control/commit/0d422354a06ef993ee5812df3fb2d83d0572aca7))
+* **locale:** update follow linter rule ([ba98781](https://github.com/dargmuesli/nuxt-cookie-control/commit/ba987812f0d0c08f707a272dfa13aad8f3312919))
+
 ## [7.1.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.1.4...7.1.5) (2023-12-06)
 
 
