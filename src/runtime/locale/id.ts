@@ -1,4 +1,4 @@
-import { LocaleStrings } from '../types';
+import { LocaleStrings } from '../types'
 
 export default {
   accept: 'Terima',
@@ -17,4 +17,4 @@ export default {
   manageCookies: 'Pelajari lebih lanjut dan sesuaikan',
   save: 'Simpan',
   settingsUnsaved: 'Anda memiliki pengaturan yang belum disimpan',
-} as LocaleStrings;
+} as LocaleStrings
