@@ -95,7 +95,7 @@
                             type="checkbox"
                             :checked="
                               getCookieIds(localCookiesEnabled).includes(
-                                getCookieId(cookie),
+                                cookie.id,
                               )
                             "
                             @change="toogleCookie(cookie)"
@@ -125,7 +125,7 @@
                               {{
                                 'IDs: ' +
                                 cookie.targetCookieIds
-                                  .map((id: string) => `"${id}"`)
+                                  .map((id) => `"${id}"`)
                                   .join(', ')
                               }}
                             </span>
@@ -200,7 +200,6 @@ import {
 } from '../types'
 import {
   getAllCookieIdsString,
-  getCookieId,
   getCookieIds,
   removeCookie,
   resolveTranslatable,
@@ -266,7 +265,7 @@ const acceptPartial = () => {
     cookiesOptionalEnabled: [
       ...moduleOptions.cookies.necessary,
       ...moduleOptions.cookies.optional,
-    ].filter((cookie) => localCookiesEnabledIds.includes(getCookieId(cookie))),
+    ].filter((cookie) => localCookiesEnabledIds.includes(cookie.id)),
   })
 }
 const decline = () => {
@@ -325,9 +324,7 @@ const toggleButton = ($event: MouseEvent) => {
   )?.click()
 }
 const toogleCookie = (cookie: Cookie) => {
-  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(
-    getCookieId(cookie),
-  )
+  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(cookie.id)
 
   if (cookieIndex < 0) {
     localCookiesEnabled.value.push(cookie)

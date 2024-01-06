@@ -206,8 +206,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
   description: {
     en: 'This cookie stores preferences.'
   },
-  id: 'p', // if unset, `getCookieId(cookie)` returns the cookie's slugified name instead, which e.g. is used to fill the state's `enabledCookieIds` list
-  // use a short cookie id to save bandwidth!
+  id: 'p', // use a short cookie id to save bandwidth and prefixes to separate
   name: {
     en: 'Preferences' // you always have to specify a cookie name (in English)
   },
