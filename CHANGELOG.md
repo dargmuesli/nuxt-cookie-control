@@ -1,3 +1,14 @@
+## [8.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.2...8.0.0-beta.1) (2024-01-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **module:** require cookie id
+
+### Features
+
+* **module:** require cookie id ([1c415bc](https://github.com/dargmuesli/nuxt-cookie-control/commit/1c415bc2a6fff71530b6e125d29dbdf7cbac0f60))
+
 ## [7.2.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.1...7.2.2) (2023-12-27)
 
 

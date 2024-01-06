@@ -78,5 +78,5 @@
   },
   "type": "module",
   "types": "./dist/module.d.ts",
-  "version": "7.2.2"
+  "version": "8.0.0-beta.1"
 }
