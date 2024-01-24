@@ -51,6 +51,7 @@ export interface Cookie {
   links?: Record<string, string | null>
   src?: string
   targetCookieIds?: string[]
+  initialRecommendedState?: boolean
 }
 
 export interface LocaleStrings {
