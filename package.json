@@ -75,7 +75,7 @@
     "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
     "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
     "prepack": "pnpm build",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "type": "module",
   "types": "./dist/module.d.ts",
