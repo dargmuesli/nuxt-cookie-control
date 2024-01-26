@@ -20,7 +20,7 @@
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.1.3",
-    "husky": "8.0.3",
+    "husky": "9.0.6",
     "lint-staged": "15.2.0",
     "nuxt": "3.9.3",
     "prettier": "3.2.4",
@@ -75,7 +75,7 @@
     "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
     "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
     "prepack": "pnpm build",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "type": "module",
   "types": "./dist/module.d.ts",
