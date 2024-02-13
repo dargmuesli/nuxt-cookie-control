@@ -1,3 +1,10 @@
+## [7.2.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.5...7.2.6) (2024-02-13)
+
+
+### Bug Fixes
+
+* **nuxt:** remove config file ([6f99bea](https://github.com/dargmuesli/nuxt-cookie-control/commit/6f99beaec723548a468db94fac12e0cde7902edf))
+
 ## [7.2.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.4...7.2.5) (2024-01-31)
 
 
