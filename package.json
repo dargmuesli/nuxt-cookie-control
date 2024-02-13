@@ -11,8 +11,8 @@
   },
   "description": "Nuxt Cookie Control Module",
   "devDependencies": {
-    "@commitlint/cli": "18.6.1",
-    "@commitlint/config-conventional": "18.6.1",
+    "@commitlint/cli": "18.6.0",
+    "@commitlint/config-conventional": "18.6.0",
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/module-builder": "0.5.5",
     "@nuxt/schema": "3.10.1",
