@@ -34,6 +34,7 @@ export type Locale =
   | 'sv'
   | 'tr'
   | 'uk'
+  | 'zhCN'
 
 export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
 
