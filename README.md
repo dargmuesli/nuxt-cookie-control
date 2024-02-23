@@ -6,7 +6,7 @@
 
 ![nuxt-cookie-control](https://drive.google.com/a/broj42.com/uc?id=19sFguJo7SKUvmH4xu9DhK9ZXzR6oWLX8)
 
-✅ Translated for: ar, az, bg, ca, cs, da, de, en, es, fi, fr, hr, hu, id, it, ja, ko, lt, nl, no, oc, pt, pl, ro, rs, ru, sk, sv, tr, uk and zhCN
+✅ Translated for: ar, az, bg, ca, cs, da, de, en, es, fi, fr, hr, hu, id, it, ja, ko, lt, nl, no, oc, pt, pl, ro, rs, ru, sk, sv, tr, uk and zh-CN
 
 ✅ Vue 3 support
 
@@ -14,9 +14,11 @@
 
 🚩 API changes since continuing Dario Ferderber's work on [gitlab.com/broj42/nuxt-cookie-control](https://gitlab.com/broj42/nuxt-cookie-control), make sure to read the README!
 
+
 ## 🚀 Getting Started
 
 [![Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/dargmuesli/nuxt-cookie-control?file=playground%2Fapp.vue)
+
 
 ### Installation
 
@@ -25,6 +27,7 @@ npm i -D @dargmuesli/nuxt-cookie-control
 yarn add -D @dargmuesli/nuxt-cookie-control
 pnpm i -D @dargmuesli/nuxt-cookie-control
 ```
+
 
 ### Configuration
 
@@ -46,6 +49,7 @@ modules: [
   }]
 ]
 ```
+
 
 ### Usage
 
@@ -92,6 +96,7 @@ if (cookieControl.cookiesEnabledIds.value.includes('google-analytics')) {
   initGoogleAnalytics() // placeholder for your custom initialization
 }
 ```
+
 
 ## API
 
@@ -259,10 +264,10 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 ### Props
 
 - locale: `['en']`
-
 ```html
 <CookieControl locale="de" />
 ```
+
 
 <!-- Badges -->
 [ci-image]: https://img.shields.io/github/actions/workflow/status/dargmuesli/nuxt-cookie-control/ci.yml
