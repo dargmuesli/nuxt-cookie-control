@@ -1,3 +1,15 @@
+## [7.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.7...7.3.0) (2024-02-23)
+
+
+### Features
+
+* **locale:** add zhCN Mainland China translation ([bc1c9ad](https://github.com/dargmuesli/nuxt-cookie-control/commit/bc1c9adf0a8b6302d76efbebf02ae2cdf3ca1c21))
+
+
+### Bug Fixes
+
+* **locale:** using "zh-CN" instead of "zhCN" ([a450413](https://github.com/dargmuesli/nuxt-cookie-control/commit/a4504130aba92850c86a6b3864d8e8cb68f14edd))
+
 ## [7.2.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.6...7.2.7) (2024-02-21)
 
 
