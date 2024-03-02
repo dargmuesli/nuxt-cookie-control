@@ -1,10 +1,4 @@
 {
-  "eslint.workingDirectories": [
-    {
-      "directory": "src" // needed to correctly lint global locale strings like `t('globalStatusLoading')`
-    }
-  ],
-  "shellcheck.customArgs": ["-x"],
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -25,5 +19,11 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "eslint.workingDirectories": [
+    {
+      "directory": "src" // needed to correctly lint global locale strings like `t('globalStatusLoading')`
+    }
+  ],
+  "shellcheck.customArgs": ["-x"]
 }
