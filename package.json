@@ -24,7 +24,7 @@
     "lint-staged": "15.2.2",
     "nuxt": "3.10.3",
     "prettier": "3.2.5",
-    "typescript": "5.3.3",
+    "typescript": "5.4.2",
     "vue": "3.4.21",
     "vue-tsc": "2.0.5",
     "webpack": "5.90.3"
