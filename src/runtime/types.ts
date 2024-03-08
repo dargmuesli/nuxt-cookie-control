@@ -6,6 +6,7 @@ import en from './locale/en'
 export type Locale =
   | 'ar'
   | 'az'
+  | 'be'
   | 'bg'
   | 'ca'
   | 'cs'
