@@ -1,3 +1,15 @@
+## [7.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.3.1...7.4.0) (2024-03-08)
+
+
+### Features
+
+* add BE locale ([38d3bd7](https://github.com/dargmuesli/nuxt-cookie-control/commit/38d3bd767dbdd2d2c8409638fb5d7b3df6b6b088))
+
+
+### Bug Fixes
+
+* formatting ([bd3330e](https://github.com/dargmuesli/nuxt-cookie-control/commit/bd3330ed320dfccb4f0c936e9cd72e33adb2769d))
+
 ## [7.3.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.3.0...7.3.1) (2024-03-06)
 
 
