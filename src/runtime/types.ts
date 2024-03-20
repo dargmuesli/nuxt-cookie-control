@@ -144,6 +144,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   cookieOptions: {
     path: '/',
     sameSite: 'strict',
+    secure: process.env.NODE_ENV === 'development' ? undefined : true,
   },
   isAcceptNecessaryButtonEnabled: true,
   isControlButtonEnabled: true,
