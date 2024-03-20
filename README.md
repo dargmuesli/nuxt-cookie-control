@@ -158,6 +158,7 @@ cookieNameCookiesEnabledIds: 'ncc_e',
 // Options to pass to nuxt's useCookie
 cookieOptions: {
   path: '/',
+  sameSite: 'strict',
 }
 
 // Switch to toggle the "accept necessary" button.

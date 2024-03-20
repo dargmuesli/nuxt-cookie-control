@@ -143,6 +143,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   cookieNameCookiesEnabledIds: 'ncc_e',
   cookieOptions: {
     path: '/',
+    sameSite: 'strict',
   },
   isAcceptNecessaryButtonEnabled: true,
   isControlButtonEnabled: true,
