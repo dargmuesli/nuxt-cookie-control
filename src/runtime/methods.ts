@@ -13,7 +13,7 @@ export const getCookieIds = (cookies: Cookie[]) =>
   cookies.map((cookie) => cookie.id)
 
 export const removeCookie = (name: string) =>
-  useCookie(name, { expires: new Date(0) })
+  (useCookie(name).value = undefined)
 
 export const resolveTranslatable = (
   translatable: Translatable,
