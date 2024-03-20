@@ -197,14 +197,14 @@ import {
   CookieType,
   type Locale,
   type Translatable,
-} from '../types'
+} from '#cookie-control/types'
 import {
   getAllCookieIdsString,
   getCookieIds,
   removeCookie,
   resolveTranslatable,
-} from '../methods'
-
+} from '#cookie-control/methods'
+import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import setCssVariables from '#cookie-control/set-vars'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
@@ -246,7 +246,8 @@ const isSaved = computed(
   () =>
     getCookieIds(cookiesEnabled.value || [])
       .sort()
-      .join('|') !== getCookieIds(localCookiesEnabled.value).sort().join('|'),
+      .join(COOKIE_ID_SEPARATOR) !==
+    getCookieIds(localCookiesEnabled.value).sort().join(COOKIE_ID_SEPARATOR),
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
@@ -358,7 +359,9 @@ watch(
     localCookiesEnabled.value = [...(current || [])]
 
     if (isConsentGiven.value) {
-      cookieCookiesEnabledIds.value = getCookieIds(current || []).join('|')
+      cookieCookiesEnabledIds.value = getCookieIds(current || []).join(
+        COOKIE_ID_SEPARATOR,
+      )
 
       for (const cookieEnabled of current || []) {
         if (!cookieEnabled.src) continue

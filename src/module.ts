@@ -138,7 +138,7 @@ const loadLocales = async (moduleOptions: ModuleOptions) => {
     }
   }
 
-  // const regex = new RegExp(moduleOptions.locales.join('|'))
+  // const regex = new RegExp(moduleOptions.locales.join(COOKIE_ID_SEPARATOR))
   // addWebpackPlugin(
   //   new webpack.ContextReplacementPlugin(
   //     /nuxt-cookie-control[/\\]dist[/\\]runtime[/\\]locale$/,
