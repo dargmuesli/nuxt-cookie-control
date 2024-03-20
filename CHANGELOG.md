@@ -1,3 +1,16 @@
+## [8.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.0.0-beta.2...8.0.0-beta.3) (2024-03-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* **cookie-options:** set secure for production
+* **cookie-options:** set same site strict by default
+
+### Features
+
+* **cookie-options:** set same site strict by default ([8bb24c9](https://github.com/dargmuesli/nuxt-cookie-control/commit/8bb24c907679ca4aa2a674044ce77098c6e9f760))
+* **cookie-options:** set secure for production ([469701e](https://github.com/dargmuesli/nuxt-cookie-control/commit/469701e2ac4af23cc11d12eb19db900913ada95a))
+
 ## [8.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.0.0-beta.1...8.0.0-beta.2) (2024-03-20)
 
 
