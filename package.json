@@ -79,5 +79,5 @@
   },
   "type": "module",
   "types": "./dist/module.d.ts",
-  "version": "7.4.0"
+  "version": "7.4.1"
 }
