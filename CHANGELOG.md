@@ -1,3 +1,16 @@
+## [7.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.4.1...7.5.0) (2024-03-21)
+
+
+### Features
+
+* add initial recommended state management ([2a90fa9](https://github.com/dargmuesli/nuxt-cookie-control/commit/2a90fa9ab4adabc239eafbd3a8ba18a97b9f57ab))
+* **cookie:** rename `initialRecommendedState` to `isPreselected` ([cb49528](https://github.com/dargmuesli/nuxt-cookie-control/commit/cb49528162d0ba4361d287c3f004cc18573d6db3))
+
+
+### Bug Fixes
+
+* **plugin:** correct cookie value usage ([6372499](https://github.com/dargmuesli/nuxt-cookie-control/commit/6372499713b7b3470e55bfff0617400047ae5cf4))
+
 ## [7.4.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.4.0...7.4.1) (2024-03-20)
 
 
