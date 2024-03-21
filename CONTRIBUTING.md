@@ -34,5 +34,14 @@ A complete contribution implements a feature or a bug fix and keeps all [automat
 1. Create meaningful, well-separated and [well-named](https://commitlint.io/) commits
 1. Create a pull request from your feature branch to the correct branch of this project
 
-## Contribution New Locales
-For new locales, adhere to the ISO 639-1 code, and incorporate alterations to the code similar to the pull request (PR) example provided at https://github.com/dargmuesli/nuxt-cookie-control/pull/194.
+## Features
+
+### Locales
+To contribute new locales, please follow these instructions:
+
+1. add a locale file like `src/runtime/locale/pl.ts`
+2. import and export it in `src/runtime/locale/index.ts`
+3. add it to the `Locale` type in `src/runtime/types.ts`
+4. add it to the list of supported locales in the `README.md`
+
+In general, please name all locales in accordance with the [ISO 639-1 standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
