@@ -1,3 +1,10 @@
+## [7.5.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.5.0...7.5.1) (2024-03-21)
+
+
+### Bug Fixes
+
+* implement feedback ([e3e54e8](https://github.com/dargmuesli/nuxt-cookie-control/commit/e3e54e8900371129416a06b8eaefc0564ec2cd52))
+
 ## [7.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.4.1...7.5.0) (2024-03-21)
 
 
