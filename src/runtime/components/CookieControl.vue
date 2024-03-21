@@ -94,9 +94,11 @@
                             :id="resolveTranslatable(cookie.name, props.locale)"
                             type="checkbox"
                             :checked="
-                              getCookieIds(localCookiesEnabled).includes(
-                                getCookieId(cookie),
-                              )
+                              isConsentGiven === undefined
+                                ? cookie.isPreselected
+                                : getCookieIds(localCookiesEnabled).includes(
+                                    getCookieId(cookie),
+                                  )
                             "
                             @change="toogleCookie(cookie)"
                           />
