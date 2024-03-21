@@ -1,3 +1,62 @@
+## [7.4.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.4.0...7.4.1) (2024-03-20)
+
+
+### Bug Fixes
+
+* schedule release ([ff94915](https://github.com/dargmuesli/nuxt-cookie-control/commit/ff949157a60c8c501f89847a8da69b33b40b930f))
+
+## [7.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.3.1...7.4.0) (2024-03-08)
+
+
+### Features
+
+* add BE locale ([38d3bd7](https://github.com/dargmuesli/nuxt-cookie-control/commit/38d3bd767dbdd2d2c8409638fb5d7b3df6b6b088))
+
+
+### Bug Fixes
+
+* formatting ([bd3330e](https://github.com/dargmuesli/nuxt-cookie-control/commit/bd3330ed320dfccb4f0c936e9cd72e33adb2769d))
+
+## [7.3.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.3.0...7.3.1) (2024-03-06)
+
+
+### Bug Fixes
+
+* schedule release ([c534ad1](https://github.com/dargmuesli/nuxt-cookie-control/commit/c534ad1c5645436a8b3dc4cd07799d08bd627ec2))
+
+## [7.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.7...7.3.0) (2024-02-23)
+
+
+### Features
+
+* **locale:** add zhCN Mainland China translation ([bc1c9ad](https://github.com/dargmuesli/nuxt-cookie-control/commit/bc1c9adf0a8b6302d76efbebf02ae2cdf3ca1c21))
+
+
+### Bug Fixes
+
+* **locale:** using "zh-CN" instead of "zhCN" ([a450413](https://github.com/dargmuesli/nuxt-cookie-control/commit/a4504130aba92850c86a6b3864d8e8cb68f14edd))
+
+## [7.2.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.6...7.2.7) (2024-02-21)
+
+
+### Bug Fixes
+
+* schedule release ([9039a80](https://github.com/dargmuesli/nuxt-cookie-control/commit/9039a8095e92790df34517d901dbdd7c5f1f1b32))
+
+## [7.2.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.5...7.2.6) (2024-02-13)
+
+
+### Bug Fixes
+
+* **nuxt:** remove config file ([6f99bea](https://github.com/dargmuesli/nuxt-cookie-control/commit/6f99beaec723548a468db94fac12e0cde7902edf))
+
+## [7.2.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.4...7.2.5) (2024-01-31)
+
+
+### Bug Fixes
+
+* schedule release ([f9643ad](https://github.com/dargmuesli/nuxt-cookie-control/commit/f9643ade7209f5419cc02074781cbbcf374f9e6d))
+
 ## [7.2.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.2.3...7.2.4) (2024-01-17)
 
 

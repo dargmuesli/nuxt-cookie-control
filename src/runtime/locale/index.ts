@@ -1,5 +1,6 @@
 import ar from './ar'
 import az from './az'
+import be from './be'
 import bg from './bg'
 import ca from './ca'
 import cs from './cs'
@@ -28,10 +29,11 @@ import sk from './sk'
 import sv from './sv'
 import tr from './tr'
 import uk from './uk'
-
+import zhCN from './zh-CN'
 export const locales = [
   ar,
   az,
+  be,
   bg,
   ca,
   cs,
@@ -60,4 +62,5 @@ export const locales = [
   sv,
   tr,
   uk,
+  zhCN,
 ]
