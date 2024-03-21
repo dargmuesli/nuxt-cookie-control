@@ -216,7 +216,9 @@ Every property that includes a `{ en: ... }` value is a translatable property th
     'https://example.com/terms': 'Terms of Service',
   },
   src: 'https://example.com/preferences/js?id=<API-KEY>',
-  targetCookieIds: ['xmpl_a', 'xmpl_b']
+  targetCookieIds: ['xmpl_a', 'xmpl_b'],
+  initialRecommendedState: false // default: `false`; This lets you preselect certain cookies in the cookie control window.
+  // The cookies with initialRecommendedState are not set, only the toggle is turned on. Attention: This is not GDPR/DSGVO compliant. Use at your own risk!
 }
 ```
 
