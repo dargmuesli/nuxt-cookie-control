@@ -278,11 +278,3 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 
 [npm-downloads-src]: https://badgen.net/npm/dm/@dargmuesli/nuxt-cookie-control
 [npm-downloads-href]: https://npmjs.com/package/@dargmuesli/nuxt-cookie-control
-
-## Contribute
-
-For new locales, adhere to the ISO 639-1 code, and incorporate alterations to the code similar to the pull request (PR) example provided at https://github.com/dargmuesli/nuxt-cookie-control/pull/194.
-
-## License
-
-[MIT](./LICENSE)
