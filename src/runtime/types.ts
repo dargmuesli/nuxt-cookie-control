@@ -49,11 +49,11 @@ export enum CookieType {
 export interface Cookie {
   description?: Translatable
   id?: string
+  isPreselected?: boolean
   name: Translatable
   links?: Record<string, string | null>
   src?: string
   targetCookieIds?: string[]
-  initialRecommendedState?: boolean
 }
 
 export interface LocaleStrings {

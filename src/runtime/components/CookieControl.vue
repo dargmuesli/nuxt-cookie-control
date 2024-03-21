@@ -95,7 +95,7 @@
                             type="checkbox"
                             :checked="
                               isConsentGiven === undefined
-                                ? cookie.initialRecommendedState
+                                ? cookie.isPreselected
                                 : getCookieIds(localCookiesEnabled).includes(
                                     getCookieId(cookie),
                                   )
