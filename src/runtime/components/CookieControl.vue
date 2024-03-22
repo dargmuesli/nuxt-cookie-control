@@ -142,14 +142,17 @@
                               >
                                 <br />
                                 <NuxtLink
-                                  v-if="!entry[0].startsWith('http')"
                                   :to="entry[0]"
-                                  @click="isModalActive = false"
+                                  :external="
+                                    entry[0].toLowerCase().startsWith('http')
+                                  "
+                                  @click="
+                                    !entry[0].toLowerCase().startsWith('http')
+                                      ? (isModalActive = false)
+                                      : null
+                                  "
                                   >{{ entry[1] || entry[0] }}</NuxtLink
                                 >
-                                <a v-else :href="entry[0]">{{
-                                  entry[1] || entry[0]
-                                }}</a>
                               </span>
                             </template>
                           </label>
