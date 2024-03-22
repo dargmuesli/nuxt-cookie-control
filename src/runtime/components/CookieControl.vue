@@ -141,7 +141,13 @@
                                 :key="entry[0]"
                               >
                                 <br />
-                                <a :href="entry[0]">{{
+                                <NuxtLink
+                                  v-if="!entry[0].startsWith('http')"
+                                  :to="entry[0]"
+                                  @click="isModalActive = false"
+                                  >{{ entry[1] || entry[0] }}</NuxtLink
+                                >
+                                <a v-else :href="entry[0]">{{
                                   entry[1] || entry[0]
                                 }}</a>
                               </span>
