@@ -1,3 +1,28 @@
+## [8.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.5.1...8.0.0) (2024-03-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **links:** differentiate external from internal links
+* **cookie-options:** set secure for production
+* **cookie-options:** set same site strict by default
+* use `~` as cookie id separator
+* **module:** require cookie id
+
+### Features
+
+* **cookie-options:** set same site strict by default ([8bb24c9](https://github.com/dargmuesli/nuxt-cookie-control/commit/8bb24c907679ca4aa2a674044ce77098c6e9f760))
+* **cookie-options:** set secure for production ([469701e](https://github.com/dargmuesli/nuxt-cookie-control/commit/469701e2ac4af23cc11d12eb19db900913ada95a))
+* **cookie:** fix to use NuxtLink external attribute ([81c780f](https://github.com/dargmuesli/nuxt-cookie-control/commit/81c780ff0bd537ef0f683bfe11e08e6375e2cda2))
+* **links:** differentiate external from internal links ([2de045c](https://github.com/dargmuesli/nuxt-cookie-control/commit/2de045cf646b3e776087b6600bd428797395cb79))
+* **module:** require cookie id ([1c415bc](https://github.com/dargmuesli/nuxt-cookie-control/commit/1c415bc2a6fff71530b6e125d29dbdf7cbac0f60))
+* use `~` as cookie id separator ([5e6bafd](https://github.com/dargmuesli/nuxt-cookie-control/commit/5e6bafd05d2b1fe332db3cf9b04241b440f96614))
+
+
+### Bug Fixes
+
+* **expiry:** remove cookies for which permissions are revoked ([72fce9a](https://github.com/dargmuesli/nuxt-cookie-control/commit/72fce9a32fdfa0ea5645808e91327012a6fd1f26))
+
 ## [8.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.0.0-beta.3...8.0.0-beta.4) (2024-03-26)
 
 
