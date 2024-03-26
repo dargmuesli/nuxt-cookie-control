@@ -141,9 +141,16 @@
                                 :key="entry[0]"
                               >
                                 <br />
-                                <a :href="entry[0]">{{
-                                  entry[1] || entry[0]
-                                }}</a>
+                                <NuxtLink
+                                  :to="entry[0]"
+                                  @click="
+                                    !entry[0].toLowerCase().startsWith('http')
+                                      ? (isModalActive = false)
+                                      : null
+                                  "
+                                >
+                                  {{ entry[1] || entry[0] }}
+                                </NuxtLink>
                               </span>
                             </template>
                           </label>

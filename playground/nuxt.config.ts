@@ -35,7 +35,8 @@ export default defineNuxtConfig({
           id: 'o',
           name: 'Optional Cookie',
           links: {
-            'https://example.com': 'Privacy Policy',
+            '/': 'Local Privacy Policy',
+            'https://example.com': '3rd Party Privacy Policy',
             'https://example.cop': null,
           },
           targetCookieIds: ['_o', '_p', '_t'],
