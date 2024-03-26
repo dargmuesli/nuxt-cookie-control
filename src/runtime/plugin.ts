@@ -20,7 +20,7 @@ const plugin: Plugin<{ cookies: State }> = defineNuxtPlugin((_nuxtApp) => {
   ).value?.split(COOKIE_ID_SEPARATOR)
 
   const isConsentGiven = ref<boolean | undefined>(
-    cookieIsConsentGiven === undefined
+    cookieIsConsentGiven.value === undefined
       ? undefined
       : cookieIsConsentGiven.value === getAllCookieIdsString(moduleOptions),
   )

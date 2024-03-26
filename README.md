@@ -208,6 +208,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
     en: 'This cookie stores preferences.'
   },
   id: 'p', // use a short cookie id to save bandwidth and prefixes to separate
+  isPreselected: false // `true` is not GDPR compliant! This flag does not enable any cookies, it only preselects the cookie's modal toggle. The default is `false`.
   name: {
     en: 'Preferences' // you always have to specify a cookie name (in English)
   },
@@ -216,7 +217,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
     'https://example.com/terms': 'Terms of Service',
   },
   src: 'https://example.com/preferences/js?id=<API-KEY>',
-  targetCookieIds: ['xmpl_a', 'xmpl_b']
+  targetCookieIds: ['xmpl_a', 'xmpl_b'],
 }
 ```
 
