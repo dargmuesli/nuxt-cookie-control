@@ -72,10 +72,10 @@
   "scripts": {
     "build": "nuxt-module-build build",
     "dev": "pnpm --dir playground run dev",
-    "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
-    "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
+    "lint": "eslint --ext .js,.ts,.vue . && nuxi typecheck",
+    "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxi typecheck --fix",
     "prepack": "pnpm build",
-    "prepare": "husky"
+    "prepare": "husky && nuxt-module-build prepare"
   },
   "type": "module",
   "types": "./dist/module.d.ts",
