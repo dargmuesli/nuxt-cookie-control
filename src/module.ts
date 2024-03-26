@@ -72,6 +72,7 @@ export default defineNuxtModule<ModuleOptions>({
 const blockIframes = (moduleOptions: ModuleOptions) => {
   if (moduleOptions.isIframeBlocked) {
     const isIframeBlocked = {
+      id: 'ncc_f',
       name: 'functional',
     }
 
@@ -137,7 +138,7 @@ const loadLocales = async (moduleOptions: ModuleOptions) => {
     }
   }
 
-  // const regex = new RegExp(moduleOptions.locales.join('|'))
+  // const regex = new RegExp(moduleOptions.locales.join(COOKIE_ID_SEPARATOR))
   // addWebpackPlugin(
   //   new webpack.ContextReplacementPlugin(
   //     /nuxt-cookie-control[/\\]dist[/\\]runtime[/\\]locale$/,

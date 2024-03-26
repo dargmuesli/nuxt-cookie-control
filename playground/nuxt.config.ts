@@ -22,6 +22,7 @@ export default defineNuxtConfig({
             de: 'Dieser Cookie tut etwas.',
             en: 'This cookie does something very very very very very very very long.',
           },
+          id: 'n',
           name: {
             de: 'Notwendiger Cookie',
             en: 'Necessary Cookie',
@@ -31,10 +32,11 @@ export default defineNuxtConfig({
       ],
       optional: [
         {
-          id: 'op',
+          id: 'o',
           name: 'Optional Cookie',
           links: {
-            'https://example.com': 'Privacy Policy',
+            '/': 'Local Privacy Policy',
+            'https://example.com': '3rd Party Privacy Policy',
             'https://example.cop': null,
           },
           targetCookieIds: ['_o', '_p', '_t'],

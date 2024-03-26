@@ -97,7 +97,7 @@
                               isConsentGiven === undefined
                                 ? cookie.isPreselected
                                 : getCookieIds(localCookiesEnabled).includes(
-                                    getCookieId(cookie),
+                                    cookie.id,
                                   )
                             "
                             @change="toogleCookie(cookie)"
@@ -127,7 +127,7 @@
                               {{
                                 'IDs: ' +
                                 cookie.targetCookieIds
-                                  .map((id: string) => `"${id}"`)
+                                  .map((id) => `"${id}"`)
                                   .join(', ')
                               }}
                             </span>
@@ -141,9 +141,16 @@
                                 :key="entry[0]"
                               >
                                 <br />
-                                <a :href="entry[0]">{{
-                                  entry[1] || entry[0]
-                                }}</a>
+                                <NuxtLink
+                                  :to="entry[0]"
+                                  @click="
+                                    !entry[0].toLowerCase().startsWith('http')
+                                      ? (isModalActive = false)
+                                      : null
+                                  "
+                                >
+                                  {{ entry[1] || entry[0] }}
+                                </NuxtLink>
                               </span>
                             </template>
                           </label>
@@ -199,15 +206,14 @@ import {
   CookieType,
   type Locale,
   type Translatable,
-} from '../types'
+} from '#cookie-control/types'
 import {
   getAllCookieIdsString,
-  getCookieId,
   getCookieIds,
   removeCookie,
   resolveTranslatable,
-} from '../methods'
-
+} from '#cookie-control/methods'
+import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import setCssVariables from '#cookie-control/set-vars'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
@@ -249,7 +255,8 @@ const isSaved = computed(
   () =>
     getCookieIds(cookiesEnabled.value || [])
       .sort()
-      .join('|') !== getCookieIds(localCookiesEnabled.value).sort().join('|'),
+      .join(COOKIE_ID_SEPARATOR) !==
+    getCookieIds(localCookiesEnabled.value).sort().join(COOKIE_ID_SEPARATOR),
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
@@ -268,7 +275,7 @@ const acceptPartial = () => {
     cookiesOptionalEnabled: [
       ...moduleOptions.cookies.necessary,
       ...moduleOptions.cookies.optional,
-    ].filter((cookie) => localCookiesEnabledIds.includes(getCookieId(cookie))),
+    ].filter((cookie) => localCookiesEnabledIds.includes(cookie.id)),
   })
 }
 const decline = () => {
@@ -327,9 +334,7 @@ const toggleButton = ($event: MouseEvent) => {
   )?.click()
 }
 const toogleCookie = (cookie: Cookie) => {
-  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(
-    getCookieId(cookie),
-  )
+  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(cookie.id)
 
   if (cookieIndex < 0) {
     localCookiesEnabled.value.push(cookie)
@@ -363,7 +368,9 @@ watch(
     localCookiesEnabled.value = [...(current || [])]
 
     if (isConsentGiven.value) {
-      cookieCookiesEnabledIds.value = getCookieIds(current || []).join('|')
+      cookieCookiesEnabledIds.value = getCookieIds(current || []).join(
+        COOKIE_ID_SEPARATOR,
+      )
 
       for (const cookieEnabled of current || []) {
         if (!cookieEnabled.src) continue

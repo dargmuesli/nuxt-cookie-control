@@ -48,7 +48,7 @@ export enum CookieType {
 
 export interface Cookie {
   description?: Translatable
-  id?: string
+  id: string
   isPreselected?: boolean
   name: Translatable
   links?: Record<string, string | null>
@@ -144,6 +144,8 @@ export const DEFAULTS: Required<ModuleOptions> = {
   cookieNameCookiesEnabledIds: 'ncc_e',
   cookieOptions: {
     path: '/',
+    sameSite: 'strict',
+    secure: process.env.NODE_ENV === 'development' ? undefined : true,
   },
   isAcceptNecessaryButtonEnabled: true,
   isControlButtonEnabled: true,

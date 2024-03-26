@@ -4,8 +4,7 @@
     "Dario Ferderber <dario.ferderber@broj42.com>"
   ],
   "dependencies": {
-    "@nuxt/kit": "3.11.1",
-    "@sindresorhus/slugify": "^2.2.1",
+    "@nuxt/kit": "^3.8.0",
     "css-vars-ponyfill": "^2.4.8",
     "string-replace-loader": "^3.1.0"
   },
@@ -72,6 +71,7 @@
   },
   "scripts": {
     "build": "nuxt-module-build build",
+    "dev": "pnpm --dir playground run dev",
     "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
     "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
     "prepack": "pnpm build",
@@ -79,5 +79,5 @@
   },
   "type": "module",
   "types": "./dist/module.d.ts",
-  "version": "7.5.1"
+  "version": "8.0.0-beta.4"
 }
