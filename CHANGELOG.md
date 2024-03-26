@@ -1,3 +1,23 @@
+## [8.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.0.0-beta.3...8.0.0-beta.4) (2024-03-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **links:** differentiate external from internal links
+
+### Features
+
+* add initial recommended state management ([2a90fa9](https://github.com/dargmuesli/nuxt-cookie-control/commit/2a90fa9ab4adabc239eafbd3a8ba18a97b9f57ab))
+* **cookie:** fix to use NuxtLink external attribute ([81c780f](https://github.com/dargmuesli/nuxt-cookie-control/commit/81c780ff0bd537ef0f683bfe11e08e6375e2cda2))
+* **cookie:** rename `initialRecommendedState` to `isPreselected` ([cb49528](https://github.com/dargmuesli/nuxt-cookie-control/commit/cb49528162d0ba4361d287c3f004cc18573d6db3))
+* **links:** differentiate external from internal links ([2de045c](https://github.com/dargmuesli/nuxt-cookie-control/commit/2de045cf646b3e776087b6600bd428797395cb79))
+
+
+### Bug Fixes
+
+* implement feedback ([e3e54e8](https://github.com/dargmuesli/nuxt-cookie-control/commit/e3e54e8900371129416a06b8eaefc0564ec2cd52))
+* **plugin:** correct cookie value usage ([6372499](https://github.com/dargmuesli/nuxt-cookie-control/commit/6372499713b7b3470e55bfff0617400047ae5cf4))
+
 ## [8.0.0-beta.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.0.0-beta.2...8.0.0-beta.3) (2024-03-20)
 
 
