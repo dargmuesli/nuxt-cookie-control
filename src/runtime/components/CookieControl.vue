@@ -143,16 +143,14 @@
                                 <br />
                                 <NuxtLink
                                   :to="entry[0]"
-                                  :external="
-                                    entry[0].toLowerCase().startsWith('http')
-                                  "
                                   @click="
                                     !entry[0].toLowerCase().startsWith('http')
                                       ? (isModalActive = false)
                                       : null
                                   "
-                                  >{{ entry[1] || entry[0] }}</NuxtLink
                                 >
+                                  {{ entry[1] || entry[0] }}
+                                </NuxtLink>
                               </span>
                             </template>
                           </label>
