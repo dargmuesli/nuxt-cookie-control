@@ -217,7 +217,7 @@ import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import setCssVariables from '#cookie-control/set-vars'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
-export interface Props {
+interface Props {
   locale?: Locale
 }
 const props = withDefaults(defineProps<Props>(), {
