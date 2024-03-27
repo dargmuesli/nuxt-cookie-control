@@ -6,7 +6,7 @@
 
 ![nuxt-cookie-control](https://drive.google.com/a/broj42.com/uc?id=19sFguJo7SKUvmH4xu9DhK9ZXzR6oWLX8)
 
-✅ Translated for: ar, az, be, bg, ca, cs, da, de, en, es, fi, fr, hr, hu, id, it, ja, ko, lt, nl, no, oc, pt, pl, ro, rs, ru, sk, sv, tr, uk and zh-CN
+✅ Translated for: ar, az, be, bg, ca, cs, da, de, en, es, fi, fr, hr, hu, id, it, ja, km, ko, lt, nl, no, oc, pt, pl, ro, rs, ru, sk, sv, tr, uk and zh-CN
 
 ✅ Vue 3 support
 
