@@ -1,3 +1,10 @@
+## [8.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.0.0...8.1.0) (2024-03-28)
+
+
+### Features
+
+* add support khmer language ([c8a9341](https://github.com/dargmuesli/nuxt-cookie-control/commit/c8a934194ed28655dbb1eb7083bef35f2d84d562))
+
 ## [8.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/7.5.1...8.0.0) (2024-03-26)
 
 
