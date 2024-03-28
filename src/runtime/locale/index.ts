@@ -15,6 +15,7 @@ import hu from './hu'
 import id from './id'
 import it from './it'
 import ja from './ja'
+import km from './km'
 import ko from './ko'
 import lt from './lt'
 import nl from './nl'
@@ -48,6 +49,7 @@ export const locales = [
   id,
   it,
   ja,
+  km,
   ko,
   lt,
   nl,

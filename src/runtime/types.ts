@@ -21,6 +21,7 @@ export type Locale =
   | 'id'
   | 'it'
   | 'ja'
+  | 'km'
   | 'ko'
   | 'lt'
   | 'nl'
