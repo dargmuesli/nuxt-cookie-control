@@ -23,9 +23,7 @@
 ### Installation
 
 ```bash
-npm i -D @dargmuesli/nuxt-cookie-control
-yarn add -D @dargmuesli/nuxt-cookie-control
-pnpm i -D @dargmuesli/nuxt-cookie-control
+npx nuxi@latest module add cookie-control
 ```
 
 
