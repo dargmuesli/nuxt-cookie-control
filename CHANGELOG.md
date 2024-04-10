@@ -1,3 +1,10 @@
+## [8.1.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.1.1...8.1.2) (2024-04-10)
+
+
+### Bug Fixes
+
+* **locale:** change language to use "kuki" instead of "cookie" for localization ([#205](https://github.com/dargmuesli/nuxt-cookie-control/issues/205)) ([5e0779b](https://github.com/dargmuesli/nuxt-cookie-control/commit/5e0779b448f5549d61a230eef72003559c1a0e5a))
+
 ## [8.1.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.1.0...8.1.1) (2024-04-10)
 
 
