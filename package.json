@@ -25,7 +25,7 @@
     "prettier": "3.2.5",
     "typescript": "5.4.5",
     "vue": "3.4.21",
-    "vue-tsc": "2.0.12",
+    "vue-tsc": "2.0.13",
     "webpack": "5.91.0"
   },
   "engines": {
