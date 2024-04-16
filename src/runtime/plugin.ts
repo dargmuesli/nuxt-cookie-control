@@ -1,10 +1,9 @@
 import { ref } from 'vue'
 
-import type { Plugin } from '#app'
-
 import { COOKIE_ID_SEPARATOR } from './constants'
 import { getAllCookieIdsString } from './methods'
 import type { Cookie, State } from './types'
+import type { Plugin } from '#app'
 
 import { defineNuxtPlugin, useCookie } from '#imports'
 import moduleOptions from '#build/cookie-control-options'

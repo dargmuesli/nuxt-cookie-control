@@ -9,8 +9,7 @@
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
-    >
-    </iframe>
+    />
 
     <fieldset>
       <legend>Choose a language</legend>

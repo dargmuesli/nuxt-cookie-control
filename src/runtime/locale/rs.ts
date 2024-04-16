@@ -1,4 +1,5 @@
 import type { LocaleStrings } from '../types'
+
 export default {
   accept: 'Dozvoli',
   acceptAll: 'Dozvoli sve',
