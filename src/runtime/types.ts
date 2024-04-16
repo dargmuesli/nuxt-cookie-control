@@ -38,7 +38,9 @@ export type Locale =
   | 'uk'
   | 'zh-CN'
 
-export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
+export type PartialRecord<K extends string | number | symbol, T> = Partial<
+  Record<K, T>
+>
 
 export type Translatable = string | PartialRecord<Locale, string>
 
@@ -84,7 +86,7 @@ export interface ModuleOptions {
     | 'bottom-right'
     | 'bottom-full'
   closeModalOnClickOutside: boolean
-  colors: false | Record<string, any>
+  colors: false | Record<string, unknown>
   cookieExpiryOffsetMs: number
   cookieNameCookiesEnabledIds: string
   cookieNameIsConsentGiven: string

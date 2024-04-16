@@ -349,7 +349,7 @@ const toggleLabel = ($event: KeyboardEvent) => {
 // lifecycle
 onBeforeMount(() => {
   if (moduleOptions.colors) {
-    const variables: Record<string, any> = {}
+    const variables: Record<string, string> = {}
 
     for (const key in moduleOptions.colors) {
       variables[`cookie-control-${key}`] = `${moduleOptions.colors[key]}`

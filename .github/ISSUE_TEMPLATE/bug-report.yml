@@ -4,8 +4,8 @@ description: Create a report to help us improve this project.
 body:
   - type: markdown
     attributes:
-        # Please carefully read the contribution docs before creating a bug report
-        # 👉 https://v3.nuxtjs.org/community/reporting-bugs
+      # Please carefully read the contribution docs before creating a bug report
+      # 👉 https://v3.nuxtjs.org/community/reporting-bugs
       value: |
         Please use the template below to create a minimal reproduction
         👉 https://stackblitz.com/github/dargmuesli/nuxt-cookie-control?file=playground%2Fapp.vue

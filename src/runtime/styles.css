@@ -58,7 +58,9 @@
   cursor: pointer;
   padding: 12px 20px;
   backface-visibility: hidden;
-  transition: background-color 200ms, color 200ms;
+  transition:
+    background-color 200ms,
+    color 200ms;
 }
 .cookieControl__Bar {
   position: fixed;
@@ -86,7 +88,7 @@
   color: var(--cookie-control-barButtonHoverColor);
   background-color: var(--cookie-control-barButtonHoverBackground);
 }
-.cookieControl__Bar button:focus{
+.cookieControl__Bar button:focus {
   box-shadow: 0 0 0 3px var(--cookie-control-focusRingColor);
 }
 .cookieControl__Bar button + button {

@@ -1,6 +1,17 @@
 // TODO: move to own library (https://github.com/leanupjs/vite-plugin-replace/pull/2)
+import type { Plugin } from 'vite'
 
-const execSrcReplacements = (src: any, replacements: any[]) => {
+// https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+interface ViteReplacement {
+  from: string | RegExp
+  to: string | ((match: string) => string)
+}
+
+export interface VitePluginReplaceConfig {
+  replacements: ViteReplacement[]
+}
+
+const execSrcReplacements = (src: string, replacements: ViteReplacement[]) => {
   for (const replacement of replacements) {
     if (
       (typeof replacement.from === 'string' ||
@@ -16,13 +27,13 @@ const execSrcReplacements = (src: any, replacements: any[]) => {
       throw new TypeError(
         "[vite-plugin-replace]: The replacement option 'to' is not of type 'string' or 'Function'",
       )
-    } else src = src.replace(replacement.from, replacement.to)
+    } else src = src.replace(replacement.from, replacement.to as string) // W3C - Function is allowed!
   }
 
   return src
 }
 
-export const replaceCodePlugin = (config: any) => {
+export const replaceCodePlugin = (config: VitePluginReplaceConfig): Plugin => {
   if (config === undefined) {
     config = {
       replacements: [],
@@ -40,11 +51,11 @@ export const replaceCodePlugin = (config: any) => {
   return {
     name: 'transform-file',
     enforce: 'pre',
-    transform: function (src: any) {
+    transform: function (src: string) {
       return {
         code: execSrcReplacements(src, config.replacements),
         map: null,
       }
     },
-  } as any
+  }
 }
