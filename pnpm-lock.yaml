@@ -31,8 +31,8 @@ importers:
         specifier: 'link:'
         version: 'link:'
       '@nuxt/eslint-config':
-        specifier: 0.3.7
-        version: 0.3.7(eslint@9.0.0)(typescript@5.4.5)
+        specifier: 0.3.8
+        version: 0.3.8(eslint@9.0.0)(typescript@5.4.5)
       '@nuxt/module-builder':
         specifier: 0.5.5
         version: 0.5.5(@nuxt/kit@3.11.2(rollup@4.14.2))(nuxi@3.11.1)(typescript@5.4.5)
@@ -797,13 +797,13 @@ packages:
       nuxt: ^3.9.0
       vite: '*'
 
-  '@nuxt/eslint-config@0.3.7':
-    resolution: {integrity: sha512-Pm3bf/XfbG9r/C76BSbeEquu3gXSsjoQYbILQP/peVBEM1gSJM2rPMmawfgV7V13UORpFBXhhk5hKQ3p7Auwkg==}
+  '@nuxt/eslint-config@0.3.8':
+    resolution: {integrity: sha512-c65jwXbiRnJIQQqbtASmOIbtKoci7njizZ++n5p00r0065ICUME0h9NsO/s0WRJp3PTxuREzX1Ey/LNaZJoE1w==}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
 
-  '@nuxt/eslint-plugin@0.3.7':
-    resolution: {integrity: sha512-dg5Lxvf+jHO5otRb6j0tYHlL5/MjLPKv8ebb4AmRVr1Ou/qeyj3Gk9ZRW5aE0R9fOykyPTLTlGjsXeo/qU1sDA==}
+  '@nuxt/eslint-plugin@0.3.8':
+    resolution: {integrity: sha512-j8k8Yu8O4W++SWsyxf60Dv9dWUoTJBP2iJfNblOvJwbzMOrEEY3Oigj9io+54J5TxAAXuyzJ82XZE0D38CXrSg==}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
 
@@ -5689,10 +5689,10 @@ snapshots:
       - utf-8-validate
       - vue
 
-  '@nuxt/eslint-config@0.3.7(eslint@9.0.0)(typescript@5.4.5)':
+  '@nuxt/eslint-config@0.3.8(eslint@9.0.0)(typescript@5.4.5)':
     dependencies:
       '@eslint/js': 9.0.0
-      '@nuxt/eslint-plugin': 0.3.7(eslint@9.0.0)(typescript@5.4.5)
+      '@nuxt/eslint-plugin': 0.3.8(eslint@9.0.0)(typescript@5.4.5)
       '@rushstack/eslint-patch': 1.10.2
       '@stylistic/eslint-plugin': 1.7.2(eslint@9.0.0)(typescript@5.4.5)
       '@typescript-eslint/eslint-plugin': 7.7.0(@typescript-eslint/parser@7.7.0(eslint@9.0.0)(typescript@5.4.5))(eslint@9.0.0)(typescript@5.4.5)
@@ -5712,7 +5712,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@nuxt/eslint-plugin@0.3.7(eslint@9.0.0)(typescript@5.4.5)':
+  '@nuxt/eslint-plugin@0.3.8(eslint@9.0.0)(typescript@5.4.5)':
     dependencies:
       '@typescript-eslint/types': 7.7.0
       '@typescript-eslint/utils': 7.7.0(eslint@9.0.0)(typescript@5.4.5)
