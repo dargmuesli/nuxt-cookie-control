@@ -13,7 +13,7 @@
     "@commitlint/cli": "19.2.2",
     "@commitlint/config-conventional": "19.2.2",
     "@dargmuesli/nuxt-cookie-control": "link:",
-    "@nuxt/eslint-config": "0.3.8",
+    "@nuxt/eslint-config": "0.3.9",
     "@nuxt/module-builder": "0.5.5",
     "@nuxt/schema": "3.11.2",
     "eslint": "9.1.0",
@@ -25,7 +25,7 @@
     "prettier": "3.2.5",
     "typescript": "5.4.5",
     "vite": "5.2.10",
-    "vue": "3.4.23",
+    "vue": "3.4.24",
     "vue-tsc": "2.0.14",
     "webpack": "5.91.0"
   },
