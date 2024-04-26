@@ -14,7 +14,7 @@
     "@commitlint/config-conventional": "19.2.2",
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/eslint-config": "0.3.10",
-    "@nuxt/module-builder": "0.5.5",
+    "@nuxt/module-builder": "0.6.0",
     "@nuxt/schema": "3.11.2",
     "eslint": "9.1.1",
     "eslint-config-prettier": "9.1.0",
