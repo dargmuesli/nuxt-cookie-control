@@ -53,10 +53,10 @@ jobs:
 
       - name: Lint
         run: pnpm lint
-  release-semantic:
+  release_semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@1.7.10
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@2.0.0-beta.11
     permissions:
       contents: write
     secrets:
