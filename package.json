@@ -31,7 +31,7 @@
     "prettier": "3.2.5",
     "semantic-release": "23.0.8",
     "typescript": "5.4.5",
-    "vite": "5.2.10",
+    "vite": "5.2.11",
     "vue": "3.4.26",
     "vue-tsc": "2.0.16",
     "webpack": "5.91.0"
