@@ -10,6 +10,8 @@ import {
   addImports,
   createResolver,
   resolvePath,
+  addTypeTemplate,
+  updateTemplates,
 } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 // import webpack from 'webpack' // eslint-disable-line import/no-named-as-default
@@ -17,6 +19,7 @@ import type { Nuxt } from '@nuxt/schema'
 import { name, version } from '../package.json'
 import { DEFAULTS, type ModuleOptions } from './runtime/types'
 import { replaceCodePlugin } from './replace'
+import { typesGenerator } from './generator/typesGenerator'
 
 const resolver = createResolver(import.meta.url)
 const runtimeDir = resolver.resolve('./runtime')
@@ -65,6 +68,30 @@ export default defineNuxtModule<ModuleOptions>({
           undefined,
           2,
         )} as ModuleOptions`,
+    })
+
+    addTypeTemplate({
+      filename: 'types/cookie-control.d.ts',
+      getContents: typesGenerator,
+      options: moduleOptions,
+      write: true,
+    })
+
+    nuxt.hook('builder:watch', async (event, path) => {
+      /**
+       * Update the templates when options are changed in a nuxt.config.ts
+       */
+      if (path.includes('cookieControl')) {
+        updateTemplates({
+          filter: (t) => t.filename === 'cookie-control-options.ts',
+        })
+
+        if (path.includes('cookieControl.cookies')) {
+          updateTemplates({
+            filter: (t) => t.filename === 'types/cookie-control.d.ts',
+          })
+        }
+      }
     })
   },
 })
