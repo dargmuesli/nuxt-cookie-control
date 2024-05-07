@@ -150,9 +150,9 @@ export type CookieID = ${
   ])
     .map((cookie) => `"${cookie.id}"`)
     .join(' | ') || 'never'
-};
+}
 
-export type CookieIDs = Array<CookieID>;
+export type CookieIDs = Array<CookieID>
 `
 
 const loadLocales = async (moduleOptions: ModuleOptions) => {
