@@ -1,3 +1,10 @@
+## [8.2.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.2.1...8.2.2) (2024-05-07)
+
+
+### Bug Fixes
+
+* **runtime:** readd defaults ([7b205d6](https://github.com/dargmuesli/nuxt-cookie-control/commit/7b205d6065f4d4842b4cde7800cc5b558be2bd98))
+
 ## [8.2.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.2.0...8.2.1) (2024-05-07)
 
 
