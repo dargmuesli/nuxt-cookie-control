@@ -1,3 +1,10 @@
+## [8.2.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.2.2...8.2.3) (2024-05-07)
+
+
+### Bug Fixes
+
+* **plugin:** correct import ([d7dd4f8](https://github.com/dargmuesli/nuxt-cookie-control/commit/d7dd4f84b48c0f2fca4339431c8f06b662ba02d9))
+
 ## [8.2.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.2.1...8.2.2) (2024-05-07)
 
 
