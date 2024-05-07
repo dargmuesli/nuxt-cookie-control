@@ -4,6 +4,9 @@
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",
+    "lint": "pnpm run lint:ts",
+    "lint:fix": "pnpm run lint:ts --fix",
+    "lint:ts": "vue-tsc --noEmit",
     "prepare": "cd .. && pnpm build --stub && cd playground && nuxi prepare"
   }
 }

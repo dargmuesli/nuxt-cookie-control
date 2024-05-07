@@ -1,14 +1,12 @@
 import { ref } from 'vue'
 
-import { COOKIE_ID_SEPARATOR } from './constants'
-import { getAllCookieIdsString } from './methods'
-import type { Cookie, State } from './types'
-import type { Plugin } from '#app'
-
+import moduleOptions from '#build/types/cookie-control'
+import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
+import { getAllCookieIdsString } from '#cookie-control/methods'
+import type { Cookie, State } from '#cookie-control/types'
 import { defineNuxtPlugin, useCookie } from '#imports'
-import moduleOptions from '#build/cookie-control-options'
 
-const plugin: Plugin<{ cookies: State }> = defineNuxtPlugin((_nuxtApp) => {
+export default defineNuxtPlugin((_nuxtApp) => {
   const cookieIsConsentGiven = useCookie(
     moduleOptions.cookieNameIsConsentGiven,
     moduleOptions.cookieOptions,
@@ -54,5 +52,3 @@ const plugin: Plugin<{ cookies: State }> = defineNuxtPlugin((_nuxtApp) => {
     },
   }
 })
-
-export default plugin
