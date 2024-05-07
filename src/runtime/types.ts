@@ -1,6 +1,8 @@
 import type { Ref } from 'vue'
 import type { CookieOptions } from 'nuxt/app'
 
+import en from './locale/en'
+
 export type Locale =
   | 'ar'
   | 'az'
@@ -103,6 +105,63 @@ export interface ModuleOptions {
   isModalForced: boolean
   locales: Locale[]
   localeTexts: PartialRecord<Locale, Partial<LocaleStrings>>
+}
+
+export const DEFAULTS: Required<ModuleOptions> = {
+  barPosition: 'bottom-full',
+  closeModalOnClickOutside: false,
+  colors: {
+    barBackground: '#000',
+    barButtonBackground: '#fff',
+    barButtonColor: '#000',
+    barButtonHoverBackground: '#333',
+    barButtonHoverColor: '#fff',
+    barTextColor: '#fff',
+    checkboxActiveBackground: '#000',
+    checkboxActiveCircleBackground: '#fff',
+    checkboxDisabledBackground: '#ddd',
+    checkboxDisabledCircleBackground: '#fff',
+    checkboxInactiveBackground: '#000',
+    checkboxInactiveCircleBackground: '#fff',
+    controlButtonBackground: '#fff',
+    controlButtonHoverBackground: '#000',
+    controlButtonIconColor: '#000',
+    controlButtonIconHoverColor: '#fff',
+    focusRingColor: '#808080',
+    modalBackground: '#fff',
+    modalButtonBackground: '#000',
+    modalButtonColor: '#fff',
+    modalButtonHoverBackground: '#333',
+    modalButtonHoverColor: '#fff',
+    modalOverlay: '#000',
+    modalOverlayOpacity: 0.8,
+    modalTextColor: '#000',
+    modalUnsavedColor: '#fff',
+  },
+  cookies: {
+    necessary: [],
+    optional: [],
+  },
+  cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
+  cookieNameIsConsentGiven: 'ncc_c',
+  cookieNameCookiesEnabledIds: 'ncc_e',
+  cookieOptions: {
+    path: '/',
+    sameSite: 'strict',
+    secure: process.env.NODE_ENV === 'development' ? undefined : true,
+  },
+  isAcceptNecessaryButtonEnabled: true,
+  isControlButtonEnabled: true,
+  isCookieIdVisible: false,
+  isCssEnabled: true,
+  isCssPonyfillEnabled: false,
+  isDashInDescriptionEnabled: true,
+  isIframeBlocked: false,
+  isModalForced: false,
+  locales: ['en'],
+
+  // TODO: use Nuxt module "i18n"
+  localeTexts: { en },
 }
 
 export interface State {
