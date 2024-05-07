@@ -1,6 +1,5 @@
-import { LOCALE_DEFAULT } from './constants'
-import type { Cookie, ModuleOptions, Translatable } from './types'
-
+import { LOCALE_DEFAULT } from '#cookie-control/constants'
+import type { Cookie, ModuleOptions, Translatable } from '#cookie-control/types'
 import { useCookie } from '#imports'
 
 export const getAllCookieIdsString = (moduleOptions: ModuleOptions) =>

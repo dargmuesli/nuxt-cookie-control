@@ -80,12 +80,14 @@
   "scripts": {
     "build": "nuxt-module-build build",
     "dev": "pnpm --dir playground run dev",
-    "lint": "eslint --cache && nuxi typecheck",
-    "lint:fix": "eslint --cache --fix . && nuxi typecheck --fix",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
+    "lint:fix": "pnpm run lint:js --fix . && pnpm run lint:ts --fix",
+    "lint:js": "eslint --cache",
+    "lint:ts": "vue-tsc --noEmit",
     "prepack": "pnpm build",
     "prepare": "husky && nuxt-module-build prepare"
   },
   "type": "module",
-  "types": "./dist/module.d.ts",
+  "types": "./dist/types.d.ts",
   "version": "8.2.0"
 }
