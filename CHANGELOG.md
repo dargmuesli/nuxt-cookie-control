@@ -1,3 +1,10 @@
+## [8.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.1.4...8.2.0) (2024-05-07)
+
+
+### Features
+
+* **types:** types generator and CookieID string literal ([#210](https://github.com/dargmuesli/nuxt-cookie-control/issues/210)) ([22796c3](https://github.com/dargmuesli/nuxt-cookie-control/commit/22796c3d8b9c60c51ab9424ee56a7995e6c57ea3))
+
 ## [8.1.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.1.3...8.1.4) (2024-05-01)
 
 
