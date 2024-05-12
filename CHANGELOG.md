@@ -1,3 +1,10 @@
+## [8.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.2.3...8.3.0) (2024-05-12)
+
+
+### Features
+
+* **configuration:** use runtime configuration ([#213](https://github.com/dargmuesli/nuxt-cookie-control/issues/213)) ([529769c](https://github.com/dargmuesli/nuxt-cookie-control/commit/529769cfcef89f26f4068f846aa075e20c2efea3))
+
 ## [8.2.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.2.2...8.2.3) (2024-05-07)
 
 
