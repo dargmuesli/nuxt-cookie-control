@@ -1,3 +1,10 @@
+## [8.3.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.3.1...8.3.2) (2024-05-12)
+
+
+### Bug Fixes
+
+* **deps:** add defu as normal dependency ([ec6c6d8](https://github.com/dargmuesli/nuxt-cookie-control/commit/ec6c6d8c38cabfc13e2cbec46018e5742ae54ef4))
+
 ## [8.3.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.3.0...8.3.1) (2024-05-12)
 
 
