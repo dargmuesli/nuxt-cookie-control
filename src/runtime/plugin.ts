@@ -1,12 +1,13 @@
 import { ref } from 'vue'
 
-import moduleOptions from '#build/types/cookie-control.d'
 import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import { getAllCookieIdsString } from '#cookie-control/methods'
 import type { Cookie, State } from '#cookie-control/types'
 import { defineNuxtPlugin, useCookie } from '#imports'
 
 export default defineNuxtPlugin((_nuxtApp) => {
+  const moduleOptions = _nuxtApp.$config.public.cookieControl
+
   const cookieIsConsentGiven = useCookie(
     moduleOptions.cookieNameIsConsentGiven,
     moduleOptions.cookieOptions,

@@ -72,6 +72,9 @@ export default defineNuxtModule<ModuleOptions>({
         })
       }
     })
+
+    nuxt.options.runtimeConfig.public.cookieControl = moduleOptions
+
     // nuxt.hook('modules:done', async () => {
     //   nuxt.options.runtimeConfig.cookieControl = defu(
     //     nuxt.options.runtimeConfig.cookieControl,
@@ -199,3 +202,8 @@ const pushCss = (moduleOptions: ModuleOptions, nuxt: Nuxt) => {
 // declare module '@nuxt/schema' {
 //   interface RuntimeConfig extends ModuleRuntimeConfig {}
 // }
+declare module '@nuxt/schema' {
+  interface PublicRuntimeConfig {
+    cookieControl: ModuleOptions
+  }
+}
