@@ -57,6 +57,9 @@ importers:
       '@semantic-release/release-notes-generator':
         specifier: 13.0.0
         version: 13.0.0(semantic-release@23.1.1(typescript@5.4.5))
+      defu:
+        specifier: 6.1.4
+        version: 6.1.4
       eslint:
         specifier: 9.2.0
         version: 9.2.0
