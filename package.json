@@ -20,7 +20,7 @@
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "12.0.0",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "10.0.3",
+    "@semantic-release/github": "10.0.4",
     "@semantic-release/npm": "12.0.1",
     "@semantic-release/release-notes-generator": "13.0.0",
     "eslint": "9.2.0",
@@ -34,7 +34,7 @@
     "typescript": "5.4.5",
     "vite": "5.2.11",
     "vue": "3.4.27",
-    "vue-tsc": "2.0.17",
+    "vue-tsc": "2.0.19",
     "webpack": "5.91.0"
   },
   "engines": {
