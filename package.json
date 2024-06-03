@@ -47,6 +47,7 @@
     },
     "./runtime/*": {
       "import": "./dist/runtime/*.js",
+      "require": "./dist/runtime/*.js",
       "types": "./dist/runtime/*.d.ts"
     }
   },
