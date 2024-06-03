@@ -1,3 +1,13 @@
+## [8.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.3.4...8.4.0) (2024-06-03)
+
+### Features
+
+* added slovenian language ([#214](https://github.com/dargmuesli/nuxt-cookie-control/issues/214)) ([c6a8757](https://github.com/dargmuesli/nuxt-cookie-control/commit/c6a8757afeb52dca9cc312fbfa1765a6c0ab47cf))
+
+### Bug Fixes
+
+* **package:** correct exports ([e2211f8](https://github.com/dargmuesli/nuxt-cookie-control/commit/e2211f86ac2181fa190f480ad3f8f9f5b910a07f))
+
 ## [8.3.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.3.3...8.3.4) (2024-05-29)
 
 
