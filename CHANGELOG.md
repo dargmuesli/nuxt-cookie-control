@@ -1,3 +1,9 @@
+## [8.4.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.0...8.4.1) (2024-06-03)
+
+### Bug Fixes
+
+* **package:** readd require export ([b818cb6](https://github.com/dargmuesli/nuxt-cookie-control/commit/b818cb6a991d0b052215e86ba8133211c195f2c2))
+
 ## [8.4.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.3.4...8.4.0) (2024-06-03)
 
 ### Features
