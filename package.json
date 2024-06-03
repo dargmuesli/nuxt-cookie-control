@@ -31,7 +31,6 @@
     "nuxt": "3.11.2",
     "prettier": "3.3.0",
     "semantic-release": "24.0.0",
-    "typescript": "5.4.5",
     "vite": "5.2.12",
     "vue": "3.4.27",
     "vue-tsc": "2.0.19",
