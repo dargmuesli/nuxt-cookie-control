@@ -27,6 +27,7 @@ import ro from './ro'
 import rs from './rs'
 import ru from './ru'
 import sk from './sk'
+import sl from './sl'
 import sv from './sv'
 import tr from './tr'
 import uk from './uk'
@@ -62,6 +63,7 @@ export const locales = [
   rs,
   ru,
   sk,
+  sl,
   sv,
   tr,
   uk,
