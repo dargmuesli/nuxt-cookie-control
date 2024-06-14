@@ -45,14 +45,6 @@ export type PartialRecord<K extends string | number | symbol, T> = Partial<
 
 export type Translatable = string | PartialRecord<Locale, string>
 
-export enum CookieType {
-  NECESSARY = 'necessary',
-  OPTIONAL = 'optional',
-  MARKETING = 'marketing',
-  ANALYTICS = 'analytics',
-  FUNCIONALITY = 'functionality'
-}
-
 export interface Cookie {
   description?: Translatable
   id: string
