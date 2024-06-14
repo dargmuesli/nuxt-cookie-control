@@ -62,27 +62,16 @@
                 @click="isModalActive = false"
                 v-text="localeStrings?.close"
               />
-              <template v-for="cookieType in CookieType" :key="cookieType">
-                <template v-if="moduleOptions.cookies[cookieType].length">
-                  <h2
-                    v-text="
-                      localeStrings &&
-                      (cookieType === CookieType.NECESSARY
-                        ? localeStrings.cookiesNecessary
-                        : localeStrings.cookiesOptional)
-                    "
-                  />
+              <template v-for="cookie in moduleOptions.cookies" :key="cookie.id">
+                
+                  <h2 v-text="resolveTranslatable(cookie.name, props.locale)" />
                   <ul>
-                    <li
-                      v-for="cookie in moduleOptions.cookies[cookieType]"
-                      :key="cookie.id"
-                    >
+                    <li>
                       <slot name="cookie" v-bind="{ cookie }">
                         <div class="cookieControl__ModalInputWrapper">
                           <input
                             v-if="
-                              cookieType === CookieType.NECESSARY &&
-                              cookie.name !== 'functional'
+                              cookie.name == 'necessary'
                             "
                             :id="resolveTranslatable(cookie.name, props.locale)"
                             type="checkbox"
@@ -158,7 +147,6 @@
                       </slot>
                     </li>
                   </ul>
-                </template>
               </template>
               <div class="cookieControl__ModalButtons">
                 <button
