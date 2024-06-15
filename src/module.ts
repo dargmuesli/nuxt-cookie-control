@@ -28,7 +28,7 @@ export default defineNuxtModule<ModuleOptions>({
     name,
     version,
     configKey: CONFIG_KEY,
-    compatibility: { nuxt: '^3.0.0' },
+    compatibility: { nuxt: '>=3.0.0' },
   },
   defaults: DEFAULTS,
   hooks: {
