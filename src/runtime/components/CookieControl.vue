@@ -191,7 +191,6 @@ import { ref, computed, onBeforeMount, watch } from 'vue'
 
 import {
   type Cookie,
-  CookieType,
   type Locale,
   type Translatable,
 } from '#cookie-control/types'
