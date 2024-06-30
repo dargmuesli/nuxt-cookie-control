@@ -173,3 +173,15 @@ export interface State {
   locale: Ref<Locale>
   moduleOptions: ModuleOptions
 }
+
+declare module '#app' {
+  interface NuxtApp {
+    $cookies: State
+  }
+}
+
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    $cookies: State
+  }
+}
