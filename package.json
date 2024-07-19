@@ -16,7 +16,7 @@
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/eslint-config": "0.3.13",
     "@nuxt/module-builder": "0.8.1",
-    "@nuxt/schema": "3.12.3",
+    "@nuxt/schema": "3.12.4",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.0",
     "@semantic-release/git": "10.0.1",
@@ -28,11 +28,11 @@
     "eslint-plugin-prettier": "5.2.1",
     "husky": "9.1.1",
     "lint-staged": "15.2.7",
-    "nuxt": "3.12.3",
+    "nuxt": "3.12.4",
     "prettier": "3.3.3",
     "semantic-release": "24.0.0",
     "vite": "5.3.4",
-    "vue": "3.4.32",
+    "vue": "3.4.33",
     "vue-tsc": "2.0.26",
     "webpack": "5.93.0"
   },
@@ -75,7 +75,7 @@
   },
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
   "resolutions": {
-    "@nuxt/kit": "3.12.3"
+    "@nuxt/kit": "3.12.4"
   },
   "scripts": {
     "build": "nuxt-module-build build",
