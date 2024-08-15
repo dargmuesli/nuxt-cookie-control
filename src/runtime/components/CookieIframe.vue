@@ -1,21 +1,19 @@
 <template>
-  <ClientOnly>
-    <iframe
-      v-if="isCookieFunctionalEnabled"
-      :cookie-enabled="null"
-      v-bind="$attrs"
-    />
-    <div v-else class="cookieControl__BlockedIframe">
-      <p>
-        {{ localeStrings?.iframeBlocked }}
-        <a
-          href="#"
-          @click.prevent="isModalActive = true"
-          v-text="localeStrings?.here"
-        />
-      </p>
-    </div>
-  </ClientOnly>
+  <iframe
+    v-if="isCookieFunctionalEnabled"
+    :cookie-enabled="null"
+    v-bind="$attrs"
+  />
+  <div v-else class="cookieControl__BlockedIframe">
+    <p>
+      {{ localeStrings?.iframeBlocked }}
+      <a
+        href="#"
+        @click.prevent="isModalActive = true"
+        v-text="localeStrings?.here"
+      />
+    </p>
+  </div>
 </template>
 
 <script setup lang="ts">
