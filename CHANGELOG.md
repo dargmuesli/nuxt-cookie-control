@@ -1,3 +1,9 @@
+## [8.4.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.7...8.4.8) (2024-08-15)
+
+### Performance Improvements
+
+* **components:** remove client-only restriction ([#226](https://github.com/dargmuesli/nuxt-cookie-control/issues/226)) ([fd3010f](https://github.com/dargmuesli/nuxt-cookie-control/commit/fd3010f3445443bacca3939f27b5178ae35abc6b))
+
 ## [8.4.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.6...8.4.7) (2024-08-07)
 
 ### Bug Fixes
