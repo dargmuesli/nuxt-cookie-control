@@ -89,5 +89,5 @@
   },
   "type": "module",
   "types": "./dist/types.d.ts",
-  "version": "8.4.8"
+  "version": "8.4.9"
 }

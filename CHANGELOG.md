@@ -1,3 +1,9 @@
+## [8.4.9](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.8...8.4.9) (2024-08-23)
+
+### Bug Fixes
+
+* **component:** add missing button type ([9eef5ae](https://github.com/dargmuesli/nuxt-cookie-control/commit/9eef5ae1fb1ca5b4596a72288f9fdcedb5a82cbe))
+
 ## [8.4.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.7...8.4.8) (2024-08-15)
 
 ### Performance Improvements
