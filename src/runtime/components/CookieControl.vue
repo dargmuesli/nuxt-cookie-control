@@ -32,6 +32,7 @@
       aria-label="Cookie control"
       class="cookieControl__ControlButton"
       data-testid="nuxt-cookie-control-control-button"
+      type="button"
       @click="isModalActive = true"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
