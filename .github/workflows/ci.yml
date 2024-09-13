@@ -52,7 +52,7 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm run lint && pnpm run -r lint
   release_semantic:
     needs: build
     name: Release (semantic)
