@@ -377,7 +377,11 @@ watch(
 
         const script = document.createElement('script')
         script.src = cookieEnabled.src
-        document.getElementsByTagName('head')[0]!.appendChild(script)
+
+        const headElement = document.getElementsByTagName('head')[0]
+        if (!headElement) return
+
+        headElement.appendChild(script)
       }
     } else {
       cookieCookiesEnabledIds.value = undefined
