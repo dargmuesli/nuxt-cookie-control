@@ -4,6 +4,7 @@ export default defineNuxtConfig({
       title: 'Playground',
     },
   },
+  compatibilityDate: '2024-04-03',
   modules: ['@dargmuesli/nuxt-cookie-control'],
   typescript: {
     includeWorkspace: true,
