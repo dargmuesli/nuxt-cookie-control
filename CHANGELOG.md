@@ -1,3 +1,9 @@
+## [8.4.11](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.10...8.4.11) (2024-09-13)
+
+### Bug Fixes
+
+* **types:** handle non-null assertion ([#222](https://github.com/dargmuesli/nuxt-cookie-control/issues/222)) ([2b59576](https://github.com/dargmuesli/nuxt-cookie-control/commit/2b59576e131c9434783e250f978fff511f0f918a))
+
 ## [8.4.10](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.9...8.4.10) (2024-09-04)
 
 ### Bug Fixes
