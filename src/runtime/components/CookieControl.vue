@@ -13,13 +13,19 @@
             </slot>
           </div>
           <div class="cookieControl__BarButtons">
-            <button @click="accept()" v-text="localeStrings?.accept" />
+            <button
+              type="button"
+              @click="accept()"
+              v-text="localeStrings?.accept"
+            />
             <button
               v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
+              type="button"
               @click="decline()"
               v-text="localeStrings?.decline"
             />
             <button
+              type="button"
               @click="isModalActive = true"
               v-text="localeStrings?.manageCookies"
             />
@@ -59,6 +65,7 @@
             <button
               v-if="!moduleOptions.isModalForced"
               class="cookieControl__ModalClose"
+              type="button"
               @click="isModalActive = false"
               v-text="localeStrings?.close"
             />
@@ -102,7 +109,7 @@
                           "
                           @change="toogleCookie(cookie)"
                         />
-                        <button @click="toggleButton($event)">
+                        <button type="button" @click="toggleButton($event)">
                           {{ getName(cookie.name) }}
                         </button>
                         <label
@@ -160,6 +167,7 @@
             </template>
             <div class="cookieControl__ModalButtons">
               <button
+                type="button"
                 @click="
                   () => {
                     acceptPartial()
@@ -169,6 +177,7 @@
                 v-text="localeStrings?.save"
               />
               <button
+                type="button"
                 @click="
                   () => {
                     accept()
@@ -179,6 +188,7 @@
               />
               <button
                 v-if="!moduleOptions.isModalForced"
+                type="button"
                 @click="
                   () => {
                     declineAll()
