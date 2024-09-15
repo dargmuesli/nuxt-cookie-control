@@ -1,3 +1,9 @@
+## [8.4.12](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.11...8.4.12) (2024-09-15)
+
+### Bug Fixes
+
+* **components:** set button types ([#232](https://github.com/dargmuesli/nuxt-cookie-control/issues/232)) ([3055d42](https://github.com/dargmuesli/nuxt-cookie-control/commit/3055d42fd61b603febaf4ea59a3524834e28f633))
+
 ## [8.4.11](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.10...8.4.11) (2024-09-13)
 
 ### Bug Fixes
