@@ -36,7 +36,7 @@ export default defineNuxtPlugin((_nuxtApp) => {
         ],
   )
   const cookiesEnabledIds = ref<string[] | undefined>(cookieCookiesEnabledIds)
-  const isModalActive = ref<boolean>()
+  const isModalActive = ref<boolean>(true)
   const locale = ref<string>()
 
   const state = {

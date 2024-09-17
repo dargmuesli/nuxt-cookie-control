@@ -11,6 +11,7 @@ import {
   resolvePath,
   addTypeTemplate,
   updateTemplates,
+  installModule,
 } from '@nuxt/kit'
 import type { Nuxt, NuxtApp } from '@nuxt/schema'
 import { defu } from 'defu'
@@ -47,6 +48,28 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.alias['#cookie-control'] = runtimeDir
     nuxt.options.build.transpile.push('#cookie-control')
+
+    // Import styles file
+    nuxt.options.css.push(resolver.resolve('./runtime/styles.css'))
+    // Install tailwindcss via nuxt module
+
+    await installModule('@nuxtjs/tailwindcss', {
+      // module configuration
+      exposeConfig: true,
+      viewer: false,
+      config: {
+        theme: {
+          extend: {
+            colors: moduleOptions.colors,
+          },
+        },
+        darkMode: 'class',
+        content: [
+          resolver.resolve('./runtime/**/*.{vue,mjs,ts}'),
+          resolver.resolve('./runtime/*.{mjs,js,ts}'),
+        ],
+      },
+    })
 
     pushCss(moduleOptions, nuxt)
     blockIframes(moduleOptions)

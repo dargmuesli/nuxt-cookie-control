@@ -1,4 +1,8 @@
-.cookieControl__Modal-enter-active,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .cookieControl__Modal-enter-active,
 .cookieControl__Modal-leave-active {
   transition: opacity 0.25s;
 }
@@ -405,4 +409,4 @@
 }
 .cookieControl__ControlButton:hover svg {
   color: var(--cookie-control-controlButtonIconHoverColor);
-}
+} */

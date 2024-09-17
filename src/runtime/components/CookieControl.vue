@@ -48,7 +48,10 @@
         />
       </svg>
     </button>
-    <transition name="cookieControl__Modal">
+
+    <!-- Modal -->
+    <CookieControlModal :locale="props.locale" />
+    <!-- <transition name="cookieControl__Modal">
       <div
         v-if="isModalActive"
         class="cookieControl__Modal"
@@ -201,7 +204,8 @@
           </div>
         </div>
       </div>
-    </transition>
+    </transition> -->
+    <!-- END > Modal -->
   </aside>
 </template>
 
@@ -223,6 +227,7 @@ import {
 import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import setCssVariables from '#cookie-control/set-vars'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
+import CookieControlModal from './CookieControlModal.vue'
 
 export interface Props {
   locale?: Locale
