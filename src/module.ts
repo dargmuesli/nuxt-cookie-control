@@ -60,7 +60,7 @@ export default defineNuxtModule<ModuleOptions>({
       config: {
         theme: {
           extend: {
-            colors: moduleOptions.colors,
+            colors: moduleOptions.colors as unknown as any,
           },
         },
         darkMode: 'class',

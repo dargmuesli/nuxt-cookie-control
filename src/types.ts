@@ -137,6 +137,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
     modalOverlay: '#000',
     modalOverlayOpacity: 0.8,
     modalTextColor: '#000',
+    modalUnsavedBackground: '#333',
     modalUnsavedColor: '#fff',
   },
   cookies: {

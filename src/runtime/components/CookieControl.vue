@@ -5,7 +5,7 @@
         v-if="!isConsentGiven && !moduleOptions.isModalForced"
         :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
       >
-        <div class="cookieControl__BarContainer">
+        <div class="coo kieControl__BarContainer">
           <div>
             <slot name="bar">
               <h2 v-text="localeStrings?.bannerTitle" />
@@ -262,17 +262,10 @@ const cookieCookiesEnabledIds = useCookie(
   },
 )
 
-// computations
-const isSaved = computed(
-  () =>
-    getCookieIds(cookiesEnabled.value || [])
-      .sort()
-      .join(COOKIE_ID_SEPARATOR) !==
-    getCookieIds(localCookiesEnabled.value).sort().join(COOKIE_ID_SEPARATOR),
-)
+// Computed
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
 
-// methods
+// Methods
 const accept = () => {
   setCookies({
     isConsentGiven: true,

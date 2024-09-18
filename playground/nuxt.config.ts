@@ -33,8 +33,52 @@ export default defineNuxtConfig({
           },
           targetCookieIds: ['NEC'],
         },
+        {
+          description: {
+            de: 'Dieser Cookie tut etwas.',
+            en: 'This cookie does something very very very very very very very long.',
+          },
+          id: 'n',
+          name: {
+            de: 'Notwendiger Cookie',
+            en: 'Necessary Cookie',
+          },
+          targetCookieIds: ['NEC'],
+        },
+        {
+          description: {
+            de: 'Dieser Cookie tut etwas.',
+            en: 'This cookie does something very very very very very very very long.',
+          },
+          id: 'n',
+          name: {
+            de: 'Notwendiger Cookie',
+            en: 'Necessary Cookie',
+          },
+          targetCookieIds: ['NEC'],
+        },
       ],
       optional: [
+        {
+          id: 'o',
+          name: 'Optional Cookie',
+          links: {
+            '/': 'Local Privacy Policy',
+            'https://example.com': '3rd Party Privacy Policy',
+            'https://example.cop': null,
+          },
+          targetCookieIds: ['_o', '_p', '_t'],
+        },
+        {
+          id: 'o',
+          name: 'Optional Cookie',
+          links: {
+            '/': 'Local Privacy Policy',
+            'https://example.com': '3rd Party Privacy Policy',
+            'https://example.cop': null,
+          },
+          targetCookieIds: ['_o', '_p', '_t'],
+        },
         {
           id: 'o',
           name: 'Optional Cookie',

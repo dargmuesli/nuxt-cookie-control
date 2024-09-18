@@ -1,14 +1,14 @@
 <template>
   <TransitionRoot appear :show="isModalActive" as="div">
-    <p
-      v-if="isSaved"
-      class="cookieControl__ModalUnsaved"
-      v-text="localeStrings?.settingsUnsaved"
-    />
-    <Dialog as="div" class="relative z-10" @close="isModalActive = false">
-      <div class="fixed inset-0 overflow-y-auto">
+    <Dialog
+      v-if="false"
+      as="div"
+      class="relative z-10"
+      @close="isModalActive = false"
+    >
+      <div class="fixed inset-0 overflow-y-auto z-50">
         <div
-          class="flex min-h-full items-center justify-center p-4 text-center"
+          class="flex min-h-full items-center justify-center p-4 text-center pb-16"
         >
           <TransitionChild
             as="div"
@@ -19,8 +19,25 @@
             leave-from="opacity-100 scale-100"
             leave-to="opacity-0 scale-95"
           >
+            <!-- Unsaved settings notify -->
+            <Transition
+              enter-active-class="duration-300 ease-out"
+              enter-from-class="opacity-0"
+              enter-to-class="opacity-100"
+              leave-active-class="duration-200"
+              leave-from-class="opacity-100"
+              leave-to-class="opacity-0"
+            >
+              <p
+                v-if="!isSaved"
+                class="cookieControl__ModalUnsaved fixed bottom-5 bg-modalUnsavedBackground px-2 rounded-md py-0.5 text-sm left-1/2 -translate-x-1/2 z-40 text-white"
+              >
+                {{ localeStrings?.settingsUnsaved }}
+              </p>
+            </Transition>
+            <!-- END > Unsaved settings notify -->
             <DialogPanel
-              class="w-full max-w-md transform overflow-hidden rounded-lg p-6 text-left align-middle shadow-xl transition-all bg-modalBackground"
+              class="w-full max-w-lg transform overflow-hidden rounded-md p-8 text-left align-middle shadow-xl transition-all bg-modalBackground"
             >
               <div class="cookieControl__ModalContent">
                 <div class="cookieControl__ModalContentInner">
@@ -32,8 +49,35 @@
                   >
                     {{ localeStrings?.close }}
                   </CookieControlModalButton>
-                  <!-- <div v-for="cookieType in CookieType" :key="cookieType">
-                    <div
+                  <div
+                    v-for="cookieType in CookieType"
+                    :key="cookieType"
+                    class="mt-14"
+                  >
+                    <!-- Modal Body -->
+                    <div v-if="moduleOptions.cookies[cookieType].length">
+                      <h2 class="text-xl mb-6 font-semibold">
+                        {{
+                          localeStrings &&
+                          (cookieType === CookieType.NECESSARY
+                            ? localeStrings.cookiesNecessary
+                            : localeStrings.cookiesOptional)
+                        }}
+                      </h2>
+                      <!-- Cookie Groups -->
+                      <div class="flex flex-col gap-y-8">
+                        <CookieControlCookieGroup
+                          v-for="cookie in moduleOptions.cookies[cookieType]"
+                          :key="cookie.id"
+                          :cookie="cookie"
+                          :cookie-type="cookieType"
+                        />
+                      </div>
+                      <!-- END > Cookie Groups -->
+                    </div>
+                    <!-- END > Modal Body -->
+                  </div>
+                  <!--<div
                       v-if="moduleOptions.cookies[cookieType].length"
                       as="div"
                     >
@@ -146,7 +190,7 @@
                     </div>
                   </div> -->
                   <div
-                    class="cookieControl__ModalButtons flex mt-10 gap-x-5 items-stretch"
+                    class="cookieControl__ModalButtons flex mt-10 gap-x-4 items-stretch"
                   >
                     <CookieControlModalButton
                       @click="
@@ -186,12 +230,15 @@
           </TransitionChild>
         </div>
       </div>
+      <!-- Backdrop -->
+      <div class="fixed inset-0 bg-black/75 z-40" aria-hidden="true" />
+      <!-- END > Backdrop -->
     </Dialog>
   </TransitionRoot>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import CookieControlModalButton from './CookieControlModalButton.vue'
 import {
   TransitionRoot,
@@ -233,6 +280,12 @@ const nuxtApp = useNuxtApp()
 
 // Data
 const localCookiesEnabled = ref([...(cookiesEnabled.value || [])])
+const test = ref(false)
+onMounted(() => {
+  setTimeout(() => {
+    test.value = true
+  }, 1500)
+})
 
 // Computed
 const isSaved = computed(
@@ -310,24 +363,6 @@ const setCookies = ({
   cookiesEnabledIds.value = isConsentGivenNew
     ? getCookieIds(cookiesEnabled.value)
     : []
-}
-const toggleButton = ($event: MouseEvent) => {
-  ;(
-    ($event.target as HTMLButtonElement | null)
-      ?.nextSibling as HTMLLabelElement | null
-  )?.click()
-}
-const toogleCookie = (cookie: Cookie) => {
-  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(cookie.id)
-
-  if (cookieIndex < 0) {
-    localCookiesEnabled.value.push(cookie)
-  } else {
-    localCookiesEnabled.value.splice(cookieIndex, 1)
-  }
-}
-const toggleLabel = ($event: KeyboardEvent) => {
-  if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
 }
 
 // Hooks
