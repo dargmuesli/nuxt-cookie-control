@@ -4,31 +4,29 @@
       <div
         v-if="!isConsentGiven && !moduleOptions.isModalForced"
         :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
+        class="fixed bottom-0 left-0 p-6 rounded-lg bg-barBackground text-barTextColor"
       >
-        <div class="coo kieControl__BarContainer">
-          <div>
+        <div class="cookieControl__BarContainer">
+          <div class="mb-4">
             <slot name="bar">
-              <h2 v-text="localeStrings?.bannerTitle" />
-              <p v-text="localeStrings?.bannerDescription" />
+              <h2 class="mb-1.5 text-lg font-bold">
+                {{ localeStrings?.bannerTitle }}
+              </h2>
+              <p class="leading-6">
+                {{ localeStrings?.bannerDescription }}
+              </p>
             </slot>
           </div>
-          <div class="cookieControl__BarButtons">
-            <button
-              type="button"
-              @click="accept()"
-              v-text="localeStrings?.accept"
-            />
-            <button
-              v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-              type="button"
-              @click="decline()"
-              v-text="localeStrings?.decline"
-            />
-            <button
-              type="button"
-              @click="isModalActive = true"
-              v-text="localeStrings?.manageCookies"
-            />
+          <div class="flex gap-3 cookieControl__BarButtons">
+            <CookieControlButton @click="accept()">
+              {{ localeStrings?.accept }}
+            </CookieControlButton>
+            <CookieControlButton @click="decline()">
+              {{ localeStrings?.decline }}
+            </CookieControlButton>
+            <CookieControlButton @click="isModalActive = true">
+              {{ localeStrings?.manageCookies }}
+            </CookieControlButton>
           </div>
         </div>
       </div>
@@ -49,180 +47,19 @@
       </svg>
     </button>
 
-    <!-- Modal -->
     <CookieControlModal :locale="props.locale" />
-    <!-- <transition name="cookieControl__Modal">
-      <div
-        v-if="isModalActive"
-        class="cookieControl__Modal"
-        @click.self="onModalClick"
-      >
-        <p
-          v-if="isSaved"
-          class="cookieControl__ModalUnsaved"
-          v-text="localeStrings?.settingsUnsaved"
-        />
-        <div class="cookieControl__ModalContent">
-          <div class="cookieControl__ModalContentInner">
-            <slot name="modal" />
-            <button
-              v-if="!moduleOptions.isModalForced"
-              class="cookieControl__ModalClose"
-              type="button"
-              @click="isModalActive = false"
-              v-text="localeStrings?.close"
-            />
-            <template v-for="cookieType in CookieType" :key="cookieType">
-              <template v-if="moduleOptions.cookies[cookieType].length">
-                <h2
-                  v-text="
-                    localeStrings &&
-                    (cookieType === CookieType.NECESSARY
-                      ? localeStrings.cookiesNecessary
-                      : localeStrings.cookiesOptional)
-                  "
-                />
-                <ul>
-                  <li
-                    v-for="cookie in moduleOptions.cookies[cookieType]"
-                    :key="cookie.id"
-                  >
-                    <slot name="cookie" v-bind="{ cookie }">
-                      <div class="cookieControl__ModalInputWrapper">
-                        <input
-                          v-if="
-                            cookieType === CookieType.NECESSARY &&
-                            cookie.name !== 'functional'
-                          "
-                          :id="resolveTranslatable(cookie.name, props.locale)"
-                          type="checkbox"
-                          disabled
-                          checked
-                        />
-                        <input
-                          v-else
-                          :id="resolveTranslatable(cookie.name, props.locale)"
-                          type="checkbox"
-                          :checked="
-                            isConsentGiven === undefined
-                              ? cookie.isPreselected
-                              : getCookieIds(localCookiesEnabled).includes(
-                                  cookie.id,
-                                )
-                          "
-                          @change="toogleCookie(cookie)"
-                        />
-                        <button type="button" @click="toggleButton($event)">
-                          {{ getName(cookie.name) }}
-                        </button>
-                        <label
-                          class="cookieControl__ModalCookieName"
-                          :for="resolveTranslatable(cookie.name, props.locale)"
-                          tabindex="0"
-                          @keydown="toggleLabel($event)"
-                        >
-                          {{ getName(cookie.name) }}
-                          <span v-if="cookie.description">
-                            {{ getDescription(cookie.description) }}
-                          </span>
-                          <span
-                            v-if="
-                              moduleOptions.isCookieIdVisible &&
-                              cookie.targetCookieIds
-                            "
-                          >
-                            <br />
-                            {{
-                              'IDs: ' +
-                              cookie.targetCookieIds
-                                .map((id) => `"${id}"`)
-                                .join(', ')
-                            }}
-                          </span>
-                          <template
-                            v-if="Object.entries(cookie.links || {}).length"
-                          >
-                            <span
-                              v-for="entry in Object.entries(
-                                cookie.links || {},
-                              )"
-                              :key="entry[0]"
-                            >
-                              <br />
-                              <NuxtLink
-                                :to="entry[0]"
-                                @click="
-                                  !entry[0].toLowerCase().startsWith('http')
-                                    ? (isModalActive = false)
-                                    : null
-                                "
-                              >
-                                {{ entry[1] || entry[0] }}
-                              </NuxtLink>
-                            </span>
-                          </template>
-                        </label>
-                      </div>
-                    </slot>
-                  </li>
-                </ul>
-              </template>
-            </template>
-            <div class="cookieControl__ModalButtons">
-              <button
-                type="button"
-                @click="
-                  () => {
-                    acceptPartial()
-                    isModalActive = false
-                  }
-                "
-                v-text="localeStrings?.save"
-              />
-              <button
-                type="button"
-                @click="
-                  () => {
-                    accept()
-                    isModalActive = false
-                  }
-                "
-                v-text="localeStrings?.acceptAll"
-              />
-              <button
-                v-if="!moduleOptions.isModalForced"
-                type="button"
-                @click="
-                  () => {
-                    declineAll()
-                    isModalActive = false
-                  }
-                "
-                v-text="localeStrings?.declineAll"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition> -->
-    <!-- END > Modal -->
   </aside>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, onBeforeMount, watch } from 'vue'
 
-import {
-  type Cookie,
-  CookieType,
-  type Locale,
-  type Translatable,
-} from '#cookie-control/types'
+import CookieControlButton from './CookieControlButton.vue'
+import type { Cookie, Locale } from '#cookie-control/types'
 import {
   getAllCookieIdsString,
   getCookieIds,
   removeCookie,
-  resolveTranslatable,
 } from '#cookie-control/methods'
 import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import setCssVariables from '#cookie-control/set-vars'
@@ -289,28 +126,8 @@ const decline = () => {
     cookiesOptionalEnabled: moduleOptions.cookies.necessary,
   })
 }
-const declineAll = () => {
-  setCookies({
-    isConsentGiven: false,
-    cookiesOptionalEnabled: [],
-  })
-}
-const getDescription = (description: Translatable) =>
-  `${
-    moduleOptions.isDashInDescriptionEnabled === false ? '' : '-'
-  } ${resolveTranslatable(description, props.locale)}`
-const getName = (name: Translatable) => {
-  return name === 'functional'
-    ? localeStrings.value?.cookiesFunctional
-    : resolveTranslatable(name, props.locale)
-}
 const init = () => {
   nuxtApp.$cookies.locale.value = props.locale
-}
-const onModalClick = () => {
-  if (moduleOptions.closeModalOnClickOutside) {
-    isModalActive.value = false
-  }
 }
 const setCookies = ({
   cookiesOptionalEnabled: cookiesOptionalEnabledNew,
@@ -331,24 +148,6 @@ const setCookies = ({
   cookiesEnabledIds.value = isConsentGivenNew
     ? getCookieIds(cookiesEnabled.value)
     : []
-}
-const toggleButton = ($event: MouseEvent) => {
-  ;(
-    ($event.target as HTMLButtonElement | null)
-      ?.nextSibling as HTMLLabelElement | null
-  )?.click()
-}
-const toogleCookie = (cookie: Cookie) => {
-  const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(cookie.id)
-
-  if (cookieIndex < 0) {
-    localCookiesEnabled.value.push(cookie)
-  } else {
-    localCookiesEnabled.value.splice(cookieIndex, 1)
-  }
-}
-const toggleLabel = ($event: KeyboardEvent) => {
-  if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
 }
 
 // lifecycle

@@ -22,11 +22,11 @@ export default defineNuxtConfig({
     cookies: {
       necessary: [
         {
+          id: 'n',
           description: {
             de: 'Dieser Cookie tut etwas.',
             en: 'This cookie does something very very very very very very very long.',
           },
-          id: 'n',
           name: {
             de: 'Notwendiger Cookie',
             en: 'Necessary Cookie',
@@ -34,26 +34,26 @@ export default defineNuxtConfig({
           targetCookieIds: ['NEC'],
         },
         {
+          id: 'x',
           description: {
             de: 'Dieser Cookie tut etwas.',
             en: 'This cookie does something very very very very very very very long.',
           },
-          id: 'n',
           name: {
-            de: 'Notwendiger Cookie',
-            en: 'Necessary Cookie',
+            de: 'Notwendiger Cook',
+            en: 'Necessary Cook',
           },
           targetCookieIds: ['NEC'],
         },
         {
+          id: 'p',
           description: {
             de: 'Dieser Cookie tut etwas.',
             en: 'This cookie does something very very very very very very very long.',
           },
-          id: 'n',
           name: {
-            de: 'Notwendiger Cookie',
-            en: 'Necessary Cookie',
+            de: 'Notwendiger Cooki',
+            en: 'Necessary Cooki',
           },
           targetCookieIds: ['NEC'],
         },
@@ -70,8 +70,8 @@ export default defineNuxtConfig({
           targetCookieIds: ['_o', '_p', '_t'],
         },
         {
-          id: 'o',
-          name: 'Optional Cookie',
+          id: 'z',
+          name: 'Optional Cook',
           links: {
             '/': 'Local Privacy Policy',
             'https://example.com': '3rd Party Privacy Policy',
@@ -80,8 +80,8 @@ export default defineNuxtConfig({
           targetCookieIds: ['_o', '_p', '_t'],
         },
         {
-          id: 'o',
-          name: 'Optional Cookie',
+          id: 'y',
+          name: 'Optional Cooki',
           links: {
             '/': 'Local Privacy Policy',
             'https://example.com': '3rd Party Privacy Policy',
