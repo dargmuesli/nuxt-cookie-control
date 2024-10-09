@@ -1,3 +1,9 @@
+## [8.4.14](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.13...8.4.14) (2024-10-09)
+
+### Bug Fixes
+
+* schedule release ([996435d](https://github.com/dargmuesli/nuxt-cookie-control/commit/996435d14d33001c3fdcc3013428b16d2ae61442))
+
 ## [8.4.13](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.12...8.4.13) (2024-09-25)
 
 ### Bug Fixes
