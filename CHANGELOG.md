@@ -1,3 +1,13 @@
+## [9.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.18...9.0.0-beta.1) (2024-12-10)
+
+### ⚠ BREAKING CHANGES
+
+* replace zh-CN locale with zh (#244)
+
+### Miscellaneous Chores
+
+* replace zh-CN locale with zh ([#244](https://github.com/dargmuesli/nuxt-cookie-control/issues/244)) ([69762ff](https://github.com/dargmuesli/nuxt-cookie-control/commit/69762ff8346ba1d611cbbc23779d87463f9c0848))
+
 ## [8.4.18](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.17...8.4.18) (2024-12-04)
 
 ### Bug Fixes
