@@ -59,8 +59,8 @@ importers:
         specifier: 12.0.1
         version: 12.0.1(semantic-release@24.2.0(typescript@5.6.3))
       '@semantic-release/release-notes-generator':
-        specifier: 14.0.1
-        version: 14.0.1(semantic-release@24.2.0(typescript@5.6.3))
+        specifier: 14.0.2
+        version: 14.0.2(semantic-release@24.2.0(typescript@5.6.3))
       eslint:
         specifier: 9.17.0
         version: 9.17.0(jiti@2.4.1)
@@ -1341,8 +1341,8 @@ packages:
     peerDependencies:
       semantic-release: '>=20.1.0'
 
-  '@semantic-release/release-notes-generator@14.0.1':
-    resolution: {integrity: sha512-K0w+5220TM4HZTthE5dDpIuFrnkN1NfTGPidJFm04ULT1DEZ9WG89VNXN7F0c+6nMEpWgqmPvb7vY7JkB2jyyA==}
+  '@semantic-release/release-notes-generator@14.0.2':
+    resolution: {integrity: sha512-ur2l2tVLBfX3fSEO2rCy2X6Kzg5S7BHGqdwTHvJrpWp4mOEN7W4K/2kWAjvfAlwMenEKjMnDIhBbxxjnP0S9hw==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
       semantic-release: '>=20.1.0'
@@ -6652,7 +6652,7 @@ snapshots:
       semver: 7.6.3
       tempy: 3.1.0
 
-  '@semantic-release/release-notes-generator@14.0.1(semantic-release@24.2.0(typescript@5.6.3))':
+  '@semantic-release/release-notes-generator@14.0.2(semantic-release@24.2.0(typescript@5.6.3))':
     dependencies:
       conventional-changelog-angular: 8.0.0
       conventional-changelog-writer: 8.0.0
@@ -9990,7 +9990,7 @@ snapshots:
       '@semantic-release/error': 4.0.0
       '@semantic-release/github': 11.0.1(semantic-release@24.2.0(typescript@5.6.3))
       '@semantic-release/npm': 12.0.1(semantic-release@24.2.0(typescript@5.6.3))
-      '@semantic-release/release-notes-generator': 14.0.1(semantic-release@24.2.0(typescript@5.6.3))
+      '@semantic-release/release-notes-generator': 14.0.2(semantic-release@24.2.0(typescript@5.6.3))
       aggregate-error: 5.0.0
       cosmiconfig: 9.0.0(typescript@5.6.3)
       debug: 4.4.0(supports-color@9.4.0)
