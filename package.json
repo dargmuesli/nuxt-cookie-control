@@ -94,5 +94,5 @@
   },
   "type": "module",
   "types": "./dist/types.d.ts",
-  "version": "8.4.19"
+  "version": "8.4.20"
 }
