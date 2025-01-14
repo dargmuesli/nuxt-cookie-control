@@ -40,6 +40,8 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   async setup(moduleOptions, nuxt) {
+    moduleOptions._isPrerendered = nuxt.options._generate
+
     nuxt.options.alias['#cookie-control/set-vars'] =
       moduleOptions.isCssPonyfillEnabled
         ? resolver.resolve(runtimeDir, 'set-vars/ponyfill')
