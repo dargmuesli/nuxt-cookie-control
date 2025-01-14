@@ -53,6 +53,9 @@ jobs:
 
       - name: Lint
         run: pnpm run lint && pnpm run -r lint
+
+      - name: Build
+        run: pnpm run build && pnpm run -r build
   release_semantic:
     needs: build
     name: Release (semantic)
