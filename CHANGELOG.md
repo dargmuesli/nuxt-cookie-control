@@ -1,3 +1,9 @@
+## [8.4.21](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.20...8.4.21) (2025-01-14)
+
+### Bug Fixes
+
+* **build:** use client only when prerendered ([#251](https://github.com/dargmuesli/nuxt-cookie-control/issues/251)) ([a20bbd0](https://github.com/dargmuesli/nuxt-cookie-control/commit/a20bbd0ed261f6242d99be78431687c733ab1842)), closes [#239](https://github.com/dargmuesli/nuxt-cookie-control/issues/239)
+
 ## [8.4.20](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.19...8.4.20) (2025-01-01)
 
 ### Bug Fixes
