@@ -24,8 +24,8 @@
 import { computed } from 'vue'
 
 import type { Cookie } from '#cookie-control/types'
-import { useNuxtApp, useCookieControl } from '#imports'
 import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
+import { useNuxtApp, useCookieControl } from '#imports'
 
 const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()
 const nuxtApp = useNuxtApp()
