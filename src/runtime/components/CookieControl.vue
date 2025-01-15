@@ -212,22 +212,22 @@
 <script setup lang="ts">
 import { ref, computed, onBeforeMount, watch } from 'vue'
 
-import {
-  type Cookie,
-  CookieType,
-  type Locale,
-  type Translatable,
-} from '#cookie-control/types'
+import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
+import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import {
   getAllCookieIdsString,
   getCookieIds,
   removeCookie,
   resolveTranslatable,
 } from '#cookie-control/methods'
-import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import setCssVariables from '#cookie-control/set-vars'
+import {
+  type Cookie,
+  CookieType,
+  type Locale,
+  type Translatable,
+} from '#cookie-control/types'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
-import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
 
 export interface Props {
   locale?: Locale

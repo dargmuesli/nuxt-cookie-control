@@ -260,6 +260,16 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 </CookieControl>
 ```
 
+#### Iframe
+
+```html
+<CookieIframe>
+  <template #iframe>
+    Content to display if iframes are blocked.
+  </template>
+</CookieIframe>
+```
+
 ### Props
 
 - locale: `['en']`

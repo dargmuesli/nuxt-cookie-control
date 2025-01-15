@@ -6,14 +6,16 @@
       v-bind="$attrs"
     />
     <div v-else class="cookieControl__BlockedIframe">
-      <p>
-        {{ localeStrings?.iframeBlocked }}
-        <a
-          href="#"
-          @click.prevent="isModalActive = true"
-          v-text="localeStrings?.here"
-        />
-      </p>
+      <slot name="iframe">
+        <p>
+          {{ localeStrings?.iframeBlocked }}
+          <a
+            href="#"
+            @click.prevent="isModalActive = true"
+            v-text="localeStrings?.here"
+          />
+        </p>
+      </slot>
     </div>
   </ClientOnlyPrerender>
 </template>
@@ -22,8 +24,8 @@
 import { computed } from 'vue'
 
 import type { Cookie } from '#cookie-control/types'
-import { useNuxtApp, useCookieControl } from '#imports'
 import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
+import { useNuxtApp, useCookieControl } from '#imports'
 
 const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()
 const nuxtApp = useNuxtApp()
