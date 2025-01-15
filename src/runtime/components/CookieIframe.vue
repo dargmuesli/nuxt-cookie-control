@@ -6,14 +6,16 @@
       v-bind="$attrs"
     />
     <div v-else class="cookieControl__BlockedIframe">
-      <p>
-        {{ localeStrings?.iframeBlocked }}
-        <a
-          href="#"
-          @click.prevent="isModalActive = true"
-          v-text="localeStrings?.here"
-        />
-      </p>
+      <slot name="iframe">
+        <p>
+          {{ localeStrings?.iframeBlocked }}
+          <a
+            href="#"
+            @click.prevent="isModalActive = true"
+            v-text="localeStrings?.here"
+          />
+        </p>
+      </slot>
     </div>
   </ClientOnlyPrerender>
 </template>

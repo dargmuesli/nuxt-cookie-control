@@ -11,6 +11,10 @@
       allowfullscreen
     />
 
+    <iframe>
+      <template #iframe>Content to display if iframes are blocked.</template>
+    </iframe>
+
     <fieldset>
       <legend>Choose a language</legend>
       <div>
