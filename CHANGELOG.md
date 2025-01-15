@@ -1,3 +1,9 @@
+## [8.5.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.21...8.5.0) (2025-01-15)
+
+### Features
+
+* **iframe:** add slot ([#252](https://github.com/dargmuesli/nuxt-cookie-control/issues/252)) ([37c6b97](https://github.com/dargmuesli/nuxt-cookie-control/commit/37c6b972d9053f8cd88f36c83ead9f3b90b97006))
+
 ## [8.4.21](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.4.20...8.4.21) (2025-01-14)
 
 ### Bug Fixes
