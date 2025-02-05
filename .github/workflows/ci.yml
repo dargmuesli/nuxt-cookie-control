@@ -59,7 +59,7 @@ jobs:
   release_semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@2.3.13
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@2.3.16
     permissions:
       contents: write
     secrets:
