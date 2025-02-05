@@ -31,23 +31,20 @@ jobs:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node: ['18', '22']
     steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
+      - name: Checkout git repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Setup pnpm
+      - name: Setup package manager
         run: |
-          npm install -g corepack@latest # TODO: remove (https://github.com/nodejs/corepack/issues/612)
+          npm install -g --force corepack@latest # TODO: remove (https://github.com/nodejs/corepack/issues/612)
           corepack enable
 
-      - name: checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-
-      - name: cache node_modules
-        uses: actions/cache@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4.2.0
         with:
-          path: node_modules
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+          node-version: ${{ matrix.node }}
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
