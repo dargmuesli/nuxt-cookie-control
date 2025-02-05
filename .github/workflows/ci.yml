@@ -36,7 +36,9 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Setup pnpm
-        run: corepack enable
+        run: |
+          npm install -g corepack@latest # TODO: remove (https://github.com/nodejs/corepack/issues/612)
+          corepack enable
 
       - name: checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -59,7 +61,7 @@ jobs:
   release_semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@2.3.13
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@2.3.16
     permissions:
       contents: write
     secrets:
