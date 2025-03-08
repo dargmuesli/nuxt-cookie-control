@@ -11,24 +11,24 @@
   },
   "description": "Nuxt Cookie Control Module",
   "devDependencies": {
-    "@commitlint/cli": "19.7.1",
-    "@commitlint/config-conventional": "19.7.1",
+    "@commitlint/cli": "19.8.0",
+    "@commitlint/config-conventional": "19.8.0",
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/eslint-config": "1.1.0",
     "@nuxt/module-builder": "0.8.4",
-    "@nuxt/schema": "3.15.4",
+    "@nuxt/schema": "3.16.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.1",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "11.0.1",
     "@semantic-release/npm": "12.0.1",
     "@semantic-release/release-notes-generator": "14.0.3",
-    "eslint": "9.21.0",
+    "eslint": "9.22.0",
     "eslint-config-prettier": "10.1.1",
     "eslint-plugin-prettier": "5.2.3",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
-    "nuxt": "3.15.4",
+    "nuxt": "3.16.0",
     "prettier": "3.5.3",
     "semantic-release": "24.2.3",
     "vite": "6.2.1",
@@ -80,7 +80,7 @@
   },
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
   "resolutions": {
-    "@nuxt/kit": "3.15.4"
+    "@nuxt/kit": "3.16.0"
   },
   "scripts": {
     "build": "nuxt-module-build build",
