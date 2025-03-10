@@ -69,7 +69,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.6.1",
+  "packageManager": "pnpm@10.6.2",
   "publishConfig": {
     "access": "public"
   },
