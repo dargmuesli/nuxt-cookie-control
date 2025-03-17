@@ -40,7 +40,7 @@ jobs:
           corepack enable
 
       - name: Setup Node
-        uses: actions/setup-node@v4.2.0
+        uses: actions/setup-node@v4.3.0
         with:
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
