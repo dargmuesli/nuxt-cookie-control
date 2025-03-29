@@ -16,13 +16,13 @@
             <div class="cookieControl__BarButtons">
               <button
                 type="button"
-                @click="accept()"
+                @click="acceptAll()"
                 v-text="localeStrings?.accept"
               />
               <button
                 v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
                 type="button"
-                @click="decline()"
+                @click="acceptNecessary()"
                 v-text="localeStrings?.decline"
               />
               <button
@@ -183,7 +183,7 @@
                   type="button"
                   @click="
                     () => {
-                      accept()
+                      acceptNecessary()
                       isModalActive = false
                     }
                   "
@@ -194,7 +194,7 @@
                   type="button"
                   @click="
                     () => {
-                      declineAll()
+                      acceptNone()
                       isModalActive = false
                     }
                   "
@@ -270,7 +270,7 @@ const isSaved = computed(
 const localeStrings = computed(() => moduleOptions.localeTexts[locale])
 
 // methods
-const accept = () => {
+const acceptAll = () => {
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: moduleOptions.cookies.optional,
@@ -287,13 +287,13 @@ const acceptPartial = () => {
     ].filter((cookie) => localCookiesEnabledIds.includes(cookie.id)),
   })
 }
-const decline = () => {
+const acceptNecessary = () => {
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: moduleOptions.cookies.necessary,
   })
 }
-const declineAll = () => {
+const acceptNone = () => {
   setCookies({
     isConsentGiven: false,
     cookiesOptionalEnabled: [],
@@ -441,8 +441,8 @@ watch(
 init()
 
 defineExpose({
-  accept,
+  accept: acceptAll,
   acceptPartial,
-  decline,
+  decline: acceptNecessary,
 })
 </script>
