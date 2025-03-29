@@ -231,7 +231,7 @@ import {
 } from '#cookie-control/types'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
-export interface Props {
+interface Props {
   locale?: Locale
 }
 const props = withDefaults(defineProps<Props>(), {
