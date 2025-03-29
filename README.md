@@ -6,7 +6,7 @@
 
 ![nuxt-cookie-control](https://drive.google.com/a/broj42.com/uc?id=19sFguJo7SKUvmH4xu9DhK9ZXzR6oWLX8)
 
-✅ Translated for: ar, az, bg, ca, cs, da, de, en, es, fi, fr, hr, hu, it, ja, ko, lt, nl, no, oc, pt, pl, ro, rs, ru, sk, sv, tr and uk
+✅ Translated for: ar, az, be, bg, ca, cs, da, de, en, es, fi, fr, hr, hu, id, it, ja, km, ko, lt, nl, no, oc, pt, pl, ro, rs, ru, sk, sl, sv, tr, uk and zh-CN
 
 ✅ Vue 3 support
 
@@ -23,9 +23,7 @@
 ### Installation
 
 ```bash
-npm i -D @dargmuesli/nuxt-cookie-control
-yarn add -D @dargmuesli/nuxt-cookie-control
-pnpm i -D @dargmuesli/nuxt-cookie-control
+npx nuxi@latest module add cookie-control
 ```
 
 
@@ -158,6 +156,7 @@ cookieNameCookiesEnabledIds: 'ncc_e',
 // Options to pass to nuxt's useCookie
 cookieOptions: {
   path: '/',
+  sameSite: 'strict',
 }
 
 // Switch to toggle the "accept necessary" button.
@@ -206,8 +205,8 @@ Every property that includes a `{ en: ... }` value is a translatable property th
   description: {
     en: 'This cookie stores preferences.'
   },
-  id: 'p', // if unset, `getCookieId(cookie)` returns the cookie's slugified name instead, which e.g. is used to fill the state's `enabledCookieIds` list
-  // use a short cookie id to save bandwidth!
+  id: 'p', // use a short cookie id to save bandwidth and prefixes to separate
+  isPreselected: false // `true` is not GDPR compliant! This flag does not enable any cookies, it only preselects the cookie's modal toggle. The default is `false`.
   name: {
     en: 'Preferences' // you always have to specify a cookie name (in English)
   },
@@ -216,7 +215,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
     'https://example.com/terms': 'Terms of Service',
   },
   src: 'https://example.com/preferences/js?id=<API-KEY>',
-  targetCookieIds: ['xmpl_a', 'xmpl_b']
+  targetCookieIds: ['xmpl_a', 'xmpl_b'],
 }
 ```
 
@@ -227,7 +226,7 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 ```html
 <CookieControl>
   <template #bar>
-    <h3>Bar title</h3>
+    <h2>Bar title</h2>
     <p>Bar description (you can use $cookies.text.barDescription)</p>
     <n-link>Go somewhere</n-link>
   </template>
@@ -237,18 +236,48 @@ Every property that includes a `{ en: ... }` value is a translatable property th
 #### Modal
 
 ```html
-<template #modal>
-  <h3>Modal title</h3>
-  <p>Modal description</p>
-</template>
+<CookieControl>
+  <template #modal>
+    <h2>Modal title</h2>
+    <p>Modal description</p>
+  </template>
+</CookieControl>
 ```
 
 #### Cookie
 
 ```html
-<template #cookie="{config}">
-  <span v-for="c in config" :key="c.id" v-text="c.cookies" />
-</template>
+<CookieControl>
+  <template #cookie="{ cookie }">
+    <h3 v-text="cookie.name" />
+    <span v-html="cookie.description" />
+
+    <div v-if="cookie.targetCookieIds">
+      <b>Cookie ids: </b>
+      <span v-text="cookie?.targetCookieIds?.join(', ')" />
+    </div>
+  </template>
+</CookieControl>
+```
+
+#### Iframe
+
+```html
+<CookieIframe>
+  <template #iframe>
+    Content to display if iframes are blocked.
+  </template>
+</CookieIframe>
+```
+
+#### Control button
+
+```html
+<CookieIframe>
+  <template #controlButton>
+    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="M247.2 17c-22.1-3.1-44.6.9-64.4 11.4l-74 39.5c-19.7 10.5-35.6 27-45.4 47.1l-36.7 75.6c-9.8 20.1-13 42.9-9.1 64.9l14.5 82.8c3.9 22.1 14.6 42.3 30.7 57.9l60.3 58.4c16.1 15.6 36.6 25.6 58.7 28.7l83 11.7c22.1 3.1 44.6-.9 64.4-11.4l74-39.5c19.7-10.5 35.6-27 45.4-47.2l36.7-75.5c9.8-20.1 13-42.9 9.1-64.9l-14.6-82.8c-3.9-22.1-14.6-42.3-30.7-57.9l-60.2-58.3c-16.1-15.6-36.6-25.6-58.7-28.7zM208 144a32 32 0 1 1 0 64a32 32 0 1 1 0-64m-64 192a32 32 0 1 1 64 0a32 32 0 1 1-64 0m224-64a32 32 0 1 1 0 64a32 32 0 1 1 0-64"/></svg>
+  </template>
+</CookieIframe>
 ```
 
 ### Props

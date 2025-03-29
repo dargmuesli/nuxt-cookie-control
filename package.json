@@ -1,10 +1,58 @@
 {
-  "name": "@dargmuesli/nuxt-cookie-control",
-  "version": "6.4.4",
+  "author": "Jonas Thelemann",
+  "contributors": [
+    "Dario Ferderber <dario.ferderber@broj42.com>"
+  ],
+  "dependencies": {
+    "@nuxt/kit": "^3.8.0",
+    "css-vars-ponyfill": "^2.4.8",
+    "defu": "^6.1.4",
+    "string-replace-loader": "^3.1.0"
+  },
   "description": "Nuxt Cookie Control Module",
-  "author": "Dario Ferderber <dario.ferderber@broj42.com>",
-  "maintainers": [
-    "Jonas Thelemann"
+  "devDependencies": {
+    "@commitlint/cli": "19.8.0",
+    "@commitlint/config-conventional": "19.8.0",
+    "@dargmuesli/nuxt-cookie-control": "link:",
+    "@nuxt/eslint-config": "1.2.0",
+    "@nuxt/module-builder": "0.8.4",
+    "@nuxt/schema": "3.16.1",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/commit-analyzer": "13.0.1",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "11.0.1",
+    "@semantic-release/npm": "12.0.1",
+    "@semantic-release/release-notes-generator": "14.0.3",
+    "eslint": "9.23.0",
+    "eslint-config-prettier": "10.1.1",
+    "eslint-plugin-prettier": "5.2.5",
+    "husky": "9.1.7",
+    "lint-staged": "15.5.0",
+    "nuxt": "3.16.1",
+    "prettier": "3.5.3",
+    "semantic-release": "24.2.3",
+    "vite": "6.2.3",
+    "vue": "3.5.13",
+    "vue-tsc": "2.2.8",
+    "webpack": "5.98.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs",
+      "types": "./dist/types.d.ts"
+    },
+    "./runtime/*": {
+      "import": "./dist/runtime/*.js",
+      "require": "./dist/runtime/*.js",
+      "types": "./dist/runtime/*.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*"
   ],
   "funding": {
     "url": "https://github.com/sponsors/dargmuesli"
@@ -15,60 +63,39 @@
     "nuxt cookie consent",
     "nuxt gdpr consent"
   ],
-  "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
   "license": "MIT",
-  "type": "module",
-  "engines": {
-    "node": ">=16"
-  },
-  "packageManager": "pnpm@8.8.0",
-  "exports": {
-    ".": {
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs",
-      "types": "./dist/types.d.ts"
-    }
-  },
   "main": "./dist/module.cjs",
-  "types": "./dist/module.d.ts",
-  "files": [
-    "dist/**/*",
-    "src/components",
-    "src/locale"
+  "maintainers": [
+    "Jonas Thelemann"
   ],
-  "scripts": {
-    "build": "nuxt-module-build",
-    "lint": "eslint --ext .js,.ts,.vue . && nuxt typecheck",
-    "lint:fix": "eslint --ext .js,.ts,.vue --fix . && nuxt typecheck --fix",
-    "prepack": "pnpm build",
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "@nuxt/kit": "^3.7.3",
-    "@sindresorhus/slugify": "^2.2.1",
-    "css-vars-ponyfill": "^2.4.8",
-    "string-replace-loader": "^3.1.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "17.7.2",
-    "@commitlint/config-conventional": "17.7.0",
-    "@dargmuesli/nuxt-cookie-control": "link:",
-    "@nuxt/module-builder": "0.5.2",
-    "@nuxtjs/eslint-config-typescript": "12.1.0",
-    "conventional-changelog-conventionalcommits": "7.0.2",
-    "eslint": "8.51.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-prettier": "5.0.0",
-    "husky": "8.0.3",
-    "lint-staged": "14.0.1",
-    "nuxt": "3.7.4",
-    "prettier": "3.0.3",
-    "typescript": "5.2.2",
-    "vue": "3.3.4",
-    "vue-tsc": "1.8.18",
-    "webpack": "5.88.2"
-  },
+  "name": "@dargmuesli/nuxt-cookie-control",
+  "packageManager": "pnpm@10.7.0",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "esbuild"
+    ],
+    "overrides": {
+      "typescript": "5.6.3"
+    }
+  },
+  "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
+  "resolutions": {
+    "@nuxt/kit": "3.16.1"
+  },
+  "scripts": {
+    "build": "nuxt-module-build build",
+    "dev": "pnpm --dir playground run dev",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
+    "lint:fix": "pnpm run lint:js --fix . && pnpm run lint:ts --fix",
+    "lint:js": "eslint --cache",
+    "lint:ts": "vue-tsc --noEmit",
+    "prepack": "pnpm build",
+    "prepare": "husky && nuxt-module-build prepare"
+  },
+  "type": "module",
+  "types": "./dist/types.d.ts",
+  "version": "8.6.0"
 }

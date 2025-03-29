@@ -58,19 +58,21 @@
   cursor: pointer;
   padding: 12px 20px;
   backface-visibility: hidden;
-  transition: background-color 200ms, color 200ms;
+  transition:
+    background-color 200ms,
+    color 200ms;
 }
 .cookieControl__Bar {
   position: fixed;
   background-color: var(--cookie-control-barBackground);
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
-.cookieControl__Bar h3,
+.cookieControl__Bar h2,
 .cookieControl__Bar p {
   color: var(--cookie-control-barTextColor);
   max-width: 900px;
 }
-.cookieControl__Bar h3 {
+.cookieControl__Bar h2 {
   margin: 0;
   font-size: 20px;
 }
@@ -86,7 +88,7 @@
   color: var(--cookie-control-barButtonHoverColor);
   background-color: var(--cookie-control-barButtonHoverBackground);
 }
-.cookieControl__Bar button:focus{
+.cookieControl__Bar button:focus {
   box-shadow: 0 0 0 3px var(--cookie-control-focusRingColor);
 }
 .cookieControl__Bar button + button {
@@ -205,11 +207,11 @@
 .cookieControl__ModalContent *:not(button) {
   color: var(--cookie-control-modalTextColor);
 }
-.cookieControl__ModalContent h3 {
+.cookieControl__ModalContent h2 {
   font-size: 24px;
   margin: 15px 0px;
 }
-.cookieControl__ModalContent h3:first-of-type {
+.cookieControl__ModalContent h2:first-of-type {
   margin-top: 0;
 }
 .cookieControl__ModalContent ul {
@@ -322,7 +324,7 @@
     right: 0;
   }
   .cookieControl__Bar p,
-  .cookieControl__Bar h3 {
+  .cookieControl__Bar h2 {
     max-width: 100%;
   }
   .cookieControl__Bar--top-full,

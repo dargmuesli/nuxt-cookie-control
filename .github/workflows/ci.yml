@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Get current PR
         id: pr
-        uses: 8BitJonny/gh-get-current-pr@2.2.0
+        uses: 8BitJonny/gh-get-current-pr@3.0.0
         with:
           filterOutClosed: true
           sha: ${{ github.event.pull_request.head.sha }}
@@ -29,34 +29,34 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node: ['18','20']
+        node: ['18', '22']
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
+      - name: Checkout git repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Setup pnpm
+      - name: Setup package manager
         run: corepack enable
 
-      - name: checkout
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
-
-      - name: cache node_modules
-        uses: actions/cache@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4.3.0
         with:
-          path: node_modules
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+          node-version: ${{ matrix.node }}
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
 
       - name: Lint
-        run: pnpm lint
-  release-semantic:
+        run: pnpm run lint && pnpm run -r lint
+
+      - name: Build
+        run: pnpm run build && pnpm run -r build
+  release_semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.43.4
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@2.5.5
     permissions:
       contents: write
     secrets:

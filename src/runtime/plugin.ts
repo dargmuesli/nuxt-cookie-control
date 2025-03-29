@@ -1,14 +1,14 @@
 import { ref } from 'vue'
 
-import { Plugin } from '#app'
+import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
+import { getAllCookieIdsString } from '#cookie-control/methods'
+import type { Cookie, State } from '#cookie-control/types'
+import { defineNuxtPlugin, useCookie, useRuntimeConfig } from '#imports'
 
-import { getAllCookieIdsString, getCookieId } from './methods'
-import { Cookie, State } from './types'
+export default defineNuxtPlugin((_nuxtApp) => {
+  const runtimeConfig = useRuntimeConfig()
+  const moduleOptions = runtimeConfig.public.cookieControl
 
-import { defineNuxtPlugin, useCookie } from '#imports'
-import moduleOptions from '#build/cookie-control-options'
-
-const plugin: Plugin<{ cookies: State }> = defineNuxtPlugin((_nuxtApp) => {
   const cookieIsConsentGiven = useCookie(
     moduleOptions.cookieNameIsConsentGiven,
     moduleOptions.cookieOptions,
@@ -16,10 +16,10 @@ const plugin: Plugin<{ cookies: State }> = defineNuxtPlugin((_nuxtApp) => {
   const cookieCookiesEnabledIds = useCookie(
     moduleOptions.cookieNameCookiesEnabledIds,
     moduleOptions.cookieOptions,
-  ).value?.split('|')
+  ).value?.split(COOKIE_ID_SEPARATOR)
 
   const isConsentGiven = ref<boolean | undefined>(
-    cookieIsConsentGiven === undefined
+    cookieIsConsentGiven.value === undefined
       ? undefined
       : cookieIsConsentGiven.value === getAllCookieIdsString(moduleOptions),
   )
@@ -28,10 +28,10 @@ const plugin: Plugin<{ cookies: State }> = defineNuxtPlugin((_nuxtApp) => {
       ? undefined
       : [
           ...moduleOptions.cookies.necessary.filter((cookieNecessary) =>
-            cookieCookiesEnabledIds.includes(getCookieId(cookieNecessary)),
+            cookieCookiesEnabledIds.includes(cookieNecessary.id),
           ),
           ...moduleOptions.cookies.optional.filter((cookieOptional) =>
-            cookieCookiesEnabledIds.includes(getCookieId(cookieOptional)),
+            cookieCookiesEnabledIds.includes(cookieOptional.id),
           ),
         ],
   )
@@ -54,5 +54,3 @@ const plugin: Plugin<{ cookies: State }> = defineNuxtPlugin((_nuxtApp) => {
     },
   }
 })
-
-export default plugin

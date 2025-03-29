@@ -1,7 +1,7 @@
 import type { Ref } from 'vue'
 import type { CookieOptions } from 'nuxt/app'
 
-import en from './locale/en'
+import en from './runtime/locale/en'
 
 export type Locale =
   | 'ar'
@@ -33,7 +33,6 @@ export type Locale =
   | 'rs'
   | 'ru'
   | 'sk'
-  | 'sl'
   | 'sv'
   | 'tr'
   | 'uk'
@@ -79,6 +78,7 @@ export interface LocaleStrings {
 }
 
 export interface ModuleOptions {
+  _isPrerendered: boolean | undefined
   barPosition:
     | 'top-left'
     | 'top-right'
@@ -109,6 +109,7 @@ export interface ModuleOptions {
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
+  _isPrerendered: undefined,
   barPosition: 'bottom-full',
   closeModalOnClickOutside: false,
   colors: {
@@ -160,8 +161,6 @@ export const DEFAULTS: Required<ModuleOptions> = {
   isIframeBlocked: false,
   isModalForced: false,
   locales: ['en'],
-
-  // TODO: use Nuxt module "i18n"
   localeTexts: { en },
 }
 
@@ -172,16 +171,4 @@ export interface State {
   isModalActive: Ref<boolean>
   locale: Ref<Locale>
   moduleOptions: ModuleOptions
-}
-
-declare module '#app' {
-  interface NuxtApp {
-    $cookies: State
-  }
-}
-
-declare module 'vue' {
-  interface ComponentCustomProperties {
-    $cookies: State
-  }
 }

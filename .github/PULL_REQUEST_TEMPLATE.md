@@ -20,5 +20,4 @@
   https://conventionalcommits.org
 -->
 
-- [ ] All commits follow the Conventional Commit format
 - [ ] The PR's title follows the Conventional Commit format

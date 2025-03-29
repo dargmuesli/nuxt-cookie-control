@@ -1,8 +1,6 @@
-import slugify from '@sindresorhus/slugify'
-import { serialize } from 'cookie-es'
-
-import { LOCALE_DEFAULT } from './constants'
-import { Cookie, ModuleOptions, Translatable } from './types'
+import { LOCALE_DEFAULT } from '#cookie-control/constants'
+import type { Cookie, ModuleOptions, Translatable } from '#cookie-control/types'
+import { useCookie } from '#imports'
 
 export const getAllCookieIdsString = (moduleOptions: ModuleOptions) =>
   getCookieIds([
@@ -10,14 +8,11 @@ export const getAllCookieIdsString = (moduleOptions: ModuleOptions) =>
     ...moduleOptions.cookies.optional,
   ]).join('')
 
-export const getCookieId = (cookie: Cookie) =>
-  cookie.id || slugify(resolveTranslatable(cookie.name))
-
 export const getCookieIds = (cookies: Cookie[]) =>
-  cookies.map((cookie) => getCookieId(cookie))
+  cookies.map((cookie) => cookie.id)
 
 export const removeCookie = (name: string) =>
-  (document.cookie = serialize(name, '', { expires: new Date(0) }))
+  (useCookie(name).value = undefined)
 
 export const resolveTranslatable = (
   translatable: Translatable,

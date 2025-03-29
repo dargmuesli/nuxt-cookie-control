@@ -1,31 +1,31 @@
 <template>
-  <ClientOnly>
+  <ClientOnlyPrerender>
     <iframe
       v-if="isCookieFunctionalEnabled"
       :cookie-enabled="null"
       v-bind="$attrs"
     />
     <div v-else class="cookieControl__BlockedIframe">
-      <p>
-        {{ localeStrings?.iframeBlocked }}
-        <a
-          href="#"
-          @click.prevent="isModalActive = true"
-          v-text="localeStrings?.here"
-        />
-      </p>
+      <slot name="iframe">
+        <p>
+          {{ localeStrings?.iframeBlocked }}
+          <a
+            href="#"
+            @click.prevent="isModalActive = true"
+            v-text="localeStrings?.here"
+          />
+        </p>
+      </slot>
     </div>
-  </ClientOnly>
+  </ClientOnlyPrerender>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { useNuxtApp } from '#app'
-
-import { Cookie } from '../types'
-
-import { useCookieControl } from '#imports'
+import type { Cookie } from '#cookie-control/types'
+import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
+import { useNuxtApp, useCookieControl } from '#imports'
 
 const { cookiesEnabled, isModalActive, moduleOptions } = useCookieControl()
 const nuxtApp = useNuxtApp()

@@ -1,4 +1,4 @@
-import { LocaleStrings } from '../types'
+import type { LocaleStrings } from '#cookie-control/types'
 
 export default {
   accept: 'Acceptar',

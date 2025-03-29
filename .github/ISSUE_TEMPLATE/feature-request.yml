@@ -1,4 +1,4 @@
-name: "🚀 Feature request"
+name: '🚀 Feature request'
 description: Suggest a feature that will improve this project.
 # labels: ["pending triage"]
 body:
@@ -6,9 +6,9 @@ body:
     attributes:
       value: |
         Thank you for taking the time to fill out this feature request!
-#
-#        Please carefully read the contribution docs before suggesting a new feature
-#        👉 https://v3.nuxtjs.org/community/contribution/#creating-an-issue
+  #
+  #        Please carefully read the contribution docs before suggesting a new feature
+  #        👉 https://v3.nuxtjs.org/community/contribution/#creating-an-issue
   - type: textarea
     id: feature-description
     attributes:
