@@ -1,3 +1,9 @@
+## [8.6.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.6.0...8.6.1) (2025-03-29)
+
+### Bug Fixes
+
+* remove unnecessary export ([#147](https://github.com/dargmuesli/nuxt-cookie-control/issues/147)) ([fc5885a](https://github.com/dargmuesli/nuxt-cookie-control/commit/fc5885aee2cf18f1bc4f17dc15db7d01b7ed9abf))
+
 ## [8.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.5.5...8.6.0) (2025-03-29)
 
 ### Features
