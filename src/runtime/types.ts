@@ -102,9 +102,9 @@ export interface ModuleOptions {
   isCssEnabled: boolean
   isCssPonyfillEnabled: boolean
   isDashInDescriptionEnabled: boolean
+  isDeclinedOptional: boolean
   isIframeBlocked: boolean
   isModalForced: boolean
-  isDeclinedOptional: boolean
   locales: Locale[]
   localeTexts: PartialRecord<Locale, Partial<LocaleStrings>>
 }

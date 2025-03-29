@@ -159,9 +159,9 @@ export const DEFAULTS: Required<ModuleOptions> = {
   isCssEnabled: true,
   isCssPonyfillEnabled: false,
   isDashInDescriptionEnabled: true,
+  isDeclinedOptional: false,
   isIframeBlocked: false,
   isModalForced: false,
-  isDeclinedOptional: false,
   locales: ['en'],
   localeTexts: { en },
 }
