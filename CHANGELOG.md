@@ -1,3 +1,9 @@
+## [8.6.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.5.5...8.6.0) (2025-03-29)
+
+### Features
+
+* **slot:** add for control button icon ([#265](https://github.com/dargmuesli/nuxt-cookie-control/issues/265)) ([eb14a66](https://github.com/dargmuesli/nuxt-cookie-control/commit/eb14a663a85372979e6d22468cb2ea0121e00f0b))
+
 ## [8.5.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.5.4...8.5.5) (2025-03-26)
 
 ### Bug Fixes
