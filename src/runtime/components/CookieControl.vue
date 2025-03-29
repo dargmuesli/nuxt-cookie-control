@@ -94,14 +94,14 @@
                               cookieType === CookieType.NECESSARY &&
                               cookie.name !== 'functional'
                             "
-                            :id="resolveTranslatable(cookie.name, props.locale)"
+                            :id="resolveTranslatable(cookie.name, locale)"
                             type="checkbox"
                             disabled
                             checked
                           />
                           <input
                             v-else
-                            :id="resolveTranslatable(cookie.name, props.locale)"
+                            :id="resolveTranslatable(cookie.name, locale)"
                             type="checkbox"
                             :checked="
                               isConsentGiven === undefined
@@ -117,9 +117,7 @@
                           </button>
                           <label
                             class="cookieControl__ModalCookieName"
-                            :for="
-                              resolveTranslatable(cookie.name, props.locale)
-                            "
+                            :for="resolveTranslatable(cookie.name, locale)"
                             tabindex="0"
                             @keydown="toggleLabel($event)"
                           >
@@ -231,12 +229,9 @@ import {
 } from '#cookie-control/types'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
-interface Props {
+const { locale = 'en' } = defineProps<{
   locale?: Locale
-}
-const props = withDefaults(defineProps<Props>(), {
-  locale: 'en',
-})
+}>()
 
 const {
   cookiesEnabled,
@@ -272,7 +267,7 @@ const isSaved = computed(
       .join(COOKIE_ID_SEPARATOR) !==
     getCookieIds(localCookiesEnabled.value).sort().join(COOKIE_ID_SEPARATOR),
 )
-const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
+const localeStrings = computed(() => moduleOptions.localeTexts[locale])
 
 // methods
 const accept = () => {
@@ -307,14 +302,14 @@ const declineAll = () => {
 const getDescription = (description: Translatable) =>
   `${
     moduleOptions.isDashInDescriptionEnabled === false ? '' : '-'
-  } ${resolveTranslatable(description, props.locale)}`
+  } ${resolveTranslatable(description, locale)}`
 const getName = (name: Translatable) => {
   return name === 'functional'
     ? localeStrings.value?.cookiesFunctional
-    : resolveTranslatable(name, props.locale)
+    : resolveTranslatable(name, locale)
 }
 const init = () => {
-  nuxtApp.$cookies.locale.value = props.locale
+  nuxtApp.$cookies.locale.value = locale
 }
 const onModalClick = () => {
   if (moduleOptions.closeModalOnClickOutside) {
@@ -436,7 +431,7 @@ watch(isConsentGiven, (current, _previous) => {
 })
 
 watch(
-  () => props.locale,
+  () => locale,
   (locale) => {
     nuxtApp.$cookies.locale.value = locale
   },
