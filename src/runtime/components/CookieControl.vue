@@ -190,6 +190,17 @@
                   v-text="localeStrings?.acceptAll"
                 />
                 <button
+                  v-if="!moduleOptions.isDeclinedOptional"
+                  type="button"
+                  @click="
+                    () => {
+                      decline()
+                      isModalActive = false
+                    }
+                  "
+                  v-text="localeStrings?.decline"
+                />
+                <button
                   v-if="!moduleOptions.isModalForced"
                   type="button"
                   @click="

@@ -102,6 +102,7 @@ export interface ModuleOptions {
   isCssEnabled: boolean
   isCssPonyfillEnabled: boolean
   isDashInDescriptionEnabled: boolean
+  isDeclinedOptional: boolean
   isIframeBlocked: boolean
   isModalForced: boolean
   locales: Locale[]
@@ -159,6 +160,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   isDashInDescriptionEnabled: true,
   isIframeBlocked: false,
   isModalForced: false,
+  isDeclinedOptional: false,
   locales: ['en'],
 
   // TODO: use Nuxt module "i18n"
