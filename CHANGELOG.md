@@ -1,3 +1,13 @@
+## [9.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.6.1...9.0.0) (2025-04-07)
+
+### ⚠ BREAKING CHANGES
+
+* **module:** upgrade builder to v1
+
+### Features
+
+* **module:** upgrade builder to v1 ([9bd2945](https://github.com/dargmuesli/nuxt-cookie-control/commit/9bd294513886d3050792742f7b31aedeabea8582))
+
 ## [8.6.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.6.0...8.6.1) (2025-03-29)
 
 ### Bug Fixes
