@@ -64,9 +64,6 @@
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
   "packageManager": "pnpm@10.7.1",
-  "publishConfig": {
-    "access": "public"
-  },
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
@@ -75,6 +72,9 @@
     "overrides": {
       "typescript": "5.6.3"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
   "resolutions": {
