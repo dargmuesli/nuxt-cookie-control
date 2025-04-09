@@ -23,7 +23,7 @@ importers:
         version: 6.1.4
       string-replace-loader:
         specifier: ^3.1.0
-        version: 3.1.0(webpack@5.99.1)
+        version: 3.1.0(webpack@5.99.5(esbuild@0.25.2))
     devDependencies:
       '@commitlint/cli':
         specifier: 19.8.0
@@ -38,8 +38,8 @@ importers:
         specifier: 1.3.0
         version: 1.3.0(@vue/compiler-sfc@3.5.13)(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3)
       '@nuxt/module-builder':
-        specifier: 1.0.0
-        version: 1.0.0(@nuxt/cli@3.24.1(magicast@0.3.5))(typescript@5.6.3)(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
+        specifier: 1.0.1
+        version: 1.0.1(@nuxt/cli@3.24.1(magicast@0.3.5))(esbuild@0.25.2)(typescript@5.6.3)(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
       '@nuxt/schema':
         specifier: 3.16.2
         version: 3.16.2
@@ -95,8 +95,8 @@ importers:
         specifier: 2.2.8
         version: 2.2.8(typescript@5.6.3)
       webpack:
-        specifier: 5.99.1
-        version: 5.99.1
+        specifier: 5.99.5
+        version: 5.99.5(esbuild@0.25.2)
 
   playground:
     devDependencies:
@@ -650,8 +650,8 @@ packages:
     resolution: {integrity: sha512-K1SAUo2vweTfudKZzjKsZ5YJoxPLTspR5qz5+G61xtZreLpsdpDYfBseqsIAl5VFLJuszeRpWQ01jP9LfQ6Ksw==}
     engines: {node: '>=18.12.0'}
 
-  '@nuxt/module-builder@1.0.0':
-    resolution: {integrity: sha512-5OxnQLAqrUXrudui1Qnke7IpfUfSAckqd1gF9K3UslG7MAG7+7oee6+rqVqdQ6YBEJJp2iE5T1xfOzfsOwhD9A==}
+  '@nuxt/module-builder@1.0.1':
+    resolution: {integrity: sha512-PmxiKKbwJ32EpASyrgX9XxD/8cZyRCZBx/A6/eSUb5PmqtEVM8QFIBZDN5+oDhAZKB1ayI+ukQNNu4kzbd292Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -4938,10 +4938,11 @@ packages:
     peerDependencies:
       vue: ^3.2.0
 
-  vue-sfc-transformer@0.1.5:
-    resolution: {integrity: sha512-EyUg9hHv666VgsPW/kxwGfat3xtQzyU49phtpI6Hi5cH6liezoSN784RMQ9eSQ6jg1ZkyZODbT6MsgEhPgc1WQ==}
-    engines: {node: '>=6.9.0'}
+  vue-sfc-transformer@0.1.9:
+    resolution: {integrity: sha512-627P1t8pcEUR4NAmmGdXCQGkGYqvRpRttbeOO84fMgSA2MgmTJ7eSmNhuq0ff6Ca/8IxKhOBIbmRziEUBG5Elw==}
+    engines: {node: '>=18.0.0'}
     peerDependencies:
+      esbuild: '*'
       vue: ^3.5.13
 
   vue-tsc@2.2.8:
@@ -4972,8 +4973,8 @@ packages:
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
-  webpack@5.99.1:
-    resolution: {integrity: sha512-o9gY7ibHPFxLjF6NtvQ6+5CGknsPTRllsL6SEnqR2Zhjk02hiIioJYLS7dvrWaykrRbbmhvDeKp36mKHNbKYiw==}
+  webpack@5.99.5:
+    resolution: {integrity: sha512-q+vHBa6H9qwBLUlHL4Y7L0L1/LlyBKZtS9FHNCQmtayxjI5RKC9yD8gpvLeqGv5lCQp1Re04yi0MF40pf30Pvg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -5800,7 +5801,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxt/module-builder@1.0.0(@nuxt/cli@3.24.1(magicast@0.3.5))(typescript@5.6.3)(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))':
+  '@nuxt/module-builder@1.0.1(@nuxt/cli@3.24.1(magicast@0.3.5))(esbuild@0.25.2)(typescript@5.6.3)(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       '@nuxt/cli': 3.24.1(magicast@0.3.5)
       citty: 0.1.6
@@ -5808,15 +5809,16 @@ snapshots:
       defu: 6.1.4
       jiti: 2.4.2
       magic-regexp: 0.8.0
-      mkdist: 2.3.0(typescript@5.6.3)(vue-sfc-transformer@0.1.5(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
+      mkdist: 2.3.0(typescript@5.6.3)(vue-sfc-transformer@0.1.9(esbuild@0.25.2)(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
       mlly: 1.7.4
       pathe: 2.0.3
       pkg-types: 2.1.0
       tsconfck: 3.1.5(typescript@5.6.3)
       typescript: 5.6.3
-      unbuild: 3.5.0(typescript@5.6.3)(vue-sfc-transformer@0.1.5(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
-      vue-sfc-transformer: 0.1.5(vue@3.5.13(typescript@5.6.3))
+      unbuild: 3.5.0(typescript@5.6.3)(vue-sfc-transformer@0.1.9(esbuild@0.25.2)(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
+      vue-sfc-transformer: 0.1.9(esbuild@0.25.2)(vue@3.5.13(typescript@5.6.3))
     transitivePeerDependencies:
+      - esbuild
       - sass
       - vue
       - vue-tsc
@@ -8610,7 +8612,7 @@ snapshots:
 
   mkdirp@3.0.1: {}
 
-  mkdist@2.3.0(typescript@5.6.3)(vue-sfc-transformer@0.1.5(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3)):
+  mkdist@2.3.0(typescript@5.6.3)(vue-sfc-transformer@0.1.9(esbuild@0.25.2)(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3)):
     dependencies:
       autoprefixer: 10.4.21(postcss@8.5.3)
       citty: 0.1.6
@@ -8628,7 +8630,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.3
       vue: 3.5.13(typescript@5.6.3)
-      vue-sfc-transformer: 0.1.5(vue@3.5.13(typescript@5.6.3))
+      vue-sfc-transformer: 0.1.9(esbuild@0.25.2)(vue@3.5.13(typescript@5.6.3))
       vue-tsc: 2.2.8(typescript@5.6.3)
 
   mlly@1.7.4:
@@ -9802,11 +9804,11 @@ snapshots:
 
   string-argv@0.3.2: {}
 
-  string-replace-loader@3.1.0(webpack@5.99.1):
+  string-replace-loader@3.1.0(webpack@5.99.5(esbuild@0.25.2)):
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.99.1
+      webpack: 5.99.5(esbuild@0.25.2)
 
   string-width@4.2.3:
     dependencies:
@@ -9948,14 +9950,16 @@ snapshots:
       type-fest: 2.19.0
       unique-string: 3.0.0
 
-  terser-webpack-plugin@5.3.14(webpack@5.99.1):
+  terser-webpack-plugin@5.3.14(esbuild@0.25.2)(webpack@5.99.5(esbuild@0.25.2)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 4.3.0
       serialize-javascript: 6.0.2
       terser: 5.39.0
-      webpack: 5.99.1
+      webpack: 5.99.5(esbuild@0.25.2)
+    optionalDependencies:
+      esbuild: 0.25.2
 
   terser@5.39.0:
     dependencies:
@@ -10043,7 +10047,7 @@ snapshots:
 
   ultrahtml@1.6.0: {}
 
-  unbuild@3.5.0(typescript@5.6.3)(vue-sfc-transformer@0.1.5(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3)):
+  unbuild@3.5.0(typescript@5.6.3)(vue-sfc-transformer@0.1.9(esbuild@0.25.2)(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3)):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.39.0)
       '@rollup/plugin-commonjs': 28.0.3(rollup@4.39.0)
@@ -10059,7 +10063,7 @@ snapshots:
       hookable: 5.5.3
       jiti: 2.4.2
       magic-string: 0.30.17
-      mkdist: 2.3.0(typescript@5.6.3)(vue-sfc-transformer@0.1.5(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
+      mkdist: 2.3.0(typescript@5.6.3)(vue-sfc-transformer@0.1.9(esbuild@0.25.2)(vue@3.5.13(typescript@5.6.3)))(vue-tsc@2.2.8(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
       mlly: 1.7.4
       pathe: 2.0.3
       pkg-types: 2.1.0
@@ -10370,10 +10374,10 @@ snapshots:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.13(typescript@5.6.3)
 
-  vue-sfc-transformer@0.1.5(vue@3.5.13(typescript@5.6.3)):
+  vue-sfc-transformer@0.1.9(esbuild@0.25.2)(vue@3.5.13(typescript@5.6.3)):
     dependencies:
-      '@babel/generator': 7.27.0
       '@babel/parser': 7.27.0
+      esbuild: 0.25.2
       vue: 3.5.13(typescript@5.6.3)
 
   vue-tsc@2.2.8(typescript@5.6.3):
@@ -10403,7 +10407,7 @@ snapshots:
 
   webpack-virtual-modules@0.6.2: {}
 
-  webpack@5.99.1:
+  webpack@5.99.5(esbuild@0.25.2):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.7
@@ -10425,7 +10429,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 4.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.14(webpack@5.99.1)
+      terser-webpack-plugin: 5.3.14(esbuild@0.25.2)(webpack@5.99.5(esbuild@0.25.2))
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
