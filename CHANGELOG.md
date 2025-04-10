@@ -1,3 +1,9 @@
+## [9.0.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.0...9.0.1) (2025-04-10)
+
+### Bug Fixes
+
+* **runtime:** generate missing component imports ([9af13b2](https://github.com/dargmuesli/nuxt-cookie-control/commit/9af13b282ec6a1565729f07c2fac3a17b45d1266))
+
 ## [9.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/8.6.1...9.0.0) (2025-04-07)
 
 ### ⚠ BREAKING CHANGES
