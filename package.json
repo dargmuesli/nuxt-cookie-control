@@ -16,7 +16,7 @@
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/eslint-config": "1.3.0",
     "@nuxt/module-builder": "1.0.1",
-    "@nuxt/schema": "3.16.2",
+    "@nuxt/schema": "3.17.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.1",
     "@semantic-release/git": "10.0.1",
@@ -28,7 +28,7 @@
     "eslint-plugin-prettier": "5.2.6",
     "husky": "9.1.7",
     "lint-staged": "15.5.1",
-    "nuxt": "3.16.2",
+    "nuxt": "3.17.0",
     "prettier": "3.5.3",
     "semantic-release": "24.2.3",
     "vite": "6.3.3",
@@ -63,7 +63,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@10.10.0",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
@@ -78,7 +78,7 @@
   },
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
   "resolutions": {
-    "@nuxt/kit": "3.16.2"
+    "@nuxt/kit": "3.17.0"
   },
   "scripts": {
     "build": "nuxt-module-build build",
