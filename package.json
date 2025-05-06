@@ -27,14 +27,14 @@
     "eslint-config-prettier": "10.1.2",
     "eslint-plugin-prettier": "5.4.0",
     "husky": "9.1.7",
-    "lint-staged": "15.5.1",
+    "lint-staged": "15.5.2",
     "nuxt": "3.17.2",
     "prettier": "3.5.3",
     "semantic-release": "24.2.3",
     "vite": "6.3.5",
     "vue": "3.5.13",
     "vue-tsc": "2.2.10",
-    "webpack": "5.99.7"
+    "webpack": "5.99.8"
   },
   "engines": {
     "node": ">=16"
