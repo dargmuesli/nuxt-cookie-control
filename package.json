@@ -67,7 +67,8 @@
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
-      "esbuild"
+      "esbuild",
+      "unrs-resolver"
     ],
     "overrides": {
       "typescript": "5.6.3"
