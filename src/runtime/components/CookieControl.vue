@@ -37,8 +37,10 @@
       <button
         v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
         aria-label="Cookie control"
-        class="cookieControl__ControlButton"
-        :class="['cookieControl__ControlButton', `cookieControl__ControlButton--${moduleOptions.controlButtonPosition}`]"
+        :class="[
+          'cookieControl__ControlButton',
+          `cookieControl__ControlButton--${moduleOptions.controlButtonPosition}`,
+        ]"
         data-testid="nuxt-cookie-control-control-button"
         type="button"
         @click="isModalActive = true"

@@ -86,12 +86,16 @@ export interface ModuleOptions {
     | 'bottom-left'
     | 'bottom-right'
     | 'bottom-full'
-    /**
+  /**
    * Position of the control button.
    * 'top-left', 'top-right', 'bottom-left', 'bottom-right', or undefined.
    * @default 'bottom-right'
    */
-  controlButtonPosition: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+  controlButtonPosition:
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
   closeModalOnClickOutside: boolean
   colors: false | Record<string, unknown>
   cookieExpiryOffsetMs: number
