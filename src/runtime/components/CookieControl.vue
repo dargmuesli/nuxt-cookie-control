@@ -110,7 +110,7 @@
                                     cookie.id,
                                   )
                             "
-                            @change="toogleCookie(cookie)"
+                            @change="toggleCookie(cookie)"
                           />
                           <button type="button" @click="toggleButton($event)">
                             {{ getName(cookie.name) }}
@@ -342,7 +342,7 @@ const toggleButton = ($event: MouseEvent) => {
       ?.nextSibling as HTMLLabelElement | null
   )?.click()
 }
-const toogleCookie = (cookie: Cookie) => {
+const toggleCookie = (cookie: Cookie) => {
   const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(cookie.id)
 
   if (cookieIndex < 0) {
