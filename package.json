@@ -69,7 +69,10 @@
       "@parcel/watcher",
       "esbuild",
       "unrs-resolver"
-    ]
+    ],
+    "overrides": {
+      "@types/eslint": "npm:eslint@9.28.0"
+    }
   },
   "publishConfig": {
     "access": "public"
