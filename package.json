@@ -23,7 +23,7 @@
     "@semantic-release/github": "11.0.3",
     "@semantic-release/npm": "12.0.1",
     "@semantic-release/release-notes-generator": "14.0.3",
-    "eslint": "9.28.0",
+    "eslint": "9.29.0",
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-prettier": "5.4.1",
     "husky": "9.1.7",
@@ -71,7 +71,7 @@
       "unrs-resolver"
     ],
     "overrides": {
-      "@types/eslint": "npm:eslint@9.28.0"
+      "@types/eslint": "npm:eslint@9.29.0"
     }
   },
   "publishConfig": {
