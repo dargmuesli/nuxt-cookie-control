@@ -29,7 +29,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.1.2",
     "nuxt": "3.17.5",
-    "prettier": "3.5.3",
+    "prettier": "3.6.0",
     "semantic-release": "24.2.5",
     "vite": "6.3.5",
     "vue": "3.5.17",
@@ -63,7 +63,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.12.2",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
