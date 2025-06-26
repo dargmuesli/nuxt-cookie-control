@@ -31,7 +31,7 @@
     "nuxt": "3.17.5",
     "prettier": "3.6.1",
     "semantic-release": "24.2.5",
-    "vite": "6.3.5",
+    "vite": "7.0.0",
     "vue": "3.5.17",
     "vue-tsc": "2.2.10",
     "webpack": "5.99.9"
