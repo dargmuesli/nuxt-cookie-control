@@ -17,7 +17,8 @@ import { defu } from 'defu'
 
 import { CONFIG_KEY } from './constants'
 import { replaceCodePlugin } from './replace'
-import { DEFAULTS, type ModuleOptions } from './types'
+import { DEFAULTS } from './types'
+import type { ModuleOptions } from './types'
 import { name, version } from '../package.json'
 
 const resolver = createResolver(import.meta.url)
