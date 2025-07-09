@@ -34,7 +34,7 @@
     "vite": "7.0.3",
     "vue": "3.5.17",
     "vue-tsc": "3.0.1",
-    "webpack": "5.99.9"
+    "webpack": "5.100.0"
   },
   "engines": {
     "node": ">=16"
@@ -63,7 +63,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.13.1",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",

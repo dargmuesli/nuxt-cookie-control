@@ -23,7 +23,7 @@ importers:
         version: 6.1.4
       string-replace-loader:
         specifier: ^3.1.0
-        version: 3.2.0(webpack@5.99.9(esbuild@0.25.5)(jiti@2.4.2))
+        version: 3.2.0(webpack@5.100.0(esbuild@0.25.5)(jiti@2.4.2))
     devDependencies:
       '@commitlint/cli':
         specifier: 19.8.1
@@ -95,8 +95,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(typescript@5.8.3)
       webpack:
-        specifier: 5.99.9
-        version: 5.99.9(esbuild@0.25.5)(jiti@2.4.2)
+        specifier: 5.100.0
+        version: 5.100.0(esbuild@0.25.5)(jiti@2.4.2)
 
   playground:
     devDependencies:
@@ -1642,6 +1642,12 @@ packages:
     resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
     peerDependencies:
       acorn: ^8
+
+  acorn-import-phases@1.0.3:
+    resolution: {integrity: sha512-jtKLnfoOzm28PazuQ4dVBcE9Jeo6ha1GAJvq3N0LlNOszmTfx+wSycBehn+FN0RnyeR77IBxN/qVYMw0Rlj0Xw==}
+    engines: {node: '>=10.13.0'}
+    peerDependencies:
+      acorn: ^8.14.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -5532,8 +5538,8 @@ packages:
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
-  webpack@5.99.9:
-    resolution: {integrity: sha512-brOPwM3JnmOa+7kd3NsmOUOwbDAj8FT9xDsG3IW0MgbN9yZV7Oi/s/+MNQ/EcSMqw7qfoRyXPoeEWT8zLVdVGg==}
+  webpack@5.100.0:
+    resolution: {integrity: sha512-H8yBSBTk+BqxrINJnnRzaxU94SVP2bjd7WmA+PfCphoIdDpeQMJ77pq9/4I7xjLq38cB1bNKfzYPZu8pB3zKtg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -7568,6 +7574,10 @@ snapshots:
       negotiator: 0.6.3
 
   acorn-import-attributes@1.9.5(acorn@8.15.0):
+    dependencies:
+      acorn: 8.15.0
+
+  acorn-import-phases@1.0.3(acorn@8.15.0):
     dependencies:
       acorn: 8.15.0
 
@@ -10945,10 +10955,10 @@ snapshots:
 
   string-argv@0.3.2: {}
 
-  string-replace-loader@3.2.0(webpack@5.99.9(esbuild@0.25.5)(jiti@2.4.2)):
+  string-replace-loader@3.2.0(webpack@5.100.0(esbuild@0.25.5)(jiti@2.4.2)):
     dependencies:
       schema-utils: 4.3.2
-      webpack: 5.99.9(esbuild@0.25.5)(jiti@2.4.2)
+      webpack: 5.100.0(esbuild@0.25.5)(jiti@2.4.2)
 
   string-width@4.2.3:
     dependencies:
@@ -11084,14 +11094,14 @@ snapshots:
       type-fest: 2.19.0
       unique-string: 3.0.0
 
-  terser-webpack-plugin@5.3.14(esbuild@0.25.5)(webpack@5.99.9(esbuild@0.25.5)(jiti@2.4.2)):
+  terser-webpack-plugin@5.3.14(esbuild@0.25.5)(webpack@5.100.0(esbuild@0.25.5)(jiti@2.4.2)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.29
       jest-worker: 27.5.1
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2
       terser: 5.43.1
-      webpack: 5.99.9(esbuild@0.25.5)(jiti@2.4.2)
+      webpack: 5.100.0(esbuild@0.25.5)(jiti@2.4.2)
     optionalDependencies:
       esbuild: 0.25.5
 
@@ -11587,7 +11597,7 @@ snapshots:
 
   webpack-virtual-modules@0.6.2: {}
 
-  webpack@5.99.9(esbuild@0.25.5)(jiti@2.4.2):
+  webpack@5.100.0(esbuild@0.25.5)(jiti@2.4.2):
     dependencies:
       '@types/eslint-scope': 3.7.7(jiti@2.4.2)
       '@types/estree': 1.0.8
@@ -11596,6 +11606,7 @@ snapshots:
       '@webassemblyjs/wasm-edit': 1.14.1
       '@webassemblyjs/wasm-parser': 1.14.1
       acorn: 8.15.0
+      acorn-import-phases: 1.0.3(acorn@8.15.0)
       browserslist: 4.25.1
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.18.2
@@ -11610,7 +11621,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 4.3.2
       tapable: 2.2.2
-      terser-webpack-plugin: 5.3.14(esbuild@0.25.5)(webpack@5.99.9(esbuild@0.25.5)(jiti@2.4.2))
+      terser-webpack-plugin: 5.3.14(esbuild@0.25.5)(webpack@5.100.0(esbuild@0.25.5)(jiti@2.4.2))
       watchpack: 2.4.4
       webpack-sources: 3.3.3
     transitivePeerDependencies:
