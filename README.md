@@ -105,6 +105,11 @@ if (cookieControl.cookiesEnabledIds.value.includes('google-analytics')) {
 // 'top-left', 'top-right', 'top-full', 'bottom-left', 'bottom-right', 'bottom-full'
 barPosition: 'bottom-full',
 
+// Position of the cookie control button.
+// 'top-left', 'top-right', 'bottom-left', 'bottom-right'
+// @default 'bottom-right'
+controlButtonPosition: 'bottom-right',
+
 // Switch to toggle if clicking the overlay outside the configuration modal closes the modal.
 closeModalOnClickOutside: true,
 
