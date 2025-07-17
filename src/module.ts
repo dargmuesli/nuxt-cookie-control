@@ -41,7 +41,11 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   async setup(moduleOptions, nuxt) {
-    moduleOptions._isPrerendered = nuxt.options._generate
+    moduleOptions._isPrerendered =
+      nuxt.options.nitro.static ||
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (nuxt.options as any)
+        ._generate /* TODO: remove when compatibility: { nuxt: '>=3.8.0' } */
 
     nuxt.options.alias['#cookie-control/set-vars'] =
       moduleOptions.isCssPonyfillEnabled
