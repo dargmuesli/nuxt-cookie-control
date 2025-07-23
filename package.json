@@ -32,7 +32,7 @@
     "prettier": "3.6.2",
     "semantic-release": "24.2.7",
     "vite": "7.0.5",
-    "vue": "3.5.17",
+    "vue": "3.5.18",
     "vue-tsc": "3.0.3",
     "webpack": "5.100.2"
   },
