@@ -183,7 +183,7 @@
                   type="button"
                   @click="
                     () => {
-                      acceptNecessary()
+                      acceptAll()
                       isModalActive = false
                     }
                   "
