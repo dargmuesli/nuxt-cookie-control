@@ -15,7 +15,7 @@
     "@commitlint/config-conventional": "19.8.1",
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/eslint-config": "1.7.1",
-    "@nuxt/module-builder": "1.0.1",
+    "@nuxt/module-builder": "1.0.2",
     "@nuxt/schema": "4.0.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.1",
@@ -23,7 +23,7 @@
     "@semantic-release/github": "11.0.3",
     "@semantic-release/npm": "12.0.2",
     "@semantic-release/release-notes-generator": "14.0.3",
-    "eslint": "9.31.0",
+    "eslint": "9.32.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.3",
     "husky": "9.1.7",
@@ -71,7 +71,7 @@
       "unrs-resolver"
     ],
     "overrides": {
-      "@types/eslint": "npm:eslint@9.31.0"
+      "@types/eslint": "npm:eslint@9.32.0"
     }
   },
   "publishConfig": {
