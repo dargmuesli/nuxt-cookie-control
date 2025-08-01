@@ -219,12 +219,8 @@ import {
   resolveTranslatable,
 } from '#cookie-control/methods'
 import setCssVariables from '#cookie-control/set-vars'
-import {
-  type Cookie,
-  CookieType,
-  type Locale,
-  type Translatable,
-} from '#cookie-control/types'
+import { CookieType } from '#cookie-control/types'
+import type { Cookie, Locale, Translatable } from '#cookie-control/types'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
 const { locale = 'en' } = defineProps<{
