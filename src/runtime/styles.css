@@ -372,8 +372,6 @@
 }
 .cookieControl__ControlButton {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
   border: 0;
   outline: 0;
   width: 40px;
@@ -386,6 +384,22 @@
   transition: background-color 200ms;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background: var(--cookie-control-controlButtonBackground);
+}
+.cookieControl__ControlButton--top-left {
+  top: 20px;
+  left: 20px;
+}
+.cookieControl__ControlButton--top-right {
+  top: 20px;
+  right: 20px;
+}
+.cookieControl__ControlButton--bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+.cookieControl__ControlButton--bottom-right {
+  bottom: 20px;
+  right: 20px;
 }
 .cookieControl__ControlButton svg {
   position: absolute;
