@@ -1,3 +1,9 @@
+## [9.0.10](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.9...9.0.10) (2025-08-02)
+
+### Bug Fixes
+
+* call `acceptAll()` instead of `acceptNecessary()` when clicking "Accept All" ([016a085](https://github.com/dargmuesli/nuxt-cookie-control/commit/016a085f160993bd0cccd29faf5dd77089ba4b9e))
+
 ## [9.0.9](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.8...9.0.9) (2025-07-30)
 
 ### Bug Fixes
