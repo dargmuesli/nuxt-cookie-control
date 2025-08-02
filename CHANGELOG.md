@@ -1,3 +1,9 @@
+## [9.1.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.10...9.1.0) (2025-08-02)
+
+### Features
+
+* add option to make "modal → decline all" decline only optional cookies ([#277](https://github.com/dargmuesli/nuxt-cookie-control/issues/277)) ([80539df](https://github.com/dargmuesli/nuxt-cookie-control/commit/80539dfaa084745caacc1a1f0ae6bc4115d31fb9))
+
 ## [9.0.10](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.9...9.0.10) (2025-08-02)
 
 ### Bug Fixes
