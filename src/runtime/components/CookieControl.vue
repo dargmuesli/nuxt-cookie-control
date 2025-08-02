@@ -281,16 +281,15 @@ const acceptPartial = () => {
 
   setCookies({
     isConsentGiven: true,
-    cookiesOptionalEnabled: [
-      ...moduleOptions.cookies.necessary,
-      ...moduleOptions.cookies.optional,
-    ].filter((cookie) => localCookiesEnabledIds.includes(cookie.id)),
+    cookiesOptionalEnabled: moduleOptions.cookies.optional.filter((cookie) =>
+      localCookiesEnabledIds.includes(cookie.id),
+    ),
   })
 }
 const acceptNecessary = () => {
   setCookies({
     isConsentGiven: true,
-    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
+    cookiesOptionalEnabled: [],
   })
 }
 const acceptNone = () => {
