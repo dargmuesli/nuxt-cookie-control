@@ -104,6 +104,7 @@ export interface ModuleOptions {
   isDashInDescriptionEnabled: boolean
   isIframeBlocked: boolean
   isModalForced: boolean
+  declineAllAcceptsNecessary: boolean
   locales: Locale[]
   localeTexts: PartialRecord<Locale, Partial<LocaleStrings>>
 }
@@ -159,6 +160,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   isDashInDescriptionEnabled: true,
   isIframeBlocked: false,
   isModalForced: false,
+  declineAllAcceptsNecessary: false,
   locales: ['en'],
 
   // TODO: use Nuxt module "i18n"

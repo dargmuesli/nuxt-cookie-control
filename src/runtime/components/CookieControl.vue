@@ -192,7 +192,9 @@
                   type="button"
                   @click="
                     () => {
-                      acceptNone()
+                      moduleOptions.declineAllAcceptsNecessary
+                        ? acceptNecessary()
+                        : acceptNone()
                       isModalActive = false
                     }
                   "

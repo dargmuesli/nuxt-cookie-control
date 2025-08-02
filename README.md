@@ -185,6 +185,10 @@ isIframeBlocked: false,
 // Switch to toggle the modal being shown right away, requiring a user's decision.
 isModalForced: false,
 
+// "Decline all" in the modal removes all cookies by default (which will re-open the cookie bar).
+// Set this to true to decline all optional cookies and accept necessary cookies.
+declineAllAcceptsNecessary: false,
+
 // The locales to include.
 locales: ['en'],
 
