@@ -1,3 +1,39 @@
+## [9.0.10](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.9...9.0.10) (2025-08-02)
+
+### Bug Fixes
+
+* call `acceptAll()` instead of `acceptNecessary()` when clicking "Accept All" ([016a085](https://github.com/dargmuesli/nuxt-cookie-control/commit/016a085f160993bd0cccd29faf5dd77089ba4b9e))
+
+## [9.0.9](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.8...9.0.9) (2025-07-30)
+
+### Bug Fixes
+
+* schedule release ([f6f29c9](https://github.com/dargmuesli/nuxt-cookie-control/commit/f6f29c932e0c495fad2069194c879852da19a80a))
+
+## [9.0.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.7...9.0.8) (2025-07-16)
+
+### Bug Fixes
+
+* schedule release ([b8cd2cc](https://github.com/dargmuesli/nuxt-cookie-control/commit/b8cd2cce36db66f91702b6036a535ec789c03114))
+
+## [9.0.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.6...9.0.7) (2025-07-07)
+
+### Bug Fixes
+
+* schedule release ([3077fe1](https://github.com/dargmuesli/nuxt-cookie-control/commit/3077fe14e703a9b4e658631606a385a7288d774e))
+
+## [9.0.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.5...9.0.6) (2025-06-18)
+
+### Bug Fixes
+
+* schedule release ([1fb6688](https://github.com/dargmuesli/nuxt-cookie-control/commit/1fb668867b0f3d639cd8509d246861a646cf8c0c))
+
+## [9.0.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.4...9.0.5) (2025-06-04)
+
+### Bug Fixes
+
+* schedule release ([23730e1](https://github.com/dargmuesli/nuxt-cookie-control/commit/23730e153efbcf5831374dc0c5efc41378409ea5))
+
 ## [9.0.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.0.3...9.0.4) (2025-05-21)
 
 ### Bug Fixes

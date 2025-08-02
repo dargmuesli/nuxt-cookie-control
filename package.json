@@ -4,7 +4,7 @@
     "Dario Ferderber <dario.ferderber@broj42.com>"
   ],
   "dependencies": {
-    "@nuxt/kit": "^3.8.0",
+    "@nuxt/kit": "^4.0.0",
     "css-vars-ponyfill": "^2.4.8",
     "defu": "^6.1.4",
     "string-replace-loader": "^3.1.0"
@@ -14,27 +14,27 @@
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@dargmuesli/nuxt-cookie-control": "link:",
-    "@nuxt/eslint-config": "1.3.1",
-    "@nuxt/module-builder": "1.0.1",
-    "@nuxt/schema": "3.17.3",
+    "@nuxt/eslint-config": "1.7.1",
+    "@nuxt/module-builder": "1.0.2",
+    "@nuxt/schema": "4.0.2",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.1",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "11.0.2",
-    "@semantic-release/npm": "12.0.1",
+    "@semantic-release/github": "11.0.3",
+    "@semantic-release/npm": "12.0.2",
     "@semantic-release/release-notes-generator": "14.0.3",
-    "eslint": "9.26.0",
-    "eslint-config-prettier": "10.1.5",
-    "eslint-plugin-prettier": "5.4.0",
+    "eslint": "9.32.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.3",
     "husky": "9.1.7",
-    "lint-staged": "16.0.0",
-    "nuxt": "3.17.3",
-    "prettier": "3.5.3",
-    "semantic-release": "24.2.3",
-    "vite": "6.3.5",
-    "vue": "3.5.14",
-    "vue-tsc": "2.2.10",
-    "webpack": "5.99.8"
+    "lint-staged": "16.1.2",
+    "nuxt": "4.0.2",
+    "prettier": "3.6.2",
+    "semantic-release": "24.2.7",
+    "vite": "7.0.6",
+    "vue": "3.5.18",
+    "vue-tsc": "3.0.5",
+    "webpack": "5.101.0"
   },
   "engines": {
     "node": ">=16"
@@ -63,7 +63,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.14.0",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
@@ -71,7 +71,7 @@
       "unrs-resolver"
     ],
     "overrides": {
-      "typescript": "5.6.3"
+      "@types/eslint": "npm:eslint@9.32.0"
     }
   },
   "publishConfig": {
@@ -79,7 +79,7 @@
   },
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
   "resolutions": {
-    "@nuxt/kit": "3.17.3"
+    "@nuxt/kit": "^4.0.0"
   },
   "scripts": {
     "build": "nuxt-module-build build",
@@ -99,5 +99,5 @@
       ]
     }
   },
-  "version": "9.0.4"
+  "version": "9.0.10"
 }
