@@ -272,31 +272,30 @@ const localeStrings = computed(() => moduleOptions.localeTexts[locale])
 // methods
 const acceptAll = () => {
   setCookies({
-    isConsentGiven: true,
     cookiesOptionalEnabled: moduleOptions.cookies.optional,
+    isConsentGiven: true,
   })
 }
 const acceptPartial = () => {
   const localCookiesEnabledIds = getCookieIds(localCookiesEnabled.value)
 
   setCookies({
+    cookiesOptionalEnabled: moduleOptions.cookies.optional.filter((cookie) =>
+      localCookiesEnabledIds.includes(cookie.id),
+    ),
     isConsentGiven: true,
-    cookiesOptionalEnabled: [
-      ...moduleOptions.cookies.necessary,
-      ...moduleOptions.cookies.optional,
-    ].filter((cookie) => localCookiesEnabledIds.includes(cookie.id)),
   })
 }
 const acceptNecessary = () => {
   setCookies({
+    cookiesOptionalEnabled: [],
     isConsentGiven: true,
-    cookiesOptionalEnabled: moduleOptions.cookies.necessary,
   })
 }
 const acceptNone = () => {
   setCookies({
-    isConsentGiven: false,
     cookiesOptionalEnabled: [],
+    isConsentGiven: false,
   })
 }
 const getDescription = (description: Translatable) =>
