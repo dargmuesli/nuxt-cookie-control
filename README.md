@@ -187,7 +187,7 @@ isModalForced: false,
 
 // "Decline all" in the modal removes all cookies by default (which will re-open the cookie bar).
 // Set this to true to decline all optional cookies and accept necessary cookies.
-declineAlldeclinesOnlyOptional: false,
+declineAllAcceptsNecessary: false,
 
 // The locales to include.
 locales: ['en'],
