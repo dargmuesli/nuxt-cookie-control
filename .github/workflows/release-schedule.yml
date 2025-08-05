@@ -1,5 +1,8 @@
 name: 'Release: Scheduled'
 
+permissions:
+  contents: read
+
 on:
   schedule:
     - cron: '0 0 * * 3' # Every Wednesday at 00:00 AM UTC on the default branch
