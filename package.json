@@ -31,10 +31,10 @@
     "nuxt": "4.0.3",
     "prettier": "3.6.2",
     "semantic-release": "24.2.7",
-    "vite": "7.1.1",
+    "vite": "7.1.2",
     "vue": "3.5.18",
     "vue-tsc": "3.0.5",
-    "webpack": "5.101.0"
+    "webpack": "5.101.1"
   },
   "engines": {
     "node": ">=16"
