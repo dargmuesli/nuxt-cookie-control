@@ -14,7 +14,7 @@
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@dargmuesli/nuxt-cookie-control": "link:",
-    "@nuxt/eslint-config": "1.8.0",
+    "@nuxt/eslint-config": "1.9.0",
     "@nuxt/module-builder": "1.0.2",
     "@nuxt/schema": "4.0.3",
     "@semantic-release/changelog": "6.0.3",
@@ -34,7 +34,7 @@
     "vite": "7.1.2",
     "vue": "3.5.18",
     "vue-tsc": "3.0.5",
-    "webpack": "5.101.2"
+    "webpack": "5.101.3"
   },
   "engines": {
     "node": ">=16"
