@@ -1,8 +1,7 @@
 import type { Ref } from 'vue'
 import type { CookieOptions } from 'nuxt/app'
 
-// TODO: reenable import (https://github.com/nuxt/module-builder/issues/261)
-// import en from './runtime/locale/en'
+import en from './runtime/locale/en'
 
 export type Locale =
   | 'ar'
@@ -79,6 +78,7 @@ export interface LocaleStrings {
 }
 
 export interface ModuleOptions {
+  _isPrerendered: boolean | undefined
   barPosition:
     | 'top-left'
     | 'top-right'
@@ -104,11 +104,13 @@ export interface ModuleOptions {
   isDashInDescriptionEnabled: boolean
   isIframeBlocked: boolean
   isModalForced: boolean
+  declineAllAcceptsNecessary: boolean
   locales: Locale[]
   localeTexts: PartialRecord<Locale, Partial<LocaleStrings>>
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
+  _isPrerendered: undefined,
   barPosition: 'bottom-full',
   closeModalOnClickOutside: false,
   colors: {
@@ -159,29 +161,9 @@ export const DEFAULTS: Required<ModuleOptions> = {
   isDashInDescriptionEnabled: true,
   isIframeBlocked: false,
   isModalForced: false,
+  declineAllAcceptsNecessary: false,
   locales: ['en'],
-
-  // TODO: use Nuxt module "i18n"
-  localeTexts: {
-    en: {
-      accept: 'Accept',
-      acceptAll: 'Accept all',
-      bannerDescription:
-        'We use our own cookies and third-party cookies so that we can display this website correctly and better understand how this website is used, with a view to improving the services we offer. A decision on cookie usage permissions can be changed anytime using the cookie button that will appear after a selection has been made on this banner.',
-      bannerTitle: 'Cookies',
-      close: 'Close',
-      cookiesFunctional: 'Functional cookies',
-      cookiesNecessary: 'Necessary cookies',
-      cookiesOptional: 'Optional cookies',
-      decline: 'Decline',
-      declineAll: 'Decline all',
-      here: 'here',
-      iframeBlocked: 'To see this, please enable functional cookies',
-      manageCookies: 'Learn more and customize',
-      save: 'Save',
-      settingsUnsaved: 'You have unsaved settings',
-    },
-  },
+  localeTexts: { en },
 }
 
 export interface State {

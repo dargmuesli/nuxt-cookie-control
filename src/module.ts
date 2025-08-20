@@ -17,7 +17,8 @@ import { defu } from 'defu'
 
 import { CONFIG_KEY } from './constants'
 import { replaceCodePlugin } from './replace'
-import { DEFAULTS, type ModuleOptions } from './types'
+import { DEFAULTS } from './types'
+import type { ModuleOptions } from './types'
 import { name, version } from '../package.json'
 
 const resolver = createResolver(import.meta.url)
@@ -40,6 +41,12 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   async setup(moduleOptions, nuxt) {
+    moduleOptions._isPrerendered =
+      nuxt.options.nitro.static ||
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (nuxt.options as any)
+        ._generate /* TODO: remove when compatibility: { nuxt: '>=3.8.0' } */
+
     nuxt.options.alias['#cookie-control/set-vars'] =
       moduleOptions.isCssPonyfillEnabled
         ? resolver.resolve(runtimeDir, 'set-vars/ponyfill')
