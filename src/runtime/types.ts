@@ -88,7 +88,7 @@ export interface ModuleOptions {
     | 'bottom-full'
   /**
    * Position of the control button.
-   * 'top-left', 'top-right', 'bottom-left', 'bottom-right', or undefined.
+   * 'top-left', 'top-right', 'bottom-left' or 'bottom-right'.
    * @default 'bottom-right'
    */
   controlButtonPosition:
