@@ -1,3 +1,9 @@
+## [10.0.0-beta.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.1...10.0.0-beta.2) (2025-08-21)
+
+### Features
+
+* allow to configure control button position ([#274](https://github.com/dargmuesli/nuxt-cookie-control/issues/274)) ([94dbb8a](https://github.com/dargmuesli/nuxt-cookie-control/commit/94dbb8afcba5a8bfd02453e3bb22650f5179725d))
+
 ## [10.0.0-beta.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.1...10.0.0-beta.1) (2025-08-20)
 
 ### ⚠ BREAKING CHANGES
