@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "serve": "14.2.4"
+    "serve": "14.2.5"
   },
   "name": "cookie-control-playground",
   "private": true,
