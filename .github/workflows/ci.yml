@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get current PR
         id: pr
-        uses: 8BitJonny/gh-get-current-pr@3.0.0
+        uses: 8BitJonny/gh-get-current-pr@4.0.0
         with:
           filterOutClosed: true
           filterOutDraft: true
