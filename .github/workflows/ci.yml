@@ -25,7 +25,6 @@ jobs:
         with:
           filterOutClosed: true
           filterOutDraft: true
-          sha: ${{ github.event.pull_request.head.sha }}
   build:
     needs: prepare_jobs
     if: needs.prepare_jobs.outputs.pr_found == 'false' || github.event_name == 'pull_request'
