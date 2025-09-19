@@ -23,14 +23,14 @@
     "@semantic-release/github": "11.0.6",
     "@semantic-release/npm": "12.0.2",
     "@semantic-release/release-notes-generator": "14.1.0",
-    "eslint": "9.35.0",
+    "eslint": "9.36.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.4",
     "husky": "9.1.7",
     "lint-staged": "16.1.6",
     "nuxt": "4.1.2",
     "prettier": "3.6.2",
-    "semantic-release": "24.2.8",
+    "semantic-release": "24.2.9",
     "vite": "7.1.6",
     "vue": "3.5.21",
     "vue-tsc": "3.0.7",
@@ -71,7 +71,7 @@
       "unrs-resolver"
     ],
     "overrides": {
-      "@types/eslint": "npm:eslint@9.35.0"
+      "@types/eslint": "npm:eslint@9.36.0"
     }
   },
   "publishConfig": {
