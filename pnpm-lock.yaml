@@ -23,7 +23,7 @@ importers:
         version: 6.1.4
       string-replace-loader:
         specifier: ^3.1.0
-        version: 3.2.0(webpack@5.101.3(esbuild@0.25.10)(jiti@2.6.0))
+        version: 3.2.0(webpack@5.102.0(esbuild@0.25.10)(jiti@2.6.0))
     devDependencies:
       '@commitlint/cli':
         specifier: 19.8.1
@@ -95,8 +95,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(typescript@5.9.2)
       webpack:
-        specifier: 5.101.3
-        version: 5.101.3(esbuild@0.25.10)(jiti@2.6.0)
+        specifier: 5.102.0
+        version: 5.102.0(esbuild@0.25.10)(jiti@2.6.0)
 
   playground:
     devDependencies:
@@ -5227,8 +5227,8 @@ packages:
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
-  webpack@5.101.3:
-    resolution: {integrity: sha512-7b0dTKR3Ed//AD/6kkx/o7duS8H3f1a4w3BYpIriX4BzIhjkn4teo05cptsxvLesHFKK5KObnadmCHBwGc+51A==}
+  webpack@5.102.0:
+    resolution: {integrity: sha512-hUtqAR3ZLVEYDEABdBioQCIqSoguHbFn1K7WlPPWSuXmx0031BD73PSE35jKyftdSh4YLDoQNgK4pqBt5Q82MA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -10225,10 +10225,10 @@ snapshots:
 
   string-argv@0.3.2: {}
 
-  string-replace-loader@3.2.0(webpack@5.101.3(esbuild@0.25.10)(jiti@2.6.0)):
+  string-replace-loader@3.2.0(webpack@5.102.0(esbuild@0.25.10)(jiti@2.6.0)):
     dependencies:
       schema-utils: 4.3.2
-      webpack: 5.101.3(esbuild@0.25.10)(jiti@2.6.0)
+      webpack: 5.102.0(esbuild@0.25.10)(jiti@2.6.0)
 
   string-width@4.2.3:
     dependencies:
@@ -10368,14 +10368,14 @@ snapshots:
       type-fest: 2.19.0
       unique-string: 3.0.0
 
-  terser-webpack-plugin@5.3.14(esbuild@0.25.10)(webpack@5.101.3(esbuild@0.25.10)(jiti@2.6.0)):
+  terser-webpack-plugin@5.3.14(esbuild@0.25.10)(webpack@5.102.0(esbuild@0.25.10)(jiti@2.6.0)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2
       terser: 5.44.0
-      webpack: 5.101.3(esbuild@0.25.10)(jiti@2.6.0)
+      webpack: 5.102.0(esbuild@0.25.10)(jiti@2.6.0)
     optionalDependencies:
       esbuild: 0.25.10
 
@@ -10836,7 +10836,7 @@ snapshots:
 
   webpack-virtual-modules@0.6.2: {}
 
-  webpack@5.101.3(esbuild@0.25.10)(jiti@2.6.0):
+  webpack@5.102.0(esbuild@0.25.10)(jiti@2.6.0):
     dependencies:
       '@types/eslint-scope': 3.7.7(jiti@2.6.0)
       '@types/estree': 1.0.8
@@ -10860,7 +10860,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 4.3.2
       tapable: 2.2.3
-      terser-webpack-plugin: 5.3.14(esbuild@0.25.10)(webpack@5.101.3(esbuild@0.25.10)(jiti@2.6.0))
+      terser-webpack-plugin: 5.3.14(esbuild@0.25.10)(webpack@5.102.0(esbuild@0.25.10)(jiti@2.6.0))
       watchpack: 2.4.4
       webpack-sources: 3.3.3
     transitivePeerDependencies:
