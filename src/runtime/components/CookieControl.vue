@@ -54,6 +54,7 @@
       <transition name="cookieControl__Modal">
         <div
           v-if="isModalActive"
+          ref="modal"
           class="cookieControl__Modal"
           @click.self="onModalClick"
         >
@@ -210,7 +211,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onBeforeMount, watch } from 'vue'
+import { ref, computed, onBeforeMount, watch, nextTick } from 'vue'
 
 import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
 import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
@@ -237,6 +238,7 @@ const {
   moduleOptions,
 } = useCookieControl()
 const nuxtApp = useNuxtApp()
+const modal = ref<HTMLElement | null>(null)
 
 // data
 const expires = new Date(Date.now() + moduleOptions.cookieExpiryOffsetMs)
@@ -356,6 +358,30 @@ const toggleLabel = ($event: KeyboardEvent) => {
   if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
 }
 
+const handleFocusTrap = (event: KeyboardEvent) => {
+  if (event.key !== 'Tab') return
+
+  const focusableElements = modal.value?.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), textarea, select, details, [tabindex]:not([tabindex="-1"])',
+  )
+  if (!focusableElements?.length) return
+
+  const firstElement = focusableElements[0] as HTMLElement
+  const lastElement = focusableElements[
+    focusableElements.length - 1
+  ] as HTMLElement
+
+  if (event.shiftKey) {
+    if (document.activeElement === firstElement) {
+      lastElement.focus()
+      event.preventDefault()
+    }
+  } else if (document.activeElement === lastElement) {
+    firstElement.focus()
+    event.preventDefault()
+  }
+}
+
 // lifecycle
 onBeforeMount(() => {
   if (moduleOptions.colors) {
@@ -372,6 +398,23 @@ onBeforeMount(() => {
     isModalActive.value = true
   }
 })
+
+watch(isModalActive, (isActive) => {
+  if (isActive) {
+    nextTick(() => {
+      const focusableElements = modal.value?.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), textarea, select, details, [tabindex]:not([tabindex="-1"])',
+      )
+      if (focusableElements?.length) {
+        ;(focusableElements[0] as HTMLElement).focus()
+        modal.value?.addEventListener('keydown', handleFocusTrap)
+      }
+    })
+  } else {
+    modal.value?.removeEventListener('keydown', handleFocusTrap)
+  }
+})
+
 watch(
   () => cookiesEnabled.value,
   (current, _previous) => {
