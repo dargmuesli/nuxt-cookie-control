@@ -14,7 +14,7 @@
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
     "@dargmuesli/nuxt-cookie-control": "link:",
-    "@nuxt/eslint-config": "1.9.0",
+    "@nuxt/eslint-config": "1.10.0",
     "@nuxt/module-builder": "1.0.2",
     "@nuxt/schema": "4.2.0",
     "@semantic-release/changelog": "6.0.3",
@@ -63,7 +63,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.19.0",
+  "packageManager": "pnpm@10.20.0",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
