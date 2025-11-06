@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get current PR
         id: pr
-        uses: 8BitJonny/gh-get-current-pr@4.0.0
+        uses: 8BitJonny/gh-get-current-pr@4056877062a1f3b624d5d4c2bedefa9cf51435c9 # 4.0.0
         with:
           filterOutClosed: true
           filterOutDraft: true
@@ -41,7 +41,7 @@ jobs:
         run: corepack enable
 
       - name: Setup Node
-        uses: actions/setup-node@v6.0.0
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           cache: pnpm
           node-version: ${{ matrix.node }}
@@ -58,7 +58,7 @@ jobs:
   release_semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@2.7.0
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@4e6e3d3fa4b81be372036d8ac7b14638d27be045 # 2.7.0
     permissions:
       contents: write
     secrets:
