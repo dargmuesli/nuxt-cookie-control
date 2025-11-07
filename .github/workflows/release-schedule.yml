@@ -1,7 +1,6 @@
 name: 'Release: Scheduled'
 
-permissions:
-  contents: read
+permissions: {}
 
 on:
   schedule:
