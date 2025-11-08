@@ -53,8 +53,8 @@ importers:
         specifier: 10.0.1
         version: 10.0.1(semantic-release@25.0.2(typescript@5.9.3))
       '@semantic-release/github':
-        specifier: 12.0.1
-        version: 12.0.1(semantic-release@25.0.2(typescript@5.9.3))
+        specifier: 12.0.2
+        version: 12.0.2(semantic-release@25.0.2(typescript@5.9.3))
       '@semantic-release/npm':
         specifier: 13.1.1
         version: 13.1.1(semantic-release@25.0.2(typescript@5.9.3))
@@ -1375,8 +1375,8 @@ packages:
     peerDependencies:
       semantic-release: '>=18.0.0'
 
-  '@semantic-release/github@12.0.1':
-    resolution: {integrity: sha512-BSC7Ko6aRPnH8ttVBpd3gC98LTiyPdmrmX4qHilLw5EZqVrXrXwcKp/JKUC5hgm0XpJACR3nPjgbfOjTJ75PIA==}
+  '@semantic-release/github@12.0.2':
+    resolution: {integrity: sha512-qyqLS+aSGH1SfXIooBKjs7mvrv0deg8v+jemegfJg1kq6ji+GJV8CO08VJDEsvjp3O8XJmTTIAjjZbMzagzsdw==}
     engines: {node: ^22.14.0 || >= 24.10.0}
     peerDependencies:
       semantic-release: '>=24.1.0'
@@ -5036,6 +5036,10 @@ packages:
     resolution: {integrity: sha512-raqeBD6NQK4SkWhQzeYKd1KmIG6dllBOTt55Rmkt4HtI9mwdWtJljnrXjAFUBLTSN67HWrOIZ3EPF4kjUw80Bg==}
     engines: {node: '>=14.0'}
 
+  undici@7.16.0:
+    resolution: {integrity: sha512-QEg3HPMll0o3t2ourKwOeUAZ159Kn9mx5pnzHRQO8+Wixmh88YdZRiIwat0iNzNNXn0yoEtXJqFpyW7eM8BV7g==}
+    engines: {node: '>=20.18.1'}
+
   unenv@2.0.0-rc.24:
     resolution: {integrity: sha512-i7qRCmY42zmCwnYlh9H2SvLEypEFGye5iRmEMKjcGi7zk9UquigRjFtTLz0TYqr0ZGLZhaMHl/foy1bZR+Cwlw==}
 
@@ -6893,7 +6897,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@semantic-release/github@12.0.1(semantic-release@25.0.2(typescript@5.9.3))':
+  '@semantic-release/github@12.0.2(semantic-release@25.0.2(typescript@5.9.3))':
     dependencies:
       '@octokit/core': 7.0.6
       '@octokit/plugin-paginate-rest': 14.0.0(@octokit/core@7.0.6)
@@ -6911,6 +6915,7 @@ snapshots:
       p-filter: 4.1.0
       semantic-release: 25.0.2(typescript@5.9.3)
       tinyglobby: 0.2.15
+      undici: 7.16.0
       url-join: 5.0.0
     transitivePeerDependencies:
       - supports-color
@@ -10339,7 +10344,7 @@ snapshots:
     dependencies:
       '@semantic-release/commit-analyzer': 13.0.1(semantic-release@25.0.2(typescript@5.9.3))
       '@semantic-release/error': 4.0.0
-      '@semantic-release/github': 12.0.1(semantic-release@25.0.2(typescript@5.9.3))
+      '@semantic-release/github': 12.0.2(semantic-release@25.0.2(typescript@5.9.3))
       '@semantic-release/npm': 13.1.1(semantic-release@25.0.2(typescript@5.9.3))
       '@semantic-release/release-notes-generator': 14.1.0(semantic-release@25.0.2(typescript@5.9.3))
       aggregate-error: 5.0.0
@@ -10865,6 +10870,8 @@ snapshots:
   undici@5.29.0:
     dependencies:
       '@fastify/busboy': 2.1.1
+
+  undici@7.16.0: {}
 
   unenv@2.0.0-rc.24:
     dependencies:
