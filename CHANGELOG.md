@@ -14,6 +14,48 @@
 
 * replace zh-CN locale with zh ([#244](https://github.com/dargmuesli/nuxt-cookie-control/issues/244)) ([69762ff](https://github.com/dargmuesli/nuxt-cookie-control/commit/69762ff8346ba1d611cbbc23779d87463f9c0848))
 
+## [9.1.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.7...9.1.8) (2025-11-12)
+
+### Bug Fixes
+
+* schedule release ([9117773](https://github.com/dargmuesli/nuxt-cookie-control/commit/91177730386952c244db877f88d928c2fcf7fda4))
+
+## [9.1.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.6...9.1.7) (2025-10-29)
+
+### Bug Fixes
+
+* schedule release ([18335ca](https://github.com/dargmuesli/nuxt-cookie-control/commit/18335ca99862f373bbb2dfb6a5fb9169b11bcd9a))
+
+## [9.1.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.5...9.1.6) (2025-10-15)
+
+### Bug Fixes
+
+* schedule release ([22a7c0e](https://github.com/dargmuesli/nuxt-cookie-control/commit/22a7c0e994d8c155eaf64fb1a8290a97b962ece6))
+
+## [9.1.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.4...9.1.5) (2025-10-01)
+
+### Bug Fixes
+
+* schedule release ([2a0ad3b](https://github.com/dargmuesli/nuxt-cookie-control/commit/2a0ad3ba99413e65133598e9698ff47b7a330cea))
+
+## [9.1.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.3...9.1.4) (2025-09-17)
+
+### Bug Fixes
+
+* schedule release ([fb43aef](https://github.com/dargmuesli/nuxt-cookie-control/commit/fb43aef537556931e8b513c1d5af559cc29be0c5))
+
+## [9.1.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.2...9.1.3) (2025-09-04)
+
+### Bug Fixes
+
+* schedule release ([079da85](https://github.com/dargmuesli/nuxt-cookie-control/commit/079da85c55266e34178f1013df674e8a6d83a18f))
+
+## [9.1.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.1...9.1.2) (2025-09-03)
+
+### Bug Fixes
+
+* schedule release ([9843ceb](https://github.com/dargmuesli/nuxt-cookie-control/commit/9843cebf9fde9e62e0a0444af87f6b711a50dfa5))
+
 ## [9.1.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.0...9.1.1) (2025-08-13)
 
 ### Bug Fixes

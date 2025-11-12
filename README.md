@@ -162,10 +162,10 @@ cookieNameCookiesEnabledIds: 'ncc_e',
 cookieOptions: {
   path: '/',
   sameSite: 'strict',
-}
+},
 
 // Switch to toggle the "accept necessary" button.
-isAcceptNecessaryButtonEnabled: true
+isAcceptNecessaryButtonEnabled: true,
 
 // Switch to toggle the button that opens the configuration modal.
 isControlButtonEnabled: true,

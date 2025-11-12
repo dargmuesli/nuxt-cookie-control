@@ -1,7 +1,6 @@
 name: CI
 
-permissions:
-  contents: read
+permissions: {}
 
 on:
   pull_request:
@@ -9,47 +8,40 @@ on:
     branches:
       - alpha
       - beta
+      - main
       - master
       - renovate/**
 
 jobs:
-  prepare_jobs:
-    name: 'Prepare: job optimization'
-    runs-on: ubuntu-latest
-    outputs:
-      pr_found: ${{ steps.pr.outputs.pr_found }}
-    steps:
-      - name: Get current PR
-        id: pr
-        uses: 8BitJonny/gh-get-current-pr@3.0.0
-        with:
-          filterOutClosed: true
-          filterOutDraft: true
-          sha: ${{ github.event.pull_request.head.sha }}
+  ci-optimization:
+    name: CI optimization
+    uses: dargmuesli/github-actions/.github/workflows/ci-optimization.yml@714a68188444d710ffa3e9f35a05f6a9d420931d # 3.2.0
+    permissions:
+      pull-requests: read
   build:
-    needs: prepare_jobs
-    if: needs.prepare_jobs.outputs.pr_found == 'false' || github.event_name == 'pull_request'
-    runs-on: ${{ matrix.os }}
+    needs: ci-optimization
+    if: needs.ci-optimization.outputs.continue == 'true'
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node: ['20', '24']
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout git repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Setup package manager
-        run: corepack enable
+        run: |
+          npm install -g corepack@latest
+          corepack enable
 
       - name: Setup Node
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           cache: pnpm
-          cache-dependency-path: pnpm-lock.yaml
           node-version: ${{ matrix.node }}
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
 
       - name: Lint
@@ -60,9 +52,11 @@ jobs:
   release_semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@2.6.2
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@714a68188444d710ffa3e9f35a05f6a9d420931d # 3.2.0
     permissions:
       contents: write
+      id-token: write
     secrets:
       PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    with:
+      INSTALL_NODE_DEPENDENCIES: true
