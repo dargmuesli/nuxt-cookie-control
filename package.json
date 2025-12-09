@@ -33,7 +33,7 @@
     "semantic-release": "25.0.2",
     "vite": "7.2.7",
     "vue": "3.5.25",
-    "vue-tsc": "3.1.7",
+    "vue-tsc": "3.1.8",
     "webpack": "5.103.0"
   },
   "engines": {
