@@ -23,7 +23,7 @@ importers:
         version: 6.1.4
       string-replace-loader:
         specifier: ^3.1.0
-        version: 3.2.0(webpack@5.103.0(esbuild@0.27.1)(jiti@2.6.1))
+        version: 3.3.0(webpack@5.103.0(esbuild@0.27.1)(jiti@2.6.1))
     devDependencies:
       '@commitlint/cli':
         specifier: 20.2.0
@@ -4890,8 +4890,8 @@ packages:
     resolution: {integrity: sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==}
     engines: {node: '>=0.6.19'}
 
-  string-replace-loader@3.2.0:
-    resolution: {integrity: sha512-q7+F4DC6MAKkszF3ZQEuZ3dDH25wXPxFA0maTLk3TOTAYPLDgwqCeCKIvOd8xJhYYYl+EXusYRCyKIJliT/olg==}
+  string-replace-loader@3.3.0:
+    resolution: {integrity: sha512-AZ3y7ktSHhd/Ebipczkp6vdfp01d2kQVwFujCGAgmogTB8t4dRhbsRGDKnyZAYqBbIA9QW7+D/IsACVJOOpcBg==}
     engines: {node: '>=4'}
     peerDependencies:
       webpack: ^5
@@ -10809,7 +10809,7 @@ snapshots:
 
   string-argv@0.3.2: {}
 
-  string-replace-loader@3.2.0(webpack@5.103.0(esbuild@0.27.1)(jiti@2.6.1)):
+  string-replace-loader@3.3.0(webpack@5.103.0(esbuild@0.27.1)(jiti@2.6.1)):
     dependencies:
       schema-utils: 4.3.3
       webpack: 5.103.0(esbuild@0.27.1)(jiti@2.6.1)
