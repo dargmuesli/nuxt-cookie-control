@@ -6,7 +6,6 @@ settings:
 
 overrides:
   '@nuxt/kit': ^4.0.0
-  '@types/eslint': npm:eslint@10.0.0
 
 importers:
 
