@@ -16,13 +16,13 @@
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/eslint-config": "1.14.0",
     "@nuxt/module-builder": "1.0.2",
-    "@nuxt/schema": "4.3.0",
+    "@nuxt/schema": "4.3.1",
     "eslint": "10.0.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
-    "nuxt": "4.3.0",
+    "nuxt": "4.3.1",
     "prettier": "3.8.1",
     "vite": "7.3.1",
     "vue": "3.5.27",
@@ -56,7 +56,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.29.1",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
