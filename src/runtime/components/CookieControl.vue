@@ -14,29 +14,37 @@
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
-              <button
-                type="button"
-                @click="acceptAll()"
-                v-text="localeStrings?.accept"
-              />
-              <button
-                v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-                type="button"
-                @click="acceptNecessary()"
-                v-text="localeStrings?.decline"
-              />
-              <button
-                type="button"
-                @click="isModalActive = true"
-                v-text="localeStrings?.manageCookies"
-              />
+              <ul>
+                <li>
+                  <button
+                    type="button"
+                    @click="acceptAll()"
+                    v-text="localeStrings?.accept"
+                  />
+                </li>
+                <li>
+                  <button
+                    v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
+                    type="button"
+                    @click="acceptNecessary()"
+                    v-text="localeStrings?.decline"
+                  />
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    @click="isModalActive = true"
+                    v-text="localeStrings?.manageCookies"
+                  />
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </transition>
       <button
         v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
-        aria-label="Cookie control"
+        :aria-label="localeStrings?.buttonCookies"
         class="cookieControl__ControlButton"
         data-testid="nuxt-cookie-control-control-button"
         type="button"
@@ -54,6 +62,9 @@
       <transition name="cookieControl__Modal">
         <div
           v-if="isModalActive"
+          role="dialog"
+          aria-modal="true"
+          :aria-label="localeStrings?.modaleTitle"
           class="cookieControl__Modal"
           @click.self="onModalClick"
         >
@@ -62,9 +73,13 @@
             class="cookieControl__ModalUnsaved"
             v-text="localeStrings?.settingsUnsaved"
           />
-          <div class="cookieControl__ModalContent">
+          <div
+            ref="modalContent"
+            class="cookieControl__ModalContent"
+            tabindex="-1"
+            @keydown="onKeydown"
+          >
             <div class="cookieControl__ModalContentInner">
-              <slot name="modal" />
               <button
                 v-if="!moduleOptions.isModalForced"
                 class="cookieControl__ModalClose"
@@ -72,6 +87,9 @@
                 @click="isModalActive = false"
                 v-text="localeStrings?.close"
               />
+
+              <slot name="modal" />
+
               <template v-for="cookieType in CookieType" :key="cookieType">
                 <template v-if="moduleOptions.cookies[cookieType].length">
                   <h2
@@ -167,39 +185,47 @@
                 </template>
               </template>
               <div class="cookieControl__ModalButtons">
-                <button
-                  type="button"
-                  @click="
-                    () => {
-                      acceptPartial()
-                      isModalActive = false
-                    }
-                  "
-                  v-text="localeStrings?.save"
-                />
-                <button
-                  type="button"
-                  @click="
-                    () => {
-                      acceptAll()
-                      isModalActive = false
-                    }
-                  "
-                  v-text="localeStrings?.acceptAll"
-                />
-                <button
-                  v-if="!moduleOptions.isModalForced"
-                  type="button"
-                  @click="
-                    () => {
-                      moduleOptions.declineAllAcceptsNecessary
-                        ? acceptNecessary()
-                        : acceptNone()
-                      isModalActive = false
-                    }
-                  "
-                  v-text="localeStrings?.declineAll"
-                />
+                <ul>
+                  <li>
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          acceptPartial()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.save"
+                    />
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          acceptAll()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.acceptAll"
+                    />
+                  </li>
+                  <li>
+                    <button
+                      v-if="!moduleOptions.isModalForced"
+                      type="button"
+                      @click="
+                        () => {
+                          moduleOptions.declineAllAcceptsNecessary
+                            ? acceptNecessary()
+                            : acceptNone()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.declineAll"
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -210,7 +236,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onBeforeMount, watch } from 'vue'
+import { ref, computed, onBeforeUnmount, watch, nextTick } from 'vue'
 
 import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
 import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
@@ -225,10 +251,51 @@ import { CookieType } from '#cookie-control/types'
 import type { Cookie, Locale, Translatable } from '#cookie-control/types'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
+const modalContent = ref<HTMLElement | null>(null)
+let lastFocusedElement: HTMLElement | null = null
 const { locale = 'en' } = defineProps<{
   locale?: Locale
 }>()
+const getFocusableElements = () => {
+  if (!modalContent.value) return []
 
+  return Array.from(
+    modalContent.value.querySelectorAll<HTMLElement>(
+      `
+    a[href],
+    button:not([disabled]),
+    textarea:not([disabled]),
+    input:not([disabled]),
+    select:not([disabled]),
+    [tabindex]:not([tabindex="-1"])
+    `,
+    ),
+  ).filter((el) => !el.hasAttribute('disabled'))
+}
+
+const onKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') {
+    isModalActive.value = false
+    return
+  }
+
+  if (event.key !== 'Tab') return
+
+  const focusable = getFocusableElements()
+  if (!focusable.length) return
+
+  const first = focusable[0]
+  const last = focusable[focusable.length - 1]
+  const active = document.activeElement as HTMLElement
+
+  if (event.shiftKey && active === first) {
+    event.preventDefault()
+    last?.focus()
+  } else if (!event.shiftKey && active === last) {
+    event.preventDefault()
+    first?.focus()
+  }
+}
 const {
   cookiesEnabled,
   cookiesEnabledIds,
@@ -357,7 +424,7 @@ const toggleLabel = ($event: KeyboardEvent) => {
 }
 
 // lifecycle
-onBeforeMount(() => {
+onBeforeUnmount(() => {
   if (moduleOptions.colors) {
     const variables: Record<string, string> = {}
 
@@ -372,6 +439,27 @@ onBeforeMount(() => {
     isModalActive.value = true
   }
 })
+
+watch(isModalActive, async (active) => {
+  if (active) {
+    lastFocusedElement = document.activeElement as HTMLElement
+    await nextTick()
+
+    const focusable = getFocusableElements()
+    if (focusable.length) {
+      focusable[0]?.focus()
+    } else {
+      modalContent.value?.focus()
+    }
+  } else {
+    lastFocusedElement?.focus()
+  }
+})
+
+onBeforeUnmount(() => {
+  lastFocusedElement = null
+})
+
 watch(
   () => cookiesEnabled.value,
   (current, _previous) => {
