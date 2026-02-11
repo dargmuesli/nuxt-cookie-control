@@ -56,7 +56,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.29.2",
+  "packageManager": "pnpm@10.29.3",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
