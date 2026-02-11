@@ -107,6 +107,10 @@ export interface ModuleOptions {
   declineAllAcceptsNecessary: boolean
   locales: Locale[]
   localeTexts: PartialRecord<Locale, Partial<LocaleStrings>>
+  modal: {
+    title: string
+    description: string
+  }
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
@@ -164,6 +168,10 @@ export const DEFAULTS: Required<ModuleOptions> = {
   declineAllAcceptsNecessary: false,
   locales: ['en'],
   localeTexts: { en },
+  modal: {
+    title: '',
+    description: '',
+  },
 }
 
 export interface State {
