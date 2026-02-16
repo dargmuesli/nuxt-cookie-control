@@ -14,22 +14,30 @@
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
-              <button
-                type="button"
-                @click="acceptAll()"
-                v-text="localeStrings?.accept"
-              />
-              <button
-                v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-                type="button"
-                @click="acceptNecessary()"
-                v-text="localeStrings?.decline"
-              />
-              <button
-                type="button"
-                @click="isModalActive = true"
-                v-text="localeStrings?.manageCookies"
-              />
+              <ul>
+                <li>
+                  <button
+                    type="button"
+                    @click="acceptAll()"
+                    v-text="localeStrings?.accept"
+                  />
+                </li>
+                <li>
+                  <button
+                    v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
+                    type="button"
+                    @click="acceptNecessary()"
+                    v-text="localeStrings?.decline"
+                  />
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    @click="isModalActive = true"
+                    v-text="localeStrings?.manageCookies"
+                  />
+                </li>
+              </ul>
             </div>
           </div>
         </div>
