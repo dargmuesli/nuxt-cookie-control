@@ -80,7 +80,6 @@
             />
             <div class="cookieControl__ModalContent">
               <div class="cookieControl__ModalContentInner">
-                <slot name="modal" />
                 <button
                   v-if="!moduleOptions.isModalForced"
                   class="cookieControl__ModalClose"
@@ -88,6 +87,7 @@
                   @click="isModalActive = false"
                   v-text="localeStrings?.close"
                 />
+                <slot name="modal" />
                 <template v-for="cookieType in CookieType" :key="cookieType">
                   <template v-if="moduleOptions.cookies[cookieType].length">
                     <h2
