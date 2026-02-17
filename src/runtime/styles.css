@@ -6,6 +6,10 @@
 .cookieControl__Modal-leave-to {
   opacity: 0;
 }
+li{
+  display: inline;
+  margin: 0 5px;
+}
 .cookieControl__Bar--center {
   top: 50%;
   left: 50%;

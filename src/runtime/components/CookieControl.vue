@@ -14,29 +14,37 @@
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
-              <button
-                type="button"
-                @click="acceptAll()"
-                v-text="localeStrings?.accept"
-              />
-              <button
-                v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-                type="button"
-                @click="acceptNecessary()"
-                v-text="localeStrings?.decline"
-              />
-              <button
-                type="button"
-                @click="isModalActive = true"
-                v-text="localeStrings?.manageCookies"
-              />
+              <ul>
+                <li>
+                  <button
+                    type="button"
+                    @click="acceptAll()"
+                    v-text="localeStrings?.accept"
+                  />
+                </li>
+                <li>
+                  <button
+                    v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
+                    type="button"
+                    @click="acceptNecessary()"
+                    v-text="localeStrings?.decline"
+                  />
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    @click="isModalActive = true"
+                    v-text="localeStrings?.manageCookies"
+                  />
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </transition>
       <button
         v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
-        aria-label="Cookie control"
+        :aria-label="localeStrings?.buttonCookies"
         :class="[
           'cookieControl__ControlButton',
           `cookieControl__ControlButton--${moduleOptions.controlButtonPosition}`,
@@ -54,7 +62,11 @@
           </svg>
         </slot>
       </button>
-      <dialog ref="dialog" @close="isModalActive = false">
+      <dialog
+        ref="dialog"
+        :aria-label="localeStrings?.modaleTitle"
+        @close="isModalActive = false"
+      >
         <transition name="cookieControl__Modal">
           <div
             v-if="isModalActive"
@@ -68,7 +80,6 @@
             />
             <div class="cookieControl__ModalContent">
               <div class="cookieControl__ModalContentInner">
-                <slot name="modal" />
                 <button
                   v-if="!moduleOptions.isModalForced"
                   class="cookieControl__ModalClose"
@@ -76,6 +87,7 @@
                   @click="isModalActive = false"
                   v-text="localeStrings?.close"
                 />
+                <slot name="modal" />
                 <template v-for="cookieType in CookieType" :key="cookieType">
                   <template v-if="moduleOptions.cookies[cookieType].length">
                     <h2
@@ -171,39 +183,47 @@
                   </template>
                 </template>
                 <div class="cookieControl__ModalButtons">
-                  <button
-                    type="button"
-                    @click="
-                      () => {
-                        acceptPartial()
-                        isModalActive = false
-                      }
-                    "
-                    v-text="localeStrings?.save"
-                  />
-                  <button
-                    type="button"
-                    @click="
-                      () => {
-                        acceptAll()
-                        isModalActive = false
-                      }
-                    "
-                    v-text="localeStrings?.acceptAll"
-                  />
-                  <button
-                    v-if="!moduleOptions.isModalForced"
-                    type="button"
-                    @click="
-                      () => {
-                        moduleOptions.declineAllAcceptsNecessary
-                          ? acceptNecessary()
-                          : acceptNone()
-                        isModalActive = false
-                      }
-                    "
-                    v-text="localeStrings?.declineAll"
-                  />
+                  <ul>
+                    <li>
+                      <button
+                        type="button"
+                        @click="
+                          () => {
+                            acceptPartial()
+                            isModalActive = false
+                          }
+                        "
+                        v-text="localeStrings?.save"
+                      />
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        @click="
+                          () => {
+                            acceptAll()
+                            isModalActive = false
+                          }
+                        "
+                        v-text="localeStrings?.acceptAll"
+                      />
+                    </li>
+                    <li>
+                      <button
+                        v-if="!moduleOptions.isModalForced"
+                        type="button"
+                        @click="
+                          () => {
+                            moduleOptions.declineAllAcceptsNecessary
+                              ? acceptNecessary()
+                              : acceptNone()
+                            isModalActive = false
+                          }
+                        "
+                        v-text="localeStrings?.declineAll"
+                      />
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -230,6 +250,7 @@ import { CookieType } from '#cookie-control/types'
 import type { Cookie, Locale, Translatable } from '#cookie-control/types'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
+const dialog = ref<HTMLElement | null>(null)
 const { locale = 'en' } = defineProps<{
   locale?: Locale
 }>()
@@ -265,6 +286,46 @@ const cookieCookiesEnabledIds = useCookie(
     ...moduleOptions.cookieOptions,
   },
 )
+const getFocusableElements = () => {
+  if (!dialog.value) return []
+
+  return Array.from(
+    dialog.value.querySelectorAll<HTMLElement>(
+      `
+    a[href],
+    button:not([disabled]),
+    textarea:not([disabled]),
+    input:not([disabled]),
+    select:not([disabled]),
+    [tabindex]:not([tabindex="-1"])
+    `,
+    ),
+  ).filter((el) => !el.hasAttribute('disabled'))
+}
+
+const onKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') {
+    isModalActive.value = false
+    return
+  }
+
+  if (event.key !== 'Tab') return
+
+  const focusable = getFocusableElements()
+  if (!focusable.length) return
+
+  const first = focusable[0]
+  const last = focusable[focusable.length - 1]
+  const active = document.activeElement as HTMLElement
+
+  if (event.shiftKey && active === first) {
+    event.preventDefault()
+    last?.focus()
+  } else if (!event.shiftKey && active === last) {
+    event.preventDefault()
+    first?.focus()
+  }
+}
 
 // computations
 const isSaved = computed(
@@ -375,6 +436,13 @@ onBeforeMount(() => {
 
   if (moduleOptions.isModalForced && !isConsentGiven.value) {
     isModalActive.value = true
+  }
+})
+watch(isModalActive, (active) => {
+  if (active) {
+    document.addEventListener('keydown', onKeydown)
+  } else {
+    document.removeEventListener('keydown', onKeydown)
   }
 })
 watch(
