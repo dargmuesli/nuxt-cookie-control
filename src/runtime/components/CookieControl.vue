@@ -250,7 +250,6 @@ import { CookieType } from '#cookie-control/types'
 import type { Cookie, Locale, Translatable } from '#cookie-control/types'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
 
-const dialog = ref<HTMLElement | null>(null)
 const { locale = 'en' } = defineProps<{
   locale?: Locale
 }>()
@@ -286,46 +285,6 @@ const cookieCookiesEnabledIds = useCookie(
     ...moduleOptions.cookieOptions,
   },
 )
-const getFocusableElements = () => {
-  if (!dialog.value) return []
-
-  return Array.from(
-    dialog.value.querySelectorAll<HTMLElement>(
-      `
-    a[href],
-    button:not([disabled]),
-    textarea:not([disabled]),
-    input:not([disabled]),
-    select:not([disabled]),
-    [tabindex]:not([tabindex="-1"])
-    `,
-    ),
-  ).filter((el) => !el.hasAttribute('disabled'))
-}
-
-const onKeydown = (event: KeyboardEvent) => {
-  if (event.key === 'Escape') {
-    isModalActive.value = false
-    return
-  }
-
-  if (event.key !== 'Tab') return
-
-  const focusable = getFocusableElements()
-  if (!focusable.length) return
-
-  const first = focusable[0]
-  const last = focusable[focusable.length - 1]
-  const active = document.activeElement as HTMLElement
-
-  if (event.shiftKey && active === first) {
-    event.preventDefault()
-    last?.focus()
-  } else if (!event.shiftKey && active === last) {
-    event.preventDefault()
-    first?.focus()
-  }
-}
 
 // computations
 const isSaved = computed(
@@ -436,13 +395,6 @@ onBeforeMount(() => {
 
   if (moduleOptions.isModalForced && !isConsentGiven.value) {
     isModalActive.value = true
-  }
-})
-watch(isModalActive, (active) => {
-  if (active) {
-    document.addEventListener('keydown', onKeydown)
-  } else {
-    document.removeEventListener('keydown', onKeydown)
   }
 })
 watch(
