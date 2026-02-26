@@ -6,10 +6,6 @@
 .cookieControl__Modal-leave-to {
   opacity: 0;
 }
-li{
-  display: inline;
-  margin: 0 5px;
-}
 .cookieControl__Bar--center {
   top: 50%;
   left: 50%;
@@ -154,6 +150,9 @@ li{
 }
 .cookieControl__BarButtons {
   display: flex;
+}
+.cookieControl__BarButtons li{
+  margin: 0 5px;
 }
 .cookieControl__Modal {
   position: fixed;
@@ -304,6 +303,9 @@ li{
   align-items: stretch;
   gap: 20px;
 }
+.cookieControl__ModalButtons li{
+  margin-top: 0 !important;
+}
 .cookieControl__ModalUnsaved {
   position: absolute;
   left: 50%;
@@ -358,6 +360,9 @@ li{
     margin-top: 20px;
     flex-direction: column;
     justify-content: center;
+  }
+  .cookieControl__BarButtons li{
+    padding-top: 10px;
   }
   .cookieControl__BarButtons button {
     width: 100%;

@@ -13,32 +13,30 @@
                 <p v-text="localeStrings?.bannerDescription" />
               </slot>
             </div>
-            <div class="cookieControl__BarButtons">
-              <ul>
-                <li>
-                  <button
-                    type="button"
-                    @click="acceptAll()"
-                    v-text="localeStrings?.accept"
-                  />
-                </li>
-                <li>
-                  <button
-                    v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-                    type="button"
-                    @click="acceptNecessary()"
-                    v-text="localeStrings?.decline"
-                  />
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    @click="isModalActive = true"
-                    v-text="localeStrings?.manageCookies"
-                  />
-                </li>
-              </ul>
-            </div>
+            <ul class="cookieControl__BarButtons">
+              <li>
+                <button
+                  type="button"
+                  @click="acceptAll()"
+                  v-text="localeStrings?.accept"
+                />
+              </li>
+              <li>
+                <button
+                  v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
+                  type="button"
+                  @click="acceptNecessary()"
+                  v-text="localeStrings?.decline"
+                />
+              </li>
+              <li>
+                <button
+                  type="button"
+                  @click="isModalActive = true"
+                  v-text="localeStrings?.manageCookies"
+                />
+              </li>
+            </ul>
           </div>
         </div>
       </transition>
@@ -64,7 +62,7 @@
       </button>
       <dialog
         ref="dialog"
-        :aria-label="localeStrings?.modaleTitle"
+        :aria-label="localeStrings?.modalTitle"
         @close="isModalActive = false"
       >
         <transition name="cookieControl__Modal">
@@ -182,49 +180,47 @@
                     </ul>
                   </template>
                 </template>
-                <div class="cookieControl__ModalButtons">
-                  <ul>
-                    <li>
-                      <button
-                        type="button"
-                        @click="
-                          () => {
-                            acceptPartial()
-                            isModalActive = false
-                          }
-                        "
-                        v-text="localeStrings?.save"
-                      />
-                    </li>
-                    <li>
-                      <button
-                        type="button"
-                        @click="
-                          () => {
-                            acceptAll()
-                            isModalActive = false
-                          }
-                        "
-                        v-text="localeStrings?.acceptAll"
-                      />
-                    </li>
-                    <li>
-                      <button
-                        v-if="!moduleOptions.isModalForced"
-                        type="button"
-                        @click="
-                          () => {
-                            moduleOptions.declineAllAcceptsNecessary
-                              ? acceptNecessary()
-                              : acceptNone()
-                            isModalActive = false
-                          }
-                        "
-                        v-text="localeStrings?.declineAll"
-                      />
-                    </li>
-                  </ul>
-                </div>
+                <ul class="cookieControl__ModalButtons">
+                  <li>
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          acceptPartial()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.save"
+                    />
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          acceptAll()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.acceptAll"
+                    />
+                  </li>
+                  <li>
+                    <button
+                      v-if="!moduleOptions.isModalForced"
+                      type="button"
+                      @click="
+                        () => {
+                          moduleOptions.declineAllAcceptsNecessary
+                            ? acceptNecessary()
+                            : acceptNone()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.declineAll"
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

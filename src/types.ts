@@ -64,7 +64,7 @@ export interface LocaleStrings {
   acceptAll: string
   bannerDescription: string
   bannerTitle: string
-  modaleTitle: string
+  modalTitle: string
   buttonCookies: string
   close: string
   cookiesFunctional: string
