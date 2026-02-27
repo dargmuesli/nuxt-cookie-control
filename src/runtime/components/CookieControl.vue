@@ -32,6 +32,8 @@
               <li>
                 <button
                   type="button"
+                  aria-haspopup="dialog"
+                  aria-controls="cookieControlModal"
                   @click="isModalActive = true"
                   v-text="localeStrings?.manageCookies"
                 />
@@ -43,6 +45,8 @@
       <button
         v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
         :aria-label="localeStrings?.buttonCookies"
+        aria-haspopup="dialog"
+        aria-controls="cookieControlModal"
         :class="[
           'cookieControl__ControlButton',
           `cookieControl__ControlButton--${moduleOptions.controlButtonPosition}`,
@@ -61,6 +65,7 @@
         </slot>
       </button>
       <dialog
+        id="cookieControlModal"
         ref="dialog"
         :aria-label="localeStrings?.modalTitle"
         @close="isModalActive = false"
