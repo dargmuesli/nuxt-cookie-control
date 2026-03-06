@@ -13,30 +13,40 @@
                 <p v-text="localeStrings?.bannerDescription" />
               </slot>
             </div>
-            <div class="cookieControl__BarButtons">
-              <button
-                type="button"
-                @click="acceptAll()"
-                v-text="localeStrings?.accept"
-              />
-              <button
-                v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-                type="button"
-                @click="acceptNecessary()"
-                v-text="localeStrings?.decline"
-              />
-              <button
-                type="button"
-                @click="isModalActive = true"
-                v-text="localeStrings?.manageCookies"
-              />
-            </div>
+            <ul class="cookieControl__BarButtons">
+              <li>
+                <button
+                  type="button"
+                  @click="acceptAll()"
+                  v-text="localeStrings?.accept"
+                />
+              </li>
+              <li>
+                <button
+                  v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
+                  type="button"
+                  @click="acceptNecessary()"
+                  v-text="localeStrings?.decline"
+                />
+              </li>
+              <li>
+                <button
+                  type="button"
+                  aria-haspopup="dialog"
+                  aria-controls="cookieControlModal"
+                  @click="isModalActive = true"
+                  v-text="localeStrings?.manageCookies"
+                />
+              </li>
+            </ul>
           </div>
         </div>
       </transition>
       <button
         v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
-        aria-label="Cookie control"
+        :aria-label="localeStrings?.buttonCookies"
+        aria-haspopup="dialog"
+        aria-controls="cookieControlModal"
         :class="[
           'cookieControl__ControlButton',
           `cookieControl__ControlButton--${moduleOptions.controlButtonPosition}`,
@@ -54,7 +64,12 @@
           </svg>
         </slot>
       </button>
-      <dialog ref="dialog" @close="isModalActive = false">
+      <dialog
+        id="cookieControlModal"
+        ref="dialog"
+        :aria-label="localeStrings?.modalTitle"
+        @close="isModalActive = false"
+      >
         <transition name="cookieControl__Modal">
           <div
             v-if="isModalActive"
@@ -68,7 +83,6 @@
             />
             <div class="cookieControl__ModalContent">
               <div class="cookieControl__ModalContentInner">
-                <slot name="modal" />
                 <button
                   v-if="!moduleOptions.isModalForced"
                   class="cookieControl__ModalClose"
@@ -76,6 +90,7 @@
                   @click="isModalActive = false"
                   v-text="localeStrings?.close"
                 />
+                <slot name="modal" />
                 <template v-for="cookieType in CookieType" :key="cookieType">
                   <template v-if="moduleOptions.cookies[cookieType].length">
                     <h2
@@ -170,41 +185,47 @@
                     </ul>
                   </template>
                 </template>
-                <div class="cookieControl__ModalButtons">
-                  <button
-                    type="button"
-                    @click="
-                      () => {
-                        acceptPartial()
-                        isModalActive = false
-                      }
-                    "
-                    v-text="localeStrings?.save"
-                  />
-                  <button
-                    type="button"
-                    @click="
-                      () => {
-                        acceptAll()
-                        isModalActive = false
-                      }
-                    "
-                    v-text="localeStrings?.acceptAll"
-                  />
-                  <button
-                    v-if="!moduleOptions.isModalForced"
-                    type="button"
-                    @click="
-                      () => {
-                        moduleOptions.declineAllAcceptsNecessary
-                          ? acceptNecessary()
-                          : acceptNone()
-                        isModalActive = false
-                      }
-                    "
-                    v-text="localeStrings?.declineAll"
-                  />
-                </div>
+                <ul class="cookieControl__ModalButtons">
+                  <li>
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          acceptPartial()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.save"
+                    />
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          acceptAll()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.acceptAll"
+                    />
+                  </li>
+                  <li>
+                    <button
+                      v-if="!moduleOptions.isModalForced"
+                      type="button"
+                      @click="
+                        () => {
+                          moduleOptions.declineAllAcceptsNecessary
+                            ? acceptNecessary()
+                            : acceptNone()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.declineAll"
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

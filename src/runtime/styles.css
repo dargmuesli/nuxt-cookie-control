@@ -151,6 +151,9 @@
 .cookieControl__BarButtons {
   display: flex;
 }
+.cookieControl__BarButtons li{
+  margin: 0 5px;
+}
 .cookieControl__Modal {
   position: fixed;
   top: 0;
@@ -300,6 +303,10 @@
   align-items: stretch;
   gap: 20px;
 }
+
+.cookieControl__ModalContent  .cookieControl__ModalButtons li{
+  margin-top: 0;
+}
 .cookieControl__ModalUnsaved {
   position: absolute;
   left: 50%;
@@ -354,6 +361,9 @@
     margin-top: 20px;
     flex-direction: column;
     justify-content: center;
+  }
+  .cookieControl__BarButtons li{
+    padding-top: 10px;
   }
   .cookieControl__BarButtons button {
     width: 100%;
