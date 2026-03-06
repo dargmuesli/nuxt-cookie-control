@@ -303,8 +303,9 @@
   align-items: stretch;
   gap: 20px;
 }
-.cookieControl__ModalButtons li{
-  margin-top: 0 !important;
+
+.cookieControl__ModalContent  .cookieControl__ModalButtons li{
+  margin-top: 0;
 }
 .cookieControl__ModalUnsaved {
   position: absolute;

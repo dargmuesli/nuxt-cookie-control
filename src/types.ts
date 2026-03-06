@@ -64,7 +64,6 @@ export interface LocaleStrings {
   acceptAll: string
   bannerDescription: string
   bannerTitle: string
-  modalTitle: string
   buttonCookies: string
   close: string
   cookiesFunctional: string
@@ -75,6 +74,7 @@ export interface LocaleStrings {
   declineAll: string
   here: string
   manageCookies: string
+  modalTitle: string
   save: string
   settingsUnsaved: string
 }
