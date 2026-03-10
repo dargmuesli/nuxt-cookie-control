@@ -152,7 +152,9 @@
   display: flex;
 }
 .cookieControl__BarButtons li{
-  margin: 0 5px;
+  list-style: none; 
+  padding: 0; 
+  margin: 0;
 }
 .cookieControl__Modal {
   position: fixed;
