@@ -21,9 +21,8 @@
                   v-text="localeStrings?.accept"
                 />
               </li>
-              <li>
+              <li v-if="moduleOptions.isAcceptNecessaryButtonEnabled">
                 <button
-                  v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
                   type="button"
                   @click="acceptNecessary()"
                   v-text="localeStrings?.decline"
@@ -33,7 +32,7 @@
                 <button
                   type="button"
                   aria-haspopup="dialog"
-                  aria-controls="cookieControlModal"
+                  :aria-controls="id"
                   @click="isModalActive = true"
                   v-text="localeStrings?.manageCookies"
                 />
@@ -46,7 +45,7 @@
         v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
         :aria-label="localeStrings?.buttonCookies"
         aria-haspopup="dialog"
-        aria-controls="cookieControlModal"
+        :aria-controls="id"
         :class="[
           'cookieControl__ControlButton',
           `cookieControl__ControlButton--${moduleOptions.controlButtonPosition}`,
@@ -65,7 +64,7 @@
         </slot>
       </button>
       <dialog
-        id="cookieControlModal"
+        :id="id"
         ref="dialog"
         :aria-label="localeStrings?.modalTitle"
         @close="isModalActive = false"
@@ -87,6 +86,7 @@
                   v-if="!moduleOptions.isModalForced"
                   class="cookieControl__ModalClose"
                   type="button"
+                  autofocus
                   @click="isModalActive = false"
                   v-text="localeStrings?.close"
                 />
@@ -210,9 +210,8 @@
                       v-text="localeStrings?.acceptAll"
                     />
                   </li>
-                  <li>
+                  <li v-if="!moduleOptions.isModalForced">
                     <button
-                      v-if="!moduleOptions.isModalForced"
                       type="button"
                       @click="
                         () => {
@@ -236,7 +235,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onBeforeMount, watch, useTemplateRef } from 'vue'
+import { ref, computed, onBeforeMount, watch, useTemplateRef, useId } from 'vue'
 
 import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
 import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
@@ -263,7 +262,7 @@ const {
   moduleOptions,
 } = useCookieControl()
 const nuxtApp = useNuxtApp()
-
+const id = useId()
 // data
 const expires = new Date(Date.now() + moduleOptions.cookieExpiryOffsetMs)
 const preselectedCookies = moduleOptions.cookies[CookieType.OPTIONAL].filter(
