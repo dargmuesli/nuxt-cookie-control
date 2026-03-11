@@ -14,6 +14,7 @@ jobs:
     permissions:
       contents: read
     secrets:
-      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
     with:
+      GH_APP_ID: ${{ vars.GH_APP_ID }}
       IS_DEBOUNCED: ${{ github.event_name != 'workflow_dispatch' }}
