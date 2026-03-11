@@ -16,7 +16,7 @@ export default {
   here: 'aquí',
   iframeBlocked: 'Per veure-ho, activeu les cookies funcionals',
   manageCookies: 'Més informació i personalització',
-  modalTitle: 'Configuración de cookies',
+  modalTitle: 'Configuració de cookies',
   save: 'Desar',
   settingsUnsaved: 'Tens una configuració no desada',
 } as LocaleStrings

@@ -16,7 +16,7 @@ export default {
   here: 'tukaj',
   iframeBlocked: 'Če želite to videti, omogočite funkcionalne piškotke',
   manageCookies: 'Izvedite več in prilagodite',
-  modalTitle: 'Nastavitve piškotků',
+  modalTitle: 'Nastavitve piškotkov',
   save: 'Shrani',
   settingsUnsaved: 'Imate neshranjene nastavitve',
 } as LocaleStrings
