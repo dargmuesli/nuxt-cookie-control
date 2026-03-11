@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Vi använder egna och tredjeparts-cookies för att visa webbplatsen korrekt samt för att förstå hur webbplatsen används i syfte att kunna förbättra de tjänster vi erbjuder. Ditt beslut kring användandet av cookies kan närsomhelst ändras via cookie-knappen på webbplatsen.',
   bannerTitle: 'Cookies',
+  buttonCookies: 'Öppna cookie-inställningar',
   close: 'Stäng',
   cookiesFunctional: 'Funktionella cookies',
   cookiesNecessary: 'Nödvändiga cookies',
@@ -16,6 +17,7 @@ export default {
   iframeBlocked:
     'För att ta del av detta, var god godkänn funktionella cookies',
   manageCookies: 'Anpassa',
+  modalTitle: 'Cookie-inställningar',
   save: 'Spara',
   settingsUnsaved: 'Du har inställningar som inte är sparade',
 } as LocaleStrings

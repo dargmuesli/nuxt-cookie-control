@@ -91,9 +91,6 @@
 .cookieControl__Bar button:focus {
   box-shadow: 0 0 0 3px var(--cookie-control-focusRingColor);
 }
-.cookieControl__Bar button + button {
-  margin-left: 10px;
-}
 .cookieControl__BarContainer {
   display: flex;
   padding: 20px;
@@ -150,6 +147,14 @@
 }
 .cookieControl__BarButtons {
   display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+.cookieControl__BarButtons li {
+  margin: 0;
+  padding: 0;
 }
 .cookieControl__Modal {
   position: fixed;
@@ -299,6 +304,15 @@
   margin-top: 40px;
   align-items: stretch;
   gap: 20px;
+}
+.cookieControl__ModalContent .cookieControl__ModalButtons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cookieControl__ModalContent .cookieControl__ModalButtons li {
+  margin: 0;
+  padding: 0;
 }
 .cookieControl__ModalUnsaved {
   position: absolute;

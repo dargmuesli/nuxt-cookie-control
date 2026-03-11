@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Nous utilisons des cookies d’origine et des cookies tiers. Ces cookies sont destinés à vous offrir une navigation optimisée sur ce site web et de nous donner un aperçu de son utilisation, en vue de l’amélioration des services que nous offrons. En poursuivant votre navigation, nous considérons que vous acceptez l’usage des cookies.',
   bannerTitle: 'Cookies',
+  buttonCookies: 'Ouvre la fenêtre de gestion des cookies',
   close: 'Fermer',
   cookiesFunctional: 'Cookies fonctionnels',
   cookiesNecessary: 'Les cookies obligatoires',
@@ -15,6 +16,7 @@ export default {
   here: 'ici',
   iframeBlocked: 'Pour voir cela, veuillez activer les cookies fonctionnels',
   manageCookies: 'Gérer les cookies',
+  modalTitle: 'Gestion des cookies',
   save: 'Sauvegarder',
   settingsUnsaved: 'Vous avez des paramètres non sauvegardés',
 } as LocaleStrings

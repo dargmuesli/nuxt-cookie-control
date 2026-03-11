@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Мы выкарыстоўваем нашыя ўласныя cookie-файлы і cookie-файлы трэціх старон, каб мы маглі паказаць вам гэты вэб-сайт і лепш разумець, як вы яго выкарыстоўваеце, з мэтай палепшэння прапанаваных намі паслуг. Калі вы працягнеце прагляд, мы будзем лічыць, што вы прынялі cookie-файлы.',
   bannerTitle: 'Cookie-файлы',
+  buttonCookies: 'Адкрыть настройки cookie',
   close: 'Зачыніць',
   cookiesFunctional: 'Функцыянальныя cookie-файлы',
   cookiesNecessary: 'Неабходныя cookie-файлы',
@@ -15,6 +16,7 @@ export default {
   here: 'тут',
   iframeBlocked: 'Каб убачыць гэта, уключыце функцыянальныя cookie-файлы',
   manageCookies: 'Кіраванне cookie-файламі',
+  modalTitle: 'Настройки cookie',
   save: 'Захаваць',
   settingsUnsaved: 'У вас засталіся незахаваныя налады',
 } as LocaleStrings

@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Utilizamos cookies propias y de terceros para poder mostrarle una página web y comprender cómo la utiliza, con el fin de mejorar los servicios que ofrecemos. Si continúa navegando, consideramos que acepta su uso.',
   bannerTitle: 'Cookies',
+  buttonCookies: 'Abrir configuración de cookies',
   close: 'Cerrar',
   cookiesFunctional: 'Cookies funcionales',
   cookiesNecessary: 'Cookies obligatorias',
@@ -15,6 +16,7 @@ export default {
   here: 'aquí',
   iframeBlocked: 'Para ver esto, por favor habilita las cookies funcionales.',
   manageCookies: 'Administrar cookies',
+  modalTitle: 'Configuración de cookies',
   save: 'Guardar',
   settingsUnsaved: 'Tienes configuraciones no guardadas',
 } as LocaleStrings

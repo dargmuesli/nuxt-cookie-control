@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Ми використовуємо власні файли cookie та сторонні файли cookie, щоб ми могли показати вам цей веб-сайт і краще зрозуміти, як ви ним користуєтеся, з метою покращення пропонованих нами послуг. Якщо ви продовжуєте перегляд, ми вважаємо, що ви прийняли файли cookie.',
   bannerTitle: 'Файли cookie',
+  buttonCookies: 'Відкрити налаштування cookie',
   close: 'Закрити',
   cookiesFunctional: 'Функціональні файли cookie',
   cookiesNecessary: 'Необхідні файли cookie',
@@ -15,6 +16,7 @@ export default {
   here: 'тут',
   iframeBlocked: 'Щоб побачити це, увімкніть функціональні файли cookie',
   manageCookies: 'Керувати файлами cookie',
+  modalTitle: 'Налаштування cookie',
   save: 'Зберегти',
   settingsUnsaved: 'У вас є незбережені налаштування',
 } as LocaleStrings
