@@ -10,10 +10,11 @@ on:
 jobs:
   release-schedule:
     name: 'Release: Scheduled'
-    uses: dargmuesli/github-actions/.github/workflows/release-schedule.yml@714a68188444d710ffa3e9f35a05f6a9d420931d # 3.2.0
+    uses: dargmuesli/github-actions/.github/workflows/release-schedule.yml@661e39fe1c9e484d94c6a5a9d4c9946d57c41771 # 5.1.0
     permissions:
       contents: read
     secrets:
-      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
     with:
+      GH_APP_ID: ${{ vars.GH_APP_ID }}
       IS_DEBOUNCED: ${{ github.event_name != 'workflow_dispatch' }}
