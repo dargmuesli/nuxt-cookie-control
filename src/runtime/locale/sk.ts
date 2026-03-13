@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Súbory cookie a súbory cookie tretích strán používame na to, aby sme mohli všetko správne zobraziť a lepšie pochopiť, ako používate túto webovú lokalitu, aby sme mohli zlepšiť ponúkané služby. Rozhodnutia môžete kedykoľvek zmeniť pomocou tlačidla cookie, ktoré sa zobrazí po vykonaní výberu na tomto banneri.',
   bannerTitle: 'Cookies',
+  buttonCookies: 'Otvoriť nastavenia cookies',
   close: 'Zatvoriť',
   cookiesFunctional: 'Obslužné cookies',
   cookiesNecessary: 'Nevyhnutné  cookies',
@@ -15,6 +16,7 @@ export default {
   here: 'tu',
   iframeBlocked: 'Ak ho chcete zobraziť, povoľte obslužné cookies',
   manageCookies: 'Ďalšie informácie a prispôsobenie',
+  modalTitle: 'Nastavenia cookies',
   save: 'Uložiť',
   settingsUnsaved: 'Máte neuložené nastavenia',
 } as LocaleStrings

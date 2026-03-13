@@ -91,9 +91,6 @@
 .cookieControl__Bar button:focus {
   box-shadow: 0 0 0 3px var(--cookie-control-focusRingColor);
 }
-.cookieControl__Bar button + button {
-  margin-left: 10px;
-}
 .cookieControl__BarContainer {
   display: flex;
   padding: 20px;
@@ -150,6 +147,14 @@
 }
 .cookieControl__BarButtons {
   display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+.cookieControl__BarButtons li {
+  margin: 0;
+  padding: 0;
 }
 .cookieControl__Modal {
   position: fixed;
@@ -300,6 +305,15 @@
   align-items: stretch;
   gap: 20px;
 }
+.cookieControl__ModalContent .cookieControl__ModalButtons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cookieControl__ModalContent .cookieControl__ModalButtons li {
+  margin: 0;
+  padding: 0;
+}
 .cookieControl__ModalUnsaved {
   position: absolute;
   left: 50%;
@@ -372,8 +386,6 @@
 }
 .cookieControl__ControlButton {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
   border: 0;
   outline: 0;
   width: 40px;
@@ -386,6 +398,22 @@
   transition: background-color 200ms;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background: var(--cookie-control-controlButtonBackground);
+}
+.cookieControl__ControlButton--top-left {
+  top: 20px;
+  left: 20px;
+}
+.cookieControl__ControlButton--top-right {
+  top: 20px;
+  right: 20px;
+}
+.cookieControl__ControlButton--bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+.cookieControl__ControlButton--bottom-right {
+  bottom: 20px;
+  right: 20px;
 }
 .cookieControl__ControlButton svg {
   position: absolute;
