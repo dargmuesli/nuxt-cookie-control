@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Käytämme omia ja kolmannen osapuolen evästeitä verkkosivuston näyttämiseen ja sen käytön ymmärtämiseen, jotta voimme parantaa palveluitamme. Evästeiden käyttöoikeuksien valinta voidaan muuttaa koska tahansa evästeiden valintanapin avulla, joka ilmestyy valinnan jälkeen tähän banneriin.',
   bannerTitle: 'Evästeet',
+  buttonCookies: 'Avaa evästeasetukset',
   close: 'Sulje',
   cookiesFunctional: 'Toiminnalliset evästeet',
   cookiesNecessary: 'Pakolliset evästeet',
@@ -16,6 +17,7 @@ export default {
   iframeBlocked:
     'Nähdäksesi tämän, ole hyvä ja hyväksy toiminnalliset evästeet.',
   manageCookies: 'Lue lisää ja hallitse evästeitä',
+  modalTitle: 'Evästeasetukset',
   save: 'Tallenna',
   settingsUnsaved: 'Sinulla on tallentamattomia muutoksia.',
 } as LocaleStrings

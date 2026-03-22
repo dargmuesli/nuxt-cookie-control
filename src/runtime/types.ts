@@ -37,7 +37,7 @@ export type Locale =
   | 'sv'
   | 'tr'
   | 'uk'
-  | 'zh-CN'
+  | 'zh'
 
 export type PartialRecord<K extends string | number | symbol, T> = Partial<
   Record<K, T>
@@ -65,6 +65,7 @@ export interface LocaleStrings {
   acceptAll: string
   bannerDescription: string
   bannerTitle: string
+  buttonCookies: string
   close: string
   cookiesFunctional: string
   cookiesNecessary: string
@@ -74,6 +75,7 @@ export interface LocaleStrings {
   declineAll: string
   here: string
   manageCookies: string
+  modalTitle: string
   save: string
   settingsUnsaved: string
 }
@@ -86,6 +88,16 @@ export interface ModuleOptions {
     | 'bottom-left'
     | 'bottom-right'
     | 'bottom-full'
+  /**
+   * Position of the control button.
+   * 'top-left', 'top-right', 'bottom-left' or 'bottom-right'.
+   * @default 'bottom-right'
+   */
+  controlButtonPosition:
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
   closeModalOnClickOutside: boolean
   colors: false | Record<string, unknown>
   cookieExpiryOffsetMs: number
@@ -111,6 +123,7 @@ export interface ModuleOptions {
 
 export const DEFAULTS: Required<ModuleOptions> = {
   barPosition: 'bottom-full',
+  controlButtonPosition: 'bottom-right',
   closeModalOnClickOutside: false,
   colors: {
     barBackground: '#000',

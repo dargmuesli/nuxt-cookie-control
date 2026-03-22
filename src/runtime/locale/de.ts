@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Wir verwenden eigene Cookies und Cookies von Drittanbietern, damit wir diese Webseite korrekt darstellen können und besser verstehen, wie diese Webseite genutzt wird, um unser Angebot zu verbessern. Eine Entscheidung über die Erlaubnis zur Verwendung von Cookies kann jederzeit über den Cookie-Button geändert werden, der erscheint, nachdem eine Auswahl auf diesem Banner getroffen wurde.',
   bannerTitle: 'Cookies',
+  buttonCookies: 'Cookie-Einstellungen öffnen',
   close: 'Schließen',
   cookiesFunctional: 'Funktionale Cookies',
   cookiesNecessary: 'Notwendige Cookies',
@@ -16,6 +17,7 @@ export default {
   iframeBlocked:
     'Um den Inhalt zu sehen, aktivieren Sie bitte funktionale Cookies',
   manageCookies: 'Mehr erfahren und anpassen',
+  modalTitle: 'Cookie-Einstellungen',
   save: 'Speichern',
   settingsUnsaved: 'Es gibt nicht gespeicherte Einstellungen',
 } as LocaleStrings
