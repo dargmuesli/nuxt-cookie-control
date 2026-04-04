@@ -62,15 +62,15 @@
       "@parcel/watcher",
       "esbuild",
       "unrs-resolver"
-    ]
+    ],
+    "overrides": {
+      "eslint-flat-config-utils": "3.0.2"
+    }
   },
   "publishConfig": {
     "access": "public"
   },
   "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
-  "resolutions": {
-    "@nuxt/kit": "^4.0.0"
-  },
   "scripts": {
     "build": "nuxt-module-build build",
     "dev": "pnpm --dir playground run dev",
