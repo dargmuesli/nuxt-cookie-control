@@ -1,6 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>dargmuesli/renovate-config"
+  "extends": ["github>dargmuesli/renovate-config"],
+  "packageRules": [
+    {
+      "allowedVersions": "3.0.2",
+      "matchPackageNames": ["eslint-flat-config-utils"]
+    }
   ]
 }
