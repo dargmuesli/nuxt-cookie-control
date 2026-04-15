@@ -3,5 +3,5 @@
  * Should just be extending and not overriding the default config
  */
 export default {
-  entries: ['src/kit'],
+  entries: ['src/module', 'src/kit'],
 }
