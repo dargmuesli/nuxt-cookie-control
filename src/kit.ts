@@ -27,6 +27,7 @@ export const addControlledCookie = (
   type: CookieType = CookieType.OPTIONAL,
   nuxt: Nuxt = useNuxt(),
 ) => {
+  nuxt.options[CONFIG_KEY] ||= {} as typeof nuxt.options[typeof CONFIG_KEY]
   nuxt.options[CONFIG_KEY].cookies ||= { necessary: [], optional: [] }
   nuxt.options[CONFIG_KEY].cookies.necessary ||= []
   nuxt.options[CONFIG_KEY].cookies.optional ||= []
