@@ -1,5 +1,8 @@
 import { defineNuxtModule, hasNuxtModule } from '@nuxt/kit'
-import { addControlledCookie, CookieType } from '@dargmuesli/nuxt-cookie-control/kit'
+import {
+  addControlledCookie,
+  CookieType,
+} from '@dargmuesli/nuxt-cookie-control/kit'
 
 export default defineNuxtModule({
   setup() {

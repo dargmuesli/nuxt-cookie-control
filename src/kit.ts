@@ -2,7 +2,7 @@ import { useNuxt } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 
 import { CONFIG_KEY } from './constants'
-import type { Cookie } from './types'
+import type { Cookie, ModuleOptions } from './types'
 import { CookieType } from './types'
 
 /**
@@ -27,16 +27,23 @@ export const addControlledCookie = (
   type: CookieType = CookieType.OPTIONAL,
   nuxt: Nuxt = useNuxt(),
 ) => {
-  nuxt.options[CONFIG_KEY] ||= {} as typeof nuxt.options[typeof CONFIG_KEY]
-  nuxt.options[CONFIG_KEY].cookies ||= { necessary: [], optional: [] }
-  nuxt.options[CONFIG_KEY].cookies.necessary ||= []
-  nuxt.options[CONFIG_KEY].cookies.optional ||= []
+  nuxt.options[CONFIG_KEY] ||= {} as (typeof nuxt.options)[typeof CONFIG_KEY]
+  ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies ||= {
+    necessary: [],
+    optional: [],
+  }
+  ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies.necessary ||= []
+  ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies.optional ||= []
 
-  if (nuxt.options[CONFIG_KEY].cookies[type].some((c) => c.id === cookie.id)) {
+  if (
+    (nuxt.options[CONFIG_KEY] as ModuleOptions).cookies[type].some(
+      (c) => c.id === cookie.id,
+    )
+  ) {
     return
   }
 
-  nuxt.options[CONFIG_KEY].cookies[type].push(cookie)
+  ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies[type].push(cookie)
 }
 
 export { CookieType } from './types'
