@@ -132,6 +132,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# PhpStorm project files
+.idea
+
 ### Node Patch ###
 # Serverless Webpack directories
 .webpack/
