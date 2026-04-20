@@ -42,6 +42,13 @@ export default defineNuxtConfig({
             '/': 'Local Privacy Policy',
             'https://example.com': '3rd Party Privacy Policy',
             'https://example.cop': null,
+            'https://translation.example.com': {
+              de: 'Datenschutzerklärung',
+              en: 'Privacy Policy',
+            },
+            'https://missing-translation.example.com': {
+              en: 'Privacy Policy',
+            },
           },
           targetCookieIds: ['_o', '_p', '_t'],
         },
