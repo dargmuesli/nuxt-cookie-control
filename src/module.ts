@@ -80,10 +80,17 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     nuxt.hook('modules:done', async () => {
-      nuxt.options.runtimeConfig.public.cookieControl = defu(
+      const merged = defu(
         nuxt.options.runtimeConfig.public.cookieControl,
         moduleOptions,
+        nuxt.options.cookieControl,
       )
+      for (const type of ['necessary', 'optional'] as const) {
+        merged.cookies[type] = [
+          ...new Map(merged.cookies[type].map((c) => [c.id, c])).values(),
+        ]
+      }
+      nuxt.options.runtimeConfig.public.cookieControl = merged
     })
   },
 })
