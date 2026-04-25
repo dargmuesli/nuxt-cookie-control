@@ -25,7 +25,7 @@
     "nuxt": "4.4.2",
     "prettier": "3.8.3",
     "vite": "8.0.9",
-    "vue": "3.5.32",
+    "vue": "3.5.33",
     "vue-tsc": "3.2.7",
     "webpack": "5.106.2"
   },
@@ -56,7 +56,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@10.33.1",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
