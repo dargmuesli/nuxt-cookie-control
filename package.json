@@ -37,6 +37,10 @@
       "types": "./dist/types.d.mts",
       "import": "./dist/module.mjs"
     },
+    "./kit": {
+      "types": "./dist/kit.d.mts",
+      "import": "./dist/kit.mjs"
+    },
     "./runtime/*": "./dist/runtime/*"
   },
   "files": [
@@ -86,6 +90,9 @@
     "*": {
       ".": [
         "./dist/types.d.mts"
+      ],
+      "kit": [
+        "./dist/kit.d.mts"
       ]
     }
   },
