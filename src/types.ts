@@ -33,6 +33,7 @@ export type Locale =
   | 'rs'
   | 'ru'
   | 'sk'
+  | 'sl'
   | 'sv'
   | 'tr'
   | 'uk'
@@ -150,7 +151,7 @@ export const DEFAULTS: Required<ModuleOptions> = {
   cookieNameCookiesEnabledIds: 'ncc_e',
   cookieOptions: {
     path: '/',
-    sameSite: 'strict',
+    sameSite: 'strict' as const,
     secure: process.env.NODE_ENV === 'development' ? undefined : true,
   },
   isAcceptNecessaryButtonEnabled: true,
