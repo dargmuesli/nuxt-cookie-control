@@ -79,6 +79,7 @@ export interface LocaleStrings {
 }
 
 export interface ModuleOptions {
+  _isPrerendered: boolean | undefined
   barPosition:
     | 'top-left'
     | 'top-right'
@@ -110,6 +111,7 @@ export interface ModuleOptions {
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
+  _isPrerendered: undefined,
   barPosition: 'bottom-full',
   closeModalOnClickOutside: false,
   colors: {
