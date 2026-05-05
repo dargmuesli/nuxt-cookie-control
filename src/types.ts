@@ -33,6 +33,7 @@ export type Locale =
   | 'rs'
   | 'ru'
   | 'sk'
+  | 'sl'
   | 'sv'
   | 'tr'
   | 'uk'
