@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  eslint-flat-config-utils: 3.0.2
-
 importers:
 
   .:
