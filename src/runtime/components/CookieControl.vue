@@ -72,6 +72,14 @@
                 @click="isModalActive = false"
                 v-text="localeStrings?.close"
               />
+              <h2
+                v-if="moduleOptions.modal?.title"
+                v-text="moduleOptions.modal.title"
+              />
+              <p
+                v-if="moduleOptions.modal?.description"
+                v-text="moduleOptions.modal.description"
+              />
               <template v-for="cookieType in CookieType" :key="cookieType">
                 <template v-if="moduleOptions.cookies[cookieType].length">
                   <h2
