@@ -1,3 +1,9 @@
+## [9.1.23](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.22...9.1.23) (2026-05-09)
+
+### Bug Fixes
+
+* **types:** deduplicate ([#326](https://github.com/dargmuesli/nuxt-cookie-control/issues/326)) ([62471ef](https://github.com/dargmuesli/nuxt-cookie-control/commit/62471ef36c7889de7b03c456445a396f24be0c60))
+
 ## [9.1.22](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.21...9.1.22) (2026-04-29)
 
 ### Bug Fixes
