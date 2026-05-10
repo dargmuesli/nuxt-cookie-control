@@ -184,7 +184,7 @@ const pushCss = (moduleOptions: ModuleOptions, nuxt: Nuxt) => {
     nuxt.options.css.push(resolver.resolve(runtimeDir, 'styles.css'))
 }
 
-declare module '@nuxt/schema' {
+declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
     cookieControl: ModuleOptions
   }
