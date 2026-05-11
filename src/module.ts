@@ -15,10 +15,10 @@ import {
 import type { Nuxt, NuxtApp } from '@nuxt/schema'
 import { defu } from 'defu'
 
-import { CONFIG_KEY } from './constants'
 import { replaceCodePlugin } from './replace'
-import { DEFAULTS } from './types'
-import type { ModuleOptions } from './types'
+import { CONFIG_KEY } from './runtime/constants'
+import type { ModuleOptions } from './runtime/types'
+import { DEFAULTS } from './runtime/types'
 import { name, version } from '../package.json'
 
 const resolver = createResolver(import.meta.url)
@@ -184,7 +184,7 @@ const pushCss = (moduleOptions: ModuleOptions, nuxt: Nuxt) => {
     nuxt.options.css.push(resolver.resolve(runtimeDir, 'styles.css'))
 }
 
-declare module '@nuxt/schema' {
+declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
     cookieControl: ModuleOptions
   }
