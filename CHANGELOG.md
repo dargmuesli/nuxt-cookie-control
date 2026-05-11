@@ -1,3 +1,14 @@
+## [10.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.4...10.0.0-beta.5) (2026-05-11)
+
+### Bug Fixes
+
+* schedule release ([33effe7](https://github.com/dargmuesli/nuxt-cookie-control/commit/33effe7c7a3c9f41ff5e6b5de941162e8cc9a997))
+* schedule release ([6573787](https://github.com/dargmuesli/nuxt-cookie-control/commit/6573787104e6157787f764da431124906bfdf828))
+* schedule release ([8acbcbe](https://github.com/dargmuesli/nuxt-cookie-control/commit/8acbcbee413a1f6b99111b50d4f71ff122e0fad9))
+* schedule release ([ff24f11](https://github.com/dargmuesli/nuxt-cookie-control/commit/ff24f1185f693fe7cbcc3a345eba49c9713dff78))
+* schedule release ([d7ad031](https://github.com/dargmuesli/nuxt-cookie-control/commit/d7ad0312738f0470d1efaf33388b5f3789827766))
+* **types:** deduplicate ([#326](https://github.com/dargmuesli/nuxt-cookie-control/issues/326)) ([62471ef](https://github.com/dargmuesli/nuxt-cookie-control/commit/62471ef36c7889de7b03c456445a396f24be0c60))
+
 ## [10.0.0-beta.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.3...10.0.0-beta.4) (2026-03-11)
 
 ### Features
