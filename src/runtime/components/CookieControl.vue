@@ -175,11 +175,13 @@
                                     "
                                   >
                                     {{
-                                      resolveTranslatable(
-                                        entry[1],
-                                        locale,
-                                        true,
-                                      ) || entry[0]
+                                      (entry[1]
+                                        ? resolveTranslatable(
+                                            entry[1],
+                                            locale,
+                                            true,
+                                          )
+                                        : undefined) || entry[0]
                                     }}
                                   </NuxtLink>
                                 </span>
