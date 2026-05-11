@@ -26,13 +26,18 @@ export const resolveTranslatable = (
 
   let result = translatable[locale]
 
-  // When missing translation and fallback is allowed, use default locale.
+  // When missing translation and fallback is allowed,
+  // use default locale first,
+  // then fall back to the first available translation.
   if (!result && useFallback) {
-    result = translatable[LOCALE_DEFAULT]
+    result =
+      translatable[LOCALE_DEFAULT] ?? Object.values(translatable).find(Boolean)
   }
 
-  if (!result)
+  if (!result) {
+    if (useFallback) return undefined
     throw new Error(`Could not get translation for locale ${locale}.`)
+  }
 
   return result
 }
