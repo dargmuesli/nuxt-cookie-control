@@ -24,7 +24,7 @@
     "lint-staged": "17.0.4",
     "nuxt": "4.4.5",
     "prettier": "3.8.3",
-    "vite": "8.0.12",
+    "vite": "8.0.13",
     "vue": "3.5.34",
     "vue-tsc": "3.2.9",
     "webpack": "5.106.2"
@@ -56,7 +56,7 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@11.1.1",
+  "packageManager": "pnpm@11.1.2",
   "publishConfig": {
     "access": "public"
   },
