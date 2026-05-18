@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'We gebruiken onze eigen cookies en third-party cookies om onze site te tonen en om te leren hoe deze gebruikt wordt, met het oog om de services die we verlenen te verbeteren. Door verder te gaan op onze site gaan we ervanuit dat hiermee akkoord gegaan wordt.',
   bannerTitle: 'Cookies',
+  buttonCookies: 'Open cookie instellingen',
   close: 'Sluiten',
   cookiesFunctional: 'Functionele cookies',
   cookiesNecessary: 'Noodzakelijke cookies',
@@ -16,6 +17,7 @@ export default {
   iframeBlocked:
     'Om dit te kunnen bekijken dienen functionele cookies geaccepteerd te worden',
   manageCookies: 'Beheer cookies',
+  modalTitle: 'Cookie instellingen',
   save: 'Opslaan',
   settingsUnsaved: 'Er zijn niet-opgeslagen instellingen',
 } as LocaleStrings

@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     '当サイトでは、サービス改善を目的として当サイト及び第三者が提供するCookieを使用することにより、利用者に当サイトを表示させるとともに、利用者がどのようにサイトを利用しているかをより十分に把握することが可能となっています。このまま閲覧を続けると、Cookieの利用について同意したとみなされます。',
   bannerTitle: 'Cookie',
+  buttonCookies: 'Cookie設定を開く',
   close: '閉じる',
   cookiesFunctional: '機能性Cookie',
   cookiesNecessary: '不可欠なCookie',
@@ -15,6 +16,7 @@ export default {
   here: '設定',
   iframeBlocked: 'ここを表示するには、機能性Cookieを有効にしてください:',
   manageCookies: 'Cookieを管理',
+  modalTitle: 'Cookie設定',
   save: '保存',
   settingsUnsaved: '保存されていない設定があります',
 } as LocaleStrings

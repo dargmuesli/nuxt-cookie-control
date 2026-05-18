@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Biz öz kukilərimizdən və üçüncü tərəf kukilərindən istifadə edirik ki, biz bu veb-saytı düzgün göstərə bilək və təklif etdiyimiz xidmətləri təkmilləşdirmək məqsədilə bu veb-saytdan necə istifadə olunduğunu daha yaxşı başa düşək. Kukidən istifadə icazələri ilə bağlı qərar bu bannerdə seçim edildikdən sonra görünəcək kuki düyməsindən istifadə etməklə istənilən vaxt dəyişdirilə bilər.',
   bannerTitle: 'Kukilər',
+  buttonCookies: 'Kuki ayarlarını aç',
   close: 'Bağla',
   cookiesFunctional: 'Funksional kukilər',
   cookiesNecessary: 'Zəruri kukilər',
@@ -15,6 +16,7 @@ export default {
   here: 'burada',
   iframeBlocked: 'Bunu görmək üçün funksional kukiləri aktiv edin',
   manageCookies: 'Kukiləri idarə et',
+  modalTitle: 'Kuki ayarları',
   save: 'Yadda saxla',
   settingsUnsaved: 'Yadda saxlanmamış ayarlarınız var',
 } as LocaleStrings

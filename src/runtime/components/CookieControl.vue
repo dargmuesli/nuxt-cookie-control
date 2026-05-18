@@ -13,31 +13,43 @@
                 <p v-text="localeStrings?.bannerDescription" />
               </slot>
             </div>
-            <div class="cookieControl__BarButtons">
-              <button
-                type="button"
-                @click="acceptAll()"
-                v-text="localeStrings?.accept"
-              />
-              <button
-                v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-                type="button"
-                @click="acceptNecessary()"
-                v-text="localeStrings?.decline"
-              />
-              <button
-                type="button"
-                @click="isModalActive = true"
-                v-text="localeStrings?.manageCookies"
-              />
-            </div>
+            <ul class="cookieControl__BarButtons">
+              <li>
+                <button
+                  type="button"
+                  @click="acceptAll()"
+                  v-text="localeStrings?.accept"
+                />
+              </li>
+              <li v-if="moduleOptions.isAcceptNecessaryButtonEnabled">
+                <button
+                  type="button"
+                  @click="acceptNecessary()"
+                  v-text="localeStrings?.decline"
+                />
+              </li>
+              <li>
+                <button
+                  type="button"
+                  aria-haspopup="dialog"
+                  :aria-controls="id"
+                  @click="isModalActive = true"
+                  v-text="localeStrings?.manageCookies"
+                />
+              </li>
+            </ul>
           </div>
         </div>
       </transition>
       <button
         v-if="moduleOptions.isControlButtonEnabled && isConsentGiven"
-        aria-label="Cookie control"
-        class="cookieControl__ControlButton"
+        :aria-label="localeStrings?.buttonCookies"
+        aria-haspopup="dialog"
+        :aria-controls="id"
+        :class="[
+          'cookieControl__ControlButton',
+          `cookieControl__ControlButton--${moduleOptions.controlButtonPosition}`,
+        ]"
         data-testid="nuxt-cookie-control-control-button"
         type="button"
         @click="isModalActive = true"
@@ -51,166 +63,179 @@
           </svg>
         </slot>
       </button>
-      <transition name="cookieControl__Modal">
-        <div
-          v-if="isModalActive"
-          class="cookieControl__Modal"
-          @click.self="onModalClick"
-        >
-          <p
-            v-if="isSaved"
-            class="cookieControl__ModalUnsaved"
-            v-text="localeStrings?.settingsUnsaved"
-          />
-          <div class="cookieControl__ModalContent">
-            <div class="cookieControl__ModalContentInner">
-              <slot name="modal" />
-              <button
-                v-if="!moduleOptions.isModalForced"
-                class="cookieControl__ModalClose"
-                type="button"
-                @click="isModalActive = false"
-                v-text="localeStrings?.close"
-              />
-              <template v-for="cookieType in CookieType" :key="cookieType">
-                <template v-if="moduleOptions.cookies[cookieType].length">
-                  <h2
-                    v-text="
-                      localeStrings &&
-                      (cookieType === CookieType.NECESSARY
-                        ? localeStrings.cookiesNecessary
-                        : localeStrings.cookiesOptional)
-                    "
-                  />
-                  <ul>
-                    <li
-                      v-for="cookie in moduleOptions.cookies[cookieType]"
-                      :key="cookie.id"
-                    >
-                      <slot name="cookie" v-bind="{ cookie }">
-                        <div class="cookieControl__ModalInputWrapper">
-                          <input
-                            v-if="
-                              cookieType === CookieType.NECESSARY &&
-                              cookie.name !== 'functional'
-                            "
-                            :id="resolveTranslatable(cookie.name, locale)"
-                            type="checkbox"
-                            disabled
-                            checked
-                          />
-                          <input
-                            v-else
-                            :id="resolveTranslatable(cookie.name, locale)"
-                            type="checkbox"
-                            :checked="
-                              getCookieIds(localCookiesEnabled).includes(
-                                cookie.id,
-                              )
-                            "
-                            @change="toggleCookie(cookie)"
-                          />
-                          <button type="button" @click="toggleButton($event)">
-                            {{ getName(cookie.name) }}
-                          </button>
-                          <label
-                            class="cookieControl__ModalCookieName"
-                            :for="resolveTranslatable(cookie.name, locale)"
-                            tabindex="0"
-                            @keydown="toggleLabel($event)"
-                          >
-                            {{ getName(cookie.name) }}
-                            <span v-if="cookie.description">
-                              {{ getDescription(cookie.description) }}
-                            </span>
-                            <span
-                              v-if="
-                                moduleOptions.isCookieIdVisible &&
-                                cookie.targetCookieIds
-                              "
-                            >
-                              <br />
-                              {{
-                                'IDs: ' +
-                                cookie.targetCookieIds
-                                  .map((id) => `"${id}"`)
-                                  .join(', ')
-                              }}
-                            </span>
-                            <template
-                              v-if="Object.entries(cookie.links || {}).length"
-                            >
-                              <span
-                                v-for="entry in Object.entries(
-                                  cookie.links || {},
-                                )"
-                                :key="entry[0]"
-                              >
-                                <br />
-                                <NuxtLink
-                                  :to="entry[0]"
-                                  @click="
-                                    !entry[0].toLowerCase().startsWith('http')
-                                      ? (isModalActive = false)
-                                      : null
-                                  "
-                                >
-                                  {{ entry[1] || entry[0] }}
-                                </NuxtLink>
-                              </span>
-                            </template>
-                          </label>
-                        </div>
-                      </slot>
-                    </li>
-                  </ul>
-                </template>
-              </template>
-              <div class="cookieControl__ModalButtons">
-                <button
-                  type="button"
-                  @click="
-                    () => {
-                      acceptPartial()
-                      isModalActive = false
-                    }
-                  "
-                  v-text="localeStrings?.save"
-                />
-                <button
-                  type="button"
-                  @click="
-                    () => {
-                      acceptAll()
-                      isModalActive = false
-                    }
-                  "
-                  v-text="localeStrings?.acceptAll"
-                />
+      <dialog
+        :id="id"
+        ref="dialog"
+        :aria-label="localeStrings?.modalTitle"
+        @close="isModalActive = false"
+      >
+        <transition name="cookieControl__Modal">
+          <div
+            v-if="isModalActive"
+            class="cookieControl__Modal"
+            @click.self="onModalClick"
+          >
+            <p
+              v-if="isSaved"
+              class="cookieControl__ModalUnsaved"
+              v-text="localeStrings?.settingsUnsaved"
+            />
+            <div class="cookieControl__ModalContent">
+              <div class="cookieControl__ModalContentInner">
                 <button
                   v-if="!moduleOptions.isModalForced"
+                  class="cookieControl__ModalClose"
                   type="button"
-                  @click="
-                    () => {
-                      moduleOptions.declineAllAcceptsNecessary
-                        ? acceptNecessary()
-                        : acceptNone()
-                      isModalActive = false
-                    }
-                  "
-                  v-text="localeStrings?.declineAll"
+                  autofocus
+                  @click="isModalActive = false"
+                  v-text="localeStrings?.close"
                 />
+                <slot name="modal" />
+                <template v-for="cookieType in CookieType" :key="cookieType">
+                  <template v-if="moduleOptions.cookies[cookieType].length">
+                    <h2
+                      v-text="
+                        localeStrings &&
+                        (cookieType === CookieType.NECESSARY
+                          ? localeStrings.cookiesNecessary
+                          : localeStrings.cookiesOptional)
+                      "
+                    />
+                    <ul>
+                      <li
+                        v-for="cookie in moduleOptions.cookies[cookieType]"
+                        :key="cookie.id"
+                      >
+                        <slot name="cookie" v-bind="{ cookie }">
+                          <div class="cookieControl__ModalInputWrapper">
+                            <input
+                              v-if="
+                                cookieType === CookieType.NECESSARY &&
+                                cookie.name !== 'functional'
+                              "
+                              :id="resolveTranslatable(cookie.name, locale)"
+                              type="checkbox"
+                              disabled
+                              checked
+                            />
+                            <input
+                              v-else
+                              :id="resolveTranslatable(cookie.name, locale)"
+                              type="checkbox"
+                              :checked="
+                                getCookieIds(localCookiesEnabled).includes(
+                                  cookie.id,
+                                )
+                              "
+                              @change="toggleCookie(cookie)"
+                            />
+                            <button type="button" @click="toggleButton($event)">
+                              {{ getName(cookie.name) }}
+                            </button>
+                            <label
+                              class="cookieControl__ModalCookieName"
+                              :for="resolveTranslatable(cookie.name, locale)"
+                              tabindex="0"
+                              @keydown="toggleLabel($event)"
+                            >
+                              {{ getName(cookie.name) }}
+                              <span v-if="cookie.description">
+                                {{ getDescription(cookie.description) }}
+                              </span>
+                              <span
+                                v-if="
+                                  moduleOptions.isCookieIdVisible &&
+                                  cookie.targetCookieIds
+                                "
+                              >
+                                <br />
+                                {{
+                                  'IDs: ' +
+                                  cookie.targetCookieIds
+                                    .map((id) => `"${id}"`)
+                                    .join(', ')
+                                }}
+                              </span>
+                              <template
+                                v-if="Object.entries(cookie.links || {}).length"
+                              >
+                                <span
+                                  v-for="entry in Object.entries(
+                                    cookie.links || {},
+                                  )"
+                                  :key="entry[0]"
+                                >
+                                  <br />
+                                  <NuxtLink
+                                    :to="entry[0]"
+                                    @click="
+                                      !entry[0].toLowerCase().startsWith('http')
+                                        ? (isModalActive = false)
+                                        : null
+                                    "
+                                  >
+                                    {{ entry[1] || entry[0] }}
+                                  </NuxtLink>
+                                </span>
+                              </template>
+                            </label>
+                          </div>
+                        </slot>
+                      </li>
+                    </ul>
+                  </template>
+                </template>
+                <ul class="cookieControl__ModalButtons">
+                  <li>
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          acceptPartial()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.save"
+                    />
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          acceptAll()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.acceptAll"
+                    />
+                  </li>
+                  <li v-if="!moduleOptions.isModalForced">
+                    <button
+                      type="button"
+                      @click="
+                        () => {
+                          moduleOptions.declineAllAcceptsNecessary
+                            ? acceptNecessary()
+                            : acceptNone()
+                          isModalActive = false
+                        }
+                      "
+                      v-text="localeStrings?.declineAll"
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </transition>
+        </transition>
+      </dialog>
     </aside>
   </ClientOnlyPrerender>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onBeforeMount, watch } from 'vue'
+import { ref, computed, onBeforeMount, watch, useTemplateRef, useId } from 'vue'
 
 import ClientOnlyPrerender from '#cookie-control/components/ClientOnlyPrerender.vue'
 import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
@@ -237,7 +262,7 @@ const {
   moduleOptions,
 } = useCookieControl()
 const nuxtApp = useNuxtApp()
-
+const id = useId()
 // data
 const expires = new Date(Date.now() + moduleOptions.cookieExpiryOffsetMs)
 const preselectedCookies = moduleOptions.cookies[CookieType.OPTIONAL].filter(
@@ -428,6 +453,19 @@ watch(isConsentGiven, (current, _previous) => {
     cookieIsConsentGiven.value = undefined
   } else {
     cookieIsConsentGiven.value = current ? allCookieIdsString : '0'
+  }
+})
+
+const templateRefDialog = useTemplateRef('dialog')
+watch(isModalActive, (current, previous) => {
+  if (!templateRefDialog.value) return
+
+  if (!previous && current && !templateRefDialog.value.open) {
+    templateRefDialog.value.showModal()
+  }
+
+  if (previous && !current && templateRefDialog.value.open) {
+    templateRefDialog.value.close()
   }
 })
 

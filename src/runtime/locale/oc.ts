@@ -10,11 +10,13 @@ export default {
   cookiesFunctional: 'Cookies foncionals',
   cookiesNecessary: 'Los cookies obligatòris',
   cookiesOptional: 'Los cookies opcionals',
+  buttonCookies: 'Dobrir los paramètres de cookies',
   decline: 'Accèpti çò necessari',
   declineAll: 'Tot refusar',
   here: 'aquí',
   iframeBlocked: 'Per veire aquò, mercés d’activar los cookies foncionals',
   manageCookies: 'Gerir los cookies',
+  modalTitle: 'Paramètres de cookies',
   save: 'Salvagardar',
   settingsUnsaved: 'Avètz de paramètres non salvagardats',
 } as LocaleStrings

@@ -6,6 +6,7 @@ export default {
   bannerDescription:
     'Saját, illetve harmadik féltől származó sütiket használunk annak érdekében, hogy megmutassuk ezt a weboldalt, és jobban megértsük, hogyan használja azt, azzal a céllal, hogy javítsuk az általunk kínált szolgáltatásokat. Ha folytatod a böngészést, úgy gondoljuk, hogy elfogadtad a sütiket.',
   bannerTitle: 'Sütik',
+  buttonCookies: 'Süti beállítások megnyitása',
   close: 'Bezár',
   cookiesFunctional: 'Funkcionális sütik',
   cookiesNecessary: 'Szükséges sütik',
@@ -16,6 +17,7 @@ export default {
   iframeBlocked:
     'Ennek megtekintéséhez, engedélyezd a funkcionális sütik használatát',
   manageCookies: 'Sütik kezelése',
+  modalTitle: 'Süti beállítások',
   save: 'Mentés',
   settingsUnsaved: 'Mentés nélküli beállítások vannak',
 } as LocaleStrings
