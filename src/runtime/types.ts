@@ -55,7 +55,7 @@ export interface Cookie {
   id: string
   isPreselected?: boolean
   name: Translatable
-  links?: Record<string, string | null>
+  links?: Record<string, Translatable | null>
   src?: string
   targetCookieIds?: string[]
 }
