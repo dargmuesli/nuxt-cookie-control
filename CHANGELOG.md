@@ -1,3 +1,9 @@
+## [9.1.27](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.26...9.1.27) (2026-05-28)
+
+### Bug Fixes
+
+* **ci:** release using pnpm ([41f2934](https://github.com/dargmuesli/nuxt-cookie-control/commit/41f29346916ea14c8200391b37cb420a644e6baf))
+
 ## [9.1.26](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.25...9.1.26) (2026-05-27)
 
 ### Bug Fixes
