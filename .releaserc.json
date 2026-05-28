@@ -15,7 +15,13 @@
       }
     ],
     "@semantic-release/changelog",
-    "@semantic-release/npm",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "pnpm version ${nextRelease.version} --git-tag-version=false --no-git-checks",
+        "publishCmd": "pnpm publish --no-git-checks"
+      }
+    ],
     "@semantic-release/github",
     "@semantic-release/git"
   ],
