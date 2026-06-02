@@ -189,3 +189,9 @@ declare module 'vue' {
     $cookies: State
   }
 }
+
+declare module '@nuxt/schema' {
+  interface PublicRuntimeConfig {
+    cookieControl: ModuleOptions
+  }
+}

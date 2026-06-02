@@ -183,9 +183,3 @@ const pushCss = (moduleOptions: ModuleOptions, nuxt: Nuxt) => {
   if (moduleOptions.isCssEnabled)
     nuxt.options.css.push(resolver.resolve(runtimeDir, 'styles.css'))
 }
-
-declare module 'nuxt/schema' {
-  interface PublicRuntimeConfig {
-    cookieControl: ModuleOptions
-  }
-}
