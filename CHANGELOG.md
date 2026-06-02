@@ -1,3 +1,9 @@
+## [9.1.28](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.27...9.1.28) (2026-06-02)
+
+### Bug Fixes
+
+* **types:** correct module augmentation ([7417c05](https://github.com/dargmuesli/nuxt-cookie-control/commit/7417c05be0080c58b84a75a2453b8c1acd947739))
+
 ## [9.1.27](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.26...9.1.27) (2026-05-28)
 
 ### Bug Fixes
