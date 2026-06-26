@@ -1,3 +1,9 @@
+## [10.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.5...10.0.0-beta.6) (2026-06-26)
+
+### Features
+
+* **i18n:** allow cookie links translation ([#324](https://github.com/dargmuesli/nuxt-cookie-control/issues/324)) ([740a20b](https://github.com/dargmuesli/nuxt-cookie-control/commit/740a20b5de276f18491a1ce4a0bf9ca100032d65))
+
 ## [10.0.0-beta.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.4...10.0.0-beta.5) (2026-05-11)
 
 ### Bug Fixes
