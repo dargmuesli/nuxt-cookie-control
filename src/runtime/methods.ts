@@ -17,16 +17,27 @@ export const removeCookie = (name: string) =>
 export const resolveTranslatable = (
   translatable: Translatable,
   locale = LOCALE_DEFAULT,
+  useFallback = false,
 ) => {
   if (typeof translatable === 'string') return translatable
 
   if (!locale)
     throw new Error('No locale given for translatable that is not a string.')
 
-  const result = translatable[locale]
+  let result = translatable[locale]
 
-  if (!result)
+  // When missing translation and fallback is allowed,
+  // use default locale first,
+  // then fall back to the first available translation.
+  if (!result && useFallback) {
+    result =
+      translatable[LOCALE_DEFAULT] ?? Object.values(translatable).find(Boolean)
+  }
+
+  if (!result) {
+    if (useFallback) return undefined
     throw new Error(`Could not get translation for locale ${locale}.`)
+  }
 
   return result
 }

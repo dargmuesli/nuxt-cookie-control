@@ -174,7 +174,15 @@
                                         : null
                                     "
                                   >
-                                    {{ entry[1] || entry[0] }}
+                                    {{
+                                      (entry[1]
+                                        ? resolveTranslatable(
+                                            entry[1],
+                                            locale,
+                                            true,
+                                          )
+                                        : undefined) || entry[0]
+                                    }}
                                   </NuxtLink>
                                 </span>
                               </template>
