@@ -16,34 +16,45 @@ import { CookieType } from './runtime/types'
  * - Initializes cookie arrays if they don't exist
  * - Prevents duplicate cookies by checking existing cookie IDs
  * - Silently returns if a cookie with the same ID already exists
+ * - Must be called during Nuxt module setup phase, not at runtime
  *
  * @example
  * ```ts
- * addCookieControl({ id: 'analytics', name: 'Analytics' }, CookieType.OPTIONAL)
+ * import { defineNuxtModule } from '@nuxt/kit'
+ * import { addCookieControl, CookieType } from '@dargmuesli/nuxt-cookie-control/kit'
+ *
+ * export default defineNuxtModule({
+ *   setup() {
+ *     addCookieControl({ id: 'analytics', name: 'Analytics' }, CookieType.OPTIONAL)
+ *   }
+ * })
  * ```
  */
 export const addCookieControl = (
   cookie: Cookie,
   type: CookieType = CookieType.OPTIONAL,
-  nuxt: Nuxt = useNuxt(),
+  nuxt?: Nuxt,
 ) => {
-  nuxt.options[CONFIG_KEY] ||= {} as (typeof nuxt.options)[typeof CONFIG_KEY]
-  ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies ||= {
+  const nuxtInstance = nuxt ?? useNuxt()
+
+  nuxtInstance.options[CONFIG_KEY] ||=
+    {} as (typeof nuxtInstance.options)[typeof CONFIG_KEY]
+  ;(nuxtInstance.options[CONFIG_KEY] as ModuleOptions).cookies ||= {
     necessary: [],
     optional: [],
   }
-  ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies.necessary ||= []
-  ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies.optional ||= []
+  ;(nuxtInstance.options[CONFIG_KEY] as ModuleOptions).cookies.necessary ||= []
+  ;(nuxtInstance.options[CONFIG_KEY] as ModuleOptions).cookies.optional ||= []
 
-  if (
-    (nuxt.options[CONFIG_KEY] as ModuleOptions).cookies[type].some(
-      (c) => c.id === cookie.id,
-    )
-  ) {
-    return
+  const config = nuxtInstance.options[CONFIG_KEY] as ModuleOptions
+
+  for (const cookieType of ['necessary', 'optional'] as const) {
+    if (config.cookies[cookieType].some((c) => c.id === cookie.id)) {
+      return
+    }
   }
 
-  ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies[type].push(cookie)
+  config.cookies[type].push(cookie)
 }
 
 export { CookieType } from './runtime/types'
