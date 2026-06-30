@@ -86,9 +86,18 @@ export default defineNuxtModule<ModuleOptions>({
         nuxt.options.cookieControl,
       )
       for (const type of ['necessary', 'optional'] as const) {
-        merged.cookies[type] = [
-          ...new Map(merged.cookies[type].map((c) => [c.id, c])).values(),
-        ]
+        if (merged.cookies?.[type]) {
+          const dedupMap = new Map<
+            string,
+            (typeof merged.cookies)[typeof type][number]
+          >()
+          for (const cookie of merged.cookies[type]) {
+            if (cookie.id && !dedupMap.has(cookie.id)) {
+              dedupMap.set(cookie.id, cookie)
+            }
+          }
+          merged.cookies[type] = Array.from(dedupMap.values())
+        }
       }
       nuxt.options.runtimeConfig.public.cookieControl = merged
     })
