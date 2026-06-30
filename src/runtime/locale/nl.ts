@@ -1,7 +1,7 @@
 import type { LocaleStrings } from '#cookie-control/types'
 
 export default {
-  accept: 'Aanvaarden',
+  accept: 'Accepteren',
   acceptAll: 'Accepteer alles',
   bannerDescription:
     'We gebruiken onze eigen cookies en third-party cookies om onze site te tonen en om te leren hoe deze gebruikt wordt, met het oog om de services die we verlenen te verbeteren. Door verder te gaan op onze site gaan we ervanuit dat hiermee akkoord gegaan wordt.',
@@ -11,7 +11,7 @@ export default {
   cookiesNecessary: 'Noodzakelijke cookies',
   cookiesOptional: 'Optionele cookies',
   decline: 'Accepteer noodzakelijk',
-  declineAll: 'Verwijder alles',
+  declineAll: 'Alles afwijzen',
   here: 'hier',
   iframeBlocked:
     'Om dit te kunnen bekijken dienen functionele cookies geaccepteerd te worden',

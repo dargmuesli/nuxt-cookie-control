@@ -1,7 +1,7 @@
 import type { LocaleStrings } from '#cookie-control/types'
 
 export default {
-  accept: 'Принимать',
+  accept: 'Прийняти',
   acceptAll: 'Прийняти усі',
   bannerDescription:
     'Ми використовуємо власні файли cookie та сторонні файли cookie, щоб ми могли показати вам цей веб-сайт і краще зрозуміти, як ви ним користуєтеся, з метою покращення пропонованих нами послуг. Якщо ви продовжуєте перегляд, ми вважаємо, що ви прийняли файли cookie.',
@@ -11,7 +11,7 @@ export default {
   cookiesNecessary: 'Необхідні файли cookie',
   cookiesOptional: 'Факультативні файли cookie',
   decline: 'Приймаю необхідне',
-  declineAll: 'Видалити усі',
+  declineAll: 'Відхилити усі',
   here: 'тут',
   iframeBlocked: 'Щоб побачити це, увімкніть функціональні файли cookie',
   manageCookies: 'Керувати файлами cookie',

@@ -11,7 +11,7 @@ export default {
   cookiesNecessary: 'Необходимые файлы cookie',
   cookiesOptional: 'Дополнительные файлы cookie',
   decline: 'Я принимаю необходимое',
-  declineAll: 'Удалить все',
+  declineAll: 'Отклонить все',
   here: 'здесь',
   iframeBlocked: 'Чтобы это увидеть, включите функциональные файлы cookie',
   manageCookies: 'Управление файлами cookie',

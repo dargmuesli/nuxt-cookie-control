@@ -11,7 +11,7 @@ export default {
   cookiesNecessary: 'Неабходныя cookie-файлы',
   cookiesOptional: 'Дадатковыя cookie-файлы',
   decline: 'Я прымаю толькі неабходнасць',
-  declineAll: 'Выдаліць усе',
+  declineAll: 'Адхіліць усё',
   here: 'тут',
   iframeBlocked: 'Каб убачыць гэта, уключыце функцыянальныя cookie-файлы',
   manageCookies: 'Кіраванне cookie-файламі',

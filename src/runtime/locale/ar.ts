@@ -11,7 +11,7 @@ export default {
   cookiesNecessary: 'ملفات تعريف الارتباط الضرورية',
   cookiesOptional: 'ملفات تعريف الارتباط الاختيارية',
   decline: 'تقبل الضرورة',
-  declineAll: 'حذف الكل',
+  declineAll: 'رفض الكل',
   here: 'هنا',
   iframeBlocked: 'لرؤية هذا ، يرجى تمكين ملفات تعريف الارتباط الوظيفية',
   manageCookies: 'إدارة ملفات تعريف الارتباط',

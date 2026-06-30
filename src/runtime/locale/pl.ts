@@ -5,7 +5,7 @@ export default {
   acceptAll: 'Akceptuj wszystkie',
   bannerDescription:
     'Używamy własnych plików cookie i plików cookie stron trzecich, abyśmy mogli poprawnie wyświetlać tę witrynę i lepiej zrozumieć, w jaki sposób ta witryna jest używana, w celu ulepszenia oferowanych przez nas usług. Decyzję w sprawie zgody na korzystanie z plików cookie można zmienić w dowolnym momencie za pomocą przycisku cookie, który pojawi się po dokonaniu wyboru na tym banerze.',
-  bannerTitle: 'Polityka cookies',
+  bannerTitle: 'Pliki cookies',
   close: 'Zamknij',
   cookiesFunctional: 'Funkcjonalne pliki cookies',
   cookiesNecessary: 'Niezbędne pliki cookies',
