@@ -96,6 +96,45 @@ if (cookieControl.cookiesEnabledIds.value.includes('google-analytics')) {
 ```
 
 
+### Programmatic Cookie Registration (Kit)
+
+Other Nuxt modules can programmatically register cookies during their setup phase using the `@dargmuesli/nuxt-cookie-control/kit` export. This is useful when cookies are managed by external modules that need to register themselves with the cookie control system.
+
+```ts
+// modules/my-analytics-module.ts
+
+import { defineNuxtModule } from '@nuxt/kit'
+import { addCookieControl, CookieType } from '@dargmuesli/nuxt-cookie-control/kit'
+
+export default defineNuxtModule({
+  setup() {
+    addCookieControl(
+      {
+        id: 'google-analytics',
+        name: 'Google Analytics',
+        description: 'Tracks user interactions and page views.',
+        src: 'https://www.googletagmanager.com/gtag/js',
+      },
+      CookieType.OPTIONAL
+    )
+  }
+})
+```
+
+#### `addCookieControl(cookie, type, nuxt?)`
+
+Adds a cookie to the cookie control configuration during module setup.
+
+- **cookie** `Cookie` - The cookie object to register
+- **type** `CookieType` - The category: `CookieType.NECESSARY` or `CookieType.OPTIONAL`
+- **nuxt** `Nuxt` (optional) - The Nuxt instance (automatically detected from context if not provided)
+
+**Notes:**
+- Must be called during module setup phase, not at runtime
+- Prevents duplicate cookies by checking existing cookie IDs across all categories
+- Returns silently if a cookie with the same ID already exists
+
+
 ## API
 
 ### Module Options
