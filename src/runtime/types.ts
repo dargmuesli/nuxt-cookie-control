@@ -69,10 +69,10 @@ export interface LocaleStrings {
   cookiesFunctional: string
   cookiesNecessary: string
   cookiesOptional: string
-  iframeBlocked: string
   decline: string
   declineAll: string
   here: string
+  iframeBlocked: string
   manageCookies: string
   save: string
   settingsUnsaved: string

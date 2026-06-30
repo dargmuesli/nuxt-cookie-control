@@ -11,7 +11,7 @@ export default {
   cookiesNecessary: 'Obavezni kolačići',
   cookiesOptional: 'Neobavezni kolačići',
   decline: 'Prihvaćam obavezne',
-  declineAll: 'Obriši sve',
+  declineAll: 'Odbij sve',
   here: 'ovdje',
   iframeBlocked:
     'Da bi vidjeli ovo, molimo Vas omogućite funkcionalne kolačiće',
