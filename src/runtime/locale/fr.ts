@@ -3,6 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Accepter',
   acceptAll: 'Tout accepter',
+  acceptNecessary: "J'accepte le nécessaire",
   bannerDescription:
     'Nous utilisons des cookies d’origine et des cookies tiers. Ces cookies sont destinés à vous offrir une navigation optimisée sur ce site web et de nous donner un aperçu de son utilisation, en vue de l’amélioration des services que nous offrons. En poursuivant votre navigation, nous considérons que vous acceptez l’usage des cookies.',
   bannerTitle: 'Cookies',
@@ -11,7 +12,6 @@ export default {
   cookiesFunctional: 'Cookies fonctionnels',
   cookiesNecessary: 'Cookies obligatoires',
   cookiesOptional: 'Cookies optionnels',
-  decline: "J'accepte le nécessaire",
   declineAll: 'Tout refuser',
   here: 'ici',
   iframeBlocked: 'Pour voir cela, veuillez activer les cookies fonctionnels',

@@ -25,7 +25,7 @@
                 <button
                   type="button"
                   @click="acceptNecessary()"
-                  v-text="localeStrings?.decline"
+                  v-text="localeStrings?.acceptNecessary"
                 />
               </li>
               <li>
@@ -488,8 +488,8 @@ watch(
 init()
 
 defineExpose({
-  accept: acceptAll,
+  acceptAll,
   acceptPartial,
-  decline: acceptNecessary,
+  acceptNecessary,
 })
 </script>

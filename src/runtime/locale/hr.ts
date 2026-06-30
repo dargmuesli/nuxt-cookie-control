@@ -3,6 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Dozvoli',
   acceptAll: 'Dozvoli sve',
+  acceptNecessary: 'Prihvaćam obavezne',
   bannerDescription:
     'Koristimo vlastite kolačiće i kolačiće treće strane kako bismo Vam mogli prikazati web stranicu i razumijeti kako je koristite, s pogledom na poboljšanje usluga koje nudimo. Ako nastavite s pregledavanjem, smatramo da prihvaćate upotrebu kolačića.',
   bannerTitle: 'Kolačići',
@@ -11,7 +12,6 @@ export default {
   cookiesFunctional: 'Funkcionalni kolačići',
   cookiesNecessary: 'Obavezni kolačići',
   cookiesOptional: 'Neobavezni kolačići',
-  decline: 'Prihvaćam obavezne',
   declineAll: 'Odbij sve',
   here: 'ovdje',
   iframeBlocked:

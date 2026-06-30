@@ -64,6 +64,7 @@ export interface Cookie {
 export interface LocaleStrings {
   accept: string
   acceptAll: string
+  acceptNecessary: string
   bannerDescription: string
   bannerTitle: string
   buttonCookies: string
@@ -71,7 +72,6 @@ export interface LocaleStrings {
   cookiesFunctional: string
   cookiesNecessary: string
   cookiesOptional: string
-  decline: string
   declineAll: string
   here: string
   iframeBlocked: string

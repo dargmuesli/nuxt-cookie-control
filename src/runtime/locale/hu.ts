@@ -3,6 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Elfogad',
   acceptAll: 'Összes elfogadása',
+  acceptNecessary: 'Elfogadom a szükségeset',
   bannerDescription:
     'Saját, illetve harmadik féltől származó sütiket használunk annak érdekében, hogy megmutassuk ezt a weboldalt, és jobban megértsük, hogyan használja azt, azzal a céllal, hogy javítsuk az általunk kínált szolgáltatásokat. Ha folytatod a böngészést, úgy gondoljuk, hogy elfogadtad a sütiket.',
   bannerTitle: 'Sütik',
@@ -11,7 +12,6 @@ export default {
   cookiesFunctional: 'Funkcionális sütik',
   cookiesNecessary: 'Szükséges sütik',
   cookiesOptional: 'Opcionális sütik',
-  decline: 'Elfogadom a szükségeset',
   declineAll: 'Összes elutasítása',
   here: 'itt',
   iframeBlocked:
