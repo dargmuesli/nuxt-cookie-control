@@ -19,10 +19,10 @@ import { CookieType } from './types'
  *
  * @example
  * ```ts
- * addControlledCookie({ id: 'analytics', name: 'Analytics' }, CookieType.OPTIONAL)
+ * addCookieControl({ id: 'analytics', name: 'Analytics' }, CookieType.OPTIONAL)
  * ```
  */
-export const addControlledCookie = (
+export const addCookieControl = (
   cookie: Cookie,
   type: CookieType = CookieType.OPTIONAL,
   nuxt: Nuxt = useNuxt(),
