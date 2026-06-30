@@ -1,3 +1,59 @@
+## [9.1.31](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.30...9.1.31) (2026-06-30)
+
+## [9.1.30](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.29...9.1.30) (2026-06-17)
+
+### Bug Fixes
+
+* schedule release ([c9881e6](https://github.com/dargmuesli/nuxt-cookie-control/commit/c9881e68e9154579607fa13ca6b2a64848d95598))
+
+## [9.1.29](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.28...9.1.29) (2026-06-10)
+
+### Bug Fixes
+
+* schedule release ([8a2c41b](https://github.com/dargmuesli/nuxt-cookie-control/commit/8a2c41bb874ebf6fe75e931437ad67df1c828f28))
+
+## [9.1.28](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.27...9.1.28) (2026-06-02)
+
+### Bug Fixes
+
+* **types:** correct module augmentation ([7417c05](https://github.com/dargmuesli/nuxt-cookie-control/commit/7417c05be0080c58b84a75a2453b8c1acd947739))
+
+## [9.1.27](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.26...9.1.27) (2026-05-28)
+
+### Bug Fixes
+
+* **ci:** release using pnpm ([41f2934](https://github.com/dargmuesli/nuxt-cookie-control/commit/41f29346916ea14c8200391b37cb420a644e6baf))
+
+## [9.1.26](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.25...9.1.26) (2026-05-27)
+
+### Bug Fixes
+
+* schedule release ([4c9e2a1](https://github.com/dargmuesli/nuxt-cookie-control/commit/4c9e2a1939ac0ca9f9dc173e8c0683d0c9cf44bb))
+
+## [9.1.25](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.24...9.1.25) (2026-05-20)
+
+### Bug Fixes
+
+* schedule release ([d51f7b7](https://github.com/dargmuesli/nuxt-cookie-control/commit/d51f7b7860af790d3a0baed8e54aae4799acafaa))
+
+## [9.1.24](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.23...9.1.24) (2026-05-10)
+
+### Bug Fixes
+
+* schedule release ([33effe7](https://github.com/dargmuesli/nuxt-cookie-control/commit/33effe7c7a3c9f41ff5e6b5de941162e8cc9a997))
+
+## [9.1.23](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.22...9.1.23) (2026-05-09)
+
+### Bug Fixes
+
+* **types:** deduplicate ([#326](https://github.com/dargmuesli/nuxt-cookie-control/issues/326)) ([62471ef](https://github.com/dargmuesli/nuxt-cookie-control/commit/62471ef36c7889de7b03c456445a396f24be0c60))
+
+## [9.1.22](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.21...9.1.22) (2026-04-29)
+
+### Bug Fixes
+
+* schedule release ([6573787](https://github.com/dargmuesli/nuxt-cookie-control/commit/6573787104e6157787f764da431124906bfdf828))
+
 ## [9.1.21](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.20...9.1.21) (2026-04-15)
 
 ### Bug Fixes

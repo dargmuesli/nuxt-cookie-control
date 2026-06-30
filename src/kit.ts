@@ -1,9 +1,9 @@
 import { useNuxt } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 
-import { CONFIG_KEY } from './constants'
-import type { Cookie, ModuleOptions } from './types'
-import { CookieType } from './types'
+import { CONFIG_KEY } from './runtime/constants'
+import type { Cookie, ModuleOptions } from './runtime/types'
+import { CookieType } from './runtime/types'
 
 /**
  * Adds a cookie to the Nuxt configuration under the specified type category.
@@ -46,5 +46,5 @@ export const addCookieControl = (
   ;(nuxt.options[CONFIG_KEY] as ModuleOptions).cookies[type].push(cookie)
 }
 
-export { CookieType } from './types'
-export type { Cookie } from './types'
+export { CookieType } from './runtime/types'
+export type { Cookie } from './runtime/types'

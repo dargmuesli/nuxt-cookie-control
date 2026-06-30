@@ -8,7 +8,7 @@ export default {
   bannerTitle: '쿠키',
   close: '닫기',
   cookiesFunctional: '기능적 쿠키',
-  cookiesNecessary: '필수 쿠키키',
+  cookiesNecessary: '필수 쿠키',
   cookiesOptional: '선택적 쿠키',
   decline: '거부하기',
   declineAll: '모두 거부하기',

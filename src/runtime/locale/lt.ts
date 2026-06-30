@@ -4,7 +4,7 @@ export default {
   accept: 'Sutinku',
   acceptAll: 'Sutinku su visais',
   bannerDescription:
-    'Mes naudojame savo slapukus and trečiųjų šalių slapukus tam, kad galėtume geriau suprasti kaip svetainė veikia ir yra naudojama bei tobulinti savo teikiamas paslaugas. Jūs bet kuriuo metu galite pakeisti sutikimą dėl slapukų naudojimo paspaudę slapukų mygtuką kuris atsiras kai šioje reklamjuostėje padarysite pasirinkimą.',
+    'Mes naudojame savo slapukus ir trečiųjų šalių slapukus tam, kad galėtume geriau suprasti kaip svetainė veikia ir yra naudojama bei tobulinti savo teikiamas paslaugas. Jūs bet kuriuo metu galite pakeisti sutikimą dėl slapukų naudojimo paspaudę slapukų mygtuką kuris atsiras kai šioje reklamjuostėje padarysite pasirinkimą.',
   bannerTitle: 'Slapukai',
   close: 'Uždaryti',
   cookiesFunctional: 'Funkciniai slapukai',

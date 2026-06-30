@@ -69,16 +69,17 @@ export interface LocaleStrings {
   cookiesFunctional: string
   cookiesNecessary: string
   cookiesOptional: string
-  iframeBlocked: string
   decline: string
   declineAll: string
   here: string
+  iframeBlocked: string
   manageCookies: string
   save: string
   settingsUnsaved: string
 }
 
 export interface ModuleOptions {
+  _isPrerendered: boolean | undefined
   barPosition:
     | 'top-left'
     | 'top-right'
@@ -110,6 +111,7 @@ export interface ModuleOptions {
 }
 
 export const DEFAULTS: Required<ModuleOptions> = {
+  _isPrerendered: undefined,
   barPosition: 'bottom-full',
   closeModalOnClickOutside: false,
   colors: {
@@ -185,5 +187,11 @@ declare module '#app' {
 declare module 'vue' {
   interface ComponentCustomProperties {
     $cookies: State
+  }
+}
+
+declare module '@nuxt/schema' {
+  interface PublicRuntimeConfig {
+    cookieControl: ModuleOptions
   }
 }

@@ -15,7 +15,7 @@ on:
 jobs:
   ci-optimization:
     name: CI optimization
-    uses: dargmuesli/github-actions/.github/workflows/ci-optimization.yml@1fc4c936d18dfa98bca895c19dd429ee108e07ea # 5.1.2
+    uses: dargmuesli/github-actions/.github/workflows/ci-optimization.yml@89c813758dd4c98d28fe3e8d0c8c13923524b4f0 # 5.5.1
     permissions:
       pull-requests: read
   build:
@@ -24,11 +24,11 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node: ['20', '24']
+        node: ['22', '26']
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: Setup package manager
         run: |
@@ -36,7 +36,7 @@ jobs:
           corepack enable
 
       - name: Setup Node
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           cache: pnpm
           node-version: ${{ matrix.node }}
@@ -52,7 +52,7 @@ jobs:
   release_semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@1fc4c936d18dfa98bca895c19dd429ee108e07ea # 5.1.2
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@89c813758dd4c98d28fe3e8d0c8c13923524b4f0 # 5.5.1
     permissions:
       contents: write
       id-token: write

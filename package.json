@@ -11,23 +11,29 @@
   },
   "description": "Nuxt Cookie Control Module",
   "devDependencies": {
-    "@commitlint/cli": "20.5.0",
-    "@commitlint/config-conventional": "20.5.0",
+    "@commitlint/cli": "21.1.0",
+    "@commitlint/config-conventional": "21.1.0",
     "@dargmuesli/nuxt-cookie-control": "link:",
-    "@nuxt/eslint-config": "1.15.2",
+    "@nuxt/eslint-config": "1.16.0",
     "@nuxt/module-builder": "1.0.2",
-    "@nuxt/schema": "4.4.2",
-    "eslint": "10.2.0",
+    "@nuxt/schema": "4.4.8",
+    "eslint": "10.6.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-prettier": "5.5.5",
+    "eslint-plugin-prettier": "5.5.6",
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
-    "nuxt": "4.4.2",
-    "prettier": "3.8.2",
-    "vite": "8.0.8",
-    "vue": "3.5.32",
-    "vue-tsc": "3.2.6",
-    "webpack": "5.106.1"
+    "lint-staged": "17.0.8",
+    "nuxt": "4.4.8",
+    "prettier": "3.8.5",
+    "vite": "8.1.0",
+    "vue": "3.5.39",
+    "vue-tsc": "3.3.5",
+    "webpack": "5.108.1"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.9.0"
+    }
   },
   "engines": {
     "node": ">=16"
@@ -60,17 +66,6 @@
     "Jonas Thelemann"
   ],
   "name": "@dargmuesli/nuxt-cookie-control",
-  "packageManager": "pnpm@10.33.0",
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild",
-      "unrs-resolver"
-    ],
-    "overrides": {
-      "eslint-flat-config-utils": "3.0.2"
-    }
-  },
   "publishConfig": {
     "access": "public"
   },
@@ -96,5 +91,5 @@
       ]
     }
   },
-  "version": "9.1.21"
+  "version": "9.1.31"
 }
