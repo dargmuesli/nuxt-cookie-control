@@ -23,7 +23,7 @@
     "husky": "9.1.7",
     "lint-staged": "17.0.8",
     "nuxt": "4.4.8",
-    "prettier": "3.9.0",
+    "prettier": "3.9.1",
     "vite": "8.1.0",
     "vue": "3.5.39",
     "vue-tsc": "3.3.5",
