@@ -23,11 +23,11 @@
     "husky": "9.1.7",
     "lint-staged": "17.0.8",
     "nuxt": "4.4.8",
-    "prettier": "3.9.3",
+    "prettier": "3.9.4",
     "vite": "8.1.0",
     "vue": "3.5.39",
     "vue-tsc": "3.3.5",
-    "webpack": "5.108.2"
+    "webpack": "5.108.3"
   },
   "devEngines": {
     "packageManager": {
