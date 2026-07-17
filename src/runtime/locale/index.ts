@@ -21,6 +21,7 @@ import lt from './lt'
 import nl from './nl'
 import no from './no'
 import oc from './oc'
+import ptBR from './pt-BR'
 import pt from './pt'
 import pl from './pl'
 import ro from './ro'
@@ -57,6 +58,7 @@ export const locales = [
   nl,
   no,
   oc,
+  ptBR,
   pt,
   pl,
   ro,
