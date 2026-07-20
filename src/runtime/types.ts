@@ -27,6 +27,7 @@ export type Locale =
   | 'nl'
   | 'no'
   | 'oc'
+  | 'pt-BR'
   | 'pt'
   | 'pl'
   | 'ro'
