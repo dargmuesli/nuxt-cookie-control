@@ -196,3 +196,9 @@ declare module '@nuxt/schema' {
     cookieControl: ModuleOptions
   }
 }
+
+declare module 'nuxt/schema' {
+  interface PublicRuntimeConfig {
+    cookieControl: ModuleOptions
+  }
+}
