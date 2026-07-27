@@ -1,3 +1,5 @@
+## [9.3.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.0...9.3.1) (2026-07-27)
+
 ## [9.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.2.1...9.3.0) (2026-07-20)
 
 ## [9.2.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.2.0...9.2.1) (2026-07-08)
