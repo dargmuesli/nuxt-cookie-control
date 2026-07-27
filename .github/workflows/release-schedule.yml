@@ -10,7 +10,7 @@ on:
 jobs:
   release-schedule:
     name: 'Release: Scheduled'
-    uses: dargmuesli/github-actions/.github/workflows/release-schedule.yml@51cd57700bedc5b189c5dce3902645e00b4e4ccf # 5.5.3
+    uses: dargmuesli/github-actions/.github/workflows/release-schedule.yml@709b1aafc707215fb7bdee40fd3367d3623b4aa8 # 5.9.0
     permissions:
       contents: read
     secrets:
