@@ -16,18 +16,18 @@
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/eslint-config": "1.16.0",
     "@nuxt/module-builder": "1.0.3",
-    "@nuxt/schema": "4.5.0",
+    "@nuxt/schema": "4.5.1",
     "eslint": "10.8.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.6",
     "husky": "9.1.7",
     "lint-staged": "17.2.0",
-    "nuxt": "4.5.0",
+    "nuxt": "4.5.1",
     "prettier": "3.9.6",
     "vite": "8.1.5",
     "vue": "3.5.40",
     "vue-tsc": "3.3.8",
-    "webpack": "5.109.0"
+    "webpack": "5.109.1"
   },
   "devEngines": {
     "packageManager": {
