@@ -21,12 +21,12 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.6",
     "husky": "9.1.7",
-    "lint-staged": "17.2.0",
+    "lint-staged": "17.3.0",
     "nuxt": "4.5.1",
     "prettier": "3.9.6",
     "vite": "8.2.0",
     "vue": "3.5.40",
-    "vue-tsc": "3.3.8",
+    "vue-tsc": "3.3.9",
     "webpack": "5.109.2"
   },
   "devEngines": {
