@@ -1,3 +1,9 @@
+## [9.3.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.3...9.3.4) (2026-08-23)
+
+### Bug Fixes
+
+* **release:** tag npm publishes with the release channel ([#337](https://github.com/dargmuesli/nuxt-cookie-control/issues/337)) ([25b1b5d](https://github.com/dargmuesli/nuxt-cookie-control/commit/25b1b5d6af1996338e25e93e7683b74554289eb3))
+
 ## [9.3.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.2...9.3.3) (2026-08-20)
 
 ### Bug Fixes
