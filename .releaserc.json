@@ -19,7 +19,7 @@
       "@semantic-release/exec",
       {
         "prepareCmd": "pnpm version ${nextRelease.version} --git-tag-version=false --no-git-checks",
-        "publishCmd": "pnpm publish --no-git-checks"
+        "publishCmd": "pnpm publish --no-git-checks --tag ${nextRelease.channel || 'latest'}"
       }
     ],
     "@semantic-release/github",
