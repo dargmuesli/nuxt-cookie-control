@@ -17,7 +17,7 @@
     "@nuxt/eslint-config": "1.17.0",
     "@nuxt/module-builder": "1.0.3",
     "@nuxt/schema": "4.5.2",
-    "eslint": "10.8.1",
+    "eslint": "10.9.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.6",
     "husky": "9.1.7",
@@ -26,7 +26,7 @@
     "prettier": "3.9.6",
     "vite": "8.2.2",
     "vue": "3.5.41",
-    "vue-tsc": "3.3.10",
+    "vue-tsc": "3.3.11",
     "webpack": "5.109.2"
   },
   "devEngines": {
