@@ -1,3 +1,9 @@
+## [9.3.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.4...9.3.5) (2026-09-01)
+
+### Bug Fixes
+
+* **deps:** bump pnpm to 11.25.0 (GHSA-vx52-2968-3vc6) ([72d2b88](https://github.com/dargmuesli/nuxt-cookie-control/commit/72d2b88979827eba8da1aa379bac28f27c525a46))
+
 ## [9.3.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.3...9.3.4) (2026-08-23)
 
 ### Bug Fixes
