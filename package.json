@@ -32,7 +32,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "11.28.3"
+      "version": "12.9.0"
     }
   },
   "engines": {
