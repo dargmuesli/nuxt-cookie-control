@@ -75,6 +75,90 @@
 
 * replace zh-CN locale with zh ([#244](https://github.com/dargmuesli/nuxt-cookie-control/issues/244)) ([69762ff](https://github.com/dargmuesli/nuxt-cookie-control/commit/69762ff8346ba1d611cbbc23779d87463f9c0848))
 
+## [9.3.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.7...9.3.8) (2026-09-30)
+
+### Bug Fixes
+
+* schedule release ([f482cc9](https://github.com/dargmuesli/nuxt-cookie-control/commit/f482cc909487d3ed6908513cdb4c5d81b0a724c3))
+
+## [9.3.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.6...9.3.7) (2026-09-16)
+
+### Bug Fixes
+
+* schedule release ([0434556](https://github.com/dargmuesli/nuxt-cookie-control/commit/04345562c786f612187c2ddbb617cf2324ab533a))
+
+## [9.3.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.5...9.3.6) (2026-09-09)
+
+### Bug Fixes
+
+* schedule release ([78af9f9](https://github.com/dargmuesli/nuxt-cookie-control/commit/78af9f961d4ed38dab1eb97210446f85032ccd37))
+
+## [9.3.5](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.4...9.3.5) (2026-09-01)
+
+### Bug Fixes
+
+* **deps:** bump pnpm to 11.25.0 (GHSA-vx52-2968-3vc6) ([72d2b88](https://github.com/dargmuesli/nuxt-cookie-control/commit/72d2b88979827eba8da1aa379bac28f27c525a46))
+
+## [9.3.4](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.3...9.3.4) (2026-08-23)
+
+### Bug Fixes
+
+* **release:** tag npm publishes with the release channel ([#337](https://github.com/dargmuesli/nuxt-cookie-control/issues/337)) ([25b1b5d](https://github.com/dargmuesli/nuxt-cookie-control/commit/25b1b5d6af1996338e25e93e7683b74554289eb3))
+
+## [9.3.3](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.2...9.3.3) (2026-08-20)
+
+### Bug Fixes
+
+* schedule release ([cb657f5](https://github.com/dargmuesli/nuxt-cookie-control/commit/cb657f514bca840bb21e8139d28108ae6087f109))
+
+## [9.3.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.1...9.3.2) (2026-08-05)
+
+## [9.3.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.0...9.3.1) (2026-07-27)
+
+## [9.3.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.2.1...9.3.0) (2026-07-20)
+
+## [9.2.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.2.0...9.2.1) (2026-07-08)
+
+## [9.2.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.31...9.2.0) (2026-06-30)
+
+## [9.1.31](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.30...9.1.31) (2026-06-30)
+
+## [9.1.30](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.29...9.1.30) (2026-06-17)
+
+### Bug Fixes
+
+* schedule release ([c9881e6](https://github.com/dargmuesli/nuxt-cookie-control/commit/c9881e68e9154579607fa13ca6b2a64848d95598))
+
+## [9.1.29](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.28...9.1.29) (2026-06-10)
+
+### Bug Fixes
+
+* schedule release ([8a2c41b](https://github.com/dargmuesli/nuxt-cookie-control/commit/8a2c41bb874ebf6fe75e931437ad67df1c828f28))
+
+## [9.1.28](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.27...9.1.28) (2026-06-02)
+
+### Bug Fixes
+
+* **types:** correct module augmentation ([7417c05](https://github.com/dargmuesli/nuxt-cookie-control/commit/7417c05be0080c58b84a75a2453b8c1acd947739))
+
+## [9.1.27](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.26...9.1.27) (2026-05-28)
+
+### Bug Fixes
+
+* **ci:** release using pnpm ([41f2934](https://github.com/dargmuesli/nuxt-cookie-control/commit/41f29346916ea14c8200391b37cb420a644e6baf))
+
+## [9.1.26](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.25...9.1.26) (2026-05-27)
+
+### Bug Fixes
+
+* schedule release ([4c9e2a1](https://github.com/dargmuesli/nuxt-cookie-control/commit/4c9e2a1939ac0ca9f9dc173e8c0683d0c9cf44bb))
+
+## [9.1.25](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.24...9.1.25) (2026-05-20)
+
+### Bug Fixes
+
+* schedule release ([d51f7b7](https://github.com/dargmuesli/nuxt-cookie-control/commit/d51f7b7860af790d3a0baed8e54aae4799acafaa))
+
 ## [9.1.24](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.1.23...9.1.24) (2026-05-10)
 
 ### Bug Fixes

@@ -1,8 +1,8 @@
 import type { LocaleStrings } from '#cookie-control/types'
 
 export default {
-  accept: 'Aceitar todos',
-  acceptAll: 'Aceitar',
+  accept: 'Aceitar',
+  acceptAll: 'Aceitar todos',
   bannerDescription:
     'Nós utilizamos os nossos próprios cookies e de terceiros para que possamos lhe mostrar este site e compreender a forma como o utiliza, de forma a melhorarmos os serviços que oferecemos. Ao continuar a navegar no site, consideramos que aceitou a utilização de cookies.',
   bannerTitle: 'Cookies',

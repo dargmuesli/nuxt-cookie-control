@@ -27,6 +27,7 @@ export type Locale =
   | 'nl'
   | 'no'
   | 'oc'
+  | 'pt-BR'
   | 'pt'
   | 'pl'
   | 'ro'
@@ -70,10 +71,10 @@ export interface LocaleStrings {
   cookiesFunctional: string
   cookiesNecessary: string
   cookiesOptional: string
-  iframeBlocked: string
   decline: string
   declineAll: string
   here: string
+  iframeBlocked: string
   manageCookies: string
   modalTitle: string
   save: string
@@ -95,10 +96,7 @@ export interface ModuleOptions {
    * @default 'bottom-right'
    */
   controlButtonPosition:
-    | 'top-left'
-    | 'top-right'
-    | 'bottom-left'
-    | 'bottom-right'
+    'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
   closeModalOnClickOutside: boolean
   colors: false | Record<string, unknown>
   cookieExpiryOffsetMs: number
@@ -200,5 +198,17 @@ declare module '#app' {
 declare module 'vue' {
   interface ComponentCustomProperties {
     $cookies: State
+  }
+}
+
+declare module '@nuxt/schema' {
+  interface PublicRuntimeConfig {
+    cookieControl: ModuleOptions
+  }
+}
+
+declare module 'nuxt/schema' {
+  interface PublicRuntimeConfig {
+    cookieControl: ModuleOptions
   }
 }
