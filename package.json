@@ -4,7 +4,7 @@
     "Dario Ferderber <dario.ferderber@broj42.com>"
   ],
   "dependencies": {
-    "@nuxt/kit": "^4.0.0",
+    "@nuxt/kit": "^4.6.0",
     "css-vars-ponyfill": "^2.4.8",
     "defu": "^6.1.4",
     "string-replace-loader": "^3.1.0"
@@ -36,7 +36,7 @@
     }
   },
   "engines": {
-    "node": ">=16"
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
   },
   "exports": {
     ".": {
