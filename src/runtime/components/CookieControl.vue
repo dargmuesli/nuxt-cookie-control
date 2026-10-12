@@ -272,7 +272,7 @@ const {
 const nuxtApp = useNuxtApp()
 const id = useId()
 // data
-const expires = new Date(Date.now() + moduleOptions.cookieExpiryOffsetMs)
+const expires = () => new Date(Date.now() + moduleOptions.cookieExpiryOffsetMs)
 const preselectedCookies = moduleOptions.cookies[CookieType.OPTIONAL].filter(
   (cookie) => cookie.isPreselected,
 )
