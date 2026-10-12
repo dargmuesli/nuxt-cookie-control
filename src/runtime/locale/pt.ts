@@ -3,19 +3,20 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Aceitar',
   acceptAll: 'Aceitar todos',
+  acceptNecessary: 'Aceitar apenas os necessários',
   bannerDescription:
-    'Nós utilizamos os nossos próprios cookies e de terceiros para que possamos lhe mostrar este site e compreender a forma como o utiliza, de forma a melhorarmos os serviços que oferecemos. Ao continuar a navegar no site, consideramos que aceitou a utilização de cookies.',
+    'Utilizamos cookies próprios e de terceiros para podermos apresentar corretamente este site e compreender melhor a forma como é utilizado, com vista a melhorar os serviços que oferecemos. A decisão sobre as permissões de utilização de cookies pode ser alterada a qualquer momento através do botão de cookies que aparecerá depois de efetuar uma seleção neste banner.',
   bannerTitle: 'Cookies',
+  buttonCookies: 'Abrir definições de cookies',
   close: 'Fechar',
   cookiesFunctional: 'Cookies funcionais',
   cookiesNecessary: 'Cookies necessários',
   cookiesOptional: 'Cookies opcionais',
-  decline: 'Eu aceito o necessário',
-  declineAll: 'Apagar todos',
+  declineAll: 'Rejeitar todos',
   here: 'aqui',
-  iframeBlocked:
-    'Para visualizar isto, por favor, active os cookies funcionais',
+  iframeBlocked: 'Para visualizar isto, por favor, ative os cookies funcionais',
   manageCookies: 'Gerir cookies',
+  modalTitle: 'Definições de cookies',
   save: 'Gravar',
   settingsUnsaved: 'Tem alterações não guardadas',
 } as LocaleStrings

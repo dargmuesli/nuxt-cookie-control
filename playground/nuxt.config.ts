@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   future: {
-    compatibilityVersion: 4,
+    compatibilityVersion: 5,
   },
   modules: ['@dargmuesli/nuxt-cookie-control'],
   typescript: {
@@ -42,6 +42,13 @@ export default defineNuxtConfig({
             '/': 'Local Privacy Policy',
             'https://example.com': '3rd Party Privacy Policy',
             'https://example.cop': null,
+            'https://translation.example.com': {
+              de: 'Datenschutzerklärung',
+              en: 'Privacy Policy',
+            },
+            'https://missing-translation.example.com': {
+              en: 'Privacy Policy',
+            },
           },
           targetCookieIds: ['_o', '_p', '_t'],
         },
