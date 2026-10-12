@@ -1,3 +1,9 @@
+## [10.0.0-beta.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.7...10.0.0-beta.8) (2026-10-12)
+
+### Bug Fixes
+
+* **i18n:** use imperative for accept necessary in oc and ro ([36193b6](https://github.com/dargmuesli/nuxt-cookie-control/commit/36193b6b75e8846649d4ba1298110f5044c6113a))
+
 ## [10.0.0-beta.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.6...10.0.0-beta.7) (2026-10-12)
 
 ### ⚠ BREAKING CHANGES
