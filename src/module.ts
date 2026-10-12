@@ -10,7 +10,6 @@ import {
   createResolver,
   resolvePath,
   addTypeTemplate,
-  updateTemplates,
 } from '@nuxt/kit'
 import type { Nuxt, NuxtApp } from '@nuxt/schema'
 import { defu } from 'defu'
@@ -65,14 +64,7 @@ export default defineNuxtModule<ModuleOptions>({
       filename: 'types/cookie-control.d.ts',
       getContents: getTypeTemplate,
       options: moduleOptions,
-    })
-
-    nuxt.hook('builder:watch', async (_event, path) => {
-      if (path.includes(`${CONFIG_KEY}.cookies`)) {
-        updateTemplates({
-          filter: (t) => t.filename === 'types/cookie-control.d.ts',
-        })
-      }
+      dependsOn: [],
     })
 
     nuxt.hook('modules:done', async () => {
