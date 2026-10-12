@@ -1,3 +1,44 @@
+## [10.0.0-beta.7](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.6...10.0.0-beta.7) (2026-10-12)
+
+### ⚠ BREAKING CHANGES
+
+* **i18n:** rename decline to accept necessary (#340)
+* **deps:** require nuxt 4.6
+
+### Features
+
+* add `/kit` export with `addCookieControl` helper ([#323](https://github.com/dargmuesli/nuxt-cookie-control/issues/323)) ([c1fa3ac](https://github.com/dargmuesli/nuxt-cookie-control/commit/c1fa3ac556a7c21b31b1ddda5ea136be612c1049))
+* **deps:** require nuxt 4.6 ([707454b](https://github.com/dargmuesli/nuxt-cookie-control/commit/707454bb3d95a8f325fcfc3bc312015672bfd39c))
+* **locale:** add pt-BR locale ([#335](https://github.com/dargmuesli/nuxt-cookie-control/issues/335)) ([ac44ee1](https://github.com/dargmuesli/nuxt-cookie-control/commit/ac44ee194c14c2fa52b86e2f9ab3725055f78d3e))
+
+### Bug Fixes
+
+* **ci:** release using pnpm ([41f2934](https://github.com/dargmuesli/nuxt-cookie-control/commit/41f29346916ea14c8200391b37cb420a644e6baf))
+* **cookies:** compute expiry on write ([8b04243](https://github.com/dargmuesli/nuxt-cookie-control/commit/8b04243c212bccfcd75fed2441028b2ad403141d))
+* **deps:** bump pnpm to 11.25.0 (GHSA-vx52-2968-3vc6) ([72d2b88](https://github.com/dargmuesli/nuxt-cookie-control/commit/72d2b88979827eba8da1aa379bac28f27c525a46))
+* **i18n:** correct locales ([ac1e20b](https://github.com/dargmuesli/nuxt-cookie-control/commit/ac1e20b787219423b10110e1f7d48d20e1c2924b))
+* **i18n:** correct translations ([#341](https://github.com/dargmuesli/nuxt-cookie-control/issues/341)) ([a7b9442](https://github.com/dargmuesli/nuxt-cookie-control/commit/a7b9442e024021de5e4462c0dcbdfc28244a8326))
+* **i18n:** rename decline to accept necessary ([#340](https://github.com/dargmuesli/nuxt-cookie-control/issues/340)) ([f0d8976](https://github.com/dargmuesli/nuxt-cookie-control/commit/f0d89769fe2a27c64c5f95c6702dd7e33a73362d))
+* **release:** tag npm publishes with the release channel ([#337](https://github.com/dargmuesli/nuxt-cookie-control/issues/337)) ([25b1b5d](https://github.com/dargmuesli/nuxt-cookie-control/commit/25b1b5d6af1996338e25e93e7683b74554289eb3))
+* **release:** use pnpm 12 compatible version flag ([#342](https://github.com/dargmuesli/nuxt-cookie-control/issues/342)) ([1680d53](https://github.com/dargmuesli/nuxt-cookie-control/commit/1680d530aebd21e61165c98af3bd6176d3a9c4ab))
+* schedule release ([37fc0ed](https://github.com/dargmuesli/nuxt-cookie-control/commit/37fc0ed084a7e18077050b10eb2c275350d04fcf))
+* schedule release ([f482cc9](https://github.com/dargmuesli/nuxt-cookie-control/commit/f482cc909487d3ed6908513cdb4c5d81b0a724c3))
+* schedule release ([0434556](https://github.com/dargmuesli/nuxt-cookie-control/commit/04345562c786f612187c2ddbb617cf2324ab533a))
+* schedule release ([78af9f9](https://github.com/dargmuesli/nuxt-cookie-control/commit/78af9f961d4ed38dab1eb97210446f85032ccd37))
+* schedule release ([cb657f5](https://github.com/dargmuesli/nuxt-cookie-control/commit/cb657f514bca840bb21e8139d28108ae6087f109))
+* schedule release ([f9971ff](https://github.com/dargmuesli/nuxt-cookie-control/commit/f9971ff9d412898889023e965de719abdfe2782d))
+* schedule release ([ff62008](https://github.com/dargmuesli/nuxt-cookie-control/commit/ff6200879e48bd4c6bdd93faca1427771b32508b))
+* schedule release ([c9881e6](https://github.com/dargmuesli/nuxt-cookie-control/commit/c9881e68e9154579607fa13ca6b2a64848d95598))
+* schedule release ([8a2c41b](https://github.com/dargmuesli/nuxt-cookie-control/commit/8a2c41bb874ebf6fe75e931437ad67df1c828f28))
+* schedule release ([4c9e2a1](https://github.com/dargmuesli/nuxt-cookie-control/commit/4c9e2a1939ac0ca9f9dc173e8c0683d0c9cf44bb))
+* schedule release ([d51f7b7](https://github.com/dargmuesli/nuxt-cookie-control/commit/d51f7b7860af790d3a0baed8e54aae4799acafaa))
+* **schema:** declare module `nuxt/schema` ([c3b1beb](https://github.com/dargmuesli/nuxt-cookie-control/commit/c3b1beb9cf5b8fb2dbe53e9a46301fa312e65f61))
+* **types:** correct module augmentation ([7417c05](https://github.com/dargmuesli/nuxt-cookie-control/commit/7417c05be0080c58b84a75a2453b8c1acd947739))
+
+### Performance Improvements
+
+* **types:** skip type template regeneration on file changes ([77c06bc](https://github.com/dargmuesli/nuxt-cookie-control/commit/77c06bc13da6faa581885a6aa588d744a8942ba3))
+
 ## [10.0.0-beta.6](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.5...10.0.0-beta.6) (2026-06-26)
 
 ### Features
