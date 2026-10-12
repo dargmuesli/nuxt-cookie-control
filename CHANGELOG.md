@@ -1,3 +1,10 @@
+## [9.3.9](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.8...9.3.9) (2026-10-12)
+
+### Bug Fixes
+
+* **release:** use pnpm 12 compatible version flag ([#342](https://github.com/dargmuesli/nuxt-cookie-control/issues/342)) ([1680d53](https://github.com/dargmuesli/nuxt-cookie-control/commit/1680d530aebd21e61165c98af3bd6176d3a9c4ab))
+* schedule release ([37fc0ed](https://github.com/dargmuesli/nuxt-cookie-control/commit/37fc0ed084a7e18077050b10eb2c275350d04fcf))
+
 ## [9.3.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.7...9.3.8) (2026-09-30)
 
 ### Bug Fixes
