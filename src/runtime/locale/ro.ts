@@ -3,7 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Acceptă',
   acceptAll: 'Acceptă toate',
-  acceptNecessary: 'Accept necesarele',
+  acceptNecessary: 'Acceptă doar necesarele',
   bannerDescription:
     'Utilizăm propriile noastre cookie-uri și cookie-uri ale terților pentru a afișa corect acest site web și pentru a înțelege mai bine modul în care este utilizat acest site web, cu scopul de a îmbunătăți serviciile pe care le oferim. Decizia cu privire la permisiunile de utilizare a cookie-urilor poate fi modificată în orice moment folosind butonul de cookie-uri care va apărea după ce ați făcut o selecție pe acest banner.',
   bannerTitle: 'Cookie-uri',

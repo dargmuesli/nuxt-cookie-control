@@ -3,7 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Acceptar',
   acceptAll: 'Tot acceptar',
-  acceptNecessary: 'Accèpti çò necessari',
+  acceptNecessary: 'Acceptar çò necessari',
   bannerDescription:
     'Utilizam nòstres pròpris cookies e de cookies tèrces per poder afichar corrèctament aqueste site web e melhor comprendre cossí es utilizat, per melhorar los servicis que vos ofrissèm. Podètz cambiar a tot moment vòstra decision sus l’usatge dels cookies amb lo boton de cookies que apareisserà aprèp qu’auretz fach una seleccion sus aqueste bandèu.',
   bannerTitle: 'Cookies',
