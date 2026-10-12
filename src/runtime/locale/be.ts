@@ -3,6 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Прыняць',
   acceptAll: 'Прыняць усё',
+  acceptNecessary: 'Я прымаю толькі неабходнасць',
   bannerDescription:
     'Мы выкарыстоўваем нашыя ўласныя cookie-файлы і cookie-файлы трэціх старон, каб мы маглі паказаць вам гэты вэб-сайт і лепш разумець, як вы яго выкарыстоўваеце, з мэтай палепшэння прапанаваных намі паслуг. Калі вы працягнеце прагляд, мы будзем лічыць, што вы прынялі cookie-файлы.',
   bannerTitle: 'Cookie-файлы',
@@ -11,7 +12,6 @@ export default {
   cookiesFunctional: 'Функцыянальныя cookie-файлы',
   cookiesNecessary: 'Неабходныя cookie-файлы',
   cookiesOptional: 'Дадатковыя cookie-файлы',
-  decline: 'Я прымаю толькі неабходнасць',
   declineAll: 'Адхіліць усё',
   here: 'тут',
   iframeBlocked: 'Каб убачыць гэта, уключыце функцыянальныя cookie-файлы',

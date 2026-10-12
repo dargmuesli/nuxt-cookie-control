@@ -3,6 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Aksepter',
   acceptAll: 'Godta alle',
+  acceptNecessary: 'Jeg aksepterer det nødvendige',
   bannerDescription:
     'Vi bruker våre egne informasjonskapsler og tredjeparts informasjonskapsler, slik at vi kan vise deg dette nettstedet og bedre forstå hvordan du bruker det, med tanke på å forbedre tjenestene vi tilbyr.',
   bannerTitle: 'Informasjonskapsler',
@@ -11,7 +12,6 @@ export default {
   cookiesFunctional: 'Funksjonelle informasjonskapsler',
   cookiesNecessary: 'Nødvendige informasjonskapsler',
   cookiesOptional: 'Valgfrie informasjonskapsler',
-  decline: 'Jeg aksepterer det nødvendige',
   declineAll: 'Avvis alle',
   here: 'her',
   iframeBlocked:

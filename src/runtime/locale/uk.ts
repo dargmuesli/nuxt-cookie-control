@@ -3,6 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Прийняти',
   acceptAll: 'Прийняти усі',
+  acceptNecessary: 'Приймаю необхідне',
   bannerDescription:
     'Ми використовуємо власні файли cookie та сторонні файли cookie, щоб ми могли показати вам цей веб-сайт і краще зрозуміти, як ви ним користуєтеся, з метою покращення пропонованих нами послуг. Якщо ви продовжуєте перегляд, ми вважаємо, що ви прийняли файли cookie.',
   bannerTitle: 'Файли cookie',
@@ -11,7 +12,6 @@ export default {
   cookiesFunctional: 'Функціональні файли cookie',
   cookiesNecessary: 'Необхідні файли cookie',
   cookiesOptional: 'Факультативні файли cookie',
-  decline: 'Приймаю необхідне',
   declineAll: 'Відхилити усі',
   here: 'тут',
   iframeBlocked: 'Щоб побачити це, увімкніть функціональні файли cookie',
