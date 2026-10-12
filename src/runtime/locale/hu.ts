@@ -1,21 +1,20 @@
 import type { LocaleStrings } from '#cookie-control/types'
 
 export default {
-  accept: 'Elfogad',
+  accept: 'Elfogadás',
   acceptAll: 'Összes elfogadása',
-  acceptNecessary: 'Elfogadom a szükségeset',
+  acceptNecessary: 'Csak a szükségesek elfogadása',
   bannerDescription:
-    'Saját, illetve harmadik féltől származó sütiket használunk annak érdekében, hogy megmutassuk ezt a weboldalt, és jobban megértsük, hogyan használja azt, azzal a céllal, hogy javítsuk az általunk kínált szolgáltatásokat. Ha folytatod a böngészést, úgy gondoljuk, hogy elfogadtad a sütiket.',
+    'Saját és harmadik féltől származó sütiket használunk, hogy ezt a weboldalt helyesen jeleníthessük meg, és jobban megértsük, hogyan használják, azzal a céllal, hogy javítsuk az általunk kínált szolgáltatásokat. A sütik használatára vonatkozó döntésedet bármikor megváltoztathatod a süti gombbal, amely azután jelenik meg, hogy választottál ezen a sávon.',
   bannerTitle: 'Sütik',
   buttonCookies: 'Süti beállítások megnyitása',
-  close: 'Bezár',
+  close: 'Bezárás',
   cookiesFunctional: 'Funkcionális sütik',
   cookiesNecessary: 'Szükséges sütik',
   cookiesOptional: 'Opcionális sütik',
   declineAll: 'Összes elutasítása',
   here: 'itt',
-  iframeBlocked:
-    'Ennek megtekintéséhez, engedélyezd a funkcionális sütik használatát',
+  iframeBlocked: 'Ennek megtekintéséhez engedélyezd a funkcionális sütiket',
   manageCookies: 'Sütik kezelése',
   modalTitle: 'Süti beállítások',
   save: 'Mentés',

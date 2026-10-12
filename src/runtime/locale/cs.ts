@@ -14,7 +14,7 @@ export default {
   cookiesOptional: 'Volitelné cookies',
   declineAll: 'Zamítnout vše',
   here: 'zde',
-  iframeBlocked: 'Chcete-li ji zobrazit, povolte obslužné cookies',
+  iframeBlocked: 'Chcete-li to zobrazit, povolte obslužné cookies',
   manageCookies: 'Další informace a přizpůsobení',
   modalTitle: 'Nastavení cookies',
   save: 'Uložit',

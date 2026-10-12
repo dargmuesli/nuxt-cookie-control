@@ -7,7 +7,7 @@ export default {
   bannerDescription:
     'Koristimo sopstvene kolačiće i kolačiće trećih strana kako bismo mogli ispravno prikazati ovu web stranicu i bolje razumeti kako se ova web stranica koristi, u cilju poboljšanja usluga koje nudimo. Odluka o dozvolama za korišćenje kolačića može se promeniti u bilo kom trenutku pomoću dugmeta za kolačiće koje će se pojaviti nakon što se izvrši izbor na ovom baneru.',
   bannerTitle: 'Kolačići',
-  buttonCookies: 'Otvorite postavke kolačića',
+  buttonCookies: 'Otvori podešavanja kolačića',
   close: 'Zatvori',
   cookiesFunctional: 'Funkcionalni kolačići',
   cookiesNecessary: 'Obavezni kolačići',
@@ -16,7 +16,7 @@ export default {
   here: 'ovde',
   iframeBlocked: 'Da biste ovo videli, omogućite funkcionalne kolačiće',
   manageCookies: 'Saznajte više i prilagodite',
-  modalTitle: 'Postavke kolačića',
+  modalTitle: 'Podešavanja kolačića',
   save: 'Sačuvaj',
   settingsUnsaved: 'Imate nesačuvana podešavanja',
 } as LocaleStrings

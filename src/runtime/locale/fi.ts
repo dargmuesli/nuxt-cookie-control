@@ -15,9 +15,9 @@ export default {
   declineAll: 'Kiellä kaikki',
   here: 'täältä',
   iframeBlocked:
-    'Nähdäksesi tämän, ole hyvä ja hyväksy toiminnalliset evästeet.',
+    'Nähdäksesi tämän, ole hyvä ja hyväksy toiminnalliset evästeet',
   manageCookies: 'Lue lisää ja hallitse evästeitä',
   modalTitle: 'Evästeasetukset',
   save: 'Tallenna',
-  settingsUnsaved: 'Sinulla on tallentamattomia muutoksia.',
+  settingsUnsaved: 'Sinulla on tallentamattomia muutoksia',
 } as LocaleStrings

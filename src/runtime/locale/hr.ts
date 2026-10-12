@@ -3,9 +3,9 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Dozvoli',
   acceptAll: 'Dozvoli sve',
-  acceptNecessary: 'Prihvaćam obavezne',
+  acceptNecessary: 'Prihvati obavezne',
   bannerDescription:
-    'Koristimo vlastite kolačiće i kolačiće treće strane kako bismo Vam mogli prikazati web stranicu i razumijeti kako je koristite, s pogledom na poboljšanje usluga koje nudimo. Ako nastavite s pregledavanjem, smatramo da prihvaćate upotrebu kolačića.',
+    'Koristimo vlastite kolačiće i kolačiće trećih strana kako bismo mogli ispravno prikazati ovu web stranicu i bolje razumjeti kako se koristi, s ciljem poboljšanja usluga koje nudimo. Odluku o dopuštenjima za korištenje kolačića možete promijeniti u bilo kojem trenutku pomoću gumba za kolačiće koji će se pojaviti nakon što napravite odabir na ovom banneru.',
   bannerTitle: 'Kolačići',
   buttonCookies: 'Otvori postavke kolačića',
   close: 'Zatvori',
@@ -15,7 +15,7 @@ export default {
   declineAll: 'Odbij sve',
   here: 'ovdje',
   iframeBlocked:
-    'Da bi vidjeli ovo, molimo Vas omogućite funkcionalne kolačiće',
+    'Da biste ovo vidjeli, molimo Vas omogućite funkcionalne kolačiće',
   manageCookies: 'Upravljaj kolačićima',
   modalTitle: 'Postavke kolačića',
   save: 'Spremi',

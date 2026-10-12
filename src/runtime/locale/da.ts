@@ -13,7 +13,7 @@ export default {
   cookiesNecessary: 'Nødvendige cookies',
   cookiesOptional: 'Valgfrie cookies',
   declineAll: 'Afvis alle',
-  here: 'Her',
+  here: 'her',
   iframeBlocked: 'For at se dette skal du aktivere funktionelle cookies',
   manageCookies: 'Læs mere og tilpas',
   modalTitle: 'Cookie-indstillinger',

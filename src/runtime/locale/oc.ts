@@ -5,7 +5,7 @@ export default {
   acceptAll: 'Tot acceptar',
   acceptNecessary: 'Accèpti çò necessari',
   bannerDescription:
-    'Utilizam de cookies d’origina e de cookies tèrces. Aquestes cookies son destinats a vos ofrir una navegacion optimizada sus aqueste site web de nos donar un apercebut de son utilizacion, per melhorar los servicis que vos provesissèm. En contunhant vòstra navegacion, consideram qu’acceptatz l’usatge de cookies.',
+    'Utilizam nòstres pròpris cookies e de cookies tèrces per poder afichar corrèctament aqueste site web e melhor comprendre cossí es utilizat, per melhorar los servicis que vos ofrissèm. Podètz cambiar a tot moment vòstra decision sus l’usatge dels cookies amb lo boton de cookies que apareisserà aprèp qu’auretz fach una seleccion sus aqueste bandèu.',
   bannerTitle: 'Cookies',
   close: 'Tancar',
   cookiesFunctional: 'Cookies foncionals',
