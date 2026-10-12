@@ -13,7 +13,7 @@ export default {
   cookiesNecessary: 'Gerekli çerezler',
   cookiesOptional: 'İsteğe bağlı çerezler',
   declineAll: 'Tümünü reddet',
-  here: 'Burada',
+  here: 'buradan',
   iframeBlocked: 'Bunu görmek için lütfen işlevsel çerezleri etkinleştirin',
   manageCookies: 'Çerezleri yönet',
   modalTitle: 'Çerez ayarları',

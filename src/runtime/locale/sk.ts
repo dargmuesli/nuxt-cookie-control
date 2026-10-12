@@ -10,7 +10,7 @@ export default {
   buttonCookies: 'Otvoriť nastavenia cookies',
   close: 'Zatvoriť',
   cookiesFunctional: 'Obslužné cookies',
-  cookiesNecessary: 'Nevyhnutné  cookies',
+  cookiesNecessary: 'Nevyhnutné cookies',
   cookiesOptional: 'Voliteľné cookies',
   declineAll: 'Odmietnuť všetky',
   here: 'tu',

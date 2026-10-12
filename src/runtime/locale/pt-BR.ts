@@ -5,7 +5,7 @@ export default {
   acceptAll: 'Aceitar todos',
   acceptNecessary: 'Aceitar apenas os necessários',
   bannerDescription:
-    'Utilizamos cookies próprios e de terceiros para permitir a navegação no site e analisar o seu uso, de modo a melhorar os serviços que oferecemos. Ao continuar navegando, consideramos que você aceita a utilização de cookies.',
+    'Utilizamos cookies próprios e de terceiros para exibir este site corretamente e entender melhor como ele é utilizado, com o objetivo de melhorar os serviços que oferecemos. A decisão sobre as permissões de uso de cookies pode ser alterada a qualquer momento por meio do botão de cookies que aparecerá após uma seleção ser feita neste banner.',
   bannerTitle: 'Cookies',
   buttonCookies: 'Abrir configurações de cookies',
   close: 'Fechar',
@@ -15,7 +15,7 @@ export default {
   declineAll: 'Rejeitar todos',
   here: 'aqui',
   iframeBlocked:
-    'Para visualizar este conteúdo, por favor, ative os cookies funcionais.',
+    'Para visualizar este conteúdo, por favor, ative os cookies funcionais',
   manageCookies: 'Gerenciar cookies',
   modalTitle: 'Configurações de cookies',
   save: 'Salvar',

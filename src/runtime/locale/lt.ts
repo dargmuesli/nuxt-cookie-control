@@ -12,7 +12,7 @@ export default {
   cookiesFunctional: 'Funkciniai slapukai',
   cookiesNecessary: 'Būtinieji slapukai',
   cookiesOptional: 'Pasirinktiniai slapukai',
-  declineAll: 'Atšaukti viską',
+  declineAll: 'Atmesti visus',
   here: 'čia',
   iframeBlocked: 'Norėdami matyti, leiskite naudoti funkcinius slapukus',
   manageCookies: 'Sužinoti daugiau ir pritaikyti',

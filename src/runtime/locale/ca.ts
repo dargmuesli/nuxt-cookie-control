@@ -3,7 +3,7 @@ import type { LocaleStrings } from '#cookie-control/types'
 export default {
   accept: 'Acceptar',
   acceptAll: 'Acceptar-ho tot',
-  acceptNecessary: 'Accepto el necessari',
+  acceptNecessary: 'Acceptar les necessàries',
   bannerDescription:
     "Utilitzem cookies pròpies i de tercers per tal de poder visualitzar correctament aquest lloc web i entendre millor com s'utilitza, amb l'objectiu de millorar els serveis que oferim. Una decisió sobre els permisos d'ús de cookies es pot canviar en qualsevol moment mitjançant el botó de cookies que apareixerà després d'haver fet una selecció en aquest bàner.",
   bannerTitle: 'Cookies',
@@ -12,7 +12,7 @@ export default {
   cookiesFunctional: 'Cookies funcionals',
   cookiesNecessary: 'Cookies necessàries',
   cookiesOptional: 'Cookies opcionals',
-  declineAll: 'Declinar tot',
+  declineAll: 'Rebutjar-ho tot',
   here: 'aquí',
   iframeBlocked: 'Per veure-ho, activeu les cookies funcionals',
   manageCookies: 'Més informació i personalització',
