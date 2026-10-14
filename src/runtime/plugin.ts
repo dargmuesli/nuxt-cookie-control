@@ -63,7 +63,7 @@ export default defineNuxtPlugin((_nuxtApp) => {
     useHead({
       script: [
         {
-          innerHTML: `if(document.cookie.split(/; */).some(function(c){return ${JSON.stringify(cookieEntries)}.indexOf(c)>-1}))document.documentElement.setAttribute('${HTML_ATTRIBUTE_CONSENT}','')`,
+          innerHTML: `if(document.cookie.split(/; */).some(function(c){return ${JSON.stringify(cookieEntries).replace(/</g, '\\u003C')}.indexOf(c)>-1}))document.documentElement.setAttribute('${HTML_ATTRIBUTE_CONSENT}','')`,
           key: 'cookie-control-consent',
           tagPriority: 'critical',
         },

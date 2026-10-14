@@ -369,13 +369,14 @@ onBeforeMount(() => {
 
     setCssVariables(variables)
   }
-
-  if (moduleOptions.isModalForced && !isConsentGiven.value) {
-    isModalActive.value = true
-  }
 })
 onMounted(() => {
   isMounted.value = true
+
+  // opened only after hydration, as the server never renders the modal
+  if (moduleOptions.isModalForced && !isConsentGiven.value) {
+    isModalActive.value = true
+  }
 
   // from now on, the bar's visibility is up to the component, so the attribute set by the plugin's head script must not hide it anymore
   watch(
