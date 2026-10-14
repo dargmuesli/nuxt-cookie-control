@@ -49,6 +49,10 @@ jobs:
 
       - name: Build
         run: pnpm run build && pnpm run -r build
+
+      - name: Test
+        if: matrix.os == 'ubuntu-latest'
+        run: pnpm exec playwright install --with-deps chromium && pnpm test
   release_semantic:
     needs: build
     name: Release (semantic)

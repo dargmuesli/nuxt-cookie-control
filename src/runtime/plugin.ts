@@ -1,9 +1,17 @@
 import { ref } from 'vue'
 
-import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
+import {
+  COOKIE_ID_SEPARATOR,
+  HTML_ATTRIBUTE_CONSENT,
+} from '#cookie-control/constants'
 import { getAllCookieIdsString } from '#cookie-control/methods'
 import type { Cookie, State } from '#cookie-control/types'
-import { defineNuxtPlugin, useCookie, useRuntimeConfig } from '#imports'
+import {
+  defineNuxtPlugin,
+  useCookie,
+  useHead,
+  useRuntimeConfig,
+} from '#imports'
 
 export default defineNuxtPlugin((_nuxtApp) => {
   const runtimeConfig = useRuntimeConfig()
@@ -38,6 +46,36 @@ export default defineNuxtPlugin((_nuxtApp) => {
   const cookiesEnabledIds = ref<string[] | undefined>(cookieCookiesEnabledIds)
   const isModalActive = ref<boolean>()
   const locale = ref<string>()
+
+  if (import.meta.server) {
+    // The server markup must not depend on the consent cookie, so that it can be cached for all visitors.
+    // This inline script hides the bar for returning visitors before the first paint instead.
+    // It accepts both encodings `useCookie` may write.
+    const allCookieIdsString = getAllCookieIdsString(moduleOptions)
+    const cookieEntries = [
+      allCookieIdsString,
+      JSON.stringify(allCookieIdsString),
+    ].map(
+      (value) =>
+        `${moduleOptions.cookieNameIsConsentGiven}=${encodeURIComponent(value)}`,
+    )
+
+    useHead({
+      script: [
+        {
+          innerHTML: `if(document.cookie.split(/; */).some(function(c){return ${JSON.stringify(cookieEntries)}.indexOf(c)>-1}))document.documentElement.setAttribute('${HTML_ATTRIBUTE_CONSENT}','')`,
+          key: 'cookie-control-consent',
+          tagPriority: 'critical',
+        },
+      ],
+      style: [
+        {
+          innerHTML: `html[${HTML_ATTRIBUTE_CONSENT}] .cookieControl__Bar{display:none}`,
+          key: 'cookie-control-consent',
+        },
+      ],
+    })
+  }
 
   const state = {
     cookiesEnabled,
