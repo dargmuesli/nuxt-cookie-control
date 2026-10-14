@@ -5,6 +5,8 @@ const portModalForced = 3457
 
 export default defineConfig({
   testDir: 'test',
+  // CI uses the runner's preinstalled Chrome to skip downloading Playwright's browser
+  use: { channel: process.env.CI ? 'chrome' : undefined },
   projects: [
     {
       name: 'default',
