@@ -17,6 +17,7 @@
     "@nuxt/eslint-config": "1.17.0",
     "@nuxt/module-builder": "1.0.3",
     "@nuxt/schema": "4.6.1",
+    "@playwright/test": "1.63.0",
     "eslint": "10.12.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.7",
@@ -78,7 +79,8 @@
     "lint:js": "eslint --cache",
     "lint:ts": "vue-tsc --noEmit",
     "prepack": "pnpm build",
-    "prepare": "husky && nuxt-module-build prepare"
+    "prepare": "husky && nuxt-module-build prepare",
+    "test": "playwright test"
   },
   "type": "module",
   "typesVersions": {
