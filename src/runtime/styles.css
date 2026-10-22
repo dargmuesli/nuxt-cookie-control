@@ -65,7 +65,7 @@
 .cookieControl__Bar {
   position: fixed;
   background-color: var(--cookie-control-barBackground);
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 .cookieControl__Bar h2,
 .cookieControl__Bar p {
@@ -329,7 +329,7 @@
 }
 .cookieControl__BlockedIframe p,
 .cookieControl__BlockedIframe a {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 @media screen and (max-width: 768px) {
   .cookieControl__Bar {
