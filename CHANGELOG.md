@@ -1,3 +1,9 @@
+## [9.3.11](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.10...9.3.11) (2026-10-22)
+
+### Bug Fixes
+
+* **ssr:** render consent-independent markup for shared caches ([#344](https://github.com/dargmuesli/nuxt-cookie-control/issues/344)) ([7b00b02](https://github.com/dargmuesli/nuxt-cookie-control/commit/7b00b02d7361dec68e76cdfff6af2917ccdb824f))
+
 ## [9.3.10](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.9...9.3.10) (2026-10-21)
 
 ### Bug Fixes
