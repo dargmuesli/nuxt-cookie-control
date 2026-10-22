@@ -1,3 +1,13 @@
+## [10.0.0-beta.9](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.8...10.0.0-beta.9) (2026-10-22)
+
+### ⚠ BREAKING CHANGES
+
+* **styles:** use system font stack to avoid build-time font fetching (#345)
+
+### Bug Fixes
+
+* **styles:** use system font stack to avoid build-time font fetching ([#345](https://github.com/dargmuesli/nuxt-cookie-control/issues/345)) ([c1a6d2b](https://github.com/dargmuesli/nuxt-cookie-control/commit/c1a6d2b41161fee42403eeb46140713342927a89))
+
 ## [10.0.0-beta.8](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.7...10.0.0-beta.8) (2026-10-12)
 
 ### Bug Fixes
