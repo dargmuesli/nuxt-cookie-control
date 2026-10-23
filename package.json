@@ -17,7 +17,7 @@
     "@nuxt/eslint-config": "1.17.0",
     "@nuxt/module-builder": "1.0.3",
     "@nuxt/schema": "4.6.2",
-    "@playwright/test": "1.63.0",
+    "@playwright/test": "1.64.1",
     "eslint": "10.13.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.7",
