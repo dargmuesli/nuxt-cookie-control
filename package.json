@@ -16,14 +16,14 @@
     "@dargmuesli/nuxt-cookie-control": "link:",
     "@nuxt/eslint-config": "1.17.0",
     "@nuxt/module-builder": "1.0.3",
-    "@nuxt/schema": "4.6.2",
+    "@nuxt/schema": "4.6.3",
     "@playwright/test": "1.64.1",
     "eslint": "10.13.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.7",
     "husky": "9.1.7",
     "lint-staged": "17.6.0",
-    "nuxt": "4.6.2",
+    "nuxt": "4.6.3",
     "prettier": "3.9.10",
     "vite": "8.3.5",
     "vue": "3.5.44",
@@ -33,7 +33,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "12.15.0"
+      "version": "12.16.0"
     }
   },
   "engines": {
