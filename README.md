@@ -6,7 +6,7 @@
 
 ![nuxt-cookie-control](https://drive.google.com/a/broj42.com/uc?id=19sFguJo7SKUvmH4xu9DhK9ZXzR6oWLX8)
 
-✅ Translated for: ar, az, be, bg, ca, cs, da, de, en, es, fi, fr, hr, hu, id, it, ja, km, ko, lt, nl, no, oc, pt-BR, pt, pl, ro, rs, ru, sk, sl, sv, tr, uk and zh-CN
+✅ Translated for: ar, az, be, bg, ca, cs, da, de, en, es, fi, fr, hr, hu, id, it, ja, km, ko, lt, nl, no, oc, pt-BR, pt, pl, ro, rs, ru, sk, sl, sv, tr, uk and zh
 
 ✅ Vue 3 support
 
@@ -143,6 +143,11 @@ Adds a cookie to the cookie control configuration during module setup.
 // Position of cookie bar.
 // 'top-left', 'top-right', 'top-full', 'bottom-left', 'bottom-right', 'bottom-full'
 barPosition: 'bottom-full',
+
+// Position of the cookie control button.
+// 'top-left', 'top-right', 'bottom-left', 'bottom-right'
+// @default 'bottom-right'
+controlButtonPosition: 'bottom-right',
 
 // Switch to toggle if clicking the overlay outside the configuration modal closes the modal.
 closeModalOnClickOutside: true,

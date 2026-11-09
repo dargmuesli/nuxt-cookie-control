@@ -10,7 +10,6 @@ import {
   createResolver,
   resolvePath,
   addTypeTemplate,
-  updateTemplates,
 } from '@nuxt/kit'
 import type { Nuxt, NuxtApp } from '@nuxt/schema'
 import { defu } from 'defu'
@@ -29,7 +28,7 @@ export default defineNuxtModule<ModuleOptions>({
     name,
     version,
     configKey: CONFIG_KEY,
-    compatibility: { nuxt: '>=3.0.0' },
+    compatibility: { nuxt: '>=4.6.0' },
   },
   defaults: DEFAULTS,
   hooks: {
@@ -41,11 +40,7 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   async setup(moduleOptions, nuxt) {
-    moduleOptions._isPrerendered =
-      nuxt.options.nitro.static ||
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (nuxt.options as any)
-        ._generate /* TODO: remove when compatibility: { nuxt: '>=3.8.0' } */
+    moduleOptions._isPrerendered = nuxt.options.nitro.static
 
     nuxt.options.alias['#cookie-control/set-vars'] =
       moduleOptions.isCssPonyfillEnabled
@@ -69,14 +64,7 @@ export default defineNuxtModule<ModuleOptions>({
       filename: 'types/cookie-control.d.ts',
       getContents: getTypeTemplate,
       options: moduleOptions,
-    })
-
-    nuxt.hook('builder:watch', async (_event, path) => {
-      if (path.includes(`${CONFIG_KEY}.cookies`)) {
-        updateTemplates({
-          filter: (t) => t.filename === 'types/cookie-control.d.ts',
-        })
-      }
+      dependsOn: [],
     })
 
     nuxt.hook('modules:done', async () => {
