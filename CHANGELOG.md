@@ -1,3 +1,11 @@
+## [10.0.0-beta.10](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.9...10.0.0-beta.10) (2026-11-09)
+
+### Bug Fixes
+
+* schedule release ([0f75267](https://github.com/dargmuesli/nuxt-cookie-control/commit/0f7526718a404b3461bf3f02ae53bf2ad6815e55))
+* schedule release ([50d6816](https://github.com/dargmuesli/nuxt-cookie-control/commit/50d68162c56ab48ff02d0a68bb449e15b8c1b6e4))
+* **ssr:** render consent-independent markup for shared caches ([#344](https://github.com/dargmuesli/nuxt-cookie-control/issues/344)) ([7b00b02](https://github.com/dargmuesli/nuxt-cookie-control/commit/7b00b02d7361dec68e76cdfff6af2917ccdb824f))
+
 ## [10.0.0-beta.9](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.8...10.0.0-beta.9) (2026-10-22)
 
 ### ⚠ BREAKING CHANGES
