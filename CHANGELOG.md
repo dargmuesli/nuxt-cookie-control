@@ -131,6 +131,23 @@
 ### Miscellaneous Chores
 
 * replace zh-CN locale with zh ([#244](https://github.com/dargmuesli/nuxt-cookie-control/issues/244)) ([69762ff](https://github.com/dargmuesli/nuxt-cookie-control/commit/69762ff8346ba1d611cbbc23779d87463f9c0848))
+## [9.3.12](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.11...9.3.12) (2026-11-04)
+
+### Bug Fixes
+
+* schedule release ([0f75267](https://github.com/dargmuesli/nuxt-cookie-control/commit/0f7526718a404b3461bf3f02ae53bf2ad6815e55))
+
+## [9.3.11](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.10...9.3.11) (2026-10-22)
+
+### Bug Fixes
+
+* **ssr:** render consent-independent markup for shared caches ([#344](https://github.com/dargmuesli/nuxt-cookie-control/issues/344)) ([7b00b02](https://github.com/dargmuesli/nuxt-cookie-control/commit/7b00b02d7361dec68e76cdfff6af2917ccdb824f))
+
+## [9.3.10](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.9...9.3.10) (2026-10-21)
+
+### Bug Fixes
+
+* schedule release ([50d6816](https://github.com/dargmuesli/nuxt-cookie-control/commit/50d68162c56ab48ff02d0a68bb449e15b8c1b6e4))
 
 ## [9.3.9](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.8...9.3.9) (2026-10-12)
 
