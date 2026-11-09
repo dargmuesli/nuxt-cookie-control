@@ -1,3 +1,42 @@
+## [10.0.0](https://github.com/dargmuesli/nuxt-cookie-control/compare/9.3.12...10.0.0) (2026-11-09)
+
+### ⚠ BREAKING CHANGES
+
+* **styles:** use system font stack to avoid build-time font fetching (#345)
+* **i18n:** rename decline to accept necessary (#340)
+* **deps:** require nuxt 4.6
+* **components:** use html dialog for modal
+* replace zh-CN locale with zh (#244)
+
+### Features
+
+* allow to configure control button position ([#274](https://github.com/dargmuesli/nuxt-cookie-control/issues/274)) ([94dbb8a](https://github.com/dargmuesli/nuxt-cookie-control/commit/94dbb8afcba5a8bfd02453e3bb22650f5179725d))
+* **components:** use html dialog for modal ([fdce9ab](https://github.com/dargmuesli/nuxt-cookie-control/commit/fdce9ab371f449a4384cc84fd32371d52c61e3a3))
+* **deps:** require nuxt 4.6 ([707454b](https://github.com/dargmuesli/nuxt-cookie-control/commit/707454bb3d95a8f325fcfc3bc312015672bfd39c))
+* **i18n:** allow cookie links translation ([#324](https://github.com/dargmuesli/nuxt-cookie-control/issues/324)) ([740a20b](https://github.com/dargmuesli/nuxt-cookie-control/commit/740a20b5de276f18491a1ce4a0bf9ca100032d65))
+* **translation:** added translations for the modal title and the cookie button label ([161834b](https://github.com/dargmuesli/nuxt-cookie-control/commit/161834b65a3ea50b8cc2529f5f06fd9b98601a1c))
+
+### Bug Fixes
+
+* **banner:** style banner ([07d4286](https://github.com/dargmuesli/nuxt-cookie-control/commit/07d4286db9f75f558b0abb24dca219d162fca26e))
+* **cookies:** compute expiry on write ([8b04243](https://github.com/dargmuesli/nuxt-cookie-control/commit/8b04243c212bccfcd75fed2441028b2ad403141d))
+* **i18n:** correct translations ([#341](https://github.com/dargmuesli/nuxt-cookie-control/issues/341)) ([a7b9442](https://github.com/dargmuesli/nuxt-cookie-control/commit/a7b9442e024021de5e4462c0dcbdfc28244a8326))
+* **i18n:** rename decline to accept necessary ([#340](https://github.com/dargmuesli/nuxt-cookie-control/issues/340)) ([f0d8976](https://github.com/dargmuesli/nuxt-cookie-control/commit/f0d89769fe2a27c64c5f95c6702dd7e33a73362d))
+* **i18n:** use imperative for accept necessary in oc and ro ([36193b6](https://github.com/dargmuesli/nuxt-cookie-control/commit/36193b6b75e8846649d4ba1298110f5044c6113a))
+* implement feedback ([3c3435d](https://github.com/dargmuesli/nuxt-cookie-control/commit/3c3435d5bb6bbdd1304d271544cb1b4fce03e878))
+* **modal:** move v-if, useId, add autofocus ([a3b6a25](https://github.com/dargmuesli/nuxt-cookie-control/commit/a3b6a257f31423e3ea07836962c5e758782b6104))
+* **modal:** update modal and banner styles ([f9c4f0c](https://github.com/dargmuesli/nuxt-cookie-control/commit/f9c4f0c7e8c79c961c31c74fb8fbb9f47ba63d94))
+* **modal:** update modal styles ([413ce5d](https://github.com/dargmuesli/nuxt-cookie-control/commit/413ce5d4d4de297a141a9c8f406a762de280611f))
+* **styles:** use system font stack to avoid build-time font fetching ([#345](https://github.com/dargmuesli/nuxt-cookie-control/issues/345)) ([c1a6d2b](https://github.com/dargmuesli/nuxt-cookie-control/commit/c1a6d2b41161fee42403eeb46140713342927a89))
+
+### Performance Improvements
+
+* **types:** skip type template regeneration on file changes ([77c06bc](https://github.com/dargmuesli/nuxt-cookie-control/commit/77c06bc13da6faa581885a6aa588d744a8942ba3))
+
+### Miscellaneous Chores
+
+* replace zh-CN locale with zh ([#244](https://github.com/dargmuesli/nuxt-cookie-control/issues/244)) ([69762ff](https://github.com/dargmuesli/nuxt-cookie-control/commit/69762ff8346ba1d611cbbc23779d87463f9c0848))
+
 ## [10.0.0-beta.10](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0-beta.9...10.0.0-beta.10) (2026-11-09)
 
 ### Bug Fixes
