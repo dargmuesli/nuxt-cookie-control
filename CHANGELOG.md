@@ -1,3 +1,9 @@
+## [10.0.2](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.1...10.0.2) (2026-11-25)
+
+### Bug Fixes
+
+* schedule release ([fef3e5a](https://github.com/dargmuesli/nuxt-cookie-control/commit/fef3e5a33117dd00bbbbadf068ba5cae08760824))
+
 ## [10.0.1](https://github.com/dargmuesli/nuxt-cookie-control/compare/10.0.0...10.0.1) (2026-11-18)
 
 ### Bug Fixes
